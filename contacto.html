@@ -254,6 +254,203 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
   footer { padding: 2rem 1.8rem; }
   .cf-row { grid-template-columns: 1fr; }
 }
+
+/* ── MOBILE NAV ─────────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: .4rem;
+  background: none;
+  border: none;
+  z-index: 200;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--purple);
+  transition: all .3s;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(58,28,87,.98);
+  z-index: 150;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 2rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: -.02em;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  width: 100%;
+  text-align: center;
+  transition: color .2s;
+}
+.mobile-menu a:hover { color: var(--lime); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu .mm-cta {
+  margin-top: 1.5rem;
+  background: var(--lime);
+  color: var(--slate) !important;
+  padding: 1rem 2.5rem !important;
+  font-size: .85rem !important;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border-bottom: none !important;
+  width: auto !important;
+}
+.mobile-menu .mm-close {
+  position: absolute;
+  top: 1.4rem; right: 1.5rem;
+  background: none; border: none;
+  font-size: 1.8rem; color: rgba(255,255,255,.6);
+  cursor: pointer; font-family: sans-serif;
+  line-height: 1;
+}
+@media (max-width: 900px) {
+  .nav-hamburger { display: flex; }
+}
+
+
+/* ── GLOBAL MOBILE FIXES ────────────────────── */
+@media (max-width: 480px) {
+  html { font-size: 15px; }
+  body { overflow-x: hidden; }
+
+  /* Nav */
+  nav { padding: .9rem 1.2rem; }
+  .nav-logo img { height: 42px !important; }
+
+  /* Typography scale */
+  h1, .hero h1, .article-header h1 {
+    font-size: clamp(1.7rem, 8vw, 2.4rem) !important;
+    letter-spacing: -.03em !important;
+    line-height: 1.1 !important;
+  }
+  h2 { font-size: clamp(1.3rem, 6vw, 1.8rem) !important; }
+
+  /* Sections padding */
+  section, .hero, .about-strip, .services, .process-strip,
+  .blog-preview, .testimonials, .newsletter, .final-cta,
+  .topics, .newsletter-full, .related-posts {
+    padding: 3.5rem 1.2rem !important;
+  }
+  .blog-body { padding: 2.5rem 1.2rem !important; }
+  .article-layout { padding: 2.5rem 1.2rem !important; }
+  .article-header { padding: 6.5rem 1.2rem 2.5rem !important; }
+  .page-header { padding: 6.5rem 1.2rem 2.5rem !important; }
+  .blog-header { padding: 7rem 1.2rem 2.5rem !important; }
+  footer { padding: 2rem 1.2rem !important; }
+  .legal-body { padding: 2.5rem 1.2rem 3rem !important; }
+
+  /* Hero */
+  .hero-actions { flex-direction: column !important; gap: .8rem !important; }
+  .btn-primary, .btn-ghost { width: 100%; text-align: center; padding: .9rem 1rem !important; }
+  .hero-proof { flex-wrap: wrap; gap: .8rem !important; }
+
+  /* Grids → single column */
+  .sv-grid, .bp-grid, .ts-grid, .topics-grid,
+  .rp-grid, .nl-fields, .platform-grid,
+  .results-grid, .rights-grid { grid-template-columns: 1fr !important; }
+
+  /* Newsletter */
+  .newsletter-full { padding: 3.5rem 1.2rem !important; }
+  .nl-fields { grid-template-columns: 1fr !important; }
+
+  /* Blog */
+  .cat-bar { padding: 0 1rem !important; }
+  .cat-pill { padding: .9rem 1rem !important; font-size: .6rem !important; }
+  .post-row { grid-template-columns: 1fr !important; }
+  .post-thumb { aspect-ratio: 16/7 !important; }
+  .featured-post { grid-template-columns: 1fr !important; }
+  .fp-photo { min-height: 200px !important; }
+  .fp-content { padding: 2rem 1.2rem !important; }
+
+  /* Article */
+  .article-content h2 { font-size: 1.15rem !important; }
+  .article-content h3 { font-size: .95rem !important; }
+  .case-header { flex-direction: column; gap: .6rem !important; }
+  .case-num { font-size: 1.8rem !important; }
+  .phase { grid-template-columns: 1fr !important; }
+
+  /* Sidebar */
+  .article-sidebar, .sidebar { padding-left: 0 !important; }
+
+  /* Footer */
+  .footer-links { flex-direction: column; gap: .8rem !important; }
+  .footer-copy { font-size: .6rem !important; }
+
+  /* Forms */
+  input, textarea, select, button {
+    font-size: 16px !important; /* Prevents iOS zoom */
+  }
+  .sb-input, .nl-input, .cat-search input {
+    font-size: 16px !important;
+  }
+
+  /* Tables */
+  .cookie-table { font-size: .72rem !important; }
+  .cookie-table th, .cookie-table td { padding: .5rem .6rem !important; }
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* Comparison table */
+  .comp-row { grid-template-columns: 1fr !important; }
+  .comp-row:first-child { display: none; }
+  .comp-cell:first-child::before { content: 'Sin estrategia: '; font-weight: 600; color: var(--pink); font-size: .7rem; }
+  .comp-cell:last-child::before { content: 'Con estrategia: '; font-weight: 600; color: var(--lime-dk); font-size: .7rem; }
+
+  /* Buttons */
+  .nav-cta { display: none; }
+  .article-cta a { width: 100%; justify-content: center; }
+  .btn-read { font-size: .65rem !important; }
+
+  /* Process steps */
+  .ps-steps { grid-template-columns: 1fr !important; }
+
+  /* Testimonials */
+  .ts-card { padding: 1.5rem !important; }
+  .ts-grid { gap: 1rem !important; }
+
+  /* About strip */
+  .as-photo { min-height: 260px !important; }
+
+  /* Topics grid */
+  .topics-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .topic-card { padding: 1.2rem 1rem !important; }
+
+  /* Case studies */
+  .results-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .result-num { font-size: 1.3rem !important; }
+
+  /* Phases */
+  .phases { gap: .8rem !important; }
+  .pillar { padding: 1.5rem !important; }
+
+  /* Sidebar CTA */
+  .sidebar-cta { padding: 1.2rem !important; }
+
+  /* Blog sidebar */
+  .sb-about, .sb-newsletter { padding: 1.5rem !important; }
+}
+
 </style>
 </head>
 <body>
@@ -268,7 +465,21 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
     <li><a href="contacto.html" class="active">Contacto</a></li>
   </ul>
   <a class="nav-cta" href="sesion-gratuita.html">Sesión gratuita</a>
+  <button class="nav-hamburger" onclick="openMobileMenu()" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mm-close" onclick="closeMobileMenu()">×</button>
+  <a href="index.html" onclick="closeMobileMenu()">Inicio</a>
+  <a href="servicios-agencia.html" onclick="closeMobileMenu()">Servicios</a>
+  <a href="ia-para-empresas.html" onclick="closeMobileMenu()">IA para Empresas</a>
+  <a href="sheila-aguilar.html" onclick="closeMobileMenu()">Sheila Aguilar</a>
+  <a href="blog.html" onclick="closeMobileMenu()">Blog</a>
+  <a href="contacto.html" onclick="closeMobileMenu()">Contacto</a>
+  <a href="sesion-gratuita.html" class="mm-cta" onclick="closeMobileMenu()">Sesión gratuita →</a>
+</div>
+
 
 <!-- PAGE HEADER -->
 <header class="page-header">

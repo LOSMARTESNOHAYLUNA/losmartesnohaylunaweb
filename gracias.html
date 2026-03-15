@@ -173,6 +173,81 @@ footer {
   nav, footer { padding: 1rem 1.5rem; }
   main { padding: 3rem 1.5rem; }
 }
+
+/* ── MOBILE NAV ─────────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: .4rem;
+  background: none;
+  border: none;
+  z-index: 200;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--purple);
+  transition: all .3s;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(58,28,87,.98);
+  z-index: 150;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 2rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: -.02em;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  width: 100%;
+  text-align: center;
+  transition: color .2s;
+}
+.mobile-menu a:hover { color: var(--lime); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu .mm-cta {
+  margin-top: 1.5rem;
+  background: var(--lime);
+  color: var(--slate) !important;
+  padding: 1rem 2.5rem !important;
+  font-size: .85rem !important;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border-bottom: none !important;
+  width: auto !important;
+}
+.mobile-menu .mm-close {
+  position: absolute;
+  top: 1.4rem; right: 1.5rem;
+  background: none; border: none;
+  font-size: 1.8rem; color: rgba(255,255,255,.6);
+  cursor: pointer; font-family: sans-serif;
+  line-height: 1;
+}
+@media (max-width: 900px) {
+  .nav-hamburger { display: flex; }
+}
+
 </style>
 </head>
 <body>
@@ -182,6 +257,19 @@ footer {
     <img src="img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna" style="height:52px;width:auto;display:block;">
   </a>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mm-close" onclick="closeMobileMenu()">×</button>
+  <a href="index.html" onclick="closeMobileMenu()">Inicio</a>
+  <a href="servicios-agencia.html" onclick="closeMobileMenu()">Servicios</a>
+  <a href="ia-para-empresas.html" onclick="closeMobileMenu()">IA para Empresas</a>
+  <a href="sheila-aguilar.html" onclick="closeMobileMenu()">Sheila Aguilar</a>
+  <a href="blog.html" onclick="closeMobileMenu()">Blog</a>
+  <a href="contacto.html" onclick="closeMobileMenu()">Contacto</a>
+  <a href="sesion-gratuita.html" class="mm-cta" onclick="closeMobileMenu()">Sesión gratuita →</a>
+</div>
+
 
 <main>
   <div class="content">
@@ -227,4 +315,4 @@ footer {
   <div class="footer-links">
     <a href="aviso-legal.html">Aviso Legal</a>
     <a href="privacidad.html">Privacidad</a>
-    <a href="/cdn-cgi/l/email-protection#b4dcdbd8d5f4d8dbc7d9d5c6c0d1c7dadbdcd5cdd8c1dad59ad7dbd9"><span class="__cf_
+    <a href="/cdn-cgi/l/email-protection#1c7473707d5c70736f717d6e68796f7273747d657069727d327f7371"><span class="__cf_
