@@ -45,7 +45,7 @@ nav {
 
 /* ── HERO ─────────────────────────────────────────── */
 .hero {
-  min-height: 100vh; background: var(--purple-dk);
+  min-height: 100vh; background: var(--purple-dk); color: #fff;
   display: grid; grid-template-columns: 1fr 1fr;
   padding-top: 72px; position: relative; overflow: hidden;
 }
@@ -234,7 +234,7 @@ nav {
 
 /* ── METHODOLOGY ──────────────────────────────────── */
 .method {
-  background: var(--slate); padding: 7rem 5rem;
+  background: var(--slate); padding: 7rem 5rem; color: rgba(255,255,255,.7);
 }
 .method-hd { margin-bottom: 5rem; }
 .method-hd .sl { margin-bottom: 1.2rem; }
@@ -289,7 +289,7 @@ nav {
 .vs-col-good .vs-item { color: var(--slate); }
 
 /* ── REAL RESULTS ─────────────────────────────────── */
-.results { padding: 7rem 5rem; background: var(--purple); }
+.results { padding: 7rem 5rem; background: var(--purple); color: rgba(255,255,255,.75); }
 .results-hd { margin-bottom: 4.5rem; }
 .results-hd .sl { margin-bottom: 1rem; }
 .results-hd h2 { font-size: clamp(1.8rem, 2.4vw, 2.6rem); font-weight: 800; color: #fff; letter-spacing: -.04em; line-height: 1.1; }
@@ -329,7 +329,7 @@ nav {
 
 /* ── CTA ──────────────────────────────────────────── */
 .final-cta {
-  background: var(--purple-dk); padding: 9rem 5rem; text-align: center;
+  background: var(--purple-dk); padding: 9rem 5rem; text-align: center; color: rgba(255,255,255,.75);
   position: relative; overflow: hidden;
 }
 .final-cta::before {
@@ -463,369 +463,41 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
 }
 
 
-@media (max-width: 480px) {
-  html { font-size: 15px; }
-  body { overflow-x: hidden; }
 
-  /* Nav */
+/* ═══════════════════════════════════════════
+   RESPONSIVE — SINGLE CLEAN BLOCK
+   ═══════════════════════════════════════════ */
+
+/* Tablet */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 5rem 1.5rem 2.5rem; }
+  .hero-right { padding: 2rem 1.5rem 3rem; }
+  .manifesto, .sheila-block { grid-template-columns: 1fr; }
+  .sb-copy, .mf-body-wrap { padding: 3rem 1.8rem; }
+  .problem, .depts, .method, .vs-section, .results, .final-cta { padding: 5rem 1.8rem; }
+  .leak-cases, .vs-grid, .results-grid, .method-steps { grid-template-columns: 1fr; }
+  .dept-panel.active { grid-template-columns: 1fr; }
+  .dp-before-after { grid-template-columns: 1fr; }
+  .sb-photo { min-height: 260px; }
+  footer { padding: 2rem 1.8rem; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
   nav { padding: .9rem 1.2rem; }
-  .nav-logo img { height: 42px !important; }
-
-  /* Typography scale */
-  h1, .hero h1, .article-header h1 {
-    font-size: clamp(1.7rem, 8vw, 2.4rem) !important;
-    letter-spacing: -.03em !important;
-    line-height: 1.1 !important;
-  }
-  h2 { font-size: clamp(1.3rem, 6vw, 1.8rem) !important; }
-
-  /* Sections padding */
-  section, .hero, .about-strip, .services, .process-strip,
-  .blog-preview, .testimonials, .newsletter, .final-cta,
-  .topics, .newsletter-full, .related-posts {
-    padding: 3.5rem 1.2rem !important;
-  }
-  .blog-body { padding: 2.5rem 1.2rem !important; }
-  .article-layout { padding: 2.5rem 1.2rem !important; }
-  .article-header { padding: 6.5rem 1.2rem 2.5rem !important; }
-  .page-header { padding: 6.5rem 1.2rem 2.5rem !important; }
-  .blog-header { padding: 7rem 1.2rem 2.5rem !important; }
-  footer { padding: 2rem 1.2rem !important; }
-  .legal-body { padding: 2.5rem 1.2rem 3rem !important; }
-
-  /* Hero */
-  .hero-actions { flex-direction: column !important; gap: .8rem !important; }
-  .btn-primary, .btn-ghost { width: 100%; text-align: center; padding: .9rem 1rem !important; }
-  .hero-proof { flex-wrap: wrap; gap: .8rem !important; }
-
-  /* Grids → single column */
-  .sv-grid, .bp-grid, .ts-grid, .topics-grid,
-  .rp-grid, .nl-fields, .platform-grid,
-  .results-grid, .rights-grid { grid-template-columns: 1fr !important; }
-
-  /* Newsletter */
-  .newsletter-full { padding: 3.5rem 1.2rem !important; }
-  .nl-fields { grid-template-columns: 1fr !important; }
-
-  /* Blog */
-  .cat-bar { padding: 0 1rem !important; }
-  .cat-pill { padding: .9rem 1rem !important; font-size: .6rem !important; }
-  .post-row { grid-template-columns: 1fr !important; }
-  .post-thumb { aspect-ratio: 16/7 !important; }
-  .featured-post { grid-template-columns: 1fr !important; }
-  .fp-photo { min-height: 200px !important; }
-  .fp-content { padding: 2rem 1.2rem !important; }
-
-  /* Article */
-  .article-content h2 { font-size: 1.15rem !important; }
-  .article-content h3 { font-size: .95rem !important; }
-  .case-header { flex-direction: column; gap: .6rem !important; }
-  .case-num { font-size: 1.8rem !important; }
-  .phase { grid-template-columns: 1fr !important; }
-
-  /* Sidebar */
-  .article-sidebar, .sidebar { padding-left: 0 !important; }
-
-  /* Footer */
-  .footer-links { flex-direction: column; gap: .8rem !important; }
-  .footer-copy { font-size: .6rem !important; }
-
-  /* Forms */
-  input, textarea, select, button {
-    font-size: 16px !important; /* Prevents iOS zoom */
-  }
-  .sb-input, .nl-input, .cat-search input {
-    font-size: 16px !important;
-  }
-
-  /* Tables */
-  .cookie-table { font-size: .72rem !important; }
-  .cookie-table th, .cookie-table td { padding: .5rem .6rem !important; }
-  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-
-  /* Comparison table */
-  .comp-row { grid-template-columns: 1fr !important; }
-  .comp-row:first-child { display: none; }
-  .comp-cell:first-child::before { content: 'Sin estrategia: '; font-weight: 600; color: var(--pink); font-size: .7rem; }
-  .comp-cell:last-child::before { content: 'Con estrategia: '; font-weight: 600; color: var(--lime-dk); font-size: .7rem; }
-
-  /* Buttons */
+  .nav-logo img { height: 42px; }
   .nav-cta { display: none; }
-  .article-cta a { width: 100%; justify-content: center; }
-  .btn-read { font-size: .65rem !important; }
-
-  /* Process steps */
-  .ps-steps { grid-template-columns: 1fr !important; }
-
-  /* Testimonials */
-  .ts-card { padding: 1.5rem !important; }
-  .ts-grid { gap: 1rem !important; }
-
-  /* About strip */
-  .as-photo { min-height: 260px !important; }
-
-  /* Topics grid */
-  .topics-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .topic-card { padding: 1.2rem 1rem !important; }
-
-  /* Case studies */
-  .results-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .result-num { font-size: 1.3rem !important; }
-
-  /* Phases */
-  .phases { gap: .8rem !important; }
-  .pillar { padding: 1.5rem !important; }
-
-  /* Sidebar CTA */
-  .sidebar-cta { padding: 1.2rem !important; }
-
-  /* Blog sidebar */
-  .sb-about, .sb-newsletter { padding: 1.5rem !important; }
-}
-
-
-@media (max-width: 900px) {
-  /* Sectors strip */
-  .clients-strip { padding: 1.5rem 1.2rem; gap: 1rem; flex-direction: column; align-items: flex-start; }
-  .cs-sep { display: none; }
-  .cs-items { gap: 1rem 1.5rem; }
-  .cs-item { font-size: .82rem; white-space: normal; }
-  .cs-label { font-size: .65rem; }
-
-  /* Proof numbers */
-  .hero-proof { gap: 1.5rem; }
-  .hero-proof-num { font-size: 2rem; }
-  .hero-proof-label { font-size: .78rem; }
-
-  /* General body text */
-  p, .fp-excerpt, .post-excerpt, .ah-excerpt { font-size: .9rem !important; line-height: 1.8 !important; }
-  .article-content p { font-size: .9rem !important; }
-
-  /* Section subtitles */
-  .bh-sub, .hero-sub { font-size: .88rem !important; }
-}
-
-@media (max-width: 480px) {
-  /* Sectors strip */
-  .clients-strip { padding: 1.2rem 1.2rem; }
-  .cs-item { font-size: .85rem; color: rgba(255,255,255,.65) !important; }
-
-  /* Proof */
-  .hero-proof-label { font-size: .8rem !important; color: rgba(255,255,255,.65) !important; }
-  .hero-proof-num { font-size: 2.2rem !important; }
-  .hero-proof-sep { display: none; }
-  .hero-proof { flex-wrap: wrap; gap: 1.2rem; }
-  .hero-proof-item { min-width: 30%; }
-
-  /* All body text minimum */
-  /* font size only on light-bg text elements */
-  .post-excerpt, .fp-excerpt, .post-info p, .bp-info p, .article-content p, .legal-body p, .phase p, .pillar p, .case-body p { font-size: .9rem !important; }
-  .post-excerpt { font-size: .84rem !important; }
-  .post-cat, .bp-cat, .rp-cat { font-size: .65rem !important; }
-  .post-date, .post-time, .bp-meta { font-size: .7rem !important; }
-
-  /* Nav */
-  .nav-logo img { height: 44px !important; }
-
-  /* Sidebar bio */
-  .sb-about p, .sa-bio { font-size: .8rem !important; }
-  .sidebar-cta p { font-size: .82rem !important; }
-
-  /* Article meta */
-  .ah-excerpt { font-size: .88rem !important; }
-  .ah-author-name { font-size: .82rem !important; }
-  .ah-time { font-size: .72rem !important; }
-
-  /* Footer */
-  .footer-links a { font-size: .72rem !important; }
-  .footer-copy { font-size: .65rem !important; }
-
-  /* Buttons */
-  .btn-primary { font-size: .75rem !important; }
-  .article-cta a { font-size: .75rem !important; }
-}
-
-
-/* ── FONT SIZE MOBILE FIX ───────────────────── */
-@media (max-width: 768px) {
-  /* body font-size managed per element */
-  p, li, td, .post-excerpt, .fp-excerpt, .ah-excerpt,
-  .sb-bio, .sa-bio, .sidebar-cta p, .sb-about p,
-  .article-content p, .article-content li,
-  .case-body p, .pillar p, .content-type p,
-  .highlight-box li, .learning-box p,
-  .pattern-list li, .phase p { 
-    font-size: 1rem !important; 
-    line-height: 1.8 !important; 
-  }
-  h1 { font-size: clamp(2rem, 8vw, 2.8rem) !important; }
-  h2 { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
-  h3 { font-size: clamp(1.1rem, 5vw, 1.4rem) !important; }
-  .article-content h2 { font-size: 1.25rem !important; }
-  .article-content h3 { font-size: 1.05rem !important; }
-  .hero-sub { font-size: 1rem !important; }
-  .bh-sub, .ah-excerpt { font-size: .95rem !important; }
-  .post-info h3 { font-size: 1rem !important; }
-  .nav-links a, .footer-links a { font-size: .75rem !important; }
-  .btn-primary, .btn-ghost, .nav-cta { font-size: .8rem !important; }
-  .article-cta a { font-size: .8rem !important; }
-  .toc-list a { font-size: .9rem !important; }
-  .fp-content h2 { font-size: 1.3rem !important; }
-  .ts-quote { font-size: .95rem !important; }
-  .mobile-menu a { font-size: 1.3rem !important; }
-}
-
-
-
-/* ════════════════════════════════════════════════════
-   MOBILE FINAL FIX — Typography + Green BG text
-   ════════════════════════════════════════════════════ */
-
-/* ── GREEN/LIME background: always white text ───────── */
-.manifesto,
-.manifesto * { color: var(--slate) !important; }
-
-.btn-lime,
-.nl-submit,
-.sb-submit,
-.mm-cta,
-.fp-featured-label { color: var(--slate) !important; }
-
-/* Article CTA lime button */
-.article-cta a,
-.sidebar-cta a { color: #fff !important; }
-
-/* Green badge on blog */
-.fp-featured-label { color: #fff !important; background: var(--lime) !important; }
-
-/* ── MOBILE TYPOGRAPHY — bigger, readable ───────────── */
-@media (max-width: 900px) {
-  /* Base body */
-  body { font-size: 16px; }
-
-  /* Paragraphs — minimum legible size */
-  p { font-size: 1rem !important; line-height: 1.85 !important; }
-  li { font-size: 1rem !important; line-height: 1.8 !important; }
-
-  /* Article content */
-  .article-content p,
-  .article-content li { font-size: 1rem !important; }
-  .article-content h2 { font-size: 1.3rem !important; }
-  .article-content h3 { font-size: 1.1rem !important; }
-
-  /* Excerpts */
-  .fp-excerpt,
-  .post-excerpt,
-  .ah-excerpt,
-  .hero-sub,
-  .bh-sub { font-size: .95rem !important; line-height: 1.8 !important; }
-
-  /* Meta / labels */
-  .post-cat, .bp-cat, .rp-cat,
-  .ah-cat, .fp-cat { font-size: .72rem !important; }
-  .post-date, .post-time,
-  .bp-meta, .ah-time { font-size: .75rem !important; }
-
-  /* Sidebar text */
-  .sa-bio,
-  .sb-about p,
-  .sidebar-cta p,
-  .toc-list a { font-size: .88rem !important; }
-
-  /* Nav */
-  .nav-links a { font-size: .72rem !important; }
-  .nav-cta { font-size: .72rem !important; }
-
-  /* Footer */
-  .footer-links a { font-size: .75rem !important; }
-  .footer-copy { font-size: .7rem !important; }
-
-  /* Buttons */
-  .btn-primary,
-  .btn-ghost,
-  .btn-read,
-  .article-cta a,
-  .sidebar-cta a { font-size: .78rem !important; }
-
-  /* Tags */
-  .tag, .sb-tag { font-size: .7rem !important; }
-
-  /* Case studies */
-  .case-body p { font-size: .92rem !important; }
-  .case-title { font-size: 1rem !important; }
-  .result-label { font-size: .78rem !important; }
-
-  /* Highlight box */
-  .highlight-box li { font-size: .92rem !important; }
-
-  /* Pull quote */
-  .pull-quote p { font-size: 1.05rem !important; }
-
-  /* Legal pages */
-  .legal-body p,
-  .legal-body li { font-size: .95rem !important; }
-  .legal-body h2 { font-size: 1.1rem !important; }
-
-  /* TOC */
-  .toc-list a { font-size: .85rem !important; }
-
-  /* Hero proof labels */
-  .hero-proof-label { font-size: .85rem !important; }
-  .hero-proof-num { font-size: 2.2rem !important; }
-}
-
-@media (max-width: 480px) {
-  /* Even bigger on very small screens */
-  p { font-size: 1rem !important; }
-  li { font-size: 1rem !important; }
-
-  /* Headings */
-  h1 { font-size: clamp(1.8rem, 8vw, 2.6rem) !important; }
-  h2 { font-size: clamp(1.3rem, 6vw, 1.9rem) !important; }
-  h3 { font-size: 1.1rem !important; }
-
-  /* Dark section text — stays white */
-  .hero p, .hero li,
-  .hero .hero-sub,
-  .hero-left .hero-sub,
-  .hero-sub,
-  .hp-label,
-  .hero-eyebrow,
-  .hero-left p { color: rgba(255,255,255,.8) !important; }
-
-  .testimonials p, .testimonials li,
-  .ts-quote { color: rgba(255,255,255,.85) !important; }
-
-  .final-cta p, .final-cta li { color: rgba(255,255,255,.8) !important; }
-
-  .article-cta p { color: rgba(255,255,255,.85) !important; }
-
-  .highlight-box li,
-  .highlight-box p { color: rgba(255,255,255,.9) !important; }
-
-  .price-box p { color: rgba(255,255,255,.85) !important; }
-
-  .learning-box p { color: rgba(255,255,255,.85) !important; }
-
-  .method p, .method li,
-  .ms-text { color: rgba(255,255,255,.7) !important; }
-
-  .results p, .results li,
-  .rc-story,
-  .rc-what { color: rgba(255,255,255,.75) !important; }
-
-  /* Sidebar author on dark purple */
-  .sidebar-author .sa-bio,
-  .sidebar-author .sa-role { color: rgba(255,255,255,.7) !important; }
-
-  /* Mobile menu links */
-  .mobile-menu a { color: #fff !important; }
-
-  /* Green bg sections — dark text */
-  .manifesto p,
-  .manifesto li,
-  .mf-body,
-  .mf-quote { color: var(--slate) !important; }
+  footer { padding: 2rem 1.2rem; }
+  .footer-links { flex-direction: column; gap: .8rem; }
+  section, .problem, .depts, .method, .vs-section, .results, .final-cta { padding: 3.5rem 1.2rem; }
+  .hero-left { padding: 5.5rem 1.2rem 2rem; }
+  .hero-right { padding: 1.5rem 1.2rem 3rem; }
+  .hp-items { flex-direction: column; gap: 1.2rem; }
+  input, textarea, select, button { font-size: 16px; }
 }
 
 </style>
@@ -862,21 +534,21 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <span class="hero-eyebrow" style="color:var(--lime);">Consultoría de IA para empresas</span>
+    <span class="hero-eyebrow">Consultoría de IA para empresas</span>
     <h1>Inteligencia Artificial para Empresas en Madrid: Automatización y Apps a Medida</h1>
-    <p class="hero-sub" style="color:rgba(255,255,255,.8);">Cada proceso manual que sigue igual que en 2015 es una factura que pagas cada mes. No en tecnología — en tiempo de tu equipo, en errores evitables y en decisiones que llegan tarde.</p>
+    <p class="hero-sub">Cada proceso manual que sigue igual que en 2015 es una factura que pagas cada mes. No en tecnología — en tiempo de tu equipo, en errores evitables y en decisiones que llegan tarde.</p>
     <div class="hero-proof">
       <div class="hp-item">
         <div class="hp-num">4,2<span>h</span></div>
-        <div class="hp-label" style="color:rgba(255,255,255,.65);">Perdidas/semana por empleado en tareas evitables</div>
+        <div class="hp-label">Perdidas/semana por empleado en tareas evitables</div>
       </div>
       <div class="hp-item">
         <div class="hp-num">38<span>%</span></div>
-        <div class="hp-label" style="color:rgba(255,255,255,.65);">De los procesos en PYMEs son automatizables hoy</div>
+        <div class="hp-label">De los procesos en PYMEs son automatizables hoy</div>
       </div>
       <div class="hp-item">
         <div class="hp-num">40<span>min</span></div>
-        <div class="hp-label" style="color:rgba(255,255,255,.65);">Para mostrarte exactamente dónde está la fuga</div>
+        <div class="hp-label">Para mostrarte exactamente dónde está la fuga</div>
       </div>
     </div>
     <a class="btn-lime" href="#sesion">Descubre tus fugas en 40 min →</a>
@@ -1327,7 +999,7 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
       <div class="ms-icon"><svg viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
       <div class="ms-title">Diagnóstico de procesos</div>
       <div class="ms-sub">Semana 1</div>
-      <p class="ms-text" style="color:rgba(255,255,255,.65);">Entendemos tu empresa, tu equipo y cómo fluye el trabajo. Mapeamos todos los procesos actuales e identificamos las ineficiencias con mayor impacto económico.</p>
+      <p class="ms-text">Entendemos tu empresa, tu equipo y cómo fluye el trabajo. Mapeamos todos los procesos actuales e identificamos las ineficiencias con mayor impacto económico.</p>
       <span class="ms-connector">→</span>
     </div>
     <div class="ms reveal d1">
@@ -1335,7 +1007,7 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
       <div class="ms-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
       <div class="ms-title">Plan de acción con ROI</div>
       <div class="ms-sub">Semana 2</div>
-      <p class="ms-text" style="color:rgba(255,255,255,.65);">Presentamos las 5-8 mejoras con mayor retorno, priorizadas por impacto y esfuerzo de implementación. Cada mejora lleva su ROI estimado en horas y euros antes de empezar.</p>
+      <p class="ms-text">Presentamos las 5-8 mejoras con mayor retorno, priorizadas por impacto y esfuerzo de implementación. Cada mejora lleva su ROI estimado en horas y euros antes de empezar.</p>
       <span class="ms-connector">→</span>
     </div>
     <div class="ms reveal d2">
@@ -1343,7 +1015,7 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
       <div class="ms-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
       <div class="ms-title">Implementación guiada</div>
       <div class="ms-sub">Semanas 3-4</div>
-      <p class="ms-text" style="color:rgba(255,255,255,.65);">Implementamos junto a tu equipo las mejoras aprobadas. Formamos a las personas que van a usarlas y nos aseguramos de que la adopción sea real, no solo técnica.</p>
+      <p class="ms-text">Implementamos junto a tu equipo las mejoras aprobadas. Formamos a las personas que van a usarlas y nos aseguramos de que la adopción sea real, no solo técnica.</p>
       <span class="ms-connector">→</span>
     </div>
     <div class="ms reveal d3">
@@ -1351,7 +1023,7 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
       <div class="ms-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
       <div class="ms-title">Medición y evolución</div>
       <div class="ms-sub">Mes 2 en adelante</div>
-      <p class="ms-text" style="color:rgba(255,255,255,.65);">Medimos el impacto real de cada mejora contra el ROI estimado. Ajustamos, iteramos y seguimos identificando nuevas oportunidades. El trabajo de optimización nunca termina.</p>
+      <p class="ms-text">Medimos el impacto real de cada mejora contra el ROI estimado. Ajustamos, iteramos y seguimos identificando nuevas oportunidades. El trabajo de optimización nunca termina.</p>
     </div>
   </div>
 </section>
@@ -1400,38 +1072,38 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
     <div class="result-card reveal">
       <div class="rc-sector">Empresa de reformas · 12 personas</div>
       <div class="rc-result">32<span>h</span></div>
-      <div class="rc-what" style="color:rgba(255,255,255,.55);">ahorradas al mes en administración</div>
-      <p class="rc-story" style="color:rgba(255,255,255,.7);">"Cada presupuesto nos llevaba 3 horas. Ahora lo genera la IA en 8 minutos con toda la información correcta. El equipo hace 4 propuestas más a la semana."</p>
+      <div class="rc-what">ahorradas al mes en administración</div>
+      <p class="rc-story">"Cada presupuesto nos llevaba 3 horas. Ahora lo genera la IA en 8 minutos con toda la información correcta. El equipo hace 4 propuestas más a la semana."</p>
     </div>
     <div class="result-card reveal d1">
       <div class="rc-sector">Clínica dental · 8 personas</div>
       <div class="rc-result">70<span>%</span></div>
-      <div class="rc-what" style="color:rgba(255,255,255,.55);">de consultas resueltas sin intervención humana</div>
-      <p class="rc-story" style="color:rgba(255,255,255,.7);">"El asistente responde citas, preguntas sobre tratamientos y precios. La recepcionista se ocupa ahora solo de los pacientes que están delante."</p>
+      <div class="rc-what">de consultas resueltas sin intervención humana</div>
+      <p class="rc-story">"El asistente responde citas, preguntas sobre tratamientos y precios. La recepcionista se ocupa ahora solo de los pacientes que están delante."</p>
     </div>
     <div class="result-card reveal d2">
       <div class="rc-sector">Distribuidora B2B · 22 personas</div>
       <div class="rc-result">−18K<span>€</span></div>
-      <div class="rc-what" style="color:rgba(255,255,255,.55);">de costes evitados en el primer año</div>
-      <p class="rc-story" style="color:rgba(255,255,255,.7);">"Encontramos tres procesos que nadie había detectado como problema. Eran invisibles porque siempre habían funcionado así. Al automatizarlos recuperamos una persona y media de capacidad."</p>
+      <div class="rc-what">de costes evitados en el primer año</div>
+      <p class="rc-story">"Encontramos tres procesos que nadie había detectado como problema. Eran invisibles porque siempre habían funcionado así. Al automatizarlos recuperamos una persona y media de capacidad."</p>
     </div>
     <div class="result-card reveal">
       <div class="rc-sector">Agencia de marketing · 6 personas</div>
       <div class="rc-result">×3</div>
-      <div class="rc-what" style="color:rgba(255,255,255,.55);">más contenido con el mismo equipo</div>
-      <p class="rc-story" style="color:rgba(255,255,255,.7);">"El calendario de contenido para 30 días lo generamos ahora en una tarde. Antes eran 3 reuniones y una semana de trabajo disperso."</p>
+      <div class="rc-what">más contenido con el mismo equipo</div>
+      <p class="rc-story">"El calendario de contenido para 30 días lo generamos ahora en una tarde. Antes eran 3 reuniones y una semana de trabajo disperso."</p>
     </div>
     <div class="result-card reveal d1">
       <div class="rc-sector">Bufete de abogados · 15 personas</div>
       <div class="rc-result">6<span>h</span></div>
-      <div class="rc-what" style="color:rgba(255,255,255,.55);">semanales de dirección recuperadas</div>
-      <p class="rc-story" style="color:rgba(255,255,255,.7);">"El director tenía el dashboard con todos los KPIs del despacho actualizados. Por primera vez supo el margen por cliente en tiempo real sin pedir el informe a nadie."</p>
+      <div class="rc-what">semanales de dirección recuperadas</div>
+      <p class="rc-story">"El director tenía el dashboard con todos los KPIs del despacho actualizados. Por primera vez supo el margen por cliente en tiempo real sin pedir el informe a nadie."</p>
     </div>
     <div class="result-card reveal d2">
       <div class="rc-sector">E-commerce · 9 personas</div>
       <div class="rc-result">−40<span>%</span></div>
-      <div class="rc-what" style="color:rgba(255,255,255,.55);">en tiempo de onboarding de nuevos clientes</div>
-      <p class="rc-story" style="color:rgba(255,255,255,.7);">"El proceso de alta de cliente nuevo pasó de 4 horas a 35 minutos. Y la experiencia del cliente mejoró: reciben todo lo que necesitan de forma automática el mismo día."</p>
+      <div class="rc-what">en tiempo de onboarding de nuevos clientes</div>
+      <p class="rc-story">"El proceso de alta de cliente nuevo pasó de 4 horas a 35 minutos. Y la experiencia del cliente mejoró: reciben todo lo que necesitan de forma automática el mismo día."</p>
     </div>
   </div>
 </section>
