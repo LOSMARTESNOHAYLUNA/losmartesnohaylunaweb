@@ -399,7 +399,6 @@ footer {
 }
 
 
-/* ── GLOBAL MOBILE FIXES ────────────────────── */
 @media (max-width: 480px) {
   html { font-size: 15px; }
   body { overflow-x: hidden; }
@@ -521,7 +520,6 @@ footer {
 }
 
 
-/* ── MOBILE TYPOGRAPHY & SECTORS FIX ───────── */
 @media (max-width: 900px) {
   /* Sectors strip */
   .clients-strip { padding: 1.5rem 1.2rem; gap: 1rem; flex-direction: column; align-items: flex-start; }
@@ -556,8 +554,8 @@ footer {
   .hero-proof-item { min-width: 30%; }
 
   /* All body text minimum */
-  p { font-size: .88rem !important; }
-  li { font-size: .88rem !important; }
+  /* font size only on light-bg text elements */
+  .post-excerpt, .fp-excerpt, .post-info p, .bp-info p, .article-content p, .legal-body p, .phase p, .pillar p, .case-body p { font-size: .9rem !important; }
   .post-excerpt { font-size: .84rem !important; }
   .post-cat, .bp-cat, .rp-cat { font-size: .65rem !important; }
   .post-date, .post-time, .bp-meta { font-size: .7rem !important; }
@@ -586,7 +584,7 @@ footer {
 
 /* ── FONT SIZE MOBILE FIX ───────────────────── */
 @media (max-width: 768px) {
-  body { font-size: 17px !important; }
+  /* body font-size managed per element */
   p, li, td, .post-excerpt, .fp-excerpt, .ah-excerpt,
   .sb-bio, .sa-bio, .sidebar-cta p, .sb-about p,
   .article-content p, .article-content li,
@@ -611,6 +609,154 @@ footer {
   .fp-content h2 { font-size: 1.3rem !important; }
   .ts-quote { font-size: .95rem !important; }
   .mobile-menu a { font-size: 1.3rem !important; }
+}
+
+
+
+/* ════════════════════════════════════════════════════
+   MOBILE FINAL FIX — Typography + Green BG text
+   ════════════════════════════════════════════════════ */
+
+/* ── GREEN/LIME background: always white text ───────── */
+.manifesto,
+.manifesto * { color: var(--slate) !important; }
+
+.btn-lime,
+.nl-submit,
+.sb-submit,
+.mm-cta,
+.fp-featured-label { color: var(--slate) !important; }
+
+/* Article CTA lime button */
+.article-cta a,
+.sidebar-cta a { color: #fff !important; }
+
+/* Green badge on blog */
+.fp-featured-label { color: #fff !important; background: var(--lime) !important; }
+
+/* ── MOBILE TYPOGRAPHY — bigger, readable ───────────── */
+@media (max-width: 900px) {
+  /* Base body */
+  body { font-size: 16px; }
+
+  /* Paragraphs — minimum legible size */
+  p { font-size: 1rem !important; line-height: 1.85 !important; }
+  li { font-size: 1rem !important; line-height: 1.8 !important; }
+
+  /* Article content */
+  .article-content p,
+  .article-content li { font-size: 1rem !important; }
+  .article-content h2 { font-size: 1.3rem !important; }
+  .article-content h3 { font-size: 1.1rem !important; }
+
+  /* Excerpts */
+  .fp-excerpt,
+  .post-excerpt,
+  .ah-excerpt,
+  .hero-sub,
+  .bh-sub { font-size: .95rem !important; line-height: 1.8 !important; }
+
+  /* Meta / labels */
+  .post-cat, .bp-cat, .rp-cat,
+  .ah-cat, .fp-cat { font-size: .72rem !important; }
+  .post-date, .post-time,
+  .bp-meta, .ah-time { font-size: .75rem !important; }
+
+  /* Sidebar text */
+  .sa-bio,
+  .sb-about p,
+  .sidebar-cta p,
+  .toc-list a { font-size: .88rem !important; }
+
+  /* Nav */
+  .nav-links a { font-size: .72rem !important; }
+  .nav-cta { font-size: .72rem !important; }
+
+  /* Footer */
+  .footer-links a { font-size: .75rem !important; }
+  .footer-copy { font-size: .7rem !important; }
+
+  /* Buttons */
+  .btn-primary,
+  .btn-ghost,
+  .btn-read,
+  .article-cta a,
+  .sidebar-cta a { font-size: .78rem !important; }
+
+  /* Tags */
+  .tag, .sb-tag { font-size: .7rem !important; }
+
+  /* Case studies */
+  .case-body p { font-size: .92rem !important; }
+  .case-title { font-size: 1rem !important; }
+  .result-label { font-size: .78rem !important; }
+
+  /* Highlight box */
+  .highlight-box li { font-size: .92rem !important; }
+
+  /* Pull quote */
+  .pull-quote p { font-size: 1.05rem !important; }
+
+  /* Legal pages */
+  .legal-body p,
+  .legal-body li { font-size: .95rem !important; }
+  .legal-body h2 { font-size: 1.1rem !important; }
+
+  /* TOC */
+  .toc-list a { font-size: .85rem !important; }
+
+  /* Hero proof labels */
+  .hero-proof-label { font-size: .85rem !important; }
+  .hero-proof-num { font-size: 2.2rem !important; }
+}
+
+@media (max-width: 480px) {
+  /* Even bigger on very small screens */
+  p { font-size: 1rem !important; }
+  li { font-size: 1rem !important; }
+
+  /* Headings */
+  h1 { font-size: clamp(1.8rem, 8vw, 2.6rem) !important; }
+  h2 { font-size: clamp(1.3rem, 6vw, 1.9rem) !important; }
+  h3 { font-size: 1.1rem !important; }
+
+  /* Dark section text — stays white */
+  .hero p, .hero li,
+  .hero .hero-sub { color: rgba(255,255,255,.8) !important; }
+
+  .testimonials p, .testimonials li,
+  .ts-quote { color: rgba(255,255,255,.85) !important; }
+
+  .final-cta p, .final-cta li { color: rgba(255,255,255,.8) !important; }
+
+  .article-cta p { color: rgba(255,255,255,.85) !important; }
+
+  .highlight-box li,
+  .highlight-box p { color: rgba(255,255,255,.9) !important; }
+
+  .price-box p { color: rgba(255,255,255,.85) !important; }
+
+  .learning-box p { color: rgba(255,255,255,.85) !important; }
+
+  .method p, .method li,
+  .ms-text { color: rgba(255,255,255,.7) !important; }
+
+  .results p, .results li,
+  .rc-story,
+  .rc-what { color: rgba(255,255,255,.75) !important; }
+
+  /* Sidebar author on dark purple */
+  .sidebar-author .sa-bio,
+  .sidebar-author .sa-role { color: rgba(255,255,255,.7) !important; }
+
+  /* Mobile menu links */
+  .mobile-menu a { color: #fff !important; }
+
+  /* Green bg sections — dark text */
+  .manifesto p,
+  .manifesto li,
+  .mf-body,
+  .mf-quote { color: var(--slate) !important; }
 }
 
 </style>
