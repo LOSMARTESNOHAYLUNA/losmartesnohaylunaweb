@@ -257,6 +257,36 @@ footer { background: #2a1f38; padding: 2.5rem 5rem; display: flex; align-items: 
   .sb-about, .sb-newsletter { padding: 1.5rem !important; }
 }
 
+
+/* ── FONT SIZE MOBILE FIX ───────────────────── */
+@media (max-width: 768px) {
+  body { font-size: 17px !important; }
+  p, li, td, .post-excerpt, .fp-excerpt, .ah-excerpt,
+  .sb-bio, .sa-bio, .sidebar-cta p, .sb-about p,
+  .article-content p, .article-content li,
+  .case-body p, .pillar p, .content-type p,
+  .highlight-box li, .learning-box p,
+  .pattern-list li, .phase p { 
+    font-size: 1rem !important; 
+    line-height: 1.8 !important; 
+  }
+  h1 { font-size: clamp(2rem, 8vw, 2.8rem) !important; }
+  h2 { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
+  h3 { font-size: clamp(1.1rem, 5vw, 1.4rem) !important; }
+  .article-content h2 { font-size: 1.25rem !important; }
+  .article-content h3 { font-size: 1.05rem !important; }
+  .hero-sub { font-size: 1rem !important; }
+  .bh-sub, .ah-excerpt { font-size: .95rem !important; }
+  .post-info h3 { font-size: 1rem !important; }
+  .nav-links a, .footer-links a { font-size: .75rem !important; }
+  .btn-primary, .btn-ghost, .nav-cta { font-size: .8rem !important; }
+  .article-cta a { font-size: .8rem !important; }
+  .toc-list a { font-size: .9rem !important; }
+  .fp-content h2 { font-size: 1.3rem !important; }
+  .ts-quote { font-size: .95rem !important; }
+  .mobile-menu a { font-size: 1.3rem !important; }
+}
+
 </style>
 </head>
 <body>
@@ -307,7 +337,7 @@ footer { background: #2a1f38; padding: 2.5rem 5rem; display: flex; align-items: 
   </div>
 
   <h2>II. Datos que recogemos y para qué</h2>
-  <p>Los Martes No Hay Luna recaba datos personales a través de los formularios de contacto, la suscripción a la newsletter y la reserva de sesiones gratuitas presentes en el sitio web. Los datos tratados son:</p>
+  <p>Los Martes No Hay Luna recaba datos personales a través de los formularios de contacto y la reserva de sesiones gratuitas presentes en el sitio web. Los datos tratados son:</p>
 
   <h3>Formulario de contacto</h3>
   <ul>
@@ -315,14 +345,6 @@ footer { background: #2a1f38; padding: 2.5rem 5rem; display: flex; align-items: 
     <li><strong>Finalidad:</strong> responder a su consulta y gestionar la relación comercial.</li>
     <li><strong>Base legal:</strong> consentimiento del interesado (Art. 6.1.a RGPD).</li>
     <li><strong>Conservación:</strong> hasta que se solicite la supresión o transcurran 3 años desde el último contacto.</li>
-  </ul>
-
-  <h3>Newsletter</h3>
-  <ul>
-    <li><strong>Datos recogidos:</strong> nombre y dirección de email.</li>
-    <li><strong>Finalidad:</strong> envío de comunicaciones comerciales y contenido de marketing digital.</li>
-    <li><strong>Base legal:</strong> consentimiento del interesado (Art. 6.1.a RGPD).</li>
-    <li><strong>Conservación:</strong> hasta que solicite la baja o retire su consentimiento.</li>
   </ul>
 
   <h3>Reserva de sesión gratuita</h3>
@@ -395,3 +417,22 @@ footer { background: #2a1f38; padding: 2.5rem 5rem; display: flex; align-items: 
 <footer>
   <a href="index.html" style="display:inline-block;">
     <img src="img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna" style="height:44px;width:auto;display:
+<script>
+function openMobileMenu() {
+  document.getElementById('mobileMenu').classList.add('open');
+  var btn = document.querySelector('.nav-hamburger');
+  if (btn) btn.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  var btn = document.querySelector('.nav-hamburger');
+  if (btn) btn.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeMobileMenu();
+});
+</script>
+</body>
+</html>

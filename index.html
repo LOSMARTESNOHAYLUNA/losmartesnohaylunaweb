@@ -575,6 +575,36 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
   .article-cta a { font-size: .75rem !important; }
 }
 
+
+/* ── FONT SIZE MOBILE FIX ───────────────────── */
+@media (max-width: 768px) {
+  body { font-size: 17px !important; }
+  p, li, td, .post-excerpt, .fp-excerpt, .ah-excerpt,
+  .sb-bio, .sa-bio, .sidebar-cta p, .sb-about p,
+  .article-content p, .article-content li,
+  .case-body p, .pillar p, .content-type p,
+  .highlight-box li, .learning-box p,
+  .pattern-list li, .phase p { 
+    font-size: 1rem !important; 
+    line-height: 1.8 !important; 
+  }
+  h1 { font-size: clamp(2rem, 8vw, 2.8rem) !important; }
+  h2 { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
+  h3 { font-size: clamp(1.1rem, 5vw, 1.4rem) !important; }
+  .article-content h2 { font-size: 1.25rem !important; }
+  .article-content h3 { font-size: 1.05rem !important; }
+  .hero-sub { font-size: 1rem !important; }
+  .bh-sub, .ah-excerpt { font-size: .95rem !important; }
+  .post-info h3 { font-size: 1rem !important; }
+  .nav-links a, .footer-links a { font-size: .75rem !important; }
+  .btn-primary, .btn-ghost, .nav-cta { font-size: .8rem !important; }
+  .article-cta a { font-size: .8rem !important; }
+  .toc-list a { font-size: .9rem !important; }
+  .fp-content h2 { font-size: 1.3rem !important; }
+  .ts-quote { font-size: .95rem !important; }
+  .mobile-menu a { font-size: 1.3rem !important; }
+}
+
 </style>
 </head>
 <body>
@@ -656,10 +686,7 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
   </div>
 </section>
 
-<!-- CLIENTS STRIP -->
-<div class="clients-strip">
-  <span class="cs-label">Sectores que trabajamos</span>
-  <div class="cs-sep"></div>
+
   <div class="cs-items">
     <span class="cs-item">Arquitectura & Reformas</span>
     <span class="cs-item">Clínicas & Salud</span>
@@ -882,24 +909,7 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
 
 </section>
 
-<!-- NEWSLETTER -->
-<section class="newsletter">
-  <div>
-    <div class="nl-eyebrow reveal">Newsletter semanal</div>
-    <h2 class="reveal">Marketing e IA en<br><em>5 minutos cada semana</em></h2>
-    <p class="reveal">Ideas prácticas, casos reales y herramientas útiles para hacer crecer tu negocio. Sin relleno. Solo lo que funciona.</p>
-  </div>
-  <div class="reveal d1">
-    <div class="nl-form">
-      <div class="nl-fields">
-        <input class="nl-input" type="text" placeholder="Tu nombre">
-        <input class="nl-input" type="email" placeholder="tu@email.com">
-      </div>
-      <button class="nl-submit">Suscribirme a la newsletter →</button>
-      <p class="nl-note">Sin spam · Puedes darte de baja cuando quieras · +1.200 suscriptores</p>
-    </div>
-  </div>
-</section>
+
 
 <!-- FINAL CTA -->
 <section class="final-cta">

@@ -752,6 +752,36 @@ footer {
   .article-cta a { font-size: .75rem !important; }
 }
 
+
+/* ── FONT SIZE MOBILE FIX ───────────────────── */
+@media (max-width: 768px) {
+  body { font-size: 17px !important; }
+  p, li, td, .post-excerpt, .fp-excerpt, .ah-excerpt,
+  .sb-bio, .sa-bio, .sidebar-cta p, .sb-about p,
+  .article-content p, .article-content li,
+  .case-body p, .pillar p, .content-type p,
+  .highlight-box li, .learning-box p,
+  .pattern-list li, .phase p { 
+    font-size: 1rem !important; 
+    line-height: 1.8 !important; 
+  }
+  h1 { font-size: clamp(2rem, 8vw, 2.8rem) !important; }
+  h2 { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
+  h3 { font-size: clamp(1.1rem, 5vw, 1.4rem) !important; }
+  .article-content h2 { font-size: 1.25rem !important; }
+  .article-content h3 { font-size: 1.05rem !important; }
+  .hero-sub { font-size: 1rem !important; }
+  .bh-sub, .ah-excerpt { font-size: .95rem !important; }
+  .post-info h3 { font-size: 1rem !important; }
+  .nav-links a, .footer-links a { font-size: .75rem !important; }
+  .btn-primary, .btn-ghost, .nav-cta { font-size: .8rem !important; }
+  .article-cta a { font-size: .8rem !important; }
+  .toc-list a { font-size: .9rem !important; }
+  .fp-content h2 { font-size: 1.3rem !important; }
+  .ts-quote { font-size: .95rem !important; }
+  .mobile-menu a { font-size: 1.3rem !important; }
+}
+
 </style>
 </head>
 <body>
@@ -980,133 +1010,9 @@ footer {
       </div>
     </div>
 
-    <!-- Newsletter -->
-    <div class="sidebar-block">
-      <div class="sb-newsletter">
-        <h4>Recibe ideas cada semana</h4>
-        <p>Marketing e IA explicados en 5 minutos. Sin spam. Solo lo que funciona.</p>
-        <div class="sb-input-wrap">
-          <input class="sb-input" type="email" placeholder="tu@email.com">
-          <button class="sb-submit">Suscribirme →</button>
-        </div>
-      </div>
-    </div>
+    
 
-    <!-- Popular posts -->
-    <div class="sidebar-block">
-      <div class="sidebar-title">Más leídos</div>
-      <div class="sb-posts">
-        <a class="sb-post" href="#">
-          <div class="sb-post-num">01</div>
-          <div>
-            <div class="sb-post-title">Cómo identificar las 5 ineficiencias invisibles que le cuestan dinero a tu empresa</div>
-            <div class="sb-post-meta">12 Ene 2025 · 8 min</div>
-          </div>
-        </a>
-        <a class="sb-post" href="#">
-          <div class="sb-post-num">02</div>
-          <div>
-            <div class="sb-post-title">SEO Local 2025: guía para aparecer en el Top 3 de Google Maps</div>
-            <div class="sb-post-meta">15 Ene 2025 · 10 min</div>
-          </div>
-        </a>
-        <a class="sb-post" href="#">
-          <div class="sb-post-num">03</div>
-          <div>
-            <div class="sb-post-title">Las 10 herramientas de IA que usa nuestro equipo cada día</div>
-            <div class="sb-post-meta">12 Dic 2024 · 7 min</div>
-          </div>
-        </a>
-        <a class="sb-post" href="#">
-          <div class="sb-post-num">04</div>
-          <div>
-            <div class="sb-post-title">Por qué tu estrategia de contenidos no funciona y cómo arreglarlo</div>
-            <div class="sb-post-meta">21 Ene 2025 · 7 min</div>
-          </div>
-        </a>
-      </div>
-    </div>
 
-    <!-- Tags -->
-    <div class="sidebar-block">
-      <div class="sidebar-title">Etiquetas</div>
-      <div class="sb-tags">
-        <span class="sb-tag">IA</span>
-        <span class="sb-tag">Automatización</span>
-        <span class="sb-tag">Google Ads</span>
-        <span class="sb-tag">SEO Local</span>
-        <span class="sb-tag">Instagram</span>
-        <span class="sb-tag">Estrategia</span>
-        <span class="sb-tag">ChatGPT</span>
-        <span class="sb-tag">Email</span>
-        <span class="sb-tag">Branding</span>
-        <span class="sb-tag">LinkedIn</span>
-        <span class="sb-tag">ROI</span>
-        <span class="sb-tag">PYME</span>
-      </div>
-    </div>
-
-  </aside>
-</div><!-- /blog-body -->
-
-<!-- TOPICS GRID -->
-<section class="topics">
-  <div class="topics-hd reveal">
-    <div class="tl">Explorar por tema</div>
-    <h2>¿Qué quieres aprender hoy?</h2>
-  </div>
-  <div class="topics-grid">
-    <a class="topic-card t-ia reveal" href="#">
-      <div class="topic-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
-      <div class="topic-name">Inteligencia Artificial</div>
-      <div class="topic-count">14 artículos</div>
-    </a>
-    <a class="topic-card t-mkt reveal d1" href="#">
-      <div class="topic-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-      <div class="topic-name">Marketing Digital</div>
-      <div class="topic-count">11 artículos</div>
-    </a>
-    <a class="topic-card t-seo reveal d2" href="#">
-      <div class="topic-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-      <div class="topic-name">SEO</div>
-      <div class="topic-count">9 artículos</div>
-    </a>
-    <a class="topic-card t-redes reveal d3" href="#">
-      <div class="topic-icon"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></div>
-      <div class="topic-name">Redes Sociales</div>
-      <div class="topic-count">7 artículos</div>
-    </a>
-    <a class="topic-card t-web reveal d2" href="#">
-      <div class="topic-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-      <div class="topic-name">Diseño Web</div>
-      <div class="topic-count">4 artículos</div>
-    </a>
-    <a class="topic-card t-tools reveal d1" href="#">
-      <div class="topic-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
-      <div class="topic-name">Herramientas</div>
-      <div class="topic-count">5 artículos</div>
-    </a>
-  </div>
-</section>
-
-<!-- NEWSLETTER FULL -->
-<section class="newsletter-full">
-  <div>
-    <div class="nl-eyebrow">Newsletter semanal</div>
-    <h2>Marketing e IA en<br><em>5 minutos cada semana</em></h2>
-    <p>Ideas prácticas, casos reales y herramientas útiles para hacer crecer tu negocio. Sin relleno. Solo lo que funciona.</p>
-  </div>
-  <div>
-    <div class="nl-form">
-      <div class="nl-fields">
-        <input class="nl-input" type="text" placeholder="Tu nombre">
-        <input class="nl-input" type="email" placeholder="tu@email.com">
-      </div>
-      <button class="nl-submit">Suscribirme a la newsletter →</button>
-      <p class="nl-note">Sin spam · Puedes darte de baja cuando quieras · +1.200 suscriptores</p>
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer>

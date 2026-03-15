@@ -518,6 +518,36 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
   .article-cta a { font-size: .75rem !important; }
 }
 
+
+/* ── FONT SIZE MOBILE FIX ───────────────────── */
+@media (max-width: 768px) {
+  body { font-size: 17px !important; }
+  p, li, td, .post-excerpt, .fp-excerpt, .ah-excerpt,
+  .sb-bio, .sa-bio, .sidebar-cta p, .sb-about p,
+  .article-content p, .article-content li,
+  .case-body p, .pillar p, .content-type p,
+  .highlight-box li, .learning-box p,
+  .pattern-list li, .phase p { 
+    font-size: 1rem !important; 
+    line-height: 1.8 !important; 
+  }
+  h1 { font-size: clamp(2rem, 8vw, 2.8rem) !important; }
+  h2 { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
+  h3 { font-size: clamp(1.1rem, 5vw, 1.4rem) !important; }
+  .article-content h2 { font-size: 1.25rem !important; }
+  .article-content h3 { font-size: 1.05rem !important; }
+  .hero-sub { font-size: 1rem !important; }
+  .bh-sub, .ah-excerpt { font-size: .95rem !important; }
+  .post-info h3 { font-size: 1rem !important; }
+  .nav-links a, .footer-links a { font-size: .75rem !important; }
+  .btn-primary, .btn-ghost, .nav-cta { font-size: .8rem !important; }
+  .article-cta a { font-size: .8rem !important; }
+  .toc-list a { font-size: .9rem !important; }
+  .fp-content h2 { font-size: 1.3rem !important; }
+  .ts-quote { font-size: .95rem !important; }
+  .mobile-menu a { font-size: 1.3rem !important; }
+}
+
 </style>
 </head>
 <body>
@@ -736,3 +766,22 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
   const els = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.targ
+<script>
+function openMobileMenu() {
+  document.getElementById('mobileMenu').classList.add('open');
+  var btn = document.querySelector('.nav-hamburger');
+  if (btn) btn.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  var btn = document.querySelector('.nav-hamburger');
+  if (btn) btn.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeMobileMenu();
+});
+</script>
+</body>
+</html>
