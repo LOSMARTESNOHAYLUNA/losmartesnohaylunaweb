@@ -44,7 +44,7 @@ nav {
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--rule);
 }
-.nav-logo { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--purple); text-decoration: none; }
+.nav-logo { text-decoration: none; display: flex; align-items: center; }
 .nav-badge {
   display: inline-flex; align-items: center; gap: .5rem;
   font-size: .6rem; letter-spacing: .14em; text-transform: uppercase;
@@ -646,7 +646,7 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="index.html">Los Martes No Hay Luna</a>
+  <a class="nav-logo" href="index.html"><img src="img/logo-color.svg" alt="Los Martes No Hay Luna" style="height:38px;width:auto;display:block;"></a>
   <span class="nav-badge">Página de servicio · No indexada</span>
   <a class="nav-cta" href="#reserva">Reservar mi plaza →</a>
 </nav>
@@ -793,7 +793,7 @@ footer {
   </div>
   <div class="pos-right reveal d1" style="grid-template-columns:1fr;display:flex;flex-direction:column;gap:1.2rem;">
     <div style="overflow:hidden;flex:1;min-height:360px;border-top:3px solid var(--lime);">
-      <img src="img/sheila-diagnostico.png" alt="Sheila Aguilar — trabajo personal y minucioso" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+      <img src="sheila-diagnostico.png" alt="Sheila Aguilar — trabajo personal y minucioso" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
       <div class="pos-stat" style="margin:0;">
@@ -1025,7 +1025,7 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-logo">Los Martes No Hay Luna</span>
+  <a href="index.html" style="display:inline-block;"><img src="img/logo-blanco.svg" alt="Los Martes No Hay Luna" style="height:32px;width:auto;display:block;"></a>
   <div class="footer-links">
     <a href="#">Aviso Legal</a>
     <a href="#">Privacidad</a>

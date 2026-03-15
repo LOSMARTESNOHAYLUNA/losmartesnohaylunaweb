@@ -28,7 +28,7 @@ body { font-family: 'Poppins', sans-serif; background: var(--off-white); color: 
 
 /* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 5rem; background: rgba(248,246,242,.97); backdrop-filter: blur(14px); border-bottom: 1px solid var(--rule); }
-.nav-logo { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--purple); text-decoration: none; }
+.nav-logo { text-decoration: none; display: flex; align-items: center; }
 .nav-links { display: flex; gap: 2.2rem; list-style: none; }
 .nav-links a { font-size: .68rem; letter-spacing: .07em; text-transform: uppercase; color: var(--mid); text-decoration: none; font-weight: 400; transition: color .2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--purple); }
@@ -250,7 +250,7 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html">Los Martes No Hay Luna</a>
+  <a class="nav-logo" href="index.html"><img src="img/logo-color.svg" alt="Los Martes No Hay Luna" style="height:38px;width:auto;display:block;"></a>
   <ul class="nav-links">
     <li><a href="servicios-agencia.html">Servicios</a></li>
     <li><a href="ia-para-empresas.html">IA para Empresas</a></li>
@@ -336,7 +336,7 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
     <a class="as-cta" href="sheila-aguilar.html">Conocer a Sheila →</a>
   </div>
   <div class="as-photo reveal d1">
-    <img src="img/sheila-about.png" alt="Sheila Aguilar — Los Martes No Hay Luna" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;min-height:500px;">
+    <img src="sheila-about.png" alt="Sheila Aguilar — Los Martes No Hay Luna" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;min-height:500px;">
   </div>
 </section>
 
@@ -494,23 +494,17 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-logo">Los Martes No Hay Luna</span>
+  <a href="index.html" style="display:inline-block;"><img src="img/logo-blanco.svg" alt="Los Martes No Hay Luna" style="height:32px;width:auto;display:block;"></a>
   <div class="footer-links">
     <a href="aviso-legal.html">Aviso Legal</a>
     <a href="privacidad.html">Privacidad</a>
     <a href="cookies.html">Cookies</a>
-    <a href="mailto:hola@losmartesnohayluna.com">hola@losmartesnohayluna.com</a>
+    <a href="/cdn-cgi/l/email-protection#3d5552515c7d51524e505c4f49584e5352555c445148535c135e5250"><span class="__cf_email__" data-cfemail="640c0b080524080b170905161001170a0b0c051d08110a054a070b09">[email&#160;protected]</span></a>
     <a href="tel:34919997726">91 999 77 26</a>
   </div>
   <p class="footer-copy">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const els = document.querySelectorAll('.reveal');
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-els.forEach(el => obs.observe(el));
-</script>
-</body>
-</html>
+const obs = new Intersecti

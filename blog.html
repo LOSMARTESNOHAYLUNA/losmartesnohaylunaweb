@@ -42,7 +42,7 @@ nav {
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--rule);
 }
-.nav-logo { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--purple); text-decoration: none; }
+.nav-logo { text-decoration: none; display: flex; align-items: center; }
 .nav-links { display: flex; gap: 2.2rem; list-style: none; }
 .nav-links a { font-size: .68rem; letter-spacing: .07em; text-transform: uppercase; color: var(--mid); text-decoration: none; font-weight: 400; transition: color .2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--purple); }
@@ -494,7 +494,7 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="index.html">Los Martes No Hay Luna</a>
+  <a class="nav-logo" href="index.html"><img src="img/logo-color.svg" alt="Los Martes No Hay Luna" style="height:38px;width:auto;display:block;"></a>
   <ul class="nav-links">
     <li><a href="servicios-agencia.html">Servicios</a></li>
     <li><a href="ia-para-empresas.html">IA para Empresas</a></li>
@@ -541,7 +541,7 @@ footer {
 <!-- FEATURED POST -->
 <article class="featured-post reveal">
   <div class="fp-photo" style="overflow:hidden;">
-    <img src="img/sheila-hero.png" alt="Artículo destacado — Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="sheila-hero.png" alt="Artículo destacado — Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
   <div class="fp-content">
     <span class="fp-featured-label">✦ Artículo destacado</span>
@@ -716,7 +716,7 @@ footer {
     <div class="sidebar-block">
       <div class="sb-about">
         <div class="sb-about-photo" style="overflow:hidden;">
-          <img src="img/sheila-about.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+          <img src="sheila-about.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
         </div>
         <h4>Sheila Aguilar</h4>
         <p>25 años de experiencia en imagen corporativa, marketing digital e IA. Fundadora de Los Martes No Hay Luna.</p>
@@ -869,7 +869,7 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-logo">Los Martes No Hay Luna</span>
+  <a href="index.html" style="display:inline-block;"><img src="img/logo-blanco.svg" alt="Los Martes No Hay Luna" style="height:32px;width:auto;display:block;"></a>
   <div class="footer-links">
     <a href="#">Aviso Legal</a>
     <a href="#">Privacidad</a>

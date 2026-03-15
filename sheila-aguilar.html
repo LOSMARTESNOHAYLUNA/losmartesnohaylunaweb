@@ -43,10 +43,7 @@ nav {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--rule);
 }
-.nav-logo {
-  font-size: .78rem; font-weight: 600; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--purple); text-decoration: none;
-}
+.nav-logo { text-decoration: none; display: flex; align-items: center; }
 .nav-cta {
   font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
   font-weight: 600; padding: .6rem 1.8rem;
@@ -445,7 +442,7 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="index.html">Los Martes No Hay Luna</a>
+  <a class="nav-logo" href="index.html"><img src="img/logo-color.svg" alt="Los Martes No Hay Luna" style="height:38px;width:auto;display:block;"></a>
   <ul class="nav-links">
     <li><a href="servicios-agencia.html">Servicios</a></li>
     <li><a href="ia-para-empresas.html">IA para Empresas</a></li>
@@ -460,7 +457,7 @@ footer {
 <section class="hero">
   <!-- Foto Sheila -->
   <div class="hero-photo" style="background:#f0eaf8;">
-    <img src="img/sheila-standing.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="sheila-standing.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
     <div class="hero-photo-tag">
       <div class="ht-name">Sheila<br>Aguilar</div>
       <div class="ht-title">Fundadora · Los Martes No Hay Luna</div>
@@ -526,7 +523,7 @@ footer {
 
   <!-- Foto oficina / trabajo -->
   <div class="what-photo" style="background:#f0eaf8;">
-    <img src="img/sheila-trabajando.png" alt="Sheila Aguilar trabajando" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="sheila-trabajando.png" alt="Sheila Aguilar trabajando" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
 </section>
 
@@ -657,7 +654,7 @@ footer {
 <section class="mission">
   <!-- Foto Sheila hablando / presentando -->
   <div class="mission-photo" style="background:#f0eaf8;">
-    <img src="img/sheila-estrategia.png" alt="Sheila Aguilar en sesión" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="sheila-estrategia.png" alt="Sheila Aguilar en sesión" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
   <div class="mission-copy reveal">
     <span class="mission-eyebrow">Misión</span>
@@ -716,13 +713,13 @@ footer {
 <!-- PHOTO STRIP -->
 <div class="photo-strip">
   <div class="ps-item" style="padding:0;overflow:hidden;">
-    <img src="img/sheila-hero.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="sheila-hero.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
   <div class="ps-item" style="padding:0;overflow:hidden;">
-    <img src="img/sheila-diagnostico.png" alt="Sheila Aguilar — diagnóstico" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="sheila-diagnostico.png" alt="Sheila Aguilar — diagnóstico" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
   <div class="ps-item" style="padding:0;overflow:hidden;">
-    <img src="img/sheila-consultoria.png" alt="Sheila Aguilar — consultoría" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="sheila-consultoria.png" alt="Sheila Aguilar — consultoría" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
 </div>
 
@@ -764,7 +761,7 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-logo">Los Martes No Hay Luna</span>
+  <a href="index.html" style="display:inline-block;"><img src="img/logo-blanco.svg" alt="Los Martes No Hay Luna" style="height:32px;width:auto;display:block;"></a>
   <div class="footer-links">
     <a href="#">Aviso Legal</a>
     <a href="#">Privacidad</a>

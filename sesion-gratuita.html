@@ -43,10 +43,7 @@
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--rule);
   }
-  .nav-logo {
-    font-size: .8rem; font-weight: 600; letter-spacing: .12em;
-    text-transform: uppercase; color: var(--purple); text-decoration: none;
-  }
+  .nav-logo { text-decoration: none; display: flex; align-items: center; }
   .nav-links { display: flex; gap: 2.4rem; list-style: none; }
   .nav-links a {
     font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
@@ -458,7 +455,7 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="index.html">Los Martes No Hay Luna</a>
+  <a class="nav-logo" href="index.html"><img src="img/logo-color.svg" alt="Los Martes No Hay Luna" style="height:38px;width:auto;display:block;"></a>
   <ul class="nav-links">
     <li><a href="servicios-agencia.html">Servicios</a></li>
     <li><a href="ia-para-empresas.html">IA para Empresas</a></li>
@@ -489,7 +486,7 @@
   <div class="hero-right" id="reserva">
     <!-- FOTO PRINCIPAL -->
     <div class="hero-photo" style="background:#f0eaf8;overflow:hidden;">
-      <img src="img/sheila-hero.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+      <img src="sheila-hero.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
       <div style="display:none;">
       </div>
     </div>
@@ -640,7 +637,7 @@
 <section class="bonus">
   <!-- FOTO SHEILA / SESIÓN -->
   <div class="bonus-photo" style="background:#f0eaf8;overflow:hidden;padding:0;">
-    <img src="img/sheila-consultoria.png" alt="Sesión de consultoría con Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="sheila-consultoria.png" alt="Sesión de consultoría con Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
   <div class="bonus-content reveal">
     <span class="section-label">Bonus exclusivo</span>
@@ -679,13 +676,13 @@
 <!-- PHOTO BAND -->
 <div class="photo-band">
   <div class="photo-band-item" style="padding:0;overflow:hidden;">
-    <img src="img/sheila-ia.png" alt="Sheila Aguilar con laptop" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="sheila-ia.png" alt="Sheila Aguilar con laptop" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
   <div class="photo-band-item" style="padding:0;overflow:hidden;">
-    <img src="img/sheila-diagnostico.png" alt="Sheila Aguilar tomando notas" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="sheila-diagnostico.png" alt="Sheila Aguilar tomando notas" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
   <div class="photo-band-item" style="padding:0;overflow:hidden;">
-    <img src="img/sheila-trabajando.png" alt="Sheila Aguilar trabajando" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="sheila-trabajando.png" alt="Sheila Aguilar trabajando" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
 </div>
 
@@ -806,7 +803,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-logo">Los Martes No Hay Luna</span>
+  <a href="index.html" style="display:inline-block;"><img src="img/logo-blanco.svg" alt="Los Martes No Hay Luna" style="height:32px;width:auto;display:block;"></a>
   <div class="footer-links">
     <a href="#">Aviso Legal</a>
     <a href="#">Privacidad</a>
