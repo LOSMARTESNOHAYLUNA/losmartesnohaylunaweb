@@ -452,7 +452,7 @@ footer {
 .footer-copy { font-size: .65rem; color: rgba(255,255,255,.2); width: 100%; }
 
 /* ── REVEAL ───────────────────────────────────────── */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+.reveal { opacity: 1; transform: translateY(0); transition: opacity .55s ease, transform .55s ease; }
 .reveal.d1 { transition-delay: .08s; }
 .reveal.d2 { transition-delay: .16s; }
 .reveal.d3 { transition-delay: .24s; }
@@ -541,7 +541,7 @@ footer {
 <!-- FEATURED POST -->
 <article class="featured-post reveal">
   <div class="fp-photo" style="overflow:hidden;">
-    <img src="sheila-hero.png" alt="Artículo destacado — Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="img/sheila-hero.png" alt="Artículo destacado — Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
   <div class="fp-content">
     <span class="fp-featured-label">✦ Artículo destacado</span>
@@ -716,7 +716,7 @@ footer {
     <div class="sidebar-block">
       <div class="sb-about">
         <div class="sb-about-photo" style="overflow:hidden;">
-          <img src="sheila-about.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+          <img src="img/sheila-about.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
         </div>
         <h4>Sheila Aguilar</h4>
         <p>25 años de experiencia en imagen corporativa, marketing digital e IA. Fundadora de Los Martes No Hay Luna.</p>
@@ -880,7 +880,7 @@ footer {
   <p class="footer-copy">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Reveal on scroll
   const els = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
@@ -897,4 +897,12 @@ footer {
   });
 
   // Sort buttons
-  doc
+  document.querySelectorAll('.sort-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

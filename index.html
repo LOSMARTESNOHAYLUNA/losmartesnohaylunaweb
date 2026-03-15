@@ -213,7 +213,7 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
 .footer-copy { font-size: .65rem; color: rgba(255,255,255,.2); width: 100%; }
 
 /* REVEAL */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.reveal { opacity: 1; transform: translateY(0); transition: opacity .6s ease, transform .6s ease; }
 .reveal.d1 { transition-delay: .1s; } .reveal.d2 { transition-delay: .2s; } .reveal.d3 { transition-delay: .3s; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -336,7 +336,7 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
     <a class="as-cta" href="sheila-aguilar.html">Conocer a Sheila →</a>
   </div>
   <div class="as-photo reveal d1">
-    <img src="sheila-about.png" alt="Sheila Aguilar — Los Martes No Hay Luna" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;min-height:500px;">
+    <img src="img/sheila-about.png" alt="Sheila Aguilar — Los Martes No Hay Luna" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;min-height:500px;">
   </div>
 </section>
 
@@ -505,6 +505,13 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
   <p class="footer-copy">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-const els = document.querySelectorAll('.reveal');
-const obs = new Intersecti
+<script>
+  // Reveal on scroll
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+  els.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

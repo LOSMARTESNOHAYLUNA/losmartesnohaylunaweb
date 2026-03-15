@@ -486,7 +486,7 @@
   <div class="hero-right" id="reserva">
     <!-- FOTO PRINCIPAL -->
     <div class="hero-photo" style="background:#f0eaf8;overflow:hidden;">
-      <img src="sheila-hero.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+      <img src="img/sheila-hero.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
       <div style="display:none;">
       </div>
     </div>
@@ -637,7 +637,7 @@
 <section class="bonus">
   <!-- FOTO SHEILA / SESIÓN -->
   <div class="bonus-photo" style="background:#f0eaf8;overflow:hidden;padding:0;">
-    <img src="sheila-consultoria.png" alt="Sesión de consultoría con Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="img/sheila-consultoria.png" alt="Sesión de consultoría con Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
   <div class="bonus-content reveal">
     <span class="section-label">Bonus exclusivo</span>
@@ -676,13 +676,13 @@
 <!-- PHOTO BAND -->
 <div class="photo-band">
   <div class="photo-band-item" style="padding:0;overflow:hidden;">
-    <img src="sheila-ia.png" alt="Sheila Aguilar con laptop" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="img/sheila-ia.png" alt="Sheila Aguilar con laptop" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
   <div class="photo-band-item" style="padding:0;overflow:hidden;">
-    <img src="sheila-diagnostico.png" alt="Sheila Aguilar tomando notas" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="img/sheila-diagnostico.png" alt="Sheila Aguilar tomando notas" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
   <div class="photo-band-item" style="padding:0;overflow:hidden;">
-    <img src="sheila-trabajando.png" alt="Sheila Aguilar trabajando" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="img/sheila-trabajando.png" alt="Sheila Aguilar trabajando" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
 </div>
 
@@ -814,6 +814,25 @@
   <p class="footer-copy">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
+  // Reveal on scroll
   const els = document.querySelectorAll('.reveal');
-  con
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+  els.forEach(el => obs.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const answer = item.querySelector('.faq-a');
+      const isOpen = q.classList.contains('open');
+      document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+      if (!isOpen) { q.classList.add('open'); answer.classList.add('open'); }
+    });
+  });
+</script>
+</body>
+</html>

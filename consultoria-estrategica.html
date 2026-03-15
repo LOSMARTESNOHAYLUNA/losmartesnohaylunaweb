@@ -609,7 +609,7 @@ footer {
 .footer-copy { font-size: .65rem; color: rgba(255,255,255,.2); width: 100%; }
 
 /* ── REVEAL ────────────────────────────────────────── */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.reveal { opacity: 1; transform: translateY(0); transition: opacity .6s ease, transform .6s ease; }
 .reveal.d1 { transition-delay: .1s; }
 .reveal.d2 { transition-delay: .2s; }
 .reveal.d3 { transition-delay: .3s; }
@@ -793,7 +793,7 @@ footer {
   </div>
   <div class="pos-right reveal d1" style="grid-template-columns:1fr;display:flex;flex-direction:column;gap:1.2rem;">
     <div style="overflow:hidden;flex:1;min-height:360px;border-top:3px solid var(--lime);">
-      <img src="sheila-diagnostico.png" alt="Sheila Aguilar — trabajo personal y minucioso" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+      <img src="img/sheila-diagnostico.png" alt="Sheila Aguilar — trabajo personal y minucioso" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
       <div class="pos-stat" style="margin:0;">
@@ -1036,16 +1036,25 @@ footer {
   <p class="footer-copy">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Reveal on scroll
-const els = document.querySelectorAll('.reveal');
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-els.forEach(el => obs.observe(el));
+<script>
+  // Reveal on scroll
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+  els.forEach(el => obs.observe(el));
 
-// FAQ accordion
-document.querySelectorAll('.faq-q').forEach(q => {
-  q.addEventListener('click', () => {
-    const item = q.parentElement;
-    const answer = item.
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const answer = item.querySelector('.faq-a');
+      const isOpen = q.classList.contains('open');
+      document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+      if (!isOpen) { q.classList.add('open'); answer.classList.add('open'); }
+    });
+  });
+</script>
+</body>
+</html>
