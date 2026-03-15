@@ -44,6 +44,9 @@ nav {
   border-bottom: 1px solid var(--rule);
 }
 .nav-logo { text-decoration: none; display: flex; align-items: center; }
+.nav-links { display: flex; gap: 2.2rem; list-style: none; }
+.nav-links a { font-size: .68rem; letter-spacing: .07em; text-transform: uppercase; color: var(--mid); text-decoration: none; font-weight: 400; transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--purple); }
 .nav-cta {
   font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
   font-weight: 600; padding: .6rem 1.8rem;
@@ -778,5 +781,6 @@ footer {
   }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
   els.forEach(el => obs.observe(el));
 </script>
+<script src="widget-consultora.js" defer></script>
 </body>
 </html>
