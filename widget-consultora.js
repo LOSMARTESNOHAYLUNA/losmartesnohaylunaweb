@@ -220,13 +220,24 @@
   // ── HELPERS ───────────────────────────────────────────
   function esc(t) { return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>'); }
 
+  function renderBot(t) {
+    let s = t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+    // URLs con sesion-gratuita → botón limpio
+    s = s.replace(/(https?:\/\/[^\s<&]+sesion-gratuita[^\s<&]*)/g,
+      '<a href="$1" target="_blank" style="display:inline-block;margin-top:.3rem;background:#87B229;color:#2a1f38;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.4rem .9rem;text-decoration:none;">Reservar sesión gratuita →</a>');
+    // Resto de URLs → enlace simple
+    s = s.replace(/(https?:\/\/[^\s<&]+)/g,
+      '<a href="$1" target="_blank" style="color:#87B229;text-decoration:underline;">$1</a>');
+    return s;
+  }
+
   function addMsg(role, text) {
     const d = document.createElement('div');
     d.className = `lmnhl-msg ${role}`;
     const av = role === 'bot'
       ? `<div class="lmnhl-msg-avatar"><img src="${photoSrc}" alt="SA" onerror="this.parentElement.innerHTML='SA'"></div>`
       : `<div class="lmnhl-msg-avatar" style="background:#87B229;font-size:.6rem;font-family:Poppins,sans-serif;">Tú</div>`;
-    d.innerHTML = `${av}<div class="lmnhl-bubble">${esc(text)}</div>`;
+    d.innerHTML = `${av}<div class="lmnhl-bubble">${role === 'bot' ? renderBot(text) : esc(text)}</div>`;
     msgs.appendChild(d);
     msgs.scrollTop = msgs.scrollHeight;
   }
