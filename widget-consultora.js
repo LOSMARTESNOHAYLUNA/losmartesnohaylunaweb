@@ -167,7 +167,7 @@
   styleEl.textContent = styles;
   document.head.appendChild(styleEl);
 
-  const photoSrc = 'img/sheila-about.png';
+  const photoSrc = 'https://0.gravatar.com/avatar/b26bfc2c65f3172e6bc3e5da78322c0c9b9103b20868eec9c2446699450d6272?size=256';
 
   document.body.insertAdjacentHTML('beforeend', `
     <button id="lmnhl-widget-btn" aria-label="Habla con nuestra consultora" style="position:fixed;">
