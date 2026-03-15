@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios de Agencia — Los Martes No Hay Luna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --purple:    #582D81;
+  --purple-lt: #6e3d9a;
+  --purple-dk: #3a1c57;
+  --lime:      #87B229;
+  --lime-lt:   #9ecf30;
+  --pink:      #e72078;
+  --slate:     #2a1f38;
+  --off-white: #f8f6f2;
+  --light:     #f4f0fa;
+  --mid:       #7a6f85;
+  --rule:      rgba(88,45,129,.12);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--off-white);
+  color: var(--slate);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ──────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 5rem;
+  background: rgba(248,246,242,.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--purple); text-decoration: none; }
+.nav-links { display: flex; gap: 2.2rem; list-style: none; }
+.nav-links a { font-size: .68rem; letter-spacing: .07em; text-transform: uppercase; color: var(--mid); text-decoration: none; font-weight: 400; transition: color .2s; }
+.nav-links a:hover { color: var(--purple); }
+.nav-cta { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; padding: .55rem 1.6rem; background: var(--purple); color: #fff; text-decoration: none; transition: background .2s; }
+.nav-cta:hover { background: var(--purple-lt); }
+
+/* ── HERO ─────────────────────────────────────────── */
+.hero {
+  min-height: 72vh;
+  background: var(--purple-dk);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 9rem 5rem 5rem;
+  position: relative; overflow: hidden;
+}
+/* Decorative elements */
+.hero::before {
+  content: '';
+  position: absolute; top: -80px; right: -80px;
+  width: 500px; height: 500px; border-radius: 50%;
+  border: 90px solid rgba(135,178,41,.07);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -60px; left: 15%;
+  width: 320px; height: 320px; border-radius: 50%;
+  border: 50px solid rgba(135,178,41,.05);
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 2; max-width: 800px; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: .7rem;
+  font-size: .65rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--lime); font-weight: 600; margin-bottom: 2rem;
+}
+.hero-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--lime); }
+.hero h1 {
+  font-size: clamp(2.8rem, 5vw, 5.2rem); font-weight: 800; color: #fff;
+  letter-spacing: -.04em; line-height: 1.02; margin-bottom: 1.5rem;
+}
+.hero h1 em { color: var(--lime); font-style: italic; font-weight: 300; }
+.hero-sub { font-size: .95rem; color: rgba(255,255,255,.5); max-width: 560px; font-weight: 300; line-height: 1.8; margin-bottom: 3rem; }
+.hero-tags { display: flex; flex-wrap: wrap; gap: .7rem; }
+.htag {
+  font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 500;
+  padding: .45rem 1.1rem; border: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.6);
+  transition: border-color .2s, color .2s;
+}
+.htag:hover { border-color: var(--lime); color: var(--lime); }
+
+/* ── INTRO BRIDGE ─────────────────────────────────── */
+.bridge {
+  background: var(--lime);
+  padding: 4.5rem 5rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+}
+.bridge-h2 {
+  font-size: clamp(1.8rem, 2.4vw, 2.4rem); font-weight: 800; color: var(--slate);
+  letter-spacing: -.03em; line-height: 1.15;
+}
+.bridge-text { font-size: .9rem; color: var(--slate); opacity: .65; line-height: 1.85; font-weight: 300; }
+.bridge-text strong { font-weight: 600; opacity: 1; color: var(--slate); }
+
+/* ── SECTION HELPERS ──────────────────────────────── */
+.section-label {
+  display: inline-flex; align-items: center; gap: .7rem;
+  font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--lime); font-weight: 700;
+}
+.section-label::before { content: ''; width: 18px; height: 2px; background: var(--lime); }
+.section-label.dark::before { background: rgba(135,178,41,.6); }
+
+/* ── SERVICE CATEGORY ─────────────────────────────── */
+.cat-wrap { padding: 7rem 5rem; }
+.cat-wrap.dark { background: var(--slate); }
+.cat-wrap.light { background: var(--off-white); }
+.cat-wrap.tint { background: var(--light); }
+
+.cat-header {
+  display: grid; grid-template-columns: auto 1fr; align-items: start;
+  gap: 0 4rem; margin-bottom: 4.5rem;
+}
+.cat-num {
+  font-size: 5rem; font-weight: 800; line-height: 1;
+  color: rgba(88,45,129,.1); letter-spacing: -.04em;
+  padding-top: .4rem;
+}
+.cat-wrap.dark .cat-num { color: rgba(255,255,255,.06); }
+.cat-hd { padding-top: .3rem; }
+.cat-hd .section-label { margin-bottom: 1rem; }
+.cat-hd h2 {
+  font-size: clamp(1.9rem, 2.5vw, 2.8rem); font-weight: 800;
+  letter-spacing: -.03em; line-height: 1.1; margin-bottom: .8rem;
+  color: var(--purple);
+}
+.cat-wrap.dark .cat-hd h2 { color: #fff; }
+.cat-hd p { font-size: .88rem; color: var(--mid); max-width: 540px; line-height: 1.8; font-weight: 300; }
+.cat-wrap.dark .cat-hd p { color: rgba(255,255,255,.65); }
+
+/* ── CARDS ────────────────────────────────────────── */
+.cards { display: grid; gap: 1.5rem; }
+.cards.col-3 { grid-template-columns: repeat(3, 1fr); }
+.cards.col-2 { grid-template-columns: repeat(2, 1fr); }
+.cards.col-4 { grid-template-columns: repeat(4, 1fr); }
+
+.card {
+  background: #fff; padding: 2.4rem 2.2rem;
+  border-top: 3px solid transparent; transition: border-color .25s, transform .25s, box-shadow .25s;
+  position: relative;
+}
+.card:hover { border-color: var(--lime); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(88,45,129,.1); }
+.card.dark-card { background: rgba(255,255,255,.05); border-top-color: rgba(255,255,255,.08); }
+.card.dark-card:hover { border-color: var(--lime); background: rgba(255,255,255,.08); box-shadow: 0 12px 40px rgba(0,0,0,.3); }
+
+/* Recommended badge */
+.badge {
+  position: absolute; top: -1px; right: 1.8rem;
+  font-size: .55rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 700;
+  padding: .3rem .8rem; background: var(--lime); color: var(--slate);
+}
+.badge.hot { background: var(--pink); color: #fff; }
+
+.card-icon {
+  width: 44px; height: 44px; background: var(--purple); margin-bottom: 1.6rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.card.dark-card .card-icon { background: rgba(135,178,41,.15); }
+.card-icon svg { width: 22px; height: 22px; stroke: var(--lime); fill: none; stroke-width: 1.5; }
+
+.card-tag {
+  font-size: .58rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 700;
+  color: var(--lime); margin-bottom: .6rem;
+}
+.card h3 { font-size: 1rem; font-weight: 700; color: var(--purple); margin-bottom: .6rem; letter-spacing: -.01em; }
+.card.dark-card h3 { color: #fff; }
+.card-desc { font-size: .82rem; color: var(--mid); line-height: 1.75; margin-bottom: 1.4rem; font-weight: 300; }
+.card.dark-card .card-desc { color: rgba(255,255,255,.65); }
+
+.card-features { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+.cf { display: flex; align-items: flex-start; gap: .6rem; font-size: .78rem; color: var(--mid); font-weight: 300; }
+.card.dark-card .cf { color: rgba(255,255,255,.7); }
+.cf::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--lime); flex-shrink: 0; margin-top: .45rem; }
+
+/* ── FEATURED CARD (horizontal) ──────────────────── */
+.featured-card {
+  grid-column: 1 / -1;
+  background: var(--purple); padding: 3rem 3.5rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  border-top: 3px solid var(--lime);
+  position: relative; overflow: hidden;
+}
+.featured-card::after {
+  content: '';
+  position: absolute; right: -60px; top: 50%; transform: translateY(-50%);
+  width: 240px; height: 240px; border-radius: 50%;
+  border: 40px solid rgba(135,178,41,.1);
+  pointer-events: none;
+}
+.fc-left .fc-tag { font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; color: var(--lime); margin-bottom: .8rem; }
+.fc-left h3 { font-size: 1.4rem; font-weight: 800; color: #fff; letter-spacing: -.02em; line-height: 1.2; margin-bottom: .8rem; }
+.fc-left p { font-size: .85rem; color: rgba(255,255,255,.5); line-height: 1.8; font-weight: 300; }
+.fc-right { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.fc-feature {
+  background: rgba(255,255,255,.06); padding: 1.2rem 1.4rem;
+  border-left: 2px solid rgba(135,178,41,.4);
+}
+.fc-feature-title { font-size: .8rem; font-weight: 600; color: #fff; margin-bottom: .3rem; }
+.fc-feature-text { font-size: .72rem; color: rgba(255,255,255,.65); line-height: 1.6; font-weight: 300; }
+
+/* ── PROOF STRIP ──────────────────────────────────── */
+.proof {
+  background: var(--purple);
+  padding: 5rem 5rem;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; border-top: 1px solid rgba(255,255,255,.06);
+}
+.proof-item {
+  padding: 2rem 2.5rem;
+  border-right: 1px solid rgba(255,255,255,.07);
+  text-align: center;
+}
+.proof-item:last-child { border-right: none; }
+.proof-num { font-size: 2.6rem; font-weight: 800; color: #fff; letter-spacing: -.04em; line-height: 1; }
+.proof-num span { color: var(--lime); }
+.proof-label { font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-top: .4rem; }
+
+/* ── PROCESS ──────────────────────────────────────── */
+.process { padding: 7rem 5rem; background: var(--light); }
+.process-hd { margin-bottom: 4rem; }
+.process-hd .section-label { margin-bottom: 1rem; }
+.process-hd h2 { font-size: clamp(1.8rem, 2.4vw, 2.4rem); font-weight: 800; color: var(--purple); letter-spacing: -.03em; line-height: 1.15; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.step {
+  padding: 2.4rem 2.2rem; border-right: 1px solid var(--rule);
+  position: relative;
+}
+.step:last-child { border-right: none; }
+.step-num {
+  font-size: 2.5rem; font-weight: 800; color: rgba(88,45,129,.12);
+  letter-spacing: -.04em; line-height: 1; margin-bottom: 1rem;
+}
+.step h3 { font-size: .9rem; font-weight: 700; color: var(--purple); margin-bottom: .5rem; }
+.step p { font-size: .78rem; color: var(--mid); line-height: 1.75; font-weight: 300; }
+/* Arrow between steps */
+.step::after {
+  content: '→';
+  position: absolute; top: 2.4rem; right: -1rem;
+  color: var(--lime); font-size: 1rem; z-index: 2;
+}
+.step:last-child::after { display: none; }
+
+/* ── CTA FINAL ────────────────────────────────────── */
+.final {
+  padding: 8rem 5rem;
+  background: var(--purple-dk); text-align: center;
+  position: relative; overflow: hidden;
+}
+.final::before {
+  content: '';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 600px; height: 600px; border-radius: 50%;
+  border: 100px solid rgba(135,178,41,.04);
+  pointer-events: none;
+}
+.final .section-label { color: var(--lime); margin-bottom: 1.5rem; justify-content: center; }
+.final .section-label::before { display: none; }
+.final h2 { font-size: clamp(2.4rem, 4vw, 4rem); font-weight: 800; color: #fff; letter-spacing: -.04em; line-height: 1.08; margin-bottom: 1.2rem; }
+.final h2 em { color: var(--lime); font-style: italic; font-weight: 300; }
+.final p { font-size: .9rem; color: rgba(255,255,255,.7); max-width: 480px; margin: 0 auto 2.8rem; font-weight: 300; line-height: 1.8; }
+.final-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-lime { display: inline-block; padding: .95rem 2.6rem; background: var(--lime); color: var(--slate); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; text-decoration: none; transition: background .2s; }
+.btn-lime:hover { background: var(--lime-lt); }
+.btn-ghost { display: inline-block; padding: .95rem 2.6rem; border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.6); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 500; text-decoration: none; transition: all .2s; }
+.btn-ghost:hover { border-color: rgba(255,255,255,.5); color: #fff; }
+
+/* ── FOOTER ───────────────────────────────────────── */
+footer {
+  background: var(--slate); padding: 2.5rem 5rem;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+}
+.footer-logo { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #fff; }
+.footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+.footer-links a { font-size: .65rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.3); text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: var(--lime); }
+.footer-copy { font-size: .65rem; color: rgba(255,255,255,.2); width: 100%; }
+
+/* ── REVEAL ───────────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.d1 { transition-delay: .08s; }
+.reveal.d2 { transition-delay: .16s; }
+.reveal.d3 { transition-delay: .24s; }
+.reveal.d4 { transition-delay: .32s; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 1100px) {
+  .cards.col-4 { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .step::after { display: none; }
+  .proof { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero, .bridge, .featured-card, .cat-header { grid-template-columns: 1fr; }
+  .hero { padding: 7rem 1.8rem 4rem; }
+  .bridge, .cat-wrap { padding: 5rem 1.8rem; }
+  .cards.col-3, .cards.col-2, .cards.col-4 { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .proof { grid-template-columns: repeat(2, 1fr); }
+  .process { padding: 5rem 1.8rem; }
+  .final { padding: 6rem 1.8rem; }
+  .fc-right { grid-template-columns: 1fr; }
+  footer { padding: 2rem 1.8rem; }
+  .cat-num { font-size: 3rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">Los Martes No Hay Luna</a>
+  <ul class="nav-links">
+    <li><a href="servicios-agencia.html" class="active">Servicios</a></li>
+    <li><a href="ia-para-empresas.html">IA para Empresas</a></li>
+    <li><a href="sheila-aguilar.html">Sheila Aguilar</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+  <a class="nav-cta" href="sesion-gratuita.html">Sesión gratuita</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Servicios de agencia</span>
+    <h1>Todo lo que diagnosticamos,<br><em>lo ejecutamos</em></h1>
+    <p class="hero-sub">En la consultoría identificamos exactamente qué necesita tu empresa. En la agencia, lo hacemos. Un mismo equipo, una misma visión, resultados medibles.</p>
+    <div class="hero-tags">
+      <span class="htag">Presencia Digital</span>
+      <span class="htag">Publicidad</span>
+      <span class="htag">SEO</span>
+      <span class="htag">Diseño Web</span>
+      <span class="htag">Email Marketing</span>
+      <span class="htag">CRM</span>
+      <span class="htag">Consultoría</span>
+    </div>
+  </div>
+</section>
+
+<!-- BRIDGE -->
+<div class="bridge">
+  <h2 class="reveal">De la estrategia a la ejecución, sin perder el hilo</h2>
+  <p class="bridge-text reveal">Muchas empresas reciben un diagnóstico brillante... y luego tienen que buscar quién lo ejecuta. <strong>Nosotros somos los dos.</strong> Cuando terminamos de analizar tu negocio, podemos ponernos a construirlo. Sin briefings de cero, sin perder contexto, sin empezar de nuevo.</p>
+</div>
+
+<!-- PROOF STRIP -->
+<div class="proof">
+  <div class="proof-item reveal">
+    <div class="proof-num">25<span>+</span></div>
+    <div class="proof-label">Años de experiencia</div>
+  </div>
+  <div class="proof-item reveal d1">
+    <div class="proof-num">3<span>×</span></div>
+    <div class="proof-label">Disciplinas unificadas</div>
+  </div>
+  <div class="proof-item reveal d2">
+    <div class="proof-num">360<span>°</span></div>
+    <div class="proof-label">Visión del negocio</div>
+  </div>
+  <div class="proof-item reveal d3">
+    <div class="proof-num">1</div>
+    <div class="proof-label">Interlocutor para todo</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 1. PRESENCIA DIGITAL -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="cat-wrap light" id="presencia">
+  <div class="cat-header">
+    <div class="cat-num reveal">01</div>
+    <div class="cat-hd reveal">
+      <span class="section-label">Presencia Digital</span>
+      <h2>Tu marca, visible donde están tus clientes</h2>
+      <p>Gestionamos tu presencia en redes sociales y Google con estrategia, consistencia y contenido que conecta. Desde la primera publicación hasta la cuenta que domina su sector.</p>
+    </div>
+  </div>
+
+  <div class="cards col-3">
+    <div class="card reveal">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <div class="card-tag">Local · Inicio</div>
+      <h3>Presencia Local</h3>
+      <p class="card-desc">Para negocios que quieren ser el referente de su barrio o municipio. Arrancamos con lo esencial: contenido de calidad y visibilidad geolocalizada.</p>
+      <ul class="card-features">
+        <li class="cf">Gestión de redes sociales con publicaciones periódicas</li>
+        <li class="cf">Diseño de perfil y portafolio visual coherente con tu marca</li>
+        <li class="cf">Posicionamiento local en Google Maps y buscadores (radio 3 km)</li>
+        <li class="cf">Contenido adaptado a tu sector y audiencia</li>
+      </ul>
+    </div>
+
+    <div class="card reveal d1">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="card-tag">Ciudad · Crecimiento</div>
+      <h3>Presencia Ciudad</h3>
+      <p class="card-desc">Da el salto a toda la ciudad. Combinamos redes sociales con posicionamiento SEO local para que aparezcas antes que tu competencia en Google Maps.</p>
+      <ul class="card-features">
+        <li class="cf">Gestión activa de redes con estrategia de contenido mensual</li>
+        <li class="cf">Portafolio digital profesional actualizado</li>
+        <li class="cf">Posicionamiento SEO Local a nivel ciudad</li>
+        <li class="cf">Reportes mensuales de visibilidad y alcance</li>
+      </ul>
+    </div>
+
+    <div class="card reveal d2">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </div>
+      <div class="card-tag">Avanzado · Alto impacto</div>
+      <h3>Gestión RRSS Avanzada</h3>
+      <p class="card-desc">Para marcas que quieren crecer en seguidores, notoriedad y engagement de forma sistemática. Contenido de alto impacto con producción profesional incluida.</p>
+      <ul class="card-features">
+        <li class="cf">Hasta 20 publicaciones mensuales optimizadas por algoritmo</li>
+        <li class="cf">Locución y edición profesional de vídeos y Reels</li>
+        <li class="cf">Estrategia de crecimiento orgánico con KPIs definidos</li>
+        <li class="cf">Gestión de comentarios e interacción con comunidad</li>
+        <li class="cf">Calendario editorial mensual alineado con tus objetivos</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 2. PUBLICIDAD -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="cat-wrap dark" id="publicidad">
+  <div class="cat-header">
+    <div class="cat-num reveal">02</div>
+    <div class="cat-hd reveal">
+      <span class="section-label dark">Publicidad y Captación</span>
+      <h2>Anuncios que traen clientes, no solo clics</h2>
+      <p>Gestionamos tus campañas publicitarias con orientación a resultados reales: leads, ventas y llamadas. No invertimos tu dinero sin saber qué va a generar.</p>
+    </div>
+  </div>
+
+  <div class="cards col-3">
+    <div class="card dark-card reveal">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div class="card-tag">Meta Ads · FB & IG</div>
+      <h3>Campañas Meta Ads</h3>
+      <p class="card-desc">Publicidad en Facebook e Instagram orientada a generar leads y ventas directas. Diseñamos los anuncios, segmentamos la audiencia y optimizamos el presupuesto.</p>
+      <ul class="card-features">
+        <li class="cf">Creación y gestión completa de campañas en FB e IG</li>
+        <li class="cf">Segmentación detallada por intereses, comportamiento y geolocalización</li>
+        <li class="cf">Diseño de creatividades y copys optimizados para conversión</li>
+        <li class="cf">A/B testing y optimización continua de resultados</li>
+        <li class="cf">Informes de rendimiento con métricas de negocio</li>
+      </ul>
+    </div>
+
+    <div class="card dark-card reveal d1">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <div class="card-tag">Google Ads</div>
+      <h3>Campañas Google Ads</h3>
+      <p class="card-desc">Aparece justo cuando alguien busca tu producto o servicio en Google. Captamos intención de compra en el momento más valioso.</p>
+      <ul class="card-features">
+        <li class="cf">Campañas de búsqueda, display y shopping según tu negocio</li>
+        <li class="cf">Investigación de palabras clave y estrategia de puja</li>
+        <li class="cf">Páginas de destino optimizadas para conversión</li>
+        <li class="cf">Seguimiento de conversiones y ROI por campaña</li>
+        <li class="cf">Optimización semanal del presupuesto</li>
+      </ul>
+    </div>
+
+    <div class="card dark-card reveal d2">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </div>
+      <div class="card-tag">B2B · LinkedIn</div>
+      <h3>Campañas LinkedIn Ads</h3>
+      <p class="card-desc">La plataforma líder para empresas B2B. Alcanzamos directores, gerentes y responsables de decisión con mensajes precisos y profesionales.</p>
+      <ul class="card-features">
+        <li class="cf">Segmentación por cargo, empresa, sector e industria</li>
+        <li class="cf">Formatos InMail, anuncios de imagen y vídeo</li>
+        <li class="cf">Estrategia de contenido patrocinado para autoridad de marca</li>
+        <li class="cf">Generación de leads cualificados en entornos corporativos</li>
+      </ul>
+    </div>
+
+    <!-- Featured card horizontal -->
+    <div class="featured-card reveal">
+      <div class="fc-left">
+        <div class="fc-tag">Social Booster · Acelerador</div>
+        <h3>Aceleración de Cuenta en Redes Sociales</h3>
+        <p>Para cuentas que necesitan tracción rápida. Una estrategia dinámica que activa el algoritmo, aumenta la visibilidad de forma sostenible y posiciona tu cuenta como "punto de tráfico" en tu sector.</p>
+      </div>
+      <div class="fc-right">
+        <div class="fc-feature">
+          <div class="fc-feature-title">Activación de algoritmo</div>
+          <p class="fc-feature-text">Secuencias de publicación diseñadas para maximizar la distribución orgánica en los primeros 30 días</p>
+        </div>
+        <div class="fc-feature">
+          <div class="fc-feature-title">Punto de tráfico</div>
+          <p class="fc-feature-text">Convertimos tu cuenta en la referencia del sector con contenido de alto valor y alto alcance</p>
+        </div>
+        <div class="fc-feature">
+          <div class="fc-feature-title">Visitas ilimitadas</div>
+          <p class="fc-feature-text">Acceso a nuestro historial de publicaciones de alto rendimiento para replicar lo que funciona</p>
+        </div>
+        <div class="fc-feature">
+          <div class="fc-feature-title">Resultados en 30 días</div>
+          <p class="fc-feature-text">Crecimiento medible en alcance, interacciones y seguidores cualificados desde el primer mes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 3. SEO -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="cat-wrap tint" id="seo">
+  <div class="cat-header">
+    <div class="cat-num reveal">03</div>
+    <div class="cat-hd reveal">
+      <span class="section-label">Posicionamiento SEO</span>
+      <h2>Que te encuentren cuando más importa</h2>
+      <p>El SEO no es un gasto, es la inversión con mejor ROI a largo plazo. Nos aseguramos de que tu empresa aparezca en las primeras posiciones cuando un cliente potencial busca exactamente lo que tú ofreces.</p>
+    </div>
+  </div>
+
+  <div class="cards col-3">
+    <div class="card reveal">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="card-tag">SEO Local · Radio 3 km</div>
+      <h3>SEO Local</h3>
+      <p class="card-desc">Aparece en el "Local Pack" de Google Maps cuando alguien cerca busca tu tipo de negocio. La forma más directa de atraer clientes del entorno inmediato.</p>
+      <ul class="card-features">
+        <li class="cf">Optimización completa del perfil de Google Business</li>
+        <li class="cf">Posicionamiento en el Top 3 del Local Pack</li>
+        <li class="cf">Gestión de reseñas y reputación local</li>
+        <li class="cf">Citaciones y directorios locales</li>
+        <li class="cf">Contenido SEO orientado a búsquedas de proximidad</li>
+      </ul>
+    </div>
+
+    <div class="card reveal d1">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z" fill="none"/><path d="M3 9h18M9 3v18"/></svg>
+      </div>
+      <div class="card-tag">SEO Ciudad</div>
+      <h3>SEO Ciudad</h3>
+      <p class="card-desc">Domina la primera página de Google en tu ciudad. Estrategia de contenidos y optimización técnica para posicionarte ante toda la demanda local de tu sector.</p>
+      <ul class="card-features">
+        <li class="cf">Auditoría técnica y estrategia SEO personalizada</li>
+        <li class="cf">Optimización on-page de toda la web</li>
+        <li class="cf">Creación de contenido SEO con intención de búsqueda real</li>
+        <li class="cf">Link building local y autoridad de dominio</li>
+        <li class="cf">Informe mensual de posiciones y tráfico orgánico</li>
+      </ul>
+    </div>
+
+    <div class="card reveal d2">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div class="card-tag">SEO Nacional · Escala</div>
+      <h3>SEO Nacional</h3>
+      <p class="card-desc">Para empresas que quieren competir a nivel nacional. Estrategia de contenidos, enlaces de autoridad y visibilidad sostenida en todo el territorio.</p>
+      <ul class="card-features">
+        <li class="cf">Estrategia de contenidos a escala nacional con cluster temáticos</li>
+        <li class="cf">Link building editorial con medios de referencia</li>
+        <li class="cf">SEO técnico avanzado: Core Web Vitals, schema, velocidad</li>
+        <li class="cf">Análisis competitivo de todo el mercado nacional</li>
+        <li class="cf">Reporting avanzado con cuadro de mando de posiciones</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 4. WEB, EMAIL Y CRM -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="cat-wrap light" id="web">
+  <div class="cat-header">
+    <div class="cat-num reveal">04</div>
+    <div class="cat-hd reveal">
+      <span class="section-label">Web, Email & CRM</span>
+      <h2>Infraestructura digital que trabaja mientras tú no estás</h2>
+      <p>Tu web, tus automatizaciones y tu CRM son los cimientos sobre los que se asienta todo lo demás. Los diseñamos para vender, para retener y para escalar.</p>
+    </div>
+  </div>
+
+  <div class="cards col-3">
+    <div class="card reveal">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div class="card-tag">Web profesional</div>
+      <h3>Diseño Web & Extras</h3>
+      <p class="card-desc">Tu web trabaja 24 horas al día, 7 días a la semana. La diseñamos con foco en conversión, con identidad de marca alineada y experiencia de usuario impecable.</p>
+      <ul class="card-features">
+        <li class="cf">Diseño personalizado adaptado a tu identidad de marca</li>
+        <li class="cf">Optimización para conversión (formularios, llamadas a la acción, velocidad)</li>
+        <li class="cf">Sesión fotográfica corporativa para dotar la web de imágenes reales</li>
+        <li class="cf">Integración con herramientas de venta y seguimiento</li>
+        <li class="cf">Formación para gestión autónoma del contenido</li>
+        <li class="cf">Mantenimiento y actualizaciones periódicas</li>
+      </ul>
+    </div>
+
+    <div class="card reveal d1">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div class="card-tag">Email Marketing</div>
+      <h3>Email Marketing & Automatización</h3>
+      <p class="card-desc">Vende mientras duermes. Diseñamos secuencias de email que nutren, convierten y fidelizan en piloto automático, sin que tengas que hacer nada una vez está en marcha.</p>
+      <ul class="card-features">
+        <li class="cf">Diseño de flujos de automatización personalizados por segmento</li>
+        <li class="cf">Secuencias de bienvenida, recuperación y fidelización</li>
+        <li class="cf">Plantillas de email alineadas con tu marca</li>
+        <li class="cf">Integración con tu CRM y formularios web</li>
+        <li class="cf">Análisis de aperturas, clics y conversiones</li>
+      </ul>
+    </div>
+
+    <div class="card reveal d2">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <div class="card-tag">CRM · Ventas</div>
+      <h3>CRM: Lidera tu Negocio</h3>
+      <p class="card-desc">Centraliza todos tus contactos, leads y conversaciones en un solo lugar. Tu equipo de ventas trabaja con información completa, en el momento adecuado, sin perder ninguna oportunidad.</p>
+      <ul class="card-features">
+        <li class="cf">Implementación y configuración del CRM a medida</li>
+        <li class="cf">Integración de email, WhatsApp y llamadas en una sola herramienta</li>
+        <li class="cf">Pipeline de ventas personalizado por etapas de tu proceso</li>
+        <li class="cf">Automatizaciones de seguimiento y recordatorios inteligentes</li>
+        <li class="cf">Formación al equipo comercial para adopción real</li>
+        <li class="cf">Informes de ventas, conversión y ciclo de vida del cliente</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- 5. CONSULTORÍA ESTRATÉGICA -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="cat-wrap dark" id="consultoria">
+  <div class="cat-header">
+    <div class="cat-num reveal">05</div>
+    <div class="cat-hd reveal">
+      <span class="section-label dark">Consultoría Estratégica</span>
+      <h2>El trabajo que lo hace todo cobrar sentido</h2>
+      <p>Antes de ejecutar, analizamos. Antes de invertir, diagnosticamos. La consultoría es donde se define qué hacer, en qué orden y por qué — para que cada euro tenga un propósito.</p>
+    </div>
+  </div>
+
+  <div class="cards col-2">
+    <div class="card dark-card reveal">
+      <span class="badge">Más solicitado</span>
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+      </div>
+      <div class="card-tag">Sesiones 1:1 · Estrategia</div>
+      <h3>Consultoría Estratégica de Marketing</h3>
+      <p class="card-desc">Un proceso de trabajo profundo con tu empresa para diseñar la estrategia de marketing más adecuada a tu realidad, tus recursos y tus objetivos de crecimiento.</p>
+      <ul class="card-features">
+        <li class="cf">Diagnóstico completo del estado actual de tu marketing y procesos</li>
+        <li class="cf">Análisis de competencia y oportunidades de mercado</li>
+        <li class="cf">Perfil detallado del cliente ideal y propuesta de valor diferencial</li>
+        <li class="cf">Análisis Dupont: rentabilidad, costes evitables e indicadores clave</li>
+        <li class="cf">Análisis competitivo con benchmarking del sector</li>
+        <li class="cf">Estrategia de contenido y plan editorial a 90 días</li>
+        <li class="cf">Propuesta publicitaria con inversión estimada y ROI esperado</li>
+        <li class="cf">Sesiones de seguimiento para ajuste y evolución del plan</li>
+      </ul>
+    </div>
+
+    <div class="card dark-card reveal d1">
+      <span class="badge hot">IA Aplicada</span>
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+      <div class="card-tag">IA · Automatización · Procesos</div>
+      <h3>Consultoría de IA para tu Negocio</h3>
+      <p class="card-desc">Identificamos dónde está perdiendo dinero tu empresa en procesos manuales y te mostramos cómo recuperarlo con Inteligencia Artificial. Sin jerga técnica, sin proyectos fantasma.</p>
+      <ul class="card-features">
+        <li class="cf">Mapa de ineficiencias invisibles: correos, presupuestos, flujos operativos</li>
+        <li class="cf">Identificación de los 3-5 procesos con mayor impacto si se automatizan</li>
+        <li class="cf">ROI estimado por cada mejora antes de invertir un euro</li>
+        <li class="cf">Plan de implementación priorizado y realista para tu equipo</li>
+        <li class="cf">Selección de herramientas de IA adecuadas a tu tamaño y presupuesto</li>
+        <li class="cf">Formación al equipo para adopción real y sostenida</li>
+        <li class="cf">Acompañamiento en la fase de implantación</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="process-hd reveal">
+    <span class="section-label">Cómo trabajamos</span>
+    <h2>Del primer contacto al resultado medible</h2>
+  </div>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <h3>Diagnóstico</h3>
+      <p>Analizamos tu negocio, tu competencia y tu situación real antes de proponer nada. Sin diagnóstico no hay receta.</p>
+    </div>
+    <div class="step reveal d1">
+      <div class="step-num">02</div>
+      <h3>Estrategia</h3>
+      <p>Diseñamos un plan a medida con prioridades claras, acciones concretas y ROI estimado para cada decisión.</p>
+    </div>
+    <div class="step reveal d2">
+      <div class="step-num">03</div>
+      <h3>Ejecución</h3>
+      <p>Nuestro equipo lo implementa. Tú tienes un único interlocutor para todo, con total transparencia del proceso.</p>
+    </div>
+    <div class="step reveal d3">
+      <div class="step-num">04</div>
+      <h3>Medición</h3>
+      <p>Reportes claros, métricas de negocio y ajustes continuos para que la inversión mejore con el tiempo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SHEILA STRIP -->
+<div style="display:grid;grid-template-columns:1fr 1fr;min-height:480px;">
+  <div style="overflow:hidden;position:relative;">
+    <img src="img/sheila-trabajando.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+  </div>
+  <div style="background:var(--purple-dk);padding:5rem;display:flex;flex-direction:column;justify-content:center;">
+    <span style="font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--lime);font-weight:600;display:flex;align-items:center;gap:.7rem;margin-bottom:1.5rem;"><span style="width:20px;height:2px;background:var(--lime);display:inline-block;"></span>Quién lo hace</span>
+    <h2 style="font-size:clamp(1.6rem,2.4vw,2.6rem);font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1.1;margin-bottom:1rem;">Sheila Aguilar.<br><em style="color:var(--lime);font-style:italic;font-weight:300;">25 años, sin atajos.</em></h2>
+    <p style="font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.85;font-weight:300;margin-bottom:1.5rem;">Cada servicio lo dirige y supervisa personalmente Sheila. No delega el diagnóstico ni la estrategia. El equipo ejecuta; la visión es siempre suya.</p>
+    <a href="sheila-aguilar.html" style="display:inline-flex;align-items:center;gap:.6rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--lime);text-decoration:none;border-bottom:1px solid rgba(135,178,41,.4);padding-bottom:.15rem;align-self:flex-start;">Conocer a Sheila →</a>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<section class="final" id="contacto">
+  <span class="section-label reveal">Siguiente paso</span>
+  <h2 class="reveal">Empieza con la<br><em>sesión gratuita</em></h2>
+  <p class="reveal">En 40 minutos te mostramos exactamente qué servicios necesitas, en qué orden y qué resultado puedes esperar. Sin compromiso, sin presupuestos genéricos.</p>
+  <div class="final-btns reveal">
+    <a class="btn-lime" href="sesion-gratuita.html">Reservar sesión estratégica →</a>
+    <a class="btn-ghost" href="sheila-aguilar.html">¿Quién es Sheila Aguilar?</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Los Martes No Hay Luna</span>
+  <div class="footer-links">
+    <a href="#">Aviso Legal</a>
+    <a href="#">Privacidad</a>
+    <a href="#">Cookies</a>
+    <a href="/cdn-cgi/l/email-protection#325a5d5e53725e5d415f53404657415c5d5a534b5e475c531c515d5f"><span class="__cf_email__" data-cfemail="9af2f5f6fbdaf6f5e9f7fbe8eeffe9f4f5f2fbe3f6eff4fbb4f9f5f7">[email&#160;protected]</span></a>
+    <a href="tel:34919997726">91 999 77 26</a>
+  </div>
+  <p class="footer-copy">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObse

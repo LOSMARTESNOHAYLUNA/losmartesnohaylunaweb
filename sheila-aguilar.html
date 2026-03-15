@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sheila Aguilar — Los Martes No Hay Luna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --purple:    #4a2e69;
+  --purple-lt: #5d4080;
+  --purple-dk: #2e1b42;
+  --lime:      #8fc21d;
+  --lime-lt:   #a8d932;
+  --pink:      #e72078;
+  --slate:     #2a1f38;
+  --off-white: #f8f6f2;
+  --light:     #f0ecf7;
+  --mid:       #7a6f85;
+  --rule:      rgba(74,46,105,.12);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--off-white);
+  color: var(--slate);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NAV ──────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 5rem;
+  background: rgba(248,246,242,.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo {
+  font-size: .78rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--purple); text-decoration: none;
+}
+.nav-cta {
+  font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+  font-weight: 600; padding: .6rem 1.8rem;
+  background: var(--purple); color: #fff;
+  text-decoration: none; transition: background .2s;
+}
+.nav-cta:hover { background: var(--purple-lt); }
+
+/* ── HERO ─────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  padding-top: 72px;
+}
+
+/* LEFT — full-bleed photo */
+.hero-photo {
+  position: relative; overflow: hidden;
+  background: var(--purple-dk);
+  min-height: 600px;
+}
+.hero-photo .ph {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1rem; color: rgba(255,255,255,.3);
+}
+.hero-photo .ph svg { width: 56px; height: 56px; opacity: .35; }
+.hero-photo .ph span { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; }
+
+/* Lime vertical rule on right edge of photo */
+.hero-photo::after {
+  content: ''; position: absolute; top: 15%; bottom: 15%;
+  right: 0; width: 4px; background: var(--lime);
+}
+
+/* Floating name tag over photo */
+.hero-photo-tag {
+  position: absolute; bottom: 3rem; left: 3rem;
+  background: var(--lime); padding: 1rem 1.8rem;
+  z-index: 2;
+}
+.hero-photo-tag .ht-name {
+  font-size: 1.3rem; font-weight: 800; color: var(--slate);
+  letter-spacing: -.02em; line-height: 1.1;
+}
+.hero-photo-tag .ht-title {
+  font-size: .65rem; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--slate); opacity: .7; margin-top: .2rem;
+}
+
+/* RIGHT — copy */
+.hero-copy {
+  background: var(--off-white);
+  padding: 6rem 5rem 6rem 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.eyebrow {
+  display: inline-flex; align-items: center; gap: .7rem;
+  font-size: .65rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--lime); font-weight: 600; margin-bottom: 2rem;
+}
+.eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--lime); }
+
+.hero-h1 {
+  font-size: clamp(2.2rem, 3vw, 3.4rem); font-weight: 800;
+  color: var(--purple); letter-spacing: -.03em; line-height: 1.1;
+  margin-bottom: .8rem;
+}
+.hero-h1 em { font-weight: 300; font-style: italic; color: var(--mid); }
+.hero-tagline {
+  font-size: 1rem; font-weight: 500; color: var(--slate); opacity: .65;
+  margin-bottom: 2rem; line-height: 1.6;
+  border-left: 3px solid var(--lime); padding-left: 1.2rem;
+}
+.hero-intro {
+  font-size: .88rem; color: var(--mid); line-height: 1.85;
+  margin-bottom: 2.8rem; max-width: 400px; font-weight: 300;
+}
+
+.stats-row {
+  display: flex; gap: 2.4rem; margin-bottom: 2.8rem;
+  padding: 1.6rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+}
+.stat-num {
+  font-size: 2rem; font-weight: 800; color: var(--purple); letter-spacing: -.04em;
+  line-height: 1;
+}
+.stat-num span { color: var(--lime); }
+.stat-label { font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; color: var(--mid); margin-top: .3rem; }
+
+.btn-purple {
+  display: inline-block; align-self: flex-start;
+  padding: .9rem 2.4rem; background: var(--purple); color: #fff;
+  font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 600; text-decoration: none; transition: background .2s;
+}
+.btn-purple:hover { background: var(--purple-lt); }
+
+/* ── WHAT SHE DOES ────────────────────────────────── */
+.what {
+  display: grid; grid-template-columns: 1fr 1fr;
+  background: var(--purple);
+}
+.what-copy {
+  padding: 6rem 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.what-copy .eyebrow { color: var(--lime); }
+.what-h2 {
+  font-size: clamp(2rem, 2.6vw, 2.8rem); font-weight: 800; color: #fff;
+  letter-spacing: -.03em; line-height: 1.12; margin-bottom: 1.4rem;
+}
+.what-h2 em { color: var(--lime); font-style: italic; font-weight: 300; }
+.what-text {
+  font-size: .88rem; color: rgba(255,255,255,.55); line-height: 1.85;
+  font-weight: 300; margin-bottom: 2.5rem;
+}
+.pillars { display: flex; flex-direction: column; gap: 1.4rem; }
+.pillar {
+  display: flex; gap: 1.4rem; align-items: flex-start;
+  padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.pillar:last-child { border-bottom: none; padding-bottom: 0; }
+.pillar-num {
+  font-size: .65rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--lime); font-weight: 700; flex-shrink: 0; width: 24px; margin-top: .15rem;
+}
+.pillar-title { font-size: .9rem; font-weight: 600; color: #fff; margin-bottom: .3rem; }
+.pillar-text { font-size: .8rem; color: rgba(255,255,255,.42); line-height: 1.7; font-weight: 300; }
+
+/* RIGHT — photo */
+.what-photo {
+  background: var(--purple-lt); position: relative; overflow: hidden;
+  min-height: 500px;
+}
+.what-photo .ph {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: .8rem; color: rgba(255,255,255,.3);
+}
+.what-photo .ph svg { width: 44px; height: 44px; opacity: .35; }
+.what-photo .ph span { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; }
+/* Decorative element */
+.what-photo::before {
+  content: ''; position: absolute; top: 2rem; right: 2rem;
+  width: 100px; height: 100px; border: 2px solid rgba(143,194,29,.25);
+  pointer-events: none;
+}
+
+/* ── QUOTE / PULL QUOTE ───────────────────────────── */
+.pullquote {
+  padding: 6rem 5rem; background: var(--light);
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.pq-mark {
+  font-size: 6rem; line-height: .7; color: var(--lime); font-weight: 800;
+  margin-bottom: 1.5rem; opacity: .6;
+}
+.pq-text {
+  font-size: clamp(1.4rem, 2.2vw, 2rem); font-weight: 300; font-style: italic;
+  color: var(--purple); max-width: 780px; line-height: 1.5; letter-spacing: -.01em;
+  margin-bottom: 1.5rem;
+}
+.pq-text strong { font-weight: 800; font-style: normal; }
+.pq-attr {
+  font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--mid);
+}
+
+/* ── VALUES ───────────────────────────────────────── */
+.values { padding: 7rem 5rem; background: var(--off-white); }
+.values-hd { margin-bottom: 4rem; }
+.values-hd .eyebrow { margin-bottom: 1rem; }
+.values-hd h2 {
+  font-size: clamp(1.8rem, 2.4vw, 2.6rem); font-weight: 800; color: var(--purple);
+  letter-spacing: -.03em; max-width: 500px; line-height: 1.15;
+}
+.val-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.val-card {
+  padding: 2.8rem 2.2rem; border-top: 3px solid transparent;
+  background: var(--light); transition: border-color .25s, transform .25s;
+  cursor: default;
+}
+.val-card:hover { border-color: var(--lime); transform: translateY(-4px); }
+.val-icon {
+  width: 40px; height: 40px; background: var(--purple);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.val-icon svg { width: 20px; height: 20px; stroke: var(--lime); fill: none; stroke-width: 1.5; }
+.val-title { font-size: .92rem; font-weight: 700; color: var(--purple); margin-bottom: .3rem; letter-spacing: -.01em; }
+.val-sub { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: var(--lime); margin-bottom: .9rem; }
+.val-text { font-size: .82rem; color: var(--mid); line-height: 1.8; font-weight: 300; }
+
+/* ── DIFFERENTIALS TABLE ──────────────────────────── */
+.diff { padding: 7rem 5rem; background: var(--slate); }
+.diff-hd { margin-bottom: 3.5rem; }
+.diff-hd .eyebrow { color: var(--lime); margin-bottom: 1rem; }
+.diff-hd h2 {
+  font-size: clamp(1.8rem, 2.4vw, 2.6rem); font-weight: 800; color: #fff;
+  letter-spacing: -.03em; line-height: 1.15;
+}
+.diff-table { width: 100%; border-collapse: collapse; }
+.diff-table th {
+  font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600;
+  padding: 1rem 1.5rem; text-align: center; color: rgba(255,255,255,.35);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.diff-table th:first-child { text-align: left; }
+.diff-table td {
+  padding: 1rem 1.5rem; font-size: .84rem; font-weight: 300;
+  border-bottom: 1px solid rgba(255,255,255,.05); text-align: center;
+  color: rgba(255,255,255,.5);
+}
+.diff-table td:first-child { text-align: left; color: rgba(255,255,255,.75); font-weight: 400; }
+.diff-table tr:last-child td { border-bottom: none; }
+/* LMNHL column highlight */
+.diff-table th.hl { color: var(--lime); background: rgba(143,194,29,.06); }
+.diff-table td.hl {
+  color: var(--lime) !important; font-weight: 600;
+  background: rgba(143,194,29,.04);
+}
+.check { color: var(--lime); font-size: 1rem; }
+.cross { color: rgba(255,255,255,.2); font-size: .9rem; }
+.partial { color: rgba(255,194,0,.5); font-size: .9rem; }
+
+/* ── MISSION BLOCK ────────────────────────────────── */
+.mission {
+  display: grid; grid-template-columns: 1fr 1fr;
+}
+.mission-photo {
+  background: var(--light); position: relative; overflow: hidden; min-height: 480px;
+}
+.mission-photo .ph {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: .8rem; color: var(--mid);
+}
+.mission-photo .ph svg { width: 40px; height: 40px; opacity: .3; }
+.mission-photo .ph span { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
+.mission-copy {
+  background: var(--lime); padding: 6rem 5rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.mission-eyebrow {
+  display: inline-flex; align-items: center; gap: .7rem;
+  font-size: .65rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--slate); opacity: .6; font-weight: 600; margin-bottom: 1.5rem;
+}
+.mission-eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--slate); opacity: .4; }
+.mission-h2 {
+  font-size: clamp(2rem, 2.6vw, 2.6rem); font-weight: 800; color: var(--slate);
+  letter-spacing: -.03em; line-height: 1.15; margin-bottom: 1.4rem;
+}
+.mission-text { font-size: .88rem; color: var(--slate); opacity: .65; line-height: 1.85; font-weight: 300; margin-bottom: 2rem; }
+.mission-promise {
+  border-top: 2px solid rgba(42,31,56,.2); padding-top: 1.6rem;
+  font-size: .92rem; font-weight: 600; color: var(--slate); font-style: italic; line-height: 1.5;
+}
+
+/* ── IDEAL CLIENT ─────────────────────────────────── */
+.client { padding: 7rem 5rem; background: var(--light); }
+.client-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.client-hd .eyebrow { margin-bottom: 1rem; }
+.client-hd h2 {
+  font-size: clamp(1.8rem, 2.4vw, 2.6rem); font-weight: 800;
+  color: var(--purple); letter-spacing: -.03em; line-height: 1.15; margin-bottom: 1.5rem;
+}
+.client-hd p { font-size: .88rem; color: var(--mid); line-height: 1.85; font-weight: 300; margin-bottom: 2rem; }
+.client-quote {
+  background: var(--purple); padding: 2rem 2.2rem;
+  border-left: 4px solid var(--lime);
+}
+.client-quote p { font-size: .92rem; font-style: italic; color: #fff; font-weight: 300; line-height: 1.7; }
+.client-quote cite { display: block; font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--lime); margin-top: .8rem; font-style: normal; }
+.client-features { display: flex; flex-direction: column; gap: 1.2rem; }
+.cf-item {
+  display: flex; gap: 1.2rem; align-items: flex-start;
+  padding: 1.4rem; background: #fff;
+  border-left: 3px solid transparent; transition: border-color .2s;
+}
+.cf-item:hover { border-color: var(--lime); }
+.cf-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--lime); flex-shrink: 0; margin-top: .5rem;
+}
+.cf-title { font-size: .85rem; font-weight: 600; color: var(--purple); margin-bottom: .2rem; }
+.cf-text { font-size: .78rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
+
+/* ── PHOTO STRIP ──────────────────────────────────── */
+.photo-strip { display: grid; grid-template-columns: 2fr 1fr 1fr; height: 400px; }
+.ps-item {
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: .7rem;
+}
+.ps-item:nth-child(1) { background: var(--purple-dk); }
+.ps-item:nth-child(2) { background: var(--purple); }
+.ps-item:nth-child(3) { background: var(--purple-lt); }
+.ps-item svg { width: 36px; height: 36px; opacity: .25; stroke: #fff; fill: none; stroke-width: 1.5; }
+.ps-item span { font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.3); }
+.ps-item .ps-label {
+  position: absolute; bottom: 1.5rem; left: 1.5rem;
+  font-size: .6rem; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(255,255,255,.4); border-bottom: 1px solid rgba(255,255,255,.15); padding-bottom: .4rem;
+}
+
+/* ── CTA FINAL ────────────────────────────────────── */
+.final {
+  background: var(--purple); padding: 9rem 5rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+  position: relative; overflow: hidden;
+}
+.final::before {
+  content: ''; position: absolute; top: -100px; right: -100px;
+  width: 500px; height: 500px; border-radius: 50%;
+  border: 80px solid rgba(143,194,29,.06); pointer-events: none;
+}
+.final-left .eyebrow { color: var(--lime); margin-bottom: 1.5rem; }
+.final-h2 {
+  font-size: clamp(2.2rem, 3vw, 3.2rem); font-weight: 800; color: #fff;
+  letter-spacing: -.03em; line-height: 1.1; margin-bottom: 1.4rem;
+}
+.final-h2 em { color: var(--lime); font-style: italic; font-weight: 300; }
+.final-text { font-size: .88rem; color: rgba(255,255,255,.45); line-height: 1.85; font-weight: 300; margin-bottom: 2.5rem; }
+.final-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-lime {
+  display: inline-block; padding: .9rem 2.4rem; background: var(--lime); color: var(--slate);
+  font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 700; text-decoration: none; transition: background .2s;
+}
+.btn-lime:hover { background: var(--lime-lt); }
+.btn-ghost {
+  display: inline-block; padding: .9rem 2.4rem;
+  border: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.6);
+  font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 500; text-decoration: none; transition: border-color .2s, color .2s;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,.5); color: #fff; }
+
+/* Final right — contact card */
+.final-card {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+  padding: 3rem;
+}
+.fc-label { font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: var(--lime); margin-bottom: 2rem; }
+.fc-item {
+  display: flex; flex-direction: column; gap: .2rem;
+  padding: 1.2rem 0; border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.fc-item:last-child { border-bottom: none; }
+.fc-key { font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.3); }
+.fc-val { font-size: .9rem; color: #fff; font-weight: 400; }
+.fc-val a { color: #fff; text-decoration: none; }
+.fc-val a:hover { color: var(--lime); }
+
+/* ── FOOTER ───────────────────────────────────────── */
+footer {
+  background: var(--slate); padding: 2.5rem 5rem;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+}
+.footer-logo { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #fff; }
+.footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+.footer-links a {
+  font-size: .65rem; letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(255,255,255,.3); text-decoration: none; transition: color .2s;
+}
+.footer-links a:hover { color: var(--lime); }
+.footer-copy { font-size: .65rem; color: rgba(255,255,255,.2); width: 100%; }
+
+/* ── REVEAL ───────────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: .1s; }
+.delay-2 { transition-delay: .2s; }
+.delay-3 { transition-delay: .3s; }
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .hero, .what, .mission, .client-grid, .final { grid-template-columns: 1fr; }
+  .hero-copy, .what-copy, .mission-copy, .final-left { padding: 4rem 1.8rem; }
+  .final { padding: 5rem 1.8rem; }
+  .hero-photo, .what-photo, .mission-photo { min-height: 260px; }
+  .values, .diff, .client, .pullquote { padding: 5rem 1.8rem; }
+  .val-grid { grid-template-columns: 1fr; }
+  .photo-strip { grid-template-columns: 1fr; height: auto; }
+  .ps-item { height: 200px; }
+  footer { padding: 2rem 1.8rem; }
+  .diff-table th, .diff-table td { padding: .7rem .8rem; font-size: .72rem; }
+  .stats-row { gap: 1.4rem; flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">Los Martes No Hay Luna</a>
+  <ul class="nav-links">
+    <li><a href="servicios-agencia.html">Servicios</a></li>
+    <li><a href="ia-para-empresas.html">IA para Empresas</a></li>
+    <li><a href="sheila-aguilar.html" class="active">Sheila Aguilar</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+  <a class="nav-cta" href="sesion-gratuita.html">Sesión gratuita</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- Foto Sheila -->
+  <div class="hero-photo" style="background:#f0eaf8;">
+    <img src="img/sheila-standing.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <div class="hero-photo-tag">
+      <div class="ht-name">Sheila<br>Aguilar</div>
+      <div class="ht-title">Fundadora · Los Martes No Hay Luna</div>
+    </div>
+  </div>
+
+  <!-- Copy -->
+  <div class="hero-copy">
+    <span class="eyebrow reveal">Quién soy</span>
+    <h1 class="hero-h1 reveal">La consultora que une<br><em>estrategia, marca e IA</em></h1>
+    <p class="hero-tagline reveal">25 años haciendo que el marketing tenga sentido de verdad.</p>
+    <p class="hero-intro reveal">Soy Sheila Aguilar, fundadora de Los Martes No Hay Luna. Mi trabajo es ayudar a empresas a transformar sus ineficiencias invisibles en ventaja competitiva — con IA, con identidad y con resultados medibles.</p>
+
+    <div class="stats-row reveal">
+      <div>
+        <div class="stat-num">25<span>+</span></div>
+        <div class="stat-label">Años de experiencia</div>
+      </div>
+      <div>
+        <div class="stat-num">3<span>×</span></div>
+        <div class="stat-label">Disciplinas unificadas</div>
+      </div>
+      <div>
+        <div class="stat-num">1</div>
+        <div class="stat-label">Consultora así en el mercado</div>
+      </div>
+    </div>
+
+    <a class="btn-purple reveal" href="#contacto">Hablemos →</a>
+  </div>
+</section>
+
+<!-- WHAT SHE DOES -->
+<section class="what">
+  <div class="what-copy reveal">
+    <span class="eyebrow">Lo que hago</span>
+    <h2 class="what-h2">La combinación única<br><em>que no existe en otro proveedor</em></h2>
+    <p class="what-text">Las agencias creativas no saben de IA. Los técnicos de IA no saben de marca. Los consultores de marketing no dominan la automatización real. Yo soy los tres, con visión de negocio encima.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div>
+          <div class="pillar-title">Diagnóstico antes de recetar</div>
+          <p class="pillar-text">Soy el médico, no la farmacia. Antes de proponer nada, analizo tu negocio con metodología propia. El cliente no paga por herramientas: paga por saber exactamente qué está fallando y cómo arreglarlo.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div>
+          <div class="pillar-title">25 años de imagen + marketing + IA</div>
+          <p class="pillar-text">Esta combinación no existe en ningún otro proveedor del mercado. No es un pitch — es la realidad de mi trayectoria y lo que hace que mi trabajo sea diferente.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div>
+          <div class="pillar-title">Lenguaje de negocio, no de tecnología</div>
+          <p class="pillar-text">Hablo el idioma del director general, no del técnico. Cada recomendación viene con su impacto en horas recuperadas, costes evitados y ROI estimado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Foto oficina / trabajo -->
+  <div class="what-photo" style="background:#f0eaf8;">
+    <img src="img/sheila-trabajando.png" alt="Sheila Aguilar trabajando" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<div class="pullquote">
+  <div class="pq-mark reveal">"</div>
+  <p class="pq-text reveal">Ayudo a empresas a transformar sus <strong>ineficiencias invisibles</strong> en ventaja competitiva — con IA, con identidad y con resultados medibles.</p>
+  <span class="pq-attr reveal">Sheila Aguilar · Fundadora, Los Martes No Hay Luna</span>
+</div>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="values-hd reveal">
+    <span class="eyebrow">Valores</span>
+    <h2>Cómo trabajo y por qué mis clientes confían en mí</h2>
+  </div>
+  <div class="val-grid">
+    <div class="val-card reveal">
+      <div class="val-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div class="val-title">Vínculos Reales</div>
+      <div class="val-sub">No estás solo, estamos contigo</div>
+      <p class="val-text">Creemos en relaciones donde el vínculo importa tanto como los resultados. No somos proveedores: nos implicamos como parte del equipo. No buscamos clientes puntuales, sino relaciones duraderas.</p>
+    </div>
+    <div class="val-card reveal delay-1">
+      <div class="val-icon">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      </div>
+      <div class="val-title">Parte de tu ADN</div>
+      <div class="val-sub">Tu negocio como si fuera el nuestro</div>
+      <p class="val-text">Nos implicamos con criterio, responsabilidad y visión de conjunto. Analizamos, afinamos y proponemos con lógica y propósito. Si algo no funciona, lo ajustamos.</p>
+    </div>
+    <div class="val-card reveal delay-2">
+      <div class="val-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <div class="val-title">Claridad Estratégica</div>
+      <div class="val-sub">Cada acción tiene un porqué</div>
+      <p class="val-text">Nuestros clientes llegan cansados de improvisar y agradecen encontrar una estrategia pensada, lógica y alineada con su realidad. La claridad también es una forma de respeto.</p>
+    </div>
+    <div class="val-card reveal">
+      <div class="val-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M6 6h4v4H6zM14 6h4v4h-4zM6 14h4v4H6zM14 14h4v4h-4z"/></svg>
+      </div>
+      <div class="val-title">Jaque a la Reina</div>
+      <div class="val-sub">La estrategia manda</div>
+      <p class="val-text">Cada acción parte de un análisis real. Tomamos decisiones con datos, contexto y visión a largo plazo. No improvisamos: trazamos planes con lógica y propósito.</p>
+    </div>
+    <div class="val-card reveal delay-1">
+      <div class="val-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="val-title">Cuidado Activo</div>
+      <div class="val-sub">Cuando se nos necesita de verdad</div>
+      <p class="val-text">Nos implicamos con empatía real. Escuchamos, acompañamos y actuamos para que el cliente nunca se sienta solo en su crecimiento.</p>
+    </div>
+    <div class="val-card reveal delay-2">
+      <div class="val-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/><line x1="20" y1="8" x2="20" y2="14"/></svg>
+      </div>
+      <div class="val-title">Cómplices para Ganar</div>
+      <div class="val-sub">Del mismo lado del negocio</div>
+      <p class="val-text">Trabajamos como parte del equipo del cliente. Hay confianza, lealtad y responsabilidad compartida. No somos externos, somos aliados.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIALS -->
+<section class="diff">
+  <div class="diff-hd reveal">
+    <span class="eyebrow">Diferencial competitivo</span>
+    <h2>Lo que LMNHL hace<br>que ningún otro puede hacer</h2>
+  </div>
+  <div class="reveal" style="overflow-x:auto">
+    <table class="diff-table">
+      <thead>
+        <tr>
+          <th>Proveedor</th>
+          <th>Imagen / Marca</th>
+          <th>Mkt Digital</th>
+          <th>IA Aplicada</th>
+          <th class="hl">🌑 LMNHL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Consultor IA puro</td>
+          <td><span class="cross">✕</span></td>
+          <td><span class="cross">✕</span></td>
+          <td><span class="check">✓</span></td>
+          <td class="hl"><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Agencia de branding</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="partial">~</span></td>
+          <td><span class="cross">✕</span></td>
+          <td class="hl"><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Agencia marketing digital</td>
+          <td><span class="cross">✕</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="partial">~</span></td>
+          <td class="hl"><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Consultora tecnológica grande</td>
+          <td><span class="cross">✕</span></td>
+          <td><span class="cross">✕</span></td>
+          <td><span class="check">✓</span></td>
+          <td class="hl"><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td style="color:#fff;font-weight:600;">🌑 Los Martes No Hay Luna</td>
+          <td class="hl" style="font-size:.75rem;font-weight:500;">25 años</td>
+          <td class="hl" style="font-size:.75rem;font-weight:500;">Estratégico</td>
+          <td class="hl" style="font-size:.75rem;font-weight:500;">Completo</td>
+          <td class="hl" style="font-size:.8rem;font-weight:700;color:var(--lime);">Siempre ✓</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission">
+  <!-- Foto Sheila hablando / presentando -->
+  <div class="mission-photo" style="background:#f0eaf8;">
+    <img src="img/sheila-estrategia.png" alt="Sheila Aguilar en sesión" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+  </div>
+  <div class="mission-copy reveal">
+    <span class="mission-eyebrow">Misión</span>
+    <h2 class="mission-h2">Hacer que el marketing tenga sentido</h2>
+    <p class="mission-text">Existimos para que las empresas dejen de improvisar y empiecen a crecer con estructura. Nuestro trabajo no es vender campañas ni herramientas: es diseñar estrategias que conecten con la realidad de cada negocio, aporten claridad y generen resultados sostenibles.</p>
+    <p class="mission-text">Nos involucramos como socios, no como ejecutores externos. Escuchamos, analizamos y trazamos planes hechos a medida, priorizando siempre la rentabilidad y el control para quienes deciden.</p>
+    <p class="mission-promise">"Transformamos la relación que tienen las empresas con el marketing y la IA: de frustración a entendimiento, de caos a estructura, de gasto a inversión."</p>
+  </div>
+</section>
+
+<!-- IDEAL CLIENT -->
+<section class="client">
+  <div class="client-grid">
+    <div class="client-hd">
+      <span class="eyebrow reveal">Cliente ideal</span>
+      <h2 class="reveal">¿Reconoces esto en tu empresa?</h2>
+      <p class="reveal">Nuestro cliente objetivo es la empresa que lleva tiempo funcionando bien... pero que empieza a notar que el mercado se mueve más rápido que ella. Tienen procesos, tienen equipo — pero esos procesos ya no son competitivos.</p>
+      <div class="client-quote reveal">
+        <p>"Que mi negocio funcione bien aunque yo no esté mirando."</p>
+        <cite>La frase que define al cliente perfecto de LMNHL</cite>
+      </div>
+    </div>
+    <div class="client-features">
+      <div class="cf-item reveal">
+        <div class="cf-dot"></div>
+        <div>
+          <div class="cf-title">Has tocado techo con el modelo actual</div>
+          <p class="cf-text">Has crecido con esfuerzo, pero sientes que las estrategias de marketing y tecnología que has probado no dan el resultado que buscas.</p>
+        </div>
+      </div>
+      <div class="cf-item reveal">
+        <div class="cf-dot"></div>
+        <div>
+          <div class="cf-title">Quieres claridad, no más herramientas</div>
+          <p class="cf-text">No quieres seguir improvisando. Valoras la calidad, la claridad y el acompañamiento real. Buscas un socio que se implique de verdad.</p>
+        </div>
+      </div>
+      <div class="cf-item reveal">
+        <div class="cf-dot"></div>
+        <div>
+          <div class="cf-title">Procesos que sangran dinero sin que nadie lo detecte</div>
+          <p class="cf-text">Correos no leídos, presupuestos mal enviados, operaciones manuales que podrían automatizarse. Sabes que está pasando. Necesitas quien lo identifique.</p>
+        </div>
+      </div>
+      <div class="cf-item reveal">
+        <div class="cf-dot"></div>
+        <div>
+          <div class="cf-title">Quieres delegar con confianza</div>
+          <p class="cf-text">Quieres que haya un sistema detrás. Crecer con estructura, no con parches. Que tu negocio funcione sin que tengas que estar al pie del cañón.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+  <div class="ps-item" style="padding:0;overflow:hidden;">
+    <img src="img/sheila-hero.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+  </div>
+  <div class="ps-item" style="padding:0;overflow:hidden;">
+    <img src="img/sheila-diagnostico.png" alt="Sheila Aguilar — diagnóstico" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+  </div>
+  <div class="ps-item" style="padding:0;overflow:hidden;">
+    <img src="img/sheila-consultoria.png" alt="Sheila Aguilar — consultoría" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<section class="final" id="contacto">
+  <div class="final-left">
+    <span class="eyebrow reveal">¿Trabajamos juntos?</span>
+    <h2 class="final-h2 reveal">Tu negocio funciona bien. Con nosotros, <em>funcionará mejor</em>.</h2>
+    <p class="final-text reveal">En 40 minutos descubrirás exactamente dónde está perdiendo dinero tu empresa y cómo recuperarlo. Sin compromiso. Sin jerga técnica. Solo claridad.</p>
+    <div class="final-actions reveal">
+      <a class="btn-lime" href="#">Reservar sesión gratuita →</a>
+      <a class="btn-ghost" href="#">Ver servicios</a>
+    </div>
+  </div>
+  <div class="final-card reveal">
+    <div class="fc-label">Contacto directo</div>
+    <div class="fc-item">
+      <span class="fc-key">Email</span>
+      <span class="fc-val"><a href="/cdn-cgi/l/email-protection#0f6760636e4f63607c626e7d7b6a7c6160676e76637a616e216c6062"><span class="__cf_email__" data-cfemail="751d1a191435191a061814070110061b1a1d140c19001b145b161a18">[email&#160;protected]</span></a></span>
+    </div>
+    <div class="fc-item">
+      <span class="fc-key">Teléfono</span>
+      <span class="fc-val"><a href="tel:34919997726">91 999 77 26</a></span>
+    </div>
+    <div class="fc-item">
+      <span class="fc-key">LinkedIn</span>
+      <span class="fc-val"><a href="#">Sheila Aguilar</a></span>
+    </div>
+    <div class="fc-item">
+      <span class="fc-key">Ubicación</span>
+      <span class="fc-val">Leganés, Madrid</span>
+    </div>
+    <div class="fc-item">
+      <span class="fc-key">Especialidad</span>
+      <span class="fc-val">IA · Marca · Marketing Digital</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Los Martes No Hay Luna</span>
+  <div class="footer-links">
+    <a href="#">Aviso Legal</a>
+    <a href="#">Privacidad</a>
+    <a href="#">Cookies</a>
+  </div>
+  <p class="footer-copy">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObse
