@@ -1,44 +1,75 @@
-# Los Martes No Hay Luna — Web Corporativa
+# Los Martes No Hay Luna — Despliegue en Vercel
 
-Sitio web corporativo de **Los Martes No Hay Luna**, agencia de marketing digital y consultoría con IA. Leganés, Madrid.
+## Estructura del proyecto
 
-## Estructura de páginas
+```
+/
+├── api/
+│   └── chat.js          ← Función serverless (GPT-4o mini)
+├── img/
+│   ├── LMHHL_logo_2026.svg
+│   ├── LMHHL_logo_2026_BLANCO.svg
+│   ├── sheila-hero.png
+│   ├── sheila-about.png
+│   ├── sheila-standing.png
+│   ├── sheila-trabajando.png
+│   ├── sheila-estrategia.png
+│   ├── sheila-ia.png
+│   ├── sheila-consultoria.png
+│   └── sheila-diagnostico.png
+├── index.html
+├── servicios-agencia.html
+├── ia-para-empresas.html
+├── sheila-aguilar.html
+├── blog.html
+├── contacto.html
+├── sesion-gratuita.html
+├── consultoria-estrategica.html
+├── gracias.html
+├── widget-consultora.js
+└── vercel.json
+```
 
-| Archivo | Descripción | En menú |
-|---|---|---|
-| `index.html` | Home principal | ✅ |
-| `servicios-agencia.html` | Servicios de agencia | ✅ Servicios |
-| `ia-para-empresas.html` | IA para empresas | ✅ IA para Empresas |
-| `sheila-aguilar.html` | Quién es Sheila Aguilar | ✅ Sheila Aguilar |
-| `blog.html` | Blog | ✅ Blog |
-| `contacto.html` | Contacto | ✅ Contacto |
-| `sesion-gratuita.html` | Landing sesión gratuita (CTA nav) | CTA nav |
-| `consultoria-estrategica.html` | Consultoría estratégica con IA (página interna, no indexada) | ❌ |
+## Pasos para desplegar
 
-## Tecnología
+### 1. Crear el proyecto en Vercel
 
-- HTML5 + CSS3 + Vanilla JS
-- Fuente: [Poppins](https://fonts.google.com/specimen/Poppins) (Google Fonts)
-- Sin dependencias ni frameworks externos
-- Diseño responsive (mobile-first)
+1. Ve a [vercel.com](https://vercel.com) y crea una cuenta (gratis)
+2. Haz clic en **"Add New Project"**
+3. Elige **"Import Git Repository"** o **"Upload"** si subes directo
+4. Si usas GitHub: conecta tu repositorio `losmartesnohaylunaweb`
 
-## Paleta de colores
+### 2. Añadir la variable de entorno (API key de OpenAI)
 
-| Variable | Hex | Uso |
-|---|---|---|
-| `--purple` | `#582D81` | Color principal |
-| `--lime` | `#87B229` | Acento / CTAs secundarios |
-| `--pink` | `#e72078` | CTAs principales |
-| `--slate` | `#2a1f38` | Texto |
+**MUY IMPORTANTE — nunca pegues la key en el código**
 
-## Despliegue en GitHub Pages
+1. En tu proyecto Vercel ve a **Settings → Environment Variables**
+2. Añade:
+   - **Name:** `OPENAI_API_KEY`
+   - **Value:** `sk-...` (tu API key de OpenAI)
+   - **Environment:** Production, Preview, Development (marca los tres)
+3. Haz clic en **Save**
 
-1. Ve a **Settings → Pages** en el repositorio
-2. En **Source**, selecciona la rama `main` y la carpeta `/ (root)`
-3. Guarda. En unos minutos la web estará disponible en `https://<usuario>.github.io/<repo>/`
+### 3. Desplegar
 
-## Contacto
+Si conectaste GitHub: cada push a `main` redespliega automáticamente.
+Si subes manual: arrastra la carpeta del proyecto a Vercel.
 
-- **Email:** hola@losmartesnohayluna.com
-- **Teléfono:** 91 999 77 26
-- **Web:** [losmartesnohayluna.com](https://losmartesnohayluna.com)
+### 4. (Opcional) Conectar tu dominio
+
+1. Ve a **Settings → Domains**
+2. Añade `losmartesnohayluna.com`
+3. Vercel te da las instrucciones DNS para apuntar tu dominio
+
+## Funcionamiento del widget
+
+- El visitante ve un botón flotante en la esquina inferior derecha
+- Al hacer clic, se abre un chat con la imagen de Sheila
+- Las preguntas y respuestas van a `/api/chat` (función serverless)
+- La función llama a OpenAI GPT-4o mini con tu API key (guardada en Vercel, nunca expuesta)
+- Después de 3 respuestas, aparece un CTA para reservar sesión gratuita
+
+## Costes estimados
+
+- **Vercel:** Gratis (plan Hobby) para este uso
+- **OpenAI GPT-4o mini:** ~0,0002€ por mensaje. Con 100 conversaciones/mes de 6 mensajes cada una = ~0,12€/mes
