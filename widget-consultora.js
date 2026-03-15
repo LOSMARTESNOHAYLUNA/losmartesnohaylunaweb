@@ -221,13 +221,18 @@
   function esc(t) { return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>'); }
 
   function renderBot(t) {
-    let s = t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
-    // URLs con sesion-gratuita → botón limpio
-    s = s.replace(/(https?:\/\/[^\s<&]+sesion-gratuita[^\s<&]*)/g,
-      '<a href="$1" target="_blank" style="display:inline-block;margin-top:.3rem;background:#87B229;color:#2a1f38;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.4rem .9rem;text-decoration:none;">Reservar sesión gratuita →</a>');
-    // Resto de URLs → enlace simple
-    s = s.replace(/(https?:\/\/[^\s<&]+)/g,
-      '<a href="$1" target="_blank" style="color:#87B229;text-decoration:underline;">$1</a>');
+    // Primero escapamos caracteres peligrosos
+    let s = t
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;')
+      .replace(/\n/g,'<br>');
+    // URL de sesion-gratuita → botón verde clicable
+    s = s.replace(/(https?:\/\/\S*sesion-gratuita\S*)/g,
+      '<a href="$1" target="_blank" style="display:inline-block;margin-top:.5rem;background:#87B229;color:#2a1f38;font-family:Poppins,sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.45rem 1rem;text-decoration:none;border-radius:0;">Reservar sesión gratuita →</a>');
+    // Otras URLs → enlace simple verde
+    s = s.replace(/(https?:\/\/\S+)/g,
+      '<a href="$1" target="_blank" style="color:#87B229;text-decoration:underline;word-break:break-all;">$1</a>');
     return s;
   }
 
