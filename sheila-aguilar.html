@@ -1255,7 +1255,7 @@ footer .footer-copy {
     <div class="fc-label">Contacto directo</div>
     <div class="fc-item">
       <span class="fc-key">Email</span>
-      <span class="fc-val"><a href="/cdn-cgi/l/email-protection#b1d9deddd0f1dddec2dcd0c3c5d4c2dfded9d0c8ddc4dfd09fd2dedc"><span class="__cf_email__" data-cfemail="cea6a1a2af8ea2a1bda3afbcbaabbda0a1a6afb7a2bba0afe0ada1a3">[email&#160;protected]</span></a></span>
+      <span class="fc-val"><a href="mailto:hola@losmartesnohayluna.com">hola@losmartesnohayluna.com</a></span>
     </div>
     <div class="fc-item">
       <span class="fc-key">Teléfono</span>
@@ -1302,7 +1302,7 @@ footer .footer-copy {
     </div>
     <div>
       <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#87B229;margin-bottom:1rem;">Contacto</div>
-      <a href="mailto:hola@losmartesnohayluna.com" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">hola@losmartesnohayluna.com</a>
+      <a href="mailto:hola@losmartesnohayluna.com">hola@losmartesnohayluna.com</a>
       <a href="tel:34919997726" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">91 999 77 26</a>
       <a href="https://wa.me/34621060659" target="_blank" rel="noopener" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">WhatsApp</a>
       <a href="https://www.google.com/maps/place/Finca+Solimpar+Legan%C3%A9s" target="_blank" rel="noopener" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;font-weight:300;">Leganés, Madrid</a>
@@ -1322,17 +1322,14 @@ footer .footer-copy {
     </div>
   </div>
 </footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Reveal on scroll
+<script>
   const els = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  }, { threshold: 0.08 });
   els.forEach(el => obs.observe(el));
-
-  // Mobile menu
-  function openMobileMenu() {
-    document.g
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
+</script>
 </body>
 </html>
