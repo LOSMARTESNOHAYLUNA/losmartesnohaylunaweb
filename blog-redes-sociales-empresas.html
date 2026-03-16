@@ -618,6 +618,38 @@ footer { background: var(--slate); padding: 4rem 5rem 2rem; }
 @media (max-width: 900px) { footer { padding: 3rem 1.5rem 1.5rem; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
 @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
 
+
+/* ── FOOTER LINK OVERRIDES ─────────────────── */
+footer .footer-col a {
+  color: rgba(255,255,255,.45) !important;
+  text-decoration: none !important;
+  display: block !important;
+  font-size: .82rem !important;
+  margin-bottom: .6rem;
+  transition: color .2s;
+  font-weight: 300;
+}
+footer .footer-col a:hover { color: #fff !important; }
+footer .footer-col-title {
+  font-size: .62rem !important;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--lime) !important;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+footer .footer-brand p { 
+  color: rgba(255,255,255,.4) !important; 
+  font-size: .82rem;
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+footer .footer-copy { 
+  color: rgba(255,255,255,.2) !important; 
+  font-size: .72rem;
+}
+
 </style>
 </head>
 <body>
