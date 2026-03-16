@@ -946,6 +946,7 @@ footer .footer-copy {
   "serviceType": "Marketing Digital"
 }
 </script>
+<script src="/widget-consultora.js" defer></script>
 </head>
 <body>
 
@@ -1404,7 +1405,6 @@ footer .footer-copy {
     </div>
     <div>
       <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#87B229;margin-bottom:1rem;">Contacto</div>
-      <a href="/cdn-cgi/l/email-protection#d9b1b6b5b899b5b6aab4b8abadbcaab7b6b1b8a0b5acb7b8f7bab6b4" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;"><span class="__cf_email__" data-cfemail="b8d0d7d4d9f8d4d7cbd5d9caccddcbd6d7d0d9c1d4cdd6d996dbd7d5">[email&#160;protected]</span></a>
       <a href="tel:34919997726" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">91 999 77 26</a>
       <a href="https://wa.me/34621060659" target="_blank" rel="noopener" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">WhatsApp</a>
       <a href="https://www.google.com/maps/place/Finca+Solimpar+Legan%C3%A9s" target="_blank" rel="noopener" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;font-weight:300;">Leganés, Madrid</a>
@@ -1420,9 +1420,19 @@ footer .footer-copy {
     </div>
     <div style="display:flex;gap:.8rem;">
       <a href="https://www.instagram.com/losmartesnohayluna" target="_blank" rel="noopener" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;">ig</a>
-      <a href="https://www.linkedin.com/company/los-martes-no-hay-luna" target="_blank" rel="noopener" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;">in</a>
+            <a href="https://www.linkedin.com/company/los-martes-no-hay-luna" target="_blank" rel="noopener" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;">in</a>
     </div>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-d
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  els.forEach(el => obs.observe(el));
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
+</script>
+</body>
+</html>
