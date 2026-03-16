@@ -210,6 +210,10 @@
       "destination": "/blog.html"
     },
     {
+      "source": "/blog",
+      "destination": "/blog.html"
+    },
+    {
       "source": "/contacto/",
       "destination": "/contacto.html"
     },
@@ -230,7 +234,15 @@
       "destination": "/consultoria-estrategica.html"
     },
     {
+      "source": "/consultoria-estrategica",
+      "destination": "/consultoria-estrategica.html"
+    },
+    {
       "source": "/aviso-legal/",
+      "destination": "/aviso-legal.html"
+    },
+    {
+      "source": "/aviso-legal",
       "destination": "/aviso-legal.html"
     },
     {
@@ -238,7 +250,15 @@
       "destination": "/privacidad.html"
     },
     {
+      "source": "/privacidad",
+      "destination": "/privacidad.html"
+    },
+    {
       "source": "/cookies/",
+      "destination": "/cookies.html"
+    },
+    {
+      "source": "/cookies",
       "destination": "/cookies.html"
     },
     {
