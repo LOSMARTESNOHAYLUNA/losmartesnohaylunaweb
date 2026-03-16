@@ -277,7 +277,7 @@
       <div class="lmnhl-msg-avatar"><img src="${photoSrc}" alt="SA" onerror="this.parentElement.innerHTML='SA'"></div>
       <div class="lmnhl-cta-box">
         <p>¿Quieres que trabajemos esto en profundidad? Tengo plazas para una sesión gratuita de 40 minutos contigo. Sin compromiso, solo valor.</p>
-        <a class="lmnhl-cta-link" href="sesion-gratuita.html">Reservar sesión gratuita →</a>
+        <a class="lmnhl-cta-link" href="/sesion-gratuita/">Reservar sesión gratuita →</a>
       </div>`;
     msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight;
   }
