@@ -49,6 +49,29 @@ nav {
   display: grid; grid-template-columns: 1fr 1fr;
   padding-top: 72px; position: relative; overflow: hidden;
 }
+/* Video background */
+.hero-video-wrap {
+  position: absolute; inset: 0; z-index: 0;
+  pointer-events: none; overflow: hidden;
+}
+.hero-video-wrap iframe {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 177.78vh; /* 16/9 * 100vh */
+  height: 56.25vw; /* 9/16 * 100vw */
+  min-width: 100%; min-height: 100%;
+  border: none;
+}
+.hero-video-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(58,28,87,.88) 0%,
+    rgba(58,28,87,.75) 50%,
+    rgba(20,10,40,.85) 100%
+  );
+}
 .hero::before {
   content: ''; position: absolute; top: -120px; right: -120px;
   width: 600px; height: 600px; border-radius: 50%;
@@ -500,6 +523,12 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
   input, textarea, select, button { font-size: 16px; }
 }
 
+
+@media (max-width: 768px) {
+  .hero-video-wrap { display: none; }
+  .hero-video-overlay { display: none; }
+}
+
 </style>
 </head>
 <body>
@@ -533,6 +562,16 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
 
 <!-- HERO -->
 <section class="hero">
+  <!-- VIDEO BACKGROUND -->
+  <div class="hero-video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/QGmEY-BQ0Ic?autoplay=1&mute=1&loop=1&playlist=QGmEY-BQ0Ic&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&playsinline=1"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      title="Background video">
+    </iframe>
+  </div>
+  <div class="hero-video-overlay"></div>
   <div class="hero-left">
     <span class="hero-eyebrow">Consultoría de IA para empresas</span>
     <h1>Inteligencia Artificial para Empresas en Madrid: Automatización y Apps a Medida</h1>
@@ -555,35 +594,38 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
   </div>
 
   <div class="hero-right">
-    <div class="counter-card">
-      <div class="cc-label">Coste oculto estimado mensual de una empresa de 10 personas</div>
-      <div class="cc-value">6.200<span>€</span></div>
-      <div class="cc-desc">en tareas manuales que podrían automatizarse. Sin que nadie lo haya detectado.</div>
+    <!-- MEDALLÓN AHORRO -->
+    <div style="background:linear-gradient(135deg,rgba(135,178,41,.15),rgba(135,178,41,.05));border:2px solid var(--lime);padding:2.5rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-20px;right:-20px;width:120px;height:120px;border-radius:50%;background:rgba(135,178,41,.08);pointer-events:none;"></div>
+      <div style="font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--lime);font-weight:700;margin-bottom:1rem;">✦ Tu ahorro potencial mensual</div>
+      <div style="font-size:5rem;font-weight:900;letter-spacing:-.04em;line-height:.9;color:var(--lime);margin-bottom:.3rem;">AHORRO</div>
+      <div style="font-size:2.4rem;font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1;margin-bottom:.8rem;">6.200€</div>
+      <div style="font-size:.82rem;color:rgba(255,255,255,.8);font-weight:300;line-height:1.6;">recuperables cada mes en una empresa de 10 personas.<br><strong style="color:#fff;">¿Cuánto lleva tu empresa perdiendo?</strong></div>
     </div>
     <div class="leak-list">
       <div class="leak-item">
         <span class="li-left">Emails duplicados y seguimientos manuales</span>
-        <span class="li-cost">−1.400€/mes</span>
+        <span class="li-cost" style="color:var(--lime);">+1.400€/mes</span>
       </div>
       <div class="leak-item">
         <span class="li-left">Informes hechos a mano cada semana</span>
-        <span class="li-cost">−980€/mes</span>
+        <span class="li-cost" style="color:var(--lime);">+980€/mes</span>
       </div>
       <div class="leak-item">
         <span class="li-left">Presupuestos y propuestas sin plantilla</span>
-        <span class="li-cost">−1.100€/mes</span>
+        <span class="li-cost" style="color:var(--lime);">+1.100€/mes</span>
       </div>
       <div class="leak-item">
         <span class="li-left">Onboarding de clientes sin protocolo</span>
-        <span class="li-cost">−860€/mes</span>
+        <span class="li-cost" style="color:var(--lime);">+860€/mes</span>
       </div>
       <div class="leak-item">
         <span class="li-left">Atención al cliente sin base de conocimiento</span>
-        <span class="li-cost">−1.260€/mes</span>
+        <span class="li-cost" style="color:var(--lime);">+1.260€/mes</span>
       </div>
       <div class="leak-item">
         <span class="li-left">Gestión documental sin automatizar</span>
-        <span class="li-cost">−600€/mes</span>
+        <span class="li-cost" style="color:var(--lime);">+600€/mes</span>
       </div>
     </div>
   </div>
@@ -1147,13 +1189,13 @@ footer { background: var(--slate); padding: 2.5rem 5rem; display: flex; align-it
     <a href="#">Aviso Legal</a>
     <a href="#">Privacidad</a>
     <a href="#">Cookies</a>
-    <a href="/cdn-cgi/l/email-protection#274f484b46674b48544a465553425449484f465e4b5249460944484a"><span class="__cf_email__" data-cfemail="046c6b686544686b776965767061776a6b6c657d68716a652a676b69">[email&#160;protected]</span></a>
+    <a href="/cdn-cgi/l/email-protection#452d2a292405292a362824373120362b2a2d243c29302b246b262a28"><span class="__cf_email__" data-cfemail="7a1215161b3a161509171b080e1f091415121b03160f141b54191517">[email&#160;protected]</span></a>
     <a href="tel:34919997726">91 999 77 26</a>
   </div>
   <p class="footer-copy">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Reveal on scroll
   const els = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
@@ -1183,15 +1225,4 @@ function openMobileMenu() {
 }
 function closeMobileMenu() {
   document.getElementById('mobileMenu').classList.remove('open');
-  var btn = document.querySelector('.nav-hamburger');
-  if (btn) btn.classList.remove('open');
-  document.body.style.overflow = '';
-}
-// Close on ESC key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeMobileMenu();
-});
-</script>
-
-</body>
-</html>
+  var btn = document.
