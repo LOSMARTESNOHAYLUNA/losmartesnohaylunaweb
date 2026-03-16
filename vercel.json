@@ -102,6 +102,5 @@
         { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
       ]
     }
-  ],
-  "errors": [{"statusCode": 404, "destination": "/404.html"}]
+  ]
 }
