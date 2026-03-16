@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Servicios de Marketing Digital para PYMEs en Madrid | Los Martes No Hay Luna</title>
+<title>Servicios Marketing Digital Madrid 🚀 | LMNHL</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Servicios de Marketing Digital para PYMEs — Los Martes No Hay Luna">
+<meta property="og:description" content="Redes sociales, SEO, publicidad digital, diseño web y consultoría estratégica para pequeñas y medianas empresas en Madrid.">
+<meta property="og:url" content="https://losmartesnohayluna.com/servicios-agencia.html">
+<meta property="og:image" content="https://losmartesnohayluna.com/img/sheila-trabajando.png">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Los Martes No Hay Luna">
+<link rel="canonical" href="https://losmartesnohayluna.com/servicios-agencia.html">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="servicios marketing digital madrid, gestion redes sociales pymes, seo local madrid, publicidad google ads, diseño web empresas">
+<meta name="description" content="Redes sociales, SEO, Google Ads, web y consultoría para PYMEs. 📍 Madrid 📈 Resultados medibles desde el primer mes. Presupuesto sin compromiso ✨">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
@@ -29,7 +40,7 @@
 
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Poppins', sans-serif;
+  font-size: 18px; font-family: 'Poppins', sans-serif;
   background: var(--off-white);
   color: var(--slate);
   font-weight: 300;
@@ -759,13 +770,156 @@ footer {
   .mf-quote { color: var(--slate) !important; }
 }
 
+
+/* ── AUTHORITY BANNER ───────────────────────── */
+.authority-banner { background: var(--purple); padding: 4rem 5rem; position: relative; overflow: hidden; }
+.authority-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--purple-dk) 0%, var(--purple) 60%, var(--purple-lt) 100%); }
+.authority-inner { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1200px; margin: 0 auto; }
+.authority-stat { padding: 2rem 2.5rem; border-right: 1px solid rgba(255,255,255,.08); text-align: center; }
+.authority-stat:last-child { border-right: none; }
+.authority-num { font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 900; color: var(--lime); letter-spacing: -.05em; line-height: 1; margin-bottom: .4rem; }
+.authority-label { font-size: .78rem; color: rgba(255,255,255,.6); font-weight: 300; line-height: 1.4; text-transform: uppercase; letter-spacing: .08em; }
+@media (max-width: 900px) { .authority-banner { padding: 3rem 1.5rem; } .authority-inner { grid-template-columns: repeat(2, 1fr); } .authority-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); padding: 1.5rem; } }
+@media (max-width: 480px) { .authority-num { font-size: 2.5rem; } }
+
+
+/* ── Z-PATTERN INTRO ───────────────────────── */
+.cat-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+.cat-intro.reverse { direction: rtl; }
+.cat-intro.reverse > * { direction: ltr; }
+.cat-intro-img {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  border-top: 4px solid var(--lime);
+}
+.cat-intro-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
+  transition: transform .4s ease;
+}
+.cat-intro-img:hover img { transform: scale(1.03); }
+.cat-intro-text {}
+.cat-intro-text .section-label { margin-bottom: 1rem; }
+.cat-intro-text h2 {
+  font-size: clamp(1.9rem, 2.5vw, 2.8rem);
+  font-weight: 800; letter-spacing: -.03em;
+  line-height: 1.1; margin-bottom: 1rem;
+  color: var(--purple);
+}
+.cat-wrap.dark .cat-intro-text h2 { color: #fff; }
+.cat-intro-text p {
+  font-size: .95rem; color: var(--mid);
+  line-height: 1.85; font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+.cat-wrap.dark .cat-intro-text p { color: rgba(255,255,255,.75); }
+.cat-num-badge {
+  font-size: 7rem; font-weight: 900;
+  color: rgba(88,45,129,.07);
+  letter-spacing: -.06em; line-height: 1;
+  margin-bottom: -.5rem;
+}
+.cat-wrap.dark .cat-num-badge { color: rgba(255,255,255,.05); }
+@media (max-width: 900px) {
+  .cat-intro, .cat-intro.reverse { grid-template-columns: 1fr; direction: ltr; gap: 2rem; }
+  .cat-intro-img { aspect-ratio: 16/7; }
+}
+
+
+/* ── QUOTE BANNERS ──────────────────────────── */
+.quote-banner { background: var(--purple-dk); padding: 5rem; text-align: center; position: relative; overflow: hidden; }
+.quote-banner::before { content: '"'; position: absolute; top: -2rem; left: 50%; transform: translateX(-50%); font-size: 18rem; font-weight: 900; color: rgba(135,178,41,.04); line-height: 1; pointer-events: none; font-family: Georgia, serif; }
+.quote-banner blockquote { position: relative; z-index: 2; font-size: clamp(1.4rem, 2.5vw, 2.2rem); font-weight: 700; color: #fff; letter-spacing: -.02em; line-height: 1.35; max-width: 800px; margin: 0 auto 1.5rem; font-style: italic; }
+.quote-banner blockquote em { color: var(--lime); font-style: normal; }
+.quote-banner cite { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.35); font-style: normal; font-weight: 500; }
+.quote-banner.lime { background: var(--lime); }
+.quote-banner.lime blockquote { color: var(--slate); }
+.quote-banner.lime blockquote em { color: var(--purple); }
+.quote-banner.lime cite { color: rgba(42,31,56,.45); }
+.quote-banner.lime::before { color: rgba(42,31,56,.06); }
+@media (max-width: 900px) { .quote-banner { padding: 4rem 1.8rem; } }
+@media (max-width: 480px) { .quote-banner { padding: 3rem 1.2rem; } }
+
+
+/* ── INLINE SERVICE TESTIMONIALS ───────────── */
+.service-testimonial {
+  margin-top: 3rem;
+  background: var(--light);
+  border-left: 4px solid var(--lime);
+  padding: 2rem 2.5rem;
+  position: relative;
+}
+.cat-wrap.dark .service-testimonial {
+  background: rgba(255,255,255,.06);
+  border-left-color: var(--lime);
+}
+.st-quote {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--slate);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 1.2rem;
+}
+.cat-wrap.dark .st-quote { color: rgba(255,255,255,.85); }
+.st-author {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+.st-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--purple);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .68rem; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+}
+.cat-wrap.dark .st-avatar { background: rgba(135,178,41,.2); color: var(--lime); }
+.st-name { font-size: .82rem; font-weight: 600; color: var(--slate); }
+.cat-wrap.dark .st-name { color: #fff; }
+.st-role { font-size: .7rem; color: var(--mid); font-weight: 300; }
+.cat-wrap.dark .st-role { color: rgba(255,255,255,.45); }
+.st-stars { color: #fbbf24; font-size: .85rem; margin-bottom: .8rem; }
+.st-google {
+  display: inline-flex; align-items: center; gap: .4rem;
+  margin-top: .8rem; font-size: .62rem; letter-spacing: .1em;
+  text-transform: uppercase; font-weight: 600;
+  color: var(--lime); text-decoration: none;
+}
+
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Marketing Digital y Consultoría Estratégica",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Los Martes No Hay Luna",
+    "url": "https://losmartesnohayluna.com"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Madrid"
+  },
+  "serviceType": "Marketing Digital"
+}
+</script>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="index.html"><img src="img/LMHHL_logo_2026.svg" alt="Los Martes No Hay Luna" style="height:52px;width:auto;display:block;"></a>
+  <a class="nav-logo" href="index.html"><img src="img/LMHHL_logo_2026.svg" alt="Los Martes No Hay Luna — Agencia de Marketing Digital Madrid" style="height:52px;width:auto;display:block;"></a>
   <ul class="nav-links">
     <li><a href="servicios-agencia.html" class="active">Servicios</a></li>
     <li><a href="ia-para-empresas.html">IA para Empresas</a></li>
@@ -806,6 +960,11 @@ footer {
       <span class="htag">Consultoría</span>
     </div>
   </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem;">
+    <img src="img/agencia-marketing-identidad-corporativa.jpg" alt="Diseño de identidad corporativa — Los Martes No Hay Luna" style="width:100%;height:220px;object-fit:cover;object-position:center;display:block;" loading="lazy">
+    <img src="img/agencia-marketing-diseno-grafico.jpg" alt="Diseño gráfico corporativo — Agencia LMNHL Madrid" style="width:100%;height:220px;object-fit:cover;object-position:center;display:block;" loading="lazy">
+  </div>
 </section>
 
 <!-- BRIDGE -->
@@ -838,15 +997,23 @@ footer {
 <!-- 1. PRESENCIA DIGITAL -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="cat-wrap light" id="presencia">
-  <div class="cat-header">
-    <div class="cat-num reveal">01</div>
-    <div class="cat-hd reveal">
+<div class="cat-intro reveal">
+    <div class="cat-intro-img">
+      <img src="img/agencia-marketing-redes-sociales.jpg" alt="Gestión de redes sociales para empresas — LMNHL Madrid" loading="lazy">
+    </div>
+    <div class="cat-intro-text">
+      <div class="cat-num-badge">01</div>
       <span class="section-label">Presencia Digital</span>
       <h2>Tu marca, visible donde están tus clientes</h2>
       <p>Gestionamos tu presencia en redes sociales y Google con estrategia, consistencia y contenido que conecta. Desde la primera publicación hasta la cuenta que domina su sector.</p>
     </div>
   </div>
 
+  
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem;">
+    <img src="img/sheila-consultora-digital.png" alt="Sheila Aguilar — Consultora digital en Madrid" style="width:100%;height:160px;object-fit:cover;object-position:top;display:block;" loading="lazy">
+    <img src="img/agencia-marketing-branding-corporativo.jpg" alt="Branding corporativo para PYMEs — Los Martes No Hay Luna" style="width:100%;height:160px;object-fit:cover;object-position:center;display:block;" loading="lazy">
+  </div>
   <div class="cards col-3">
     <div class="card reveal">
       <div class="card-icon">
@@ -894,225 +1061,204 @@ footer {
       </ul>
     </div>
   </div>
+  
+  <div class="service-testimonial reveal">
+    <div class="st-stars">★★★★★</div>
+    <p class="st-quote" style="color:var(--slate);">"Después de haber estado con varias empresas de marketing, redes sociales y creación web, encontramos una que vale la pena. Nosotros empezamos con Sheila y la diferencia es enorme."</p>
+    <div class="st-author">
+      <div class="st-avatar">SU</div>
+      <div>
+        <div class="st-name" style="color:var(--slate);">Sergio Uceda</div>
+        <div class="st-role" style="color:var(--mid);">Cliente verificado</div>
+      </div>
+    </div>
+    <a href="https://g.page/losmartesnohayluna" target="_blank" rel="noopener" class="st-google">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/></svg>
+      Reseña verificada en Google
+    </a>
+  </div>
+</div>
 </section>
 
+
 <!-- ═══════════════════════════════════════════════ -->
-<!-- 2. PUBLICIDAD -->
+<!-- 2. PUBLICIDAD DIGITAL -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="cat-wrap dark" id="publicidad">
-  <div class="cat-header">
-    <div class="cat-num reveal">02</div>
-    <div class="cat-hd reveal">
-      <span class="section-label dark">Publicidad y Captación</span>
+<div class="cat-intro reverse reveal">
+    <div class="cat-intro-img">
+      <img src="img/agencia-marketing-digital-madrid.jpg" alt="Agencia de marketing digital en Madrid — Los Martes No Hay Luna" loading="lazy">
+    </div>
+    <div class="cat-intro-text">
+      <div class="cat-num-badge">02</div>
+      <span class="section-label">Publicidad Digital</span>
       <h2>Anuncios que traen clientes, no solo clics</h2>
-      <p>Gestionamos tus campañas publicitarias con orientación a resultados reales: leads, ventas y llamadas. No invertimos tu dinero sin saber qué va a generar.</p>
+      <p>Diseñamos y gestionamos campañas en Google Ads y Meta Ads con un único criterio: el retorno. Cada euro invertido debe tener un destino claro y un resultado medible.</p>
     </div>
   </div>
 
-  <div class="cards col-3">
-    <div class="card dark-card reveal">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-      </div>
-      <div class="card-tag">Meta Ads · FB & IG</div>
-      <h3>Campañas Meta Ads</h3>
-      <p class="card-desc">Publicidad en Facebook e Instagram orientada a generar leads y ventas directas. Diseñamos los anuncios, segmentamos la audiencia y optimizamos el presupuesto.</p>
+  <div class="cards col-2">
+    <div class="card reveal">
+      <div class="card-tag">Google · Meta</div>
+      <h3>Campañas de Publicidad Pagada</h3>
+      <p class="card-desc">Gestionamos tus campañas en Google Ads y Meta Ads desde la estrategia hasta la optimización continua. Solo pagamos por resultados.</p>
       <ul class="card-features">
-        <li class="cf">Creación y gestión completa de campañas en FB e IG</li>
-        <li class="cf">Segmentación detallada por intereses, comportamiento y geolocalización</li>
-        <li class="cf">Diseño de creatividades y copys optimizados para conversión</li>
-        <li class="cf">A/B testing y optimización continua de resultados</li>
-        <li class="cf">Informes de rendimiento con métricas de negocio</li>
+        <li class="cf">Configuración y optimización de campañas Google Ads</li>
+        <li class="cf">Campañas de Meta Ads (Facebook e Instagram)</li>
+        <li class="cf">Segmentación avanzada por audiencia e intención de compra</li>
+        <li class="cf">Reportes mensuales con ROI detallado</li>
       </ul>
     </div>
-
-    <div class="card dark-card reveal d1">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </div>
-      <div class="card-tag">Google Ads</div>
-      <h3>Campañas Google Ads</h3>
-      <p class="card-desc">Aparece justo cuando alguien busca tu producto o servicio en Google. Captamos intención de compra en el momento más valioso.</p>
+    <div class="card reveal d1">
+      <div class="card-tag">Conversión · CRO</div>
+      <h3>Optimización de Conversión</h3>
+      <p class="card-desc">No basta con atraer tráfico. Optimizamos todo el embudo para que más visitas se conviertan en leads y más leads en clientes.</p>
       <ul class="card-features">
-        <li class="cf">Campañas de búsqueda, display y shopping según tu negocio</li>
-        <li class="cf">Investigación de palabras clave y estrategia de puja</li>
-        <li class="cf">Páginas de destino optimizadas para conversión</li>
-        <li class="cf">Seguimiento de conversiones y ROI por campaña</li>
-        <li class="cf">Optimización semanal del presupuesto</li>
+        <li class="cf">Análisis del recorrido del usuario (heatmaps y grabaciones)</li>
+        <li class="cf">Optimización de páginas de destino</li>
+        <li class="cf">Test A/B de mensajes y creatividades</li>
+        <li class="cf">Seguimiento de conversiones y atribución</li>
       </ul>
     </div>
+  </div>
 
-    <div class="card dark-card reveal d2">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-      </div>
-      <div class="card-tag">B2B · LinkedIn</div>
-      <h3>Campañas LinkedIn Ads</h3>
-      <p class="card-desc">La plataforma líder para empresas B2B. Alcanzamos directores, gerentes y responsables de decisión con mensajes precisos y profesionales.</p>
-      <ul class="card-features">
-        <li class="cf">Segmentación por cargo, empresa, sector e industria</li>
-        <li class="cf">Formatos InMail, anuncios de imagen y vídeo</li>
-        <li class="cf">Estrategia de contenido patrocinado para autoridad de marca</li>
-        <li class="cf">Generación de leads cualificados en entornos corporativos</li>
-      </ul>
-    </div>
-
-    <!-- Featured card horizontal -->
-    <div class="featured-card reveal">
-      <div class="fc-left">
-        <div class="fc-tag">Social Booster · Acelerador</div>
-        <h3>Aceleración de Cuenta en Redes Sociales</h3>
-        <p>Para cuentas que necesitan tracción rápida. Una estrategia dinámica que activa el algoritmo, aumenta la visibilidad de forma sostenible y posiciona tu cuenta como "punto de tráfico" en tu sector.</p>
-      </div>
-      <div class="fc-right">
-        <div class="fc-feature">
-          <div class="fc-feature-title">Activación de algoritmo</div>
-          <p class="fc-feature-text">Secuencias de publicación diseñadas para maximizar la distribución orgánica en los primeros 30 días</p>
-        </div>
-        <div class="fc-feature">
-          <div class="fc-feature-title">Punto de tráfico</div>
-          <p class="fc-feature-text">Convertimos tu cuenta en la referencia del sector con contenido de alto valor y alto alcance</p>
-        </div>
-        <div class="fc-feature">
-          <div class="fc-feature-title">Visitas ilimitadas</div>
-          <p class="fc-feature-text">Acceso a nuestro historial de publicaciones de alto rendimiento para replicar lo que funciona</p>
-        </div>
-        <div class="fc-feature">
-          <div class="fc-feature-title">Resultados en 30 días</div>
-          <p class="fc-feature-text">Crecimiento medible en alcance, interacciones y seguidores cualificados desde el primer mes</p>
-        </div>
+  <div class="service-testimonial reveal">
+    <div class="st-stars">★★★★★</div>
+    <p class="st-quote" style="color:rgba(255,255,255,.85);">"Todo fenomenal, el resultado ha sido un éxito y el proceso muy fácil y rápido. La comunicación ha sido fluida y sin duda repetiremos."</p>
+    <div class="st-author">
+      <div class="st-avatar">CC</div>
+      <div>
+        <div class="st-name" style="color:#fff;">Carlos Cagigas</div>
+        <div class="st-role" style="color:rgba(255,255,255,.45);">Cliente verificado en Google</div>
       </div>
     </div>
+    <a href="https://g.page/losmartesnohayluna" target="_blank" rel="noopener" class="st-google">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/></svg>
+      Reseña verificada en Google
+    </a>
   </div>
 </section>
+
+<!-- QUOTE BANNER -->
+<div class="quote-banner reveal">
+  <blockquote>"El problema casi nunca está donde el cliente cree.<br>Nuestro trabajo empieza por <em>encontrar la fuga real</em>."</blockquote>
+  <cite>— Sheila Aguilar · Consultora estratégica</cite>
+</div>
 
 <!-- ═══════════════════════════════════════════════ -->
 <!-- 3. SEO -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="cat-wrap tint" id="seo">
-  <div class="cat-header">
-    <div class="cat-num reveal">03</div>
-    <div class="cat-hd reveal">
-      <span class="section-label">Posicionamiento SEO</span>
-      <h2>Que te encuentren cuando más importa</h2>
-      <p>El SEO no es un gasto, es la inversión con mejor ROI a largo plazo. Nos aseguramos de que tu empresa aparezca en las primeras posiciones cuando un cliente potencial busca exactamente lo que tú ofreces.</p>
+<div class="cat-intro reveal">
+    <div class="cat-intro-img">
+      <img src="img/agencia-marketing-estructura-digital.jpg" alt="Estructura digital y SEO para empresas — LMNHL Madrid" loading="lazy">
+    </div>
+    <div class="cat-intro-text">
+      <div class="cat-num-badge">03</div>
+      <span class="section-label">SEO & Posicionamiento</span>
+      <h2>Que Google te encuentre antes que a tu competencia</h2>
+      <p>Trabajamos el posicionamiento orgánico en buscadores para que tus clientes ideales lleguen a ti sin necesidad de pagar por cada clic. Resultados sostenibles a largo plazo.</p>
     </div>
   </div>
 
-  <div class="cards col-3">
+  <div class="cards col-2">
     <div class="card reveal">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      </div>
-      <div class="card-tag">SEO Local · Radio 3 km</div>
+      <div class="card-tag">Local · Google Maps</div>
       <h3>SEO Local</h3>
-      <p class="card-desc">Aparece en el "Local Pack" de Google Maps cuando alguien cerca busca tu tipo de negocio. La forma más directa de atraer clientes del entorno inmediato.</p>
+      <p class="card-desc">Posicionamos tu negocio en Google Maps y búsquedas locales para que seas la primera opción cuando alguien busca lo que ofreces en tu zona.</p>
       <ul class="card-features">
-        <li class="cf">Optimización completa del perfil de Google Business</li>
-        <li class="cf">Posicionamiento en el Top 3 del Local Pack</li>
-        <li class="cf">Gestión de reseñas y reputación local</li>
-        <li class="cf">Citaciones y directorios locales</li>
-        <li class="cf">Contenido SEO orientado a búsquedas de proximidad</li>
+        <li class="cf">Optimización completa de Google Business Profile</li>
+        <li class="cf">Estrategia de reseñas y valoraciones</li>
+        <li class="cf">SEO on-page orientado a búsquedas locales</li>
+        <li class="cf">Posicionamiento en el Local Pack de Google</li>
       </ul>
     </div>
-
     <div class="card reveal d1">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3z" fill="none"/><path d="M3 9h18M9 3v18"/></svg>
-      </div>
-      <div class="card-tag">SEO Ciudad</div>
-      <h3>SEO Ciudad</h3>
-      <p class="card-desc">Domina la primera página de Google en tu ciudad. Estrategia de contenidos y optimización técnica para posicionarte ante toda la demanda local de tu sector.</p>
+      <div class="card-tag">Orgánico · Nacional</div>
+      <h3>SEO Orgánico</h3>
+      <p class="card-desc">Para negocios que quieren crecer más allá de su municipio. Construimos una presencia orgánica sólida que atrae tráfico cualificado de forma constante.</p>
       <ul class="card-features">
-        <li class="cf">Auditoría técnica y estrategia SEO personalizada</li>
-        <li class="cf">Optimización on-page de toda la web</li>
-        <li class="cf">Creación de contenido SEO con intención de búsqueda real</li>
-        <li class="cf">Link building local y autoridad de dominio</li>
-        <li class="cf">Informe mensual de posiciones y tráfico orgánico</li>
+        <li class="cf">Auditoría técnica y optimización on-page completa</li>
+        <li class="cf">Investigación de palabras clave y arquitectura web</li>
+        <li class="cf">Estrategia de contenidos orientada a posicionamiento</li>
+        <li class="cf">Link building y autoridad de dominio</li>
       </ul>
     </div>
+  </div>
 
-    <div class="card reveal d2">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+  <div class="service-testimonial reveal">
+    <div class="st-stars">★★★★★</div>
+    <p class="st-quote">"Hay muchas empresas digitales, pocas tan efectivas, serias y eficaces. Gracias por la magia que hacéis, sois los mejores."</p>
+    <div class="st-author">
+      <div class="st-avatar">BO</div>
+      <div>
+        <div class="st-name">Bernardo Ortega Sarvise</div>
+        <div class="st-role">Cliente verificado en Google</div>
       </div>
-      <div class="card-tag">SEO Nacional · Escala</div>
-      <h3>SEO Nacional</h3>
-      <p class="card-desc">Para empresas que quieren competir a nivel nacional. Estrategia de contenidos, enlaces de autoridad y visibilidad sostenida en todo el territorio.</p>
-      <ul class="card-features">
-        <li class="cf">Estrategia de contenidos a escala nacional con cluster temáticos</li>
-        <li class="cf">Link building editorial con medios de referencia</li>
-        <li class="cf">SEO técnico avanzado: Core Web Vitals, schema, velocidad</li>
-        <li class="cf">Análisis competitivo de todo el mercado nacional</li>
-        <li class="cf">Reporting avanzado con cuadro de mando de posiciones</li>
-      </ul>
     </div>
+    <a href="https://g.page/losmartesnohayluna" target="_blank" rel="noopener" class="st-google">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/></svg>
+      Reseña verificada en Google
+    </a>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════ -->
-<!-- 4. WEB, EMAIL Y CRM -->
+<!-- 4. DISEÑO WEB -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="cat-wrap light" id="web">
-  <div class="cat-header">
-    <div class="cat-num reveal">04</div>
-    <div class="cat-hd reveal">
-      <span class="section-label">Web, Email & CRM</span>
-      <h2>Infraestructura digital que trabaja mientras tú no estás</h2>
-      <p>Tu web, tus automatizaciones y tu CRM son los cimientos sobre los que se asienta todo lo demás. Los diseñamos para vender, para retener y para escalar.</p>
+<div class="cat-intro reverse reveal">
+    <div class="cat-intro-img">
+      <img src="img/agencia-marketing-diseno-grafico.jpg" alt="Diseño gráfico corporativo — Agencia LMNHL Madrid" loading="lazy">
+    </div>
+    <div class="cat-intro-text">
+      <div class="cat-num-badge">04</div>
+      <span class="section-label">Diseño Web</span>
+      <h2>Una web que convierte visitas en clientes</h2>
+      <p>Diseñamos y desarrollamos sitios web que reflejan la identidad de tu marca y están optimizados para convertir visitantes en leads cualificados desde el primer día.</p>
+      <img src="img/sheila-identidad-visual.png" alt="Sheila Aguilar — Diseño de identidad visual corporativa" style="width:100%;height:180px;object-fit:cover;object-position:top;margin-top:1.5rem;border-top:3px solid var(--lime);" loading="lazy">
     </div>
   </div>
 
-  <div class="cards col-3">
+  <div class="cards col-2">
     <div class="card reveal">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-      </div>
-      <div class="card-tag">Web profesional</div>
-      <h3>Diseño Web & Extras</h3>
-      <p class="card-desc">Tu web trabaja 24 horas al día, 7 días a la semana. La diseñamos con foco en conversión, con identidad de marca alineada y experiencia de usuario impecable.</p>
+      <div class="card-tag">Web · Identidad</div>
+      <h3>Diseño Web Corporativo</h3>
+      <p class="card-desc">Webs profesionales que representan tu marca con claridad y están diseñadas para convertir. Con SEO integrado desde el primer día.</p>
       <ul class="card-features">
         <li class="cf">Diseño personalizado adaptado a tu identidad de marca</li>
-        <li class="cf">Optimización para conversión (formularios, llamadas a la acción, velocidad)</li>
-        <li class="cf">Sesión fotográfica corporativa para dotar la web de imágenes reales</li>
-        <li class="cf">Integración con herramientas de venta y seguimiento</li>
-        <li class="cf">Formación para gestión autónoma del contenido</li>
-        <li class="cf">Mantenimiento y actualizaciones periódicas</li>
+        <li class="cf">Optimización SEO on-page desde el lanzamiento</li>
+        <li class="cf">Diseño responsive (móvil, tablet y escritorio)</li>
+        <li class="cf">Integración con Google Analytics y herramientas de seguimiento</li>
       </ul>
     </div>
-
     <div class="card reveal d1">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </div>
-      <div class="card-tag">Email Marketing</div>
-      <h3>Email Marketing & Automatización</h3>
-      <p class="card-desc">Vende mientras duermes. Diseñamos secuencias de email que nutren, convierten y fidelizan en piloto automático, sin que tengas que hacer nada una vez está en marcha.</p>
+      <div class="card-tag">Branding · Identidad</div>
+      <h3>Identidad Corporativa</h3>
+      <p class="card-desc">Creamos la identidad visual completa de tu marca: logotipo, paleta de colores, tipografía y manual de uso. Todo coherente con quién eres y a quién te diriges.</p>
       <ul class="card-features">
-        <li class="cf">Diseño de flujos de automatización personalizados por segmento</li>
-        <li class="cf">Secuencias de bienvenida, recuperación y fidelización</li>
-        <li class="cf">Plantillas de email alineadas con tu marca</li>
-        <li class="cf">Integración con tu CRM y formularios web</li>
-        <li class="cf">Análisis de aperturas, clics y conversiones</li>
+        <li class="cf">Diseño de logotipo y variantes</li>
+        <li class="cf">Manual de identidad corporativa completo</li>
+        <li class="cf">Aplicaciones de marca (tarjetas, papelería, digital)</li>
+        <li class="cf">Naming y posicionamiento de marca</li>
       </ul>
     </div>
+  </div>
 
-    <div class="card reveal d2">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+  <div class="service-testimonial reveal">
+    <div class="st-stars">★★★★★</div>
+    <p class="st-quote">"Por nuestro 40 aniversario decidimos renovar el logo y Sheila dio con lo que nos gustaba muy fácilmente. Seguimos trabajando con ella para nuestra web. Recomendable 100%."</p>
+    <div class="st-author">
+      <div class="st-avatar">IC</div>
+      <div>
+        <div class="st-name">Información CESA</div>
+        <div class="st-role">Cliente verificado en Google</div>
       </div>
-      <div class="card-tag">CRM · Ventas</div>
-      <h3>CRM: Lidera tu Negocio</h3>
-      <p class="card-desc">Centraliza todos tus contactos, leads y conversaciones en un solo lugar. Tu equipo de ventas trabaja con información completa, en el momento adecuado, sin perder ninguna oportunidad.</p>
-      <ul class="card-features">
-        <li class="cf">Implementación y configuración del CRM a medida</li>
-        <li class="cf">Integración de email, WhatsApp y llamadas en una sola herramienta</li>
-        <li class="cf">Pipeline de ventas personalizado por etapas de tu proceso</li>
-        <li class="cf">Automatizaciones de seguimiento y recordatorios inteligentes</li>
-        <li class="cf">Formación al equipo comercial para adopción real</li>
-        <li class="cf">Informes de ventas, conversión y ciclo de vida del cliente</li>
-      </ul>
     </div>
+    <a href="https://g.page/losmartesnohayluna" target="_blank" rel="noopener" class="st-google">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/></svg>
+      Reseña verificada en Google
+    </a>
   </div>
 </section>
 
@@ -1120,91 +1266,68 @@ footer {
 <!-- 5. CONSULTORÍA ESTRATÉGICA -->
 <!-- ═══════════════════════════════════════════════ -->
 <section class="cat-wrap dark" id="consultoria">
-  <div class="cat-header">
-    <div class="cat-num reveal">05</div>
-    <div class="cat-hd reveal">
-      <span class="section-label dark">Consultoría Estratégica</span>
-      <h2>El trabajo que lo hace todo cobrar sentido</h2>
-      <p>Antes de ejecutar, analizamos. Antes de invertir, diagnosticamos. La consultoría es donde se define qué hacer, en qué orden y por qué — para que cada euro tenga un propósito.</p>
+<div class="cat-intro reveal">
+    <div class="cat-intro-img">
+      <img src="img/sheila-con-tablet.png" alt="Sheila Aguilar con tablet — Consultoría estratégica" loading="lazy">
     </div>
+    <div class="cat-intro-text">
+      <div class="cat-num-badge">05</div>
+      <span class="section-label">Consultoría Estratégica</span>
+      <h2>Diagnóstico, estrategia y acompañamiento real</h2>
+      <p>No llegamos con soluciones predefinidas. Primero entendemos tu negocio, identificamos dónde se pierde valor y diseñamos un plan de acción adaptado a tu realidad.</p>
+    </div>
+  </div>
+
+  <div style="margin-bottom:2rem;">
+    <img src="img/sheila-identidad-corporativa.png" alt="Sheila Aguilar — Identidad corporativa y branding" style="width:100%;height:200px;object-fit:cover;object-position:top center;display:block;border-top:3px solid var(--lime);" loading="lazy">
   </div>
 
   <div class="cards col-2">
-    <div class="card dark-card reveal">
-      <span class="badge">Más solicitado</span>
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-      </div>
-      <div class="card-tag">Sesiones 1:1 · Estrategia</div>
-      <h3>Consultoría Estratégica de Marketing</h3>
-      <p class="card-desc">Un proceso de trabajo profundo con tu empresa para diseñar la estrategia de marketing más adecuada a tu realidad, tus recursos y tus objetivos de crecimiento.</p>
+    <div class="card reveal">
+      <div class="card-tag">Diagnóstico · Estrategia</div>
+      <h3>Consultoría de Marketing</h3>
+      <p class="card-desc">Analizamos tu situación actual, identificamos los puntos de mayor palanca y diseñamos una hoja de ruta concreta para los próximos 90 días.</p>
       <ul class="card-features">
-        <li class="cf">Diagnóstico completo del estado actual de tu marketing y procesos</li>
-        <li class="cf">Análisis de competencia y oportunidades de mercado</li>
-        <li class="cf">Perfil detallado del cliente ideal y propuesta de valor diferencial</li>
-        <li class="cf">Análisis Dupont: rentabilidad, costes evitables e indicadores clave</li>
-        <li class="cf">Análisis competitivo con benchmarking del sector</li>
-        <li class="cf">Estrategia de contenido y plan editorial a 90 días</li>
-        <li class="cf">Propuesta publicitaria con inversión estimada y ROI esperado</li>
-        <li class="cf">Sesiones de seguimiento para ajuste y evolución del plan</li>
+        <li class="cf">Diagnóstico completo de presencia digital y posicionamiento</li>
+        <li class="cf">Análisis de competencia y mercado</li>
+        <li class="cf">Plan de acción priorizado con KPIs definidos</li>
+        <li class="cf">Acompañamiento mensual en la implementación</li>
       </ul>
     </div>
-
-    <div class="card dark-card reveal d1">
-      <span class="badge hot">IA Aplicada</span>
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-      </div>
-      <div class="card-tag">IA · Automatización · Procesos</div>
-      <h3>Consultoría de IA para tu Negocio</h3>
-      <p class="card-desc">Identificamos dónde está perdiendo dinero tu empresa en procesos manuales y te mostramos cómo recuperarlo con Inteligencia Artificial. Sin jerga técnica, sin proyectos fantasma.</p>
+    <div class="card reveal d1">
+      <div class="card-tag">IA · Automatización</div>
+      <h3>Consultoría de IA para Empresas</h3>
+      <p class="card-desc">Identificamos qué procesos de tu empresa son automatizables con IA y diseñamos la implementación paso a paso, asegurándonos de que el equipo adopte las herramientas.</p>
       <ul class="card-features">
-        <li class="cf">Mapa de ineficiencias invisibles: correos, presupuestos, flujos operativos</li>
-        <li class="cf">Identificación de los 3-5 procesos con mayor impacto si se automatizan</li>
-        <li class="cf">ROI estimado por cada mejora antes de invertir un euro</li>
-        <li class="cf">Plan de implementación priorizado y realista para tu equipo</li>
-        <li class="cf">Selección de herramientas de IA adecuadas a tu tamaño y presupuesto</li>
-        <li class="cf">Formación al equipo para adopción real y sostenida</li>
-        <li class="cf">Acompañamiento en la fase de implantación</li>
+        <li class="cf">Diagnóstico de procesos automatizables</li>
+        <li class="cf">Selección de herramientas adaptadas a tu sector</li>
+        <li class="cf">Implementación guiada y formación del equipo</li>
+        <li class="cf">ROI estimado antes de invertir nada</li>
       </ul>
     </div>
   </div>
-</section>
 
-<!-- PROCESS -->
-<section class="process">
-  <div class="process-hd reveal">
-    <span class="section-label">Cómo trabajamos</span>
-    <h2>Del primer contacto al resultado medible</h2>
-  </div>
-  <div class="steps">
-    <div class="step reveal">
-      <div class="step-num">01</div>
-      <h3>Diagnóstico</h3>
-      <p>Analizamos tu negocio, tu competencia y tu situación real antes de proponer nada. Sin diagnóstico no hay receta.</p>
+  <div class="service-testimonial reveal">
+    <div class="st-stars">★★★★★</div>
+    <p class="st-quote" style="color:rgba(255,255,255,.85);">"Sheila comprendió exactamente lo que nuestra empresa necesitaba. Muy profesional y con mucha paciencia. Lo recomiendo 100%."</p>
+    <div class="st-author">
+      <div class="st-avatar">DA</div>
+      <div>
+        <div class="st-name" style="color:#fff;">Daniel Altaba Durán</div>
+        <div class="st-role" style="color:rgba(255,255,255,.45);">Cliente verificado en Google</div>
+      </div>
     </div>
-    <div class="step reveal d1">
-      <div class="step-num">02</div>
-      <h3>Estrategia</h3>
-      <p>Diseñamos un plan a medida con prioridades claras, acciones concretas y ROI estimado para cada decisión.</p>
-    </div>
-    <div class="step reveal d2">
-      <div class="step-num">03</div>
-      <h3>Ejecución</h3>
-      <p>Nuestro equipo lo implementa. Tú tienes un único interlocutor para todo, con total transparencia del proceso.</p>
-    </div>
-    <div class="step reveal d3">
-      <div class="step-num">04</div>
-      <h3>Medición</h3>
-      <p>Reportes claros, métricas de negocio y ajustes continuos para que la inversión mejore con el tiempo.</p>
-    </div>
+    <a href="https://g.page/losmartesnohayluna" target="_blank" rel="noopener" class="st-google">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/></svg>
+      Reseña verificada en Google
+    </a>
   </div>
 </section>
 
 <!-- SHEILA STRIP -->
 <div style="display:grid;grid-template-columns:1fr 1fr;min-height:480px;">
   <div style="overflow:hidden;position:relative;">
-    <img src="img/sheila-trabajando.png" alt="Sheila Aguilar" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+    <img src="img/shey-agencia-consultoria.png" alt="Sheila Aguilar — Fundadora de Los Martes No Hay Luna" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
   </div>
   <div style="background:var(--purple-dk);padding:5rem;display:flex;flex-direction:column;justify-content:center;">
     <span style="font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--lime);font-weight:600;display:flex;align-items:center;gap:.7rem;margin-bottom:1.5rem;"><span style="width:20px;height:2px;background:var(--lime);display:inline-block;"></span>Quién lo hace</span>
@@ -1227,18 +1350,71 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <a href="index.html" style="display:inline-block;"><img src="img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna" style="height:44px;width:auto;display:block;"></a>
-  <div class="footer-links">
-    <a href="#">Aviso Legal</a>
-    <a href="#">Privacidad</a>
-    <a href="#">Cookies</a>
-    <a href="/cdn-cgi/l/email-protection#325a5d5e53725e5d415f53404657415c5d5a534b5e475c531c515d5f"><span class="__cf_email__" data-cfemail="9af2f5f6fbdaf6f5e9f7fbe8eeffe9f4f5f2fbe3f6eff4fbb4f9f5f7">[email&#160;protected]</span></a>
-    <a href="tel:34919997726">91 999 77 26</a>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" style="display:inline-block;">
+        <img src="img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna — Agencia de Marketing Digital Madrid" style="height:44px;width:auto;display:block;">
+      </a>
+      <p>Marketing digital, consultoría estratégica e inteligencia artificial para PYMEs. Leganés, Madrid.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Servicios</div>
+      <a href="/servicios/">Marketing Digital</a>
+      <a href="/servicios/">SEO y Posicionamiento</a>
+      <a href="/servicios/">Redes Sociales</a>
+      <a href="/ia-para-empresas/">IA para Empresas</a>
+      <a href="/consultoria-estrategica/">Consultoría Estratégica</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Empresa</div>
+      <a href="/sheila-aguilar/">Sheila Aguilar</a>
+      <a href="/blog/">Blog</a>
+      <a href="/sesion-gratuita/">Sesión gratuita</a>
+      <a href="/contacto/">Contacto</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contacto</div>
+      <a href="mailto:hola@losmartesnohayluna.com">hola@losmartesnohayluna.com</a>
+      <a href="tel:34919997726">91 999 77 26</a>
+      <a href="https://wa.me/34621060659" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.google.com/maps/place/Finca+Solimpar+Legan%C3%A9s" target="_blank" rel="noopener">Leganés, Madrid</a>
+    </div>
   </div>
-  <p class="footer-copy">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
+
+  <!-- MAPA DEL SITIO -->
+  <div style="border-top:1px solid rgba(255,255,255,.06);padding:2rem 0;margin-bottom:1.5rem;">
+    <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--lime);margin-bottom:1rem;">Mapa del sitio</div>
+    <div style="display:flex;flex-wrap:wrap;gap:.6rem 2rem;">
+      <a href="/" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none;">Inicio</a>
+      <a href="/servicios/" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none;">Servicios</a>
+      <a href="/ia-para-empresas/" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none;">IA para Empresas</a>
+      <a href="/sheila-aguilar/" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none;">Sheila Aguilar</a>
+      <a href="/blog/" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none;">Blog</a>
+      <a href="/sesion-gratuita/" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none;">Sesión gratuita</a>
+      <a href="/contacto/" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none;">Contacto</a>
+      <a href="/blog/ia-para-pymes/" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none;">Blog: IA para PYMEs</a>
+      <a href="/blog/marketing-digital-pymes/" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none;">Blog: Marketing Digital</a>
+      <a href="/blog/redes-sociales-empresas/" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none;">Blog: Redes Sociales</a>
+      <a href="/blog/casos-exito-marketing/" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none;">Blog: Casos de Éxito</a>
+      <a href="https://losmartesnohayluna.com/sitemap.xml" target="_blank" rel="noopener" style="font-size:.72rem;color:rgba(135,178,41,.5);text-decoration:none;">Sitemap XML ↗</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
+    <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+      <a href="/aviso-legal/" rel="nofollow" style="font-size:.72rem;color:rgba(255,255,255,.25);text-decoration:none;">Aviso Legal</a>
+      <a href="/privacidad/" rel="nofollow" style="font-size:.72rem;color:rgba(255,255,255,.25);text-decoration:none;">Privacidad</a>
+      <a href="/cookies/" rel="nofollow" style="font-size:.72rem;color:rgba(255,255,255,.25);text-decoration:none;">Cookies</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/losmartesnohayluna" target="_blank" rel="noopener" title="Instagram">ig</a>
+      <a href="https://www.linkedin.com/company/los-martes-no-hay-luna" target="_blank" rel="noopener" title="LinkedIn">in</a>
+    </div>
+  </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Reveal on scroll
   const els = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
@@ -1250,21 +1426,4 @@ footer {
 
 <script>
 function openMobileMenu() {
-  document.getElementById('mobileMenu').classList.add('open');
-  document.querySelector('.nav-hamburger').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeMobileMenu() {
-  document.getElementById('mobileMenu').classList.remove('open');
-  var btn = document.querySelector('.nav-hamburger');
-  if (btn) btn.classList.remove('open');
-  document.body.style.overflow = '';
-}
-// Close on ESC key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeMobileMenu();
-});
-</script>
-
-</body>
-</html>
+  document.getElementById('mobi

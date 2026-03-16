@@ -20,7 +20,7 @@
   --mid: #7a6f85; --rule: rgba(88,45,129,.12);
 }
 html { scroll-behavior: smooth; }
-body { font-family: 'Poppins', sans-serif; background: var(--off-white); color: var(--slate); font-weight: 300; line-height: 1.7; }
+body { font-size: 18px; font-family: 'Poppins', sans-serif; background: var(--off-white); color: var(--slate); font-weight: 300; line-height: 1.7; }
 
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 5rem; background: rgba(248,246,242,.97); backdrop-filter: blur(14px); border-bottom: 1px solid var(--rule); }
 .nav-logo { text-decoration: none; display: flex; align-items: center; }
@@ -51,10 +51,10 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
   font-size: .85rem; font-weight: 600; color: var(--purple);
   margin: 1.4rem 0 .5rem;
 }
-.legal-body p { font-size: .88rem; color: var(--mid); line-height: 1.85; margin-bottom: 1rem; font-weight: 300; }
+.legal-body p { font-size: 1rem; color: var(--mid); line-height: 1.85; margin-bottom: 1rem; font-weight: 300; }
 .legal-body p strong { color: var(--slate); font-weight: 600; }
 .legal-body ul { margin: .8rem 0 1rem 1.5rem; display: flex; flex-direction: column; gap: .4rem; }
-.legal-body ul li { font-size: .85rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
+.legal-body ul li { font-size: .95rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
 .legal-body ul li a { color: var(--purple); }
 .legal-body a { color: var(--purple); }
 
@@ -159,7 +159,6 @@ footer { background: #2a1f38; padding: 2.5rem 5rem; display: flex; align-items: 
 }
 
 
-/* ── GLOBAL MOBILE FIXES ────────────────────── */
 @media (max-width: 480px) {
   html { font-size: 15px; }
   body { overflow-x: hidden; }
@@ -310,13 +309,176 @@ footer { background: #2a1f38; padding: 2.5rem 5rem; display: flex; align-items: 
   .mobile-menu a { font-size: 1.3rem !important; }
 }
 
+
+/* ════════════════════════════════════════════════════
+   MOBILE FINAL FIX — Typography + Green BG text
+   ════════════════════════════════════════════════════ */
+
+/* ── GREEN/LIME background: always white text ───────── */
+.manifesto,
+.manifesto * { color: var(--slate) !important; }
+
+.btn-lime,
+.nl-submit,
+.sb-submit,
+.mm-cta,
+.fp-featured-label { color: var(--slate) !important; }
+
+/* Article CTA lime button */
+.article-cta a,
+.sidebar-cta a { color: #fff !important; }
+
+/* Green badge on blog */
+.fp-featured-label { color: #fff !important; background: var(--lime) !important; }
+
+/* ── MOBILE TYPOGRAPHY — bigger, readable ───────────── */
+@media (max-width: 900px) {
+  /* Base body */
+  body { font-size: 16px; }
+
+  /* Paragraphs — minimum legible size */
+  p { font-size: 1rem !important; line-height: 1.85 !important; }
+  li { font-size: 1rem !important; line-height: 1.8 !important; }
+
+  /* Article content */
+  .article-content p,
+  .article-content li { font-size: 1rem !important; }
+  .article-content h2 { font-size: 1.3rem !important; }
+  .article-content h3 { font-size: 1.1rem !important; }
+
+  /* Excerpts */
+  .fp-excerpt,
+  .post-excerpt,
+  .ah-excerpt,
+  .hero-sub,
+  .bh-sub { font-size: .95rem !important; line-height: 1.8 !important; }
+
+  /* Meta / labels */
+  .post-cat, .bp-cat, .rp-cat,
+  .ah-cat, .fp-cat { font-size: .72rem !important; }
+  .post-date, .post-time,
+  .bp-meta, .ah-time { font-size: .75rem !important; }
+
+  /* Sidebar text */
+  .sa-bio,
+  .sb-about p,
+  .sidebar-cta p,
+  .toc-list a { font-size: .88rem !important; }
+
+  /* Nav */
+  .nav-links a { font-size: .72rem !important; }
+  .nav-cta { font-size: .72rem !important; }
+
+  /* Footer */
+  .footer-links a { font-size: .75rem !important; }
+  .footer-copy { font-size: .7rem !important; }
+
+  /* Buttons */
+  .btn-primary,
+  .btn-ghost,
+  .btn-read,
+  .article-cta a,
+  .sidebar-cta a { font-size: .78rem !important; }
+
+  /* Tags */
+  .tag, .sb-tag { font-size: .7rem !important; }
+
+  /* Case studies */
+  .case-body p { font-size: .92rem !important; }
+  .case-title { font-size: 1rem !important; }
+  .result-label { font-size: .78rem !important; }
+
+  /* Highlight box */
+  .highlight-box li { font-size: .92rem !important; }
+
+  /* Pull quote */
+  .pull-quote p { font-size: 1.05rem !important; }
+
+  /* Legal pages */
+  .legal-body p,
+  .legal-body li { font-size: .95rem !important; }
+  .legal-body h2 { font-size: 1.1rem !important; }
+
+  /* TOC */
+  .toc-list a { font-size: .85rem !important; }
+
+  /* Hero proof labels */
+  .hero-proof-label { font-size: .85rem !important; }
+  .hero-proof-num { font-size: 2.2rem !important; }
+}
+
+@media (max-width: 480px) {
+  /* Even bigger on very small screens */
+  p { font-size: 1rem !important; }
+  li { font-size: 1rem !important; }
+
+  /* Headings */
+  h1 { font-size: clamp(1.8rem, 8vw, 2.6rem) !important; }
+  h2 { font-size: clamp(1.3rem, 6vw, 1.9rem) !important; }
+  h3 { font-size: 1.1rem !important; }
+
+  /* Dark section text — stays white */
+  .hero p, .hero li,
+  .hero .hero-sub { color: rgba(255,255,255,.8) !important; }
+
+  .testimonials p, .testimonials li,
+  .ts-quote { color: rgba(255,255,255,.85) !important; }
+
+  .final-cta p, .final-cta li { color: rgba(255,255,255,.8) !important; }
+
+  .article-cta p { color: rgba(255,255,255,.85) !important; }
+
+  .highlight-box li,
+  .highlight-box p { color: rgba(255,255,255,.9) !important; }
+
+  .price-box p { color: rgba(255,255,255,.85) !important; }
+
+  .learning-box p { color: rgba(255,255,255,.85) !important; }
+
+  .method p, .method li,
+  .ms-text { color: rgba(255,255,255,.7) !important; }
+
+  .results p, .results li,
+  .rc-story,
+  .rc-what { color: rgba(255,255,255,.75) !important; }
+
+  /* Sidebar author on dark purple */
+  .sidebar-author .sa-bio,
+  .sidebar-author .sa-role { color: rgba(255,255,255,.7) !important; }
+
+  /* Mobile menu links */
+  .mobile-menu a { color: #fff !important; }
+
+  /* Green bg sections — dark text */
+  .manifesto p,
+  .manifesto li,
+  .mf-body,
+  .mf-quote { color: var(--slate) !important; }
+}
+
+
+/* ── FOOTER REDISEÑADO ──────────────────────── */
+footer { background: var(--slate); padding: 4rem 5rem 2rem; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 2rem; }
+.footer-brand p { font-size: .82rem; color: rgba(255,255,255,.4); line-height: 1.7; font-weight: 300; margin-top: 1rem; max-width: 240px; }
+.footer-col-title { font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; color: var(--lime); margin-bottom: 1.2rem; }
+.footer-col a { display: block; font-size: .82rem; color: rgba(255,255,255,.45); text-decoration: none; margin-bottom: .6rem; transition: color .2s; font-weight: 300; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-copy { font-size: .72rem; color: rgba(255,255,255,.2); }
+.footer-social { display: flex; gap: 1rem; }
+.footer-social a { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.4); text-decoration: none; transition: all .2s; font-size: .75rem; }
+.footer-social a:hover { border-color: var(--lime); color: var(--lime); }
+@media (max-width: 900px) { footer { padding: 3rem 1.5rem 1.5rem; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+
 </style>
 </head>
 <body>
 
 <nav>
   <a class="nav-logo" href="index.html">
-    <img src="img/LMHHL_logo_2026.svg" alt="Los Martes No Hay Luna" style="height:52px;width:auto;display:block;">
+    <img src="img/LMHHL_logo_2026.svg" alt="Los Martes No Hay Luna — Agencia de Marketing Digital Madrid" style="height:52px;width:auto;display:block;">
   </a>
   <ul class="nav-links">
     <li><a href="servicios-agencia.html">Servicios</a></li>
@@ -355,7 +517,7 @@ footer { background: #2a1f38; padding: 2.5rem 5rem; display: flex; align-items: 
   <p>Las cookies son procedimientos automáticos de recogida de información relativa a las preferencias determinadas por el Usuario durante su visita al Sitio Web con el fin de reconocerlo como Usuario, y personalizar su experiencia y el uso del Sitio Web, y pueden también, por ejemplo, ayudar a identificar y resolver errores.</p>
 
   <div class="info-box">
-    <p><strong>Responsable del tratamiento:</strong> Sheila Aguilar Minero · Los Martes No Hay Luna · FINCA SOLIMPAR, Carr. Madrid-Toledo Km 8, Despacho 12, 28916 Leganés, Madrid · <a href="/cdn-cgi/l/email-protection#fa9295969bba969589979b888e9f899495929b83968f949bd4999597"><span class="__cf_email__" data-cfemail="9ef6f1f2ffdef2f1edf3ffeceafbedf0f1f6ffe7f2ebf0ffb0fdf1f3">[email&#160;protected]</span></a> · 91 999 77 26</p>
+    <p><strong>Responsable del tratamiento:</strong> Sheila Aguilar Minero · Los Martes No Hay Luna · FINCA SOLIMPAR, Carr. Madrid-Toledo Km 8, Despacho 12, 28916 Leganés, Madrid · <a href="/cdn-cgi/l/email-protection#563e393a37163a39253b372422332538393e372f3a2338377835393b"><span class="__cf_email__" data-cfemail="86eee9eae7c6eae9f5ebe7f4f2e3f5e8e9eee7ffeaf3e8e7a8e5e9eb">[email&#160;protected]</span></a> · 91 999 77 26</p>
   </div>
 
   <h2>¿Qué información recogen las cookies?</h2>
@@ -448,12 +610,12 @@ footer { background: #2a1f38; padding: 2.5rem 5rem; display: flex; align-items: 
   <h2>Modificación de la Política de Cookies</h2>
   <p>Los Martes No Hay Luna puede modificar esta Política de Cookies en función de exigencias legislativas, reglamentarias, o con la finalidad de adaptar dicha política a las instrucciones dictadas por la Agencia Española de Protección de Datos. Por ello, se aconseja al Usuario que la visite periódicamente.</p>
 
-  <p>Para cualquier consulta sobre cookies puede contactar en <a href="/cdn-cgi/l/email-protection#98f0f7f4f9d8f4f7ebf5f9eaecfdebf6f7f0f9e1f4edf6f9b6fbf7f5"><span class="__cf_email__" data-cfemail="e0888f8c81a08c8f938d81929485938e8f8881998c958e81ce838f8d">[email&#160;protected]</span></a></p>
+  <p>Para cualquier consulta sobre cookies puede contactar en <a href="/cdn-cgi/l/email-protection#d2babdbeb392bebda1bfb3a0a6b7a1bcbdbab3abbea7bcb3fcb1bdbf"><span class="__cf_email__" data-cfemail="d0b8bfbcb190bcbfa3bdb1a2a4b5a3bebfb8b1a9bca5beb1feb3bfbd">[email&#160;protected]</span></a></p>
 </div>
 
 <footer>
   <a href="index.html" style="display:inline-block;">
-    <img src="img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna" style="height:44px;width:auto;display:block;">
+    <img src="img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna — Agencia de Marketing Digital Madrid" style="height:44px;width:auto;display:block;">
   </a>
   <div class="footer-links">
     <a href="aviso-legal.html">Aviso Legal</a>
@@ -467,14 +629,4 @@ function openMobileMenu() {
   document.body.style.overflow = 'hidden';
 }
 function closeMobileMenu() {
-  document.getElementById('mobileMenu').classList.remove('open');
-  var btn = document.querySelector('.nav-hamburger');
-  if (btn) btn.classList.remove('open');
-  document.body.style.overflow = '';
-}
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeMobileMenu();
-});
-</script>
-</body>
-</html>
+  document.getElementBy

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página no encontrada | Los Martes No Hay Luna</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://losmartesnohayluna.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --purple: #582D81; --purple-lt: #6e3d9a; --purple-dk: #3a1c57;
+  --lime: #87B229; --pink: #e72078;
+  --slate: #2a1f38; --off-white: #f8f6f2; --light: #f4f0fa;
+  --mid: #7a6f85; --rule: rgba(88,45,129,.12);
+}
+html, body { height: 100%; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--purple-dk);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  padding: 1.2rem 5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.nav-logo img { height: 48px; width: auto; display: block; }
+.nav-cta {
+  font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+  font-weight: 600; padding: .55rem 1.6rem;
+  background: var(--lime); color: var(--slate);
+  text-decoration: none; transition: background .2s;
+}
+.nav-cta:hover { background: #9ecf30; }
+
+/* HERO 404 */
+.hero {
+  flex: 1;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '404';
+  position: absolute;
+  font-size: 30vw; font-weight: 900;
+  color: rgba(255,255,255,.03);
+  letter-spacing: -.08em;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.eyebrow {
+  font-size: .62rem; letter-spacing: .22em; text-transform: uppercase;
+  font-weight: 600; color: var(--lime);
+  display: flex; align-items: center; gap: .7rem;
+  margin-bottom: 1.5rem;
+}
+.eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--lime); }
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -.04em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  position: relative; z-index: 2;
+}
+.hero h1 em { color: var(--lime); font-style: italic; font-weight: 300; }
+.hero p {
+  font-size: 1rem;
+  color: rgba(255,255,255,.6);
+  max-width: 480px;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  position: relative; z-index: 2;
+}
+
+/* LINKS GRID */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 720px;
+  width: 100%;
+  position: relative; z-index: 2;
+  margin-bottom: 3rem;
+}
+.link-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-top: 2px solid var(--lime);
+  padding: 1.4rem 1.6rem;
+  text-decoration: none;
+  text-align: left;
+  transition: background .2s, transform .2s;
+}
+.link-card:hover { background: rgba(255,255,255,.09); transform: translateY(-2px); }
+.link-card .lc-label {
+  font-size: .58rem; letter-spacing: .16em; text-transform: uppercase;
+  font-weight: 700; color: var(--lime); margin-bottom: .4rem;
+}
+.link-card .lc-title {
+  font-size: .88rem; font-weight: 600; color: #fff; line-height: 1.3;
+}
+.link-card:nth-child(2) { border-top-color: var(--pink); }
+.link-card:nth-child(2) .lc-label { color: var(--pink); }
+.link-card:nth-child(3) { border-top-color: rgba(255,255,255,.3); }
+.link-card:nth-child(3) .lc-label { color: rgba(255,255,255,.5); }
+
+.btn-home {
+  display: inline-flex; align-items: center; gap: .7rem;
+  background: var(--pink); color: #fff;
+  text-decoration: none; padding: 1rem 2.5rem;
+  font-size: .75rem; letter-spacing: .12em; text-transform: uppercase;
+  font-weight: 700; transition: background .2s, gap .2s;
+  position: relative; z-index: 2;
+}
+.btn-home:hover { background: #c0185e; gap: 1.2rem; }
+
+/* FOOTER */
+footer {
+  padding: 1.5rem 5rem;
+  border-top: 1px solid rgba(255,255,255,.06);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+}
+footer p { font-size: .65rem; color: rgba(255,255,255,.2); }
+.footer-links a {
+  font-size: .65rem; color: rgba(255,255,255,.25);
+  text-decoration: none; margin-left: 1.5rem;
+}
+.footer-links a:hover { color: var(--lime); }
+
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .links-grid { grid-template-columns: 1fr; max-width: 360px; }
+  footer { padding: 1.5rem; }
+  .footer-links a { margin-left: .8rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna">
+  </a>
+  <a class="nav-cta" href="/sesion-gratuita/">Sesión gratuita →</a>
+</nav>
+
+<main class="hero">
+  <div class="eyebrow">Página no encontrada</div>
+  <h1>Esta página se ha<br><em>mudado o no existe</em></h1>
+  <p>La dirección que buscas ya no está aquí. Puede que haya cambiado de URL o que nunca haya existido. Te llevamos donde necesitas ir.</p>
+
+  <div class="links-grid">
+    <a class="link-card" href="/">
+      <div class="lc-label">Inicio</div>
+      <div class="lc-title">Volver a la home principal</div>
+    </a>
+    <a class="link-card" href="/servicios/">
+      <div class="lc-label">Servicios</div>
+      <div class="lc-title">Marketing digital, SEO y redes sociales</div>
+    </a>
+    <a class="link-card" href="/ia-para-empresas/">
+      <div class="lc-label">IA para Empresas</div>
+      <div class="lc-title">Automatización y apps a medida</div>
+    </a>
+    <a class="link-card" href="/sheila-aguilar/">
+      <div class="lc-label">Sheila Aguilar</div>
+      <div class="lc-title">Quién hay detrás del proyecto</div>
+    </a>
+    <a class="link-card" href="/blog/">
+      <div class="lc-label">Blog</div>
+      <div class="lc-title">Marketing e IA explicados sin tecnicismos</div>
+    </a>
+    <a class="link-card" href="/contacto/">
+      <div class="lc-label">Contacto</div>
+      <div class="lc-title">Escríbenos o llámanos</div>
+    </a>
+  </div>
+
+  <a class="btn-home" href="/sesion-gratuita/">Reservar sesión gratuita de diagnóstico →</a>
+</main>
+
+<footer>
+  <p>© 2026 Los Martes No Hay Luna · Leganés, Madrid</p>
+  <div class="footer-links">
+    <a href="/aviso-legal/" rel="nofollow">Aviso Legal</a>
+    <a href="/privacidad/" rel="nofollow">Privacidad</a>
+    <a href="/sitemap.xml" target="_blank" rel="noopener">Sitemap</a>
+  </div>
+</footer>
+
+</body>
+</html>

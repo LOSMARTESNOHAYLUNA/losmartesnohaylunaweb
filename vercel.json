@@ -1,6 +1,107 @@
 {
+  "redirects": [
+    { "source": "https://www.losmartesnohayluna.com/(.*)", "destination": "https://losmartesnohayluna.com/$1", "permanent": true },
+
+    { "source": "/index.html",                        "destination": "/",                              "permanent": true },
+    { "source": "/servicios-agencia.html",            "destination": "/servicios/",                    "permanent": true },
+    { "source": "/ia-para-empresas.html",             "destination": "/ia-para-empresas/",             "permanent": true },
+    { "source": "/sheila-aguilar.html",               "destination": "/sheila-aguilar/",               "permanent": true },
+    { "source": "/blog.html",                         "destination": "/blog/",                         "permanent": true },
+    { "source": "/contacto.html",                     "destination": "/contacto/",                     "permanent": true },
+    { "source": "/sesion-gratuita.html",              "destination": "/sesion-gratuita/",              "permanent": true },
+    { "source": "/consultoria-estrategica.html",      "destination": "/consultoria-estrategica/",      "permanent": true },
+    { "source": "/aviso-legal.html",                  "destination": "/aviso-legal/",                  "permanent": true },
+    { "source": "/privacidad.html",                   "destination": "/privacidad/",                   "permanent": true },
+    { "source": "/cookies.html",                      "destination": "/cookies/",                      "permanent": true },
+    { "source": "/gracias.html",                      "destination": "/gracias/",                      "permanent": true },
+    { "source": "/blog-ia-para-pymes.html",           "destination": "/blog/ia-para-pymes/",           "permanent": true },
+    { "source": "/blog-marketing-digital-pymes.html", "destination": "/blog/marketing-digital-pymes/", "permanent": true },
+    { "source": "/blog-redes-sociales-empresas.html", "destination": "/blog/redes-sociales-empresas/", "permanent": true },
+    { "source": "/blog-casos-exito-marketing.html",   "destination": "/blog/casos-exito-marketing/",   "permanent": true },
+    { "source": "/blog-5-preguntas-ia-empresa.html",  "destination": "/blog/5-preguntas-ia-empresa/",  "permanent": true },
+    { "source": "/blog-automatizacion-pymes.html",    "destination": "/blog/automatizacion-pymes/",    "permanent": true },
+
+    { "source": "/servicios-marketing-y-comunicacion/",   "destination": "/servicios/",            "permanent": true },
+    { "source": "/servicios-marketing-y-comunicacion",    "destination": "/servicios/",            "permanent": true },
+    { "source": "/nombre-logotipo-e-imagen-marca/",       "destination": "/servicios/",            "permanent": true },
+    { "source": "/nombre-logotipo-e-imagen-marca",        "destination": "/servicios/",            "permanent": true },
+    { "source": "/rediseno-y-modernizacion-de-logotipo/", "destination": "/servicios/",            "permanent": true },
+    { "source": "/diseno-grafico/",                       "destination": "/servicios/",            "permanent": true },
+    { "source": "/diseno-grafico",                        "destination": "/servicios/",            "permanent": true },
+    { "source": "/diseno-paginas-web/",                   "destination": "/servicios/",            "permanent": true },
+    { "source": "/diseno-paginas-web",                    "destination": "/servicios/",            "permanent": true },
+    { "source": "/agencia-de-seo-local/",                 "destination": "/servicios/",            "permanent": true },
+    { "source": "/agencia-de-seo-local",                  "destination": "/servicios/",            "permanent": true },
+    { "source": "/la-navaja-suiza-del-marketing/",        "destination": "/servicios/",            "permanent": true },
+    { "source": "/politica-de-cookies-y-lgpd/",           "destination": "/cookies/",              "permanent": true },
+    { "source": "/politica-de-cookies-y-lgpd",            "destination": "/cookies/",              "permanent": true },
+    { "source": "/politica-de-privacidad/",               "destination": "/privacidad/",           "permanent": true },
+    { "source": "/contact/",                              "destination": "/contacto/",             "permanent": true },
+    { "source": "/reservar/",                             "destination": "/sesion-gratuita/",      "permanent": true },
+    { "source": "/agendar/",                              "destination": "/sesion-gratuita/",      "permanent": true },
+    { "source": "/solicitar-consultoria/",                "destination": "/sesion-gratuita/",      "permanent": true },
+    { "source": "/sobre-mi/",                             "destination": "/sheila-aguilar/",       "permanent": true },
+    { "source": "/sobre-nosotros/",                       "destination": "/sheila-aguilar/",       "permanent": true },
+    { "source": "/quien-soy/",                            "destination": "/sheila-aguilar/",       "permanent": true },
+    { "source": "/inteligencia-artificial/",              "destination": "/ia-para-empresas/",     "permanent": true },
+    { "source": "/ia-empresas/",                          "destination": "/ia-para-empresas/",     "permanent": true },
+    { "source": "/automatizacion/",                       "destination": "/ia-para-empresas/",     "permanent": true },
+    { "source": "/category/:slug*",                       "destination": "/blog/",                 "permanent": true },
+    { "source": "/tag/:slug*",                            "destination": "/blog/",                 "permanent": true }
+  ],
+
   "rewrites": [
-    { "source": "/api/chat", "destination": "/api/chat.js" },
-    { "source": "/((?!api/).*)", "destination": "/$1" }
-  ]
+    { "source": "/api/chat",                         "destination": "/api/chat.js" },
+    { "source": "/servicios/",                       "destination": "/servicios-agencia.html" },
+    { "source": "/servicios",                        "destination": "/servicios-agencia.html" },
+    { "source": "/ia-para-empresas/",                "destination": "/ia-para-empresas.html" },
+    { "source": "/ia-para-empresas",                 "destination": "/ia-para-empresas.html" },
+    { "source": "/sheila-aguilar/",                  "destination": "/sheila-aguilar.html" },
+    { "source": "/sheila-aguilar",                   "destination": "/sheila-aguilar.html" },
+    { "source": "/blog/",                            "destination": "/blog.html" },
+    { "source": "/contacto/",                        "destination": "/contacto.html" },
+    { "source": "/contacto",                         "destination": "/contacto.html" },
+    { "source": "/sesion-gratuita/",                 "destination": "/sesion-gratuita.html" },
+    { "source": "/sesion-gratuita",                  "destination": "/sesion-gratuita.html" },
+    { "source": "/consultoria-estrategica/",         "destination": "/consultoria-estrategica.html" },
+    { "source": "/aviso-legal/",                     "destination": "/aviso-legal.html" },
+    { "source": "/aviso-legal",                      "destination": "/aviso-legal.html" },
+    { "source": "/privacidad/",                      "destination": "/privacidad.html" },
+    { "source": "/privacidad",                       "destination": "/privacidad.html" },
+    { "source": "/cookies/",                         "destination": "/cookies.html" },
+    { "source": "/cookies",                          "destination": "/cookies.html" },
+    { "source": "/gracias/",                         "destination": "/gracias.html" },
+    { "source": "/blog/ia-para-pymes/",              "destination": "/blog-ia-para-pymes.html" },
+    { "source": "/blog/marketing-digital-pymes/",    "destination": "/blog-marketing-digital-pymes.html" },
+    { "source": "/blog/redes-sociales-empresas/",    "destination": "/blog-redes-sociales-empresas.html" },
+    { "source": "/blog/casos-exito-marketing/",      "destination": "/blog-casos-exito-marketing.html" },
+    { "source": "/blog/5-preguntas-ia-empresa/",     "destination": "/blog-5-preguntas-ia-empresa.html" },
+    { "source": "/blog/automatizacion-pymes/",       "destination": "/blog-automatizacion-pymes.html" },
+    { "source": "/((?!api/).*)",                     "destination": "/$1" }
+  ],
+
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options",  "value": "nosniff" },
+        { "key": "X-Frame-Options",         "value": "SAMEORIGIN" },
+        { "key": "X-XSS-Protection",        "value": "1; mode=block" },
+        { "key": "Referrer-Policy",         "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/img/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+      ]
+    }
+  ],
+  "errors": [{"statusCode": 404, "destination": "/404.html"}]
 }

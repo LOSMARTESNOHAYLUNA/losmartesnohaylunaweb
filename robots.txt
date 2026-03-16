@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /consultoria-estrategica/
+Disallow: /gracias/
+Disallow: /api/
+
+Sitemap: https://losmartesnohayluna.com/sitemap.xml

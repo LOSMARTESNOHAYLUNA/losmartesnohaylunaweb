@@ -28,7 +28,7 @@
 }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Poppins', sans-serif;
+  font-size: 18px; font-family: 'Poppins', sans-serif;
   background: var(--purple-xdk);
   color: #fff;
   font-weight: 300;
@@ -282,13 +282,29 @@ footer {
   .mobile-menu a { font-size: 1.3rem !important; }
 }
 
+
+/* ── FOOTER REDISEÑADO ──────────────────────── */
+footer { background: var(--slate); padding: 4rem 5rem 2rem; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 2rem; }
+.footer-brand p { font-size: .82rem; color: rgba(255,255,255,.4); line-height: 1.7; font-weight: 300; margin-top: 1rem; max-width: 240px; }
+.footer-col-title { font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; color: var(--lime); margin-bottom: 1.2rem; }
+.footer-col a { display: block; font-size: .82rem; color: rgba(255,255,255,.45); text-decoration: none; margin-bottom: .6rem; transition: color .2s; font-weight: 300; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-copy { font-size: .72rem; color: rgba(255,255,255,.2); }
+.footer-social { display: flex; gap: 1rem; }
+.footer-social a { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.4); text-decoration: none; transition: all .2s; font-size: .75rem; }
+.footer-social a:hover { border-color: var(--lime); color: var(--lime); }
+@media (max-width: 900px) { footer { padding: 3rem 1.5rem 1.5rem; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+
 </style>
 </head>
 <body>
 
 <nav>
   <a class="nav-logo" href="index.html">
-    <img src="img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna" style="height:52px;width:auto;display:block;">
+    <img src="img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna — Agencia de Marketing Digital Madrid" style="height:52px;width:auto;display:block;">
   </a>
 </nav>
 
@@ -344,28 +360,9 @@ footer {
 
 <footer>
   <a href="index.html" style="display:inline-block;">
-    <img src="img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna" style="height:40px;width:auto;display:block;opacity:.4;">
+    <img src="img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna — Agencia de Marketing Digital Madrid" style="height:40px;width:auto;display:block;opacity:.4;">
   </a>
   <div class="footer-links">
     <a href="aviso-legal.html">Aviso Legal</a>
     <a href="privacidad.html">Privacidad</a>
-    <a href="/cdn-cgi/l/email-protection#1c7473707d5c70736f717d6e68796f7273747d657069727d327f7371"><span class="__cf_
-<script>
-function openMobileMenu() {
-  document.getElementById('mobileMenu').classList.add('open');
-  var btn = document.querySelector('.nav-hamburger');
-  if (btn) btn.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeMobileMenu() {
-  document.getElementById('mobileMenu').classList.remove('open');
-  var btn = document.querySelector('.nav-hamburger');
-  if (btn) btn.classList.remove('open');
-  document.body.style.overflow = '';
-}
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeMobileMenu();
-});
-</script>
-</body>
-</html>
+    <a href="/cdn-cgi/l/email-protection#a0c8cfccc1e0cccfd3cdc1d2d4c5d3cecfc8c1d9ccd5cec18ec3cfcd"><s
