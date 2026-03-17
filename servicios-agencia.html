@@ -313,7 +313,7 @@ footer {
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ── RESPONSIVE ───────────────────────────────────── */
-@media (max-width: 1100px) {
+@media (max-max-width: 100%) {
   .cards.col-4 { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .step::after { display: none; }
@@ -774,7 +774,7 @@ footer {
 /* ── AUTHORITY BANNER ───────────────────────── */
 .authority-banner { background: var(--purple); padding: 4rem 5rem; position: relative; overflow: hidden; }
 .authority-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--purple-dk) 0%, var(--purple) 60%, var(--purple-lt) 100%); }
-.authority-inner { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1200px; margin: 0 auto; }
+.authority-inner { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-max-width: 100%; margin: 0 auto; }
 .authority-stat { padding: 2rem 2.5rem; border-right: 1px solid rgba(255,255,255,.08); text-align: center; }
 .authority-stat:last-child { border-right: none; }
 .authority-num { font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 900; color: var(--lime); letter-spacing: -.05em; line-height: 1; margin-bottom: .4rem; }
@@ -927,6 +927,17 @@ footer .footer-copy {
   color: rgba(255,255,255,.2) !important; 
   font-size: .72rem;
 }
+
+
+/* ── MOBILE FIRST RESET ─────────────────────── */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img, video, iframe, table, input, textarea, select {
+  max-width: 100%;
+}
+img { height: auto; }
 
 </style>
 <script type="application/ld+json">
@@ -1434,5 +1445,6 @@ footer .footer-copy {
   function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
   function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
 </script>
+<script src="/cookie-consent.js" defer></script>
 </body>
 </html>

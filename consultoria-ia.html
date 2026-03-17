@@ -3,22 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Consultoría Estratégica Marketing Madrid 🚀</title>
-<meta property="og:type" content="website">
-<meta property="og:title" content="Consultoría Estratégica de Marketing — LMNHL Madrid">
-<meta property="og:description" content="Diagnóstico minucioso de tu negocio y plan de acción a 90 días. Sheila Aguilar trabaja directamente contigo. 1.497€. Solo 8 plazas/mes.">
-<meta property="og:url" content="https://losmartesnohayluna.com/consultoria-estrategica/">
-<meta property="og:image" content="https://losmartesnohayluna.com/img/sheila-trabajando.png">
-<meta property="og:locale" content="es_ES">
-<meta property="og:site_name" content="Los Martes No Hay Luna">
-<link rel="canonical" href="https://losmartesnohayluna.com/consultoria-estrategica/">
-<meta name="robots" content="noindex, follow">
-<meta name="keywords" content="consultoria estrategica marketing madrid, plan marketing 90 dias, auditoria marketing digital pymes">
-<meta name="description" content="Diagnóstico completo + plan de acción 90 días. 1.497€. 📍 Madrid 📈 Trabajo personal de Sheila Aguilar. Solo 8 plazas/mes ✨">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
-<link rel="manifest" href="/site.webmanifest">
+<title>Consultoría Estratégica con IA — Los Martes No Hay Luna</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 <style>
@@ -59,7 +44,7 @@ nav {
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--rule);
 }
-.nav-logo { text-decoration: none; display: flex; align-items: center; }
+.nav-logo { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--purple); text-decoration: none; }
 .nav-badge {
   display: inline-flex; align-items: center; gap: .5rem;
   font-size: .6rem; letter-spacing: .14em; text-transform: uppercase;
@@ -624,7 +609,7 @@ footer {
 .footer-copy { font-size: .65rem; color: rgba(255,255,255,.2); width: 100%; }
 
 /* ── REVEAL ────────────────────────────────────────── */
-.reveal { opacity: 1; transform: translateY(0); transition: opacity .6s ease, transform .6s ease; }
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.d1 { transition-delay: .1s; }
 .reveal.d2 { transition-delay: .2s; }
 .reveal.d3 { transition-delay: .3s; }
@@ -656,490 +641,6 @@ footer {
   .pr-steps { grid-template-columns: 1fr; }
 }
 
-/* ── MOBILE NAV ─────────────────────────────── */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: .4rem;
-  background: none;
-  border: none;
-  z-index: 200;
-}
-.nav-hamburger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--purple);
-  transition: all .3s;
-  transform-origin: center;
-}
-.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-hamburger.open span:nth-child(2) { opacity: 0; }
-.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(58,28,87,.98);
-  z-index: 150;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  padding: 2rem;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #fff;
-  text-decoration: none;
-  letter-spacing: -.02em;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  width: 100%;
-  text-align: center;
-  transition: color .2s;
-}
-.mobile-menu a:hover { color: var(--lime); }
-.mobile-menu a:last-child { border-bottom: none; }
-.mobile-menu .mm-cta {
-  margin-top: 1.5rem;
-  background: var(--lime);
-  color: var(--slate) !important;
-  padding: 1rem 2.5rem !important;
-  font-size: .85rem !important;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  border-bottom: none !important;
-  width: auto !important;
-}
-.mobile-menu .mm-close {
-  position: absolute;
-  top: 1.4rem; right: 1.5rem;
-  background: none; border: none;
-  font-size: 1.8rem; color: rgba(255,255,255,.6);
-  cursor: pointer; font-family: sans-serif;
-  line-height: 1;
-}
-@media (max-width: 900px) {
-  .nav-hamburger { display: flex; }
-}
-
-
-@media (max-width: 480px) {
-  html { font-size: 15px; }
-  body { overflow-x: hidden; }
-
-  /* Nav */
-  nav { padding: .9rem 1.2rem; }
-  .nav-logo img { height: 42px !important; }
-
-  /* Typography scale */
-  h1, .hero h1, .article-header h1 {
-    font-size: clamp(1.7rem, 8vw, 2.4rem) !important;
-    letter-spacing: -.03em !important;
-    line-height: 1.1 !important;
-  }
-  h2 { font-size: clamp(1.3rem, 6vw, 1.8rem) !important; }
-
-  /* Sections padding */
-  section, .hero, .about-strip, .services, .process-strip,
-  .blog-preview, .testimonials, .newsletter, .final-cta,
-  .topics, .newsletter-full, .related-posts {
-    padding: 3.5rem 1.2rem !important;
-  }
-  .blog-body { padding: 2.5rem 1.2rem !important; }
-  .article-layout { padding: 2.5rem 1.2rem !important; }
-  .article-header { padding: 6.5rem 1.2rem 2.5rem !important; }
-  .page-header { padding: 6.5rem 1.2rem 2.5rem !important; }
-  .blog-header { padding: 7rem 1.2rem 2.5rem !important; }
-  footer { padding: 2rem 1.2rem !important; }
-  .legal-body { padding: 2.5rem 1.2rem 3rem !important; }
-
-  /* Hero */
-  .hero-actions { flex-direction: column !important; gap: .8rem !important; }
-  .btn-primary, .btn-ghost { width: 100%; text-align: center; padding: .9rem 1rem !important; }
-  .hero-proof { flex-wrap: wrap; gap: .8rem !important; }
-
-  /* Grids → single column */
-  .sv-grid, .bp-grid, .ts-grid, .topics-grid,
-  .rp-grid, .nl-fields, .platform-grid,
-  .results-grid, .rights-grid { grid-template-columns: 1fr !important; }
-
-  /* Newsletter */
-  .newsletter-full { padding: 3.5rem 1.2rem !important; }
-  .nl-fields { grid-template-columns: 1fr !important; }
-
-  /* Blog */
-  .cat-bar { padding: 0 1rem !important; }
-  .cat-pill { padding: .9rem 1rem !important; font-size: .6rem !important; }
-  .post-row { grid-template-columns: 1fr !important; }
-  .post-thumb { aspect-ratio: 16/7 !important; }
-  .featured-post { grid-template-columns: 1fr !important; }
-  .fp-photo { min-height: 200px !important; }
-  .fp-content { padding: 2rem 1.2rem !important; }
-
-  /* Article */
-  .article-content h2 { font-size: 1.15rem !important; }
-  .article-content h3 { font-size: .95rem !important; }
-  .case-header { flex-direction: column; gap: .6rem !important; }
-  .case-num { font-size: 1.8rem !important; }
-  .phase { grid-template-columns: 1fr !important; }
-
-  /* Sidebar */
-  .article-sidebar, .sidebar { padding-left: 0 !important; }
-
-  /* Footer */
-  .footer-links { flex-direction: column; gap: .8rem !important; }
-  .footer-copy { font-size: .6rem !important; }
-
-  /* Forms */
-  input, textarea, select, button {
-    font-size: 16px !important; /* Prevents iOS zoom */
-  }
-  .sb-input, .nl-input, .cat-search input {
-    font-size: 16px !important;
-  }
-
-  /* Tables */
-  .cookie-table { font-size: .72rem !important; }
-  .cookie-table th, .cookie-table td { padding: .5rem .6rem !important; }
-  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-
-  /* Comparison table */
-  .comp-row { grid-template-columns: 1fr !important; }
-  .comp-row:first-child { display: none; }
-  .comp-cell:first-child::before { content: 'Sin estrategia: '; font-weight: 600; color: var(--pink); font-size: .7rem; }
-  .comp-cell:last-child::before { content: 'Con estrategia: '; font-weight: 600; color: var(--lime-dk); font-size: .7rem; }
-
-  /* Buttons */
-  .nav-cta { display: none; }
-  .article-cta a { width: 100%; justify-content: center; }
-  .btn-read { font-size: .65rem !important; }
-
-  /* Process steps */
-  .ps-steps { grid-template-columns: 1fr !important; }
-
-  /* Testimonials */
-  .ts-card { padding: 1.5rem !important; }
-  .ts-grid { gap: 1rem !important; }
-
-  /* About strip */
-  .as-photo { min-height: 260px !important; }
-
-  /* Topics grid */
-  .topics-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .topic-card { padding: 1.2rem 1rem !important; }
-
-  /* Case studies */
-  .results-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .result-num { font-size: 1.3rem !important; }
-
-  /* Phases */
-  .phases { gap: .8rem !important; }
-  .pillar { padding: 1.5rem !important; }
-
-  /* Sidebar CTA */
-  .sidebar-cta { padding: 1.2rem !important; }
-
-  /* Blog sidebar */
-  .sb-about, .sb-newsletter { padding: 1.5rem !important; }
-}
-
-
-@media (max-width: 900px) {
-  /* Sectors strip */
-  .clients-strip { padding: 1.5rem 1.2rem; gap: 1rem; flex-direction: column; align-items: flex-start; }
-  .cs-sep { display: none; }
-  .cs-items { gap: 1rem 1.5rem; }
-  .cs-item { font-size: .82rem; white-space: normal; }
-  .cs-label { font-size: .65rem; }
-
-  /* Proof numbers */
-  .hero-proof { gap: 1.5rem; }
-  .hero-proof-num { font-size: 2rem; }
-  .hero-proof-label { font-size: .78rem; }
-
-  /* General body text */
-  p, .fp-excerpt, .post-excerpt, .ah-excerpt { font-size: .9rem !important; line-height: 1.8 !important; }
-  .article-content p { font-size: .9rem !important; }
-
-  /* Section subtitles */
-  .bh-sub, .hero-sub { font-size: .88rem !important; }
-}
-
-@media (max-width: 480px) {
-  /* Sectors strip */
-  .clients-strip { padding: 1.2rem 1.2rem; }
-  .cs-item { font-size: .85rem; color: rgba(255,255,255,.65) !important; }
-
-  /* Proof */
-  .hero-proof-label { font-size: .8rem !important; color: rgba(255,255,255,.65) !important; }
-  .hero-proof-num { font-size: 2.2rem !important; }
-  .hero-proof-sep { display: none; }
-  .hero-proof { flex-wrap: wrap; gap: 1.2rem; }
-  .hero-proof-item { min-width: 30%; }
-
-  /* All body text minimum */
-  /* font size only on light-bg text elements */
-  .post-excerpt, .fp-excerpt, .post-info p, .bp-info p, .article-content p, .legal-body p, .phase p, .pillar p, .case-body p { font-size: .9rem !important; }
-  .post-excerpt { font-size: .84rem !important; }
-  .post-cat, .bp-cat, .rp-cat { font-size: .65rem !important; }
-  .post-date, .post-time, .bp-meta { font-size: .7rem !important; }
-
-  /* Nav */
-  .nav-logo img { height: 44px !important; }
-
-  /* Sidebar bio */
-  .sb-about p, .sa-bio { font-size: .8rem !important; }
-  .sidebar-cta p { font-size: .82rem !important; }
-
-  /* Article meta */
-  .ah-excerpt { font-size: .88rem !important; }
-  .ah-author-name { font-size: .82rem !important; }
-  .ah-time { font-size: .72rem !important; }
-
-  /* Footer */
-  .footer-links a { font-size: .72rem !important; }
-  .footer-copy { font-size: .65rem !important; }
-
-  /* Buttons */
-  .btn-primary { font-size: .75rem !important; }
-  .article-cta a { font-size: .75rem !important; }
-}
-
-
-/* ── FONT SIZE MOBILE FIX ───────────────────── */
-@media (max-width: 768px) {
-  /* body font-size managed per element */
-  p, li, td, .post-excerpt, .fp-excerpt, .ah-excerpt,
-  .sb-bio, .sa-bio, .sidebar-cta p, .sb-about p,
-  .article-content p, .article-content li,
-  .case-body p, .pillar p, .content-type p,
-  .highlight-box li, .learning-box p,
-  .pattern-list li, .phase p { 
-    font-size: 1rem !important; 
-    line-height: 1.8 !important; 
-  }
-  h1 { font-size: clamp(2rem, 8vw, 2.8rem) !important; }
-  h2 { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
-  h3 { font-size: clamp(1.1rem, 5vw, 1.4rem) !important; }
-  .article-content h2 { font-size: 1.25rem !important; }
-  .article-content h3 { font-size: 1.05rem !important; }
-  .hero-sub { font-size: 1rem !important; }
-  .bh-sub, .ah-excerpt { font-size: .95rem !important; }
-  .post-info h3 { font-size: 1rem !important; }
-  .nav-links a, .footer-links a { font-size: .75rem !important; }
-  .btn-primary, .btn-ghost, .nav-cta { font-size: .8rem !important; }
-  .article-cta a { font-size: .8rem !important; }
-  .toc-list a { font-size: .9rem !important; }
-  .fp-content h2 { font-size: 1.3rem !important; }
-  .ts-quote { font-size: .95rem !important; }
-  .mobile-menu a { font-size: 1.3rem !important; }
-}
-
-
-
-/* ════════════════════════════════════════════════════
-   MOBILE FINAL FIX — Typography + Green BG text
-   ════════════════════════════════════════════════════ */
-
-/* ── GREEN/LIME background: always white text ───────── */
-.manifesto,
-.manifesto * { color: var(--slate) !important; }
-
-.btn-lime,
-.nl-submit,
-.sb-submit,
-.mm-cta,
-.fp-featured-label { color: var(--slate) !important; }
-
-/* Article CTA lime button */
-.article-cta a,
-.sidebar-cta a { color: #fff !important; }
-
-/* Green badge on blog */
-.fp-featured-label { color: #fff !important; background: var(--lime) !important; }
-
-/* ── MOBILE TYPOGRAPHY — bigger, readable ───────────── */
-@media (max-width: 900px) {
-  /* Base body */
-  body { font-size: 16px; }
-
-  /* Paragraphs — minimum legible size */
-  p { font-size: 1rem !important; line-height: 1.85 !important; }
-  li { font-size: 1rem !important; line-height: 1.8 !important; }
-
-  /* Article content */
-  .article-content p,
-  .article-content li { font-size: 1rem !important; }
-  .article-content h2 { font-size: 1.3rem !important; }
-  .article-content h3 { font-size: 1.1rem !important; }
-
-  /* Excerpts */
-  .fp-excerpt,
-  .post-excerpt,
-  .ah-excerpt,
-  .hero-sub,
-  .bh-sub { font-size: .95rem !important; line-height: 1.8 !important; }
-
-  /* Meta / labels */
-  .post-cat, .bp-cat, .rp-cat,
-  .ah-cat, .fp-cat { font-size: .72rem !important; }
-  .post-date, .post-time,
-  .bp-meta, .ah-time { font-size: .75rem !important; }
-
-  /* Sidebar text */
-  .sa-bio,
-  .sb-about p,
-  .sidebar-cta p,
-  .toc-list a { font-size: .88rem !important; }
-
-  /* Nav */
-  .nav-links a { font-size: .72rem !important; }
-  .nav-cta { font-size: .72rem !important; }
-
-  /* Footer */
-  .footer-links a { font-size: .75rem !important; }
-  .footer-copy { font-size: .7rem !important; }
-
-  /* Buttons */
-  .btn-primary,
-  .btn-ghost,
-  .btn-read,
-  .article-cta a,
-  .sidebar-cta a { font-size: .78rem !important; }
-
-  /* Tags */
-  .tag, .sb-tag { font-size: .7rem !important; }
-
-  /* Case studies */
-  .case-body p { font-size: .92rem !important; }
-  .case-title { font-size: 1rem !important; }
-  .result-label { font-size: .78rem !important; }
-
-  /* Highlight box */
-  .highlight-box li { font-size: .92rem !important; }
-
-  /* Pull quote */
-  .pull-quote p { font-size: 1.05rem !important; }
-
-  /* Legal pages */
-  .legal-body p,
-  .legal-body li { font-size: .95rem !important; }
-  .legal-body h2 { font-size: 1.1rem !important; }
-
-  /* TOC */
-  .toc-list a { font-size: .85rem !important; }
-
-  /* Hero proof labels */
-  .hero-proof-label { font-size: .85rem !important; }
-  .hero-proof-num { font-size: 2.2rem !important; }
-}
-
-@media (max-width: 480px) {
-  /* Even bigger on very small screens */
-  p { font-size: 1rem !important; }
-  li { font-size: 1rem !important; }
-
-  /* Headings */
-  h1 { font-size: clamp(1.8rem, 8vw, 2.6rem) !important; }
-  h2 { font-size: clamp(1.3rem, 6vw, 1.9rem) !important; }
-  h3 { font-size: 1.1rem !important; }
-
-  /* Dark section text — stays white */
-  .hero p, .hero li,
-  .hero .hero-sub { color: rgba(255,255,255,.8) !important; }
-
-  .testimonials p, .testimonials li,
-  .ts-quote { color: rgba(255,255,255,.85) !important; }
-
-  .final-cta p, .final-cta li { color: rgba(255,255,255,.8) !important; }
-
-  .article-cta p { color: rgba(255,255,255,.85) !important; }
-
-  .highlight-box li,
-  .highlight-box p { color: rgba(255,255,255,.9) !important; }
-
-  .price-box p { color: rgba(255,255,255,.85) !important; }
-
-  .learning-box p { color: rgba(255,255,255,.85) !important; }
-
-  .method p, .method li,
-  .ms-text { color: rgba(255,255,255,.7) !important; }
-
-  .results p, .results li,
-  .rc-story,
-  .rc-what { color: rgba(255,255,255,.75) !important; }
-
-  /* Sidebar author on dark purple */
-  .sidebar-author .sa-bio,
-  .sidebar-author .sa-role { color: rgba(255,255,255,.7) !important; }
-
-  /* Mobile menu links */
-  .mobile-menu a { color: #fff !important; }
-
-  /* Green bg sections — dark text */
-  .manifesto p,
-  .manifesto li,
-  .mf-body,
-  .mf-quote { color: var(--slate) !important; }
-}
-
-
-/* ── FOOTER REDISEÑADO ──────────────────────── */
-footer { background: var(--slate); padding: 4rem 5rem 2rem; }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 2rem; }
-.footer-brand p { font-size: .82rem; color: rgba(255,255,255,.4); line-height: 1.7; font-weight: 300; margin-top: 1rem; max-width: 240px; }
-.footer-col-title { font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; color: var(--lime); margin-bottom: 1.2rem; }
-.footer-col a { display: block; font-size: .82rem; color: rgba(255,255,255,.45); text-decoration: none; margin-bottom: .6rem; transition: color .2s; font-weight: 300; }
-.footer-col a:hover { color: #fff; }
-.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-.footer-copy { font-size: .72rem; color: rgba(255,255,255,.2); }
-.footer-social { display: flex; gap: 1rem; }
-.footer-social a { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.4); text-decoration: none; transition: all .2s; font-size: .75rem; }
-.footer-social a:hover { border-color: var(--lime); color: var(--lime); }
-@media (max-width: 900px) { footer { padding: 3rem 1.5rem 1.5rem; } .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
-@media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
-
-
-/* ── FOOTER LINK OVERRIDES ─────────────────── */
-footer .footer-col a {
-  color: rgba(255,255,255,.45) !important;
-  text-decoration: none !important;
-  display: block !important;
-  font-size: .82rem !important;
-  margin-bottom: .6rem;
-  transition: color .2s;
-  font-weight: 300;
-}
-footer .footer-col a:hover { color: #fff !important; }
-footer .footer-col-title {
-  font-size: .62rem !important;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--lime) !important;
-  margin-bottom: 1.2rem;
-  display: block;
-}
-footer .footer-brand p { 
-  color: rgba(255,255,255,.4) !important; 
-  font-size: .82rem;
-  line-height: 1.7;
-  margin-top: 1rem;
-}
-footer .footer-copy { 
-  color: rgba(255,255,255,.2) !important; 
-  font-size: .72rem;
-}
-
-
 /* ── MOBILE FIRST RESET ─────────────────────── */
 html, body {
   max-width: 100%;
@@ -1150,48 +651,36 @@ img, video, iframe, table, input, textarea, select {
 }
 img { height: auto; }
 
+
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; background: none; border: none; z-index: 200; }
+.nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--purple); transition: all .3s; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(58,28,87,.98); z-index: 150; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-family: 'Poppins', sans-serif; font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,.08); width: 100%; text-align: center; transition: color .2s; }
+.mobile-menu a:hover { color: var(--lime); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu .mm-cta { margin-top: 1.5rem; background: var(--lime); color: var(--slate) !important; padding: 1rem 2.5rem !important; font-size: .85rem !important; text-transform: uppercase; border-bottom: none !important; width: auto !important; }
+.mobile-menu .mm-close { position: absolute; top: 1.4rem; right: 1.5rem; background: none; border: none; font-size: 1.8rem; color: rgba(255,255,255,.6); cursor: pointer; }
+@media (max-width: 900px) { .nav-hamburger { display: flex; } .nav-links { display: none; } nav { padding: 1rem 1.5rem; } }
+
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Marketing Digital y Consultoría Estratégica",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Los Martes No Hay Luna",
-    "url": "https://losmartesnohayluna.com"
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "Madrid"
-  },
-  "serviceType": "Marketing Digital"
-}
+<script src="/widget-consultora.js" defer>
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
+
 </script>
-<script src="/widget-consultora.js" defer></script>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="/"><img src="/img/LMHHL_logo_2026.svg" alt="Los Martes No Hay Luna — Agencia de Marketing Digital Madrid" style="height:52px;width:auto;display:block;"></a>
-
+  <a class="nav-logo" href="/">Los Martes No Hay Luna</a>
+  <span class="nav-badge">Página de servicio · No indexada</span>
   <a class="nav-cta" href="#reserva">Reservar mi plaza →</a>
-  <button class="nav-hamburger" onclick="openMobileMenu()" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mm-close" onclick="closeMobileMenu()">×</button>
-  <a href="/" onclick="closeMobileMenu()">Inicio</a>
-  <a href="/servicios/" onclick="closeMobileMenu()">Servicios</a>
-  <a href="/ia-para-empresas/" onclick="closeMobileMenu()">IA para Empresas</a>
-  <a href="/sheila-aguilar/" onclick="closeMobileMenu()">Sheila Aguilar</a>
-  <a href="/blog/" onclick="closeMobileMenu()">Blog</a>
-  <a href="/contacto/" onclick="closeMobileMenu()">Contacto</a>
-  <a href="/sesion-gratuita/" class="mm-cta" onclick="closeMobileMenu()">Sesión gratuita →</a>
-</div>
-
 
 <!-- HERO -->
 <section class="hero">
@@ -1227,7 +716,7 @@ img { height: auto; }
         <div class="pc-original">PVP regular: <span>2.500€</span></div>
         <div class="pc-offer">
           <span class="pc-offer-label">Oferta 2026</span>
-          <div class="pc-price">1.497<sup>€</sup></div>
+          <div class="pc-price"><sup>€</sup>1.497</div>
         </div>
         <div class="pc-price-note">2 sesiones online · Grabación incluida</div>
         <div class="pc-savings">✦ Ahorras 1.003€ · Solo 8 plazas/mes</div>
@@ -1333,19 +822,22 @@ img { height: auto; }
       Trabajo personal y directo con Sheila · Sin intermediarios
     </div>
   </div>
-  <div class="pos-right reveal d1" style="grid-template-columns:1fr;display:flex;flex-direction:column;gap:1.2rem;">
-    <div style="overflow:hidden;flex:1;min-height:360px;border-top:3px solid var(--lime);">
-      <img src="/img/Sheila-Aguilar-consultora-de-empresas.png" alt="Sheila Aguilar — Consultora estratégica para empresas" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+  <div class="pos-right reveal d1">
+    <div class="pos-stat">
+      <div class="pos-stat-num">25<span>+</span></div>
+      <div class="pos-stat-label">Años de experiencia en estrategia e imagen corporativa</div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
-      <div class="pos-stat" style="margin:0;">
-        <div class="pos-stat-num">25<span>+</span></div>
-        <div class="pos-stat-label">Años de experiencia</div>
-      </div>
-      <div class="pos-stat highlight" style="margin:0;">
-        <div class="pos-stat-num">+100</div>
-        <div class="pos-stat-label">Consultorías realizadas</div>
-      </div>
+    <div class="pos-stat highlight">
+      <div class="pos-stat-num">40<span>min</span></div>
+      <div class="pos-stat-label">Para localizar las primeras ineficiencias de tu negocio</div>
+    </div>
+    <div class="pos-stat">
+      <div class="pos-stat-num">3x</div>
+      <div class="pos-stat-label">Media de leads tras aplicar el plan a 90 días en nuestros clientes</div>
+    </div>
+    <div class="pos-stat">
+      <div class="pos-stat-num">+100</div>
+      <div class="pos-stat-label">Consultorías realizadas en los últimos 5 años</div>
     </div>
   </div>
 </section>
@@ -1472,138 +964,51 @@ img { height: auto; }
 
 <!-- TESTIMONIALS -->
 <section class="testimonials">
-  <div class="ts-eyebrow reveal">Clientes verificados en Google</div>
-  <h2 class="reveal">Lo que dicen quienes ya<br>han trabajado con nosotros</h2>
-
-  <!-- Google badge -->
-  <div class="reveal" style="display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem;flex-wrap:wrap;">
-    <div style="display:flex;align-items:center;gap:.7rem;background:rgba(255,255,255,.08);padding:.7rem 1.2rem;border-left:3px solid #87B229;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-      </svg>
-      <span style="font-size:.7rem;font-weight:600;color:#fff;letter-spacing:.06em;">Reseñas verificadas en Google</span>
-      <span style="color:#fbbf24;font-size:.9rem;letter-spacing:.05em;">★★★★★</span>
-    </div>
-    <a href="https://g.page/losmartesnohayluna" target="_blank" rel="noopener"
-       style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#87B229;text-decoration:none;border-bottom:1px solid rgba(135,178,41,.4);padding-bottom:.1rem;transition:border-color .2s;">
-      Ver todas las reseñas →
-    </a>
-  </div>
-
-  <div class="ts-grid" style="position:relative;z-index:2;">
-
+  <div class="ts-eyebrow reveal">Lo que dicen nuestros clientes</div>
+  <h2 class="reveal">Resultados que hablan<br>por sí solos</h2>
+  <div class="ts-grid">
     <div class="ts-card reveal">
       <div class="ts-stars">★★★★★</div>
-      <p class="ts-quote">Sheila tiene una visión muy clara y estratégica. Nos ayudó a enfocar nuestro mensaje y a saber exactamente a quién nos dirigimos. Desde que trabajamos con ella notamos resultados reales.</p>
+      <p class="ts-quote">Llegué pensando que mi problema era de marketing. Sheila me ayudó a ver que era un problema de estrategia y posicionamiento. En 90 días cambiamos el mensaje, el canal y el precio. Y funcionó.</p>
       <div class="ts-author">
-        <div class="ts-avatar" style="background:#582D81;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-        </div>
+        <div class="ts-avatar">MR</div>
         <div>
-          <div class="ts-name">Cliente verificado</div>
-          <div class="ts-role">Reseña en Google · Los Martes No Hay Luna</div>
+          <div class="ts-name">María Rodríguez</div>
+          <div class="ts-role">CEO · Estudio de arquitectura · Madrid</div>
         </div>
       </div>
-      <a href="https://g.page/losmartesnohayluna" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#87B229;text-decoration:none;">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/></svg>
-        Ver en Google
-      </a>
+      <div class="ts-result">+180% en solicitudes de presupuesto</div>
     </div>
-
     <div class="ts-card reveal d1">
       <div class="ts-stars">★★★★★</div>
-      <p class="ts-quote">Profesionalidad y cercanía a partes iguales. Sheila entiende tu negocio de verdad antes de proponer nada. No te da soluciones genéricas: te da lo que necesitas tú.</p>
+      <p class="ts-quote">La integración de IA que diseñamos en la sesión 2 nos ahorró literalmente 12 horas semanales de trabajo manual. Y lo implementamos nosotros solos, sin contratar a nadie externo.</p>
       <div class="ts-author">
-        <div class="ts-avatar" style="background:#582D81;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-        </div>
+        <div class="ts-avatar">JP</div>
         <div>
-          <div class="ts-name">Cliente verificado</div>
-          <div class="ts-role">Reseña en Google · Los Martes No Hay Luna</div>
+          <div class="ts-name">Javier Pérez</div>
+          <div class="ts-role">Director Comercial · PYME industrial · Valencia</div>
         </div>
       </div>
-      <a href="https://g.page/losmartesnohayluna" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#87B229;text-decoration:none;">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/></svg>
-        Ver en Google
-      </a>
+      <div class="ts-result">12h/semana ahorradas con IA</div>
     </div>
-
     <div class="ts-card reveal d2">
       <div class="ts-stars">★★★★★</div>
-      <p class="ts-quote">Llevábamos tiempo dando vueltas sin dirección clara. Tras la consultoría con Sheila tuvimos un plan de acción concreto en dos sesiones. Muy recomendable si quieres dejar de improvisar.</p>
+      <p class="ts-quote">Llevaba 3 años con la misma estrategia digital sin saber por qué no escalaba. En la primera sesión identificamos el problema. En la segunda, ya teníamos el plan para solucionarlo.</p>
       <div class="ts-author">
-        <div class="ts-avatar" style="background:#582D81;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-        </div>
+        <div class="ts-avatar">AL</div>
         <div>
-          <div class="ts-name">Cliente verificado</div>
-          <div class="ts-role">Reseña en Google · Los Martes No Hay Luna</div>
+          <div class="ts-name">Ana Llorente</div>
+          <div class="ts-role">Fundadora · E-commerce moda · Barcelona</div>
         </div>
       </div>
-      <a href="https://g.page/losmartesnohayluna" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:#87B229;text-decoration:none;">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/></svg>
-        Ver en Google
-      </a>
+      <div class="ts-result">De 15k€/mes a 47k€/mes en 4 meses</div>
     </div>
-
   </div>
-
-  <!-- CTA Google Reviews -->
-  <div class="reveal" style="text-align:center;margin-top:3rem;">
-    <a href="https://g.page/losmartesnohayluna" target="_blank" rel="noopener"
-       style="display:inline-flex;align-items:center;gap:.8rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:1rem 2rem;color:#fff;text-decoration:none;font-family:Poppins,sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;transition:background .2s;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-      Ver todas las reseñas en Google
-      <span style="color:#87B229;">★★★★★</span>
-    </a>
-  </div>
-
 </section>
 
-<!-- FAQ -->
-<section class="faq">
-  <div class="faq-left">
-    <div class="faq-eyebrow reveal">FAQ</div>
-    <h2 class="reveal">Preguntas frecuentes</h2>
-    <p class="faq-sub reveal">Si tienes alguna duda que no esté aquí resuelta, escríbenos a <strong>
-    <a href="tel:34919997726">91 999 77 26</a>
-  </div>
-  <p class="footer-copy">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
-</footer>
 
-<script>
-  // Reveal on scroll
-  const els = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-  els.forEach(el => obs.observe(el));
 
-  // FAQ accordion
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const answer = item.querySelector('.faq-a');
-      const isOpen = q.classList.contains('open');
-      document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('open'));
-      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
-      if (!isOpen) { q.classList.add('open'); answer.classList.add('open'); }
-    });
-  });
-</script>
-
-<script>
-function openMobileMenu() {
-  document.getElementById('mobileMenu').classList.add('open');
-  document.querySelector('.nav-hamburger').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeMobileMenu() {
-  document.getElementById('mobileMenu').classList.remove('open');
-  var btn = document.<footer>
+<footer style="background:#2a1f38;padding:4rem 5rem 2rem;">
   <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.5rem;">
     <div>
       <a href="/" style="display:inline-block;margin-bottom:1rem;">
@@ -1643,7 +1048,7 @@ function closeMobileMenu() {
     </div>
     <div style="display:flex;gap:.8rem;">
       <a href="https://www.instagram.com/losmartesnohayluna" target="_blank" rel="noopener" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;">ig</a>
-            <a href="https://www.linkedin.com/company/los-martes-no-hay-luna" target="_blank" rel="noopener" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;">in</a>
+      <a href="https://www.linkedin.com/company/los-martes-no-hay-luna" target="_blank" rel="noopener" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;">in</a>
     </div>
   </div>
 </footer>

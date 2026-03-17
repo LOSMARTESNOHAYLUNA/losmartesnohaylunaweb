@@ -476,6 +476,17 @@ footer .footer-copy {
   font-size: .72rem;
 }
 
+
+/* ── MOBILE FIRST RESET ─────────────────────── */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img, video, iframe, table, input, textarea, select {
+  max-width: 100%;
+}
+img { height: auto; }
+
 </style>
 <script src="/widget-consultora.js" defer></script>
 </head>
@@ -612,5 +623,6 @@ footer .footer-copy {
   function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
   function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
 </script>
+<script src="/cookie-consent.js" defer></script>
 </body>
 </html>

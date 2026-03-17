@@ -466,7 +466,7 @@ footer {
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ── RESPONSIVE ───────────────────────────────────── */
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
   .method-steps { grid-template-columns: repeat(2, 1fr); }
   .ms-connector { display: none; }
   .results-grid { grid-template-columns: 1fr 1fr; }
@@ -591,6 +591,8 @@ footer {
 /* Mobile */
 @media (max-width: 480px) {
   nav { padding: .9rem 1.2rem; }
+  .quote-banner { padding: 3.5rem 1.2rem; }
+  .authority-banner { padding: 2.5rem 1.2rem; }
   .nav-logo img { height: 42px; }
   .nav-cta { display: none; }
   footer { padding: 2rem 1.2rem; }
@@ -612,7 +614,7 @@ footer {
 /* ── AUTHORITY BANNER ───────────────────────── */
 .authority-banner { background: var(--purple); padding: 4rem 5rem; position: relative; overflow: hidden; }
 .authority-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--purple-dk) 0%, var(--purple) 60%, var(--purple-lt) 100%); }
-.authority-inner { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1200px; margin: 0 auto; }
+.authority-inner { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-max-width: 100%; margin: 0 auto; }
 .authority-stat { padding: 2rem 2.5rem; border-right: 1px solid rgba(255,255,255,.08); text-align: center; }
 .authority-stat:last-child { border-right: none; }
 .authority-num { font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 900; color: var(--lime); letter-spacing: -.05em; line-height: 1; margin-bottom: .4rem; }
@@ -622,7 +624,7 @@ footer {
 
 
 /* ── QUOTE BANNERS ──────────────────────────── */
-.quote-banner { background: var(--purple-dk); padding: 5rem; text-align: center; position: relative; overflow: hidden; }
+.quote-banner { background: var(--purple-dk); padding: 5rem 1.8rem; text-align: center; position: relative; overflow: hidden; }
 .quote-banner::before { content: '"'; position: absolute; top: -2rem; left: 50%; transform: translateX(-50%); font-size: 18rem; font-weight: 900; color: rgba(135,178,41,.04); line-height: 1; pointer-events: none; font-family: Georgia, serif; }
 .quote-banner blockquote { position: relative; z-index: 2; font-size: clamp(1.4rem, 2.5vw, 2.2rem); font-weight: 700; color: #fff; letter-spacing: -.02em; line-height: 1.35; max-width: 800px; margin: 0 auto 1.5rem; font-style: italic; }
 .quote-banner blockquote em { color: var(--lime); font-style: normal; }
@@ -666,6 +668,17 @@ footer .footer-copy {
   color: rgba(255,255,255,.2) !important; 
   font-size: .72rem;
 }
+
+
+/* ── MOBILE FIRST RESET ─────────────────────── */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img, video, iframe, table, input, textarea, select {
+  max-width: 100%;
+}
+img { height: auto; }
 
 </style>
 <script type="application/ld+json">
@@ -1432,5 +1445,6 @@ footer .footer-copy {
   function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
   function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
 </script>
+<script src="/cookie-consent.js" defer></script>
 </body>
 </html>

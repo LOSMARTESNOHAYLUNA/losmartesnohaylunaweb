@@ -1,6 +1,71 @@
 {
   "redirects": [
     {
+      "source": "/marketing-para-centros-de-estetica/",
+      "destination": "https://losmartesnohayluna.com/servicios/",
+      "permanent": true
+    },
+    {
+      "source": "/los-mejores-crm-del-mercado/",
+      "destination": "https://losmartesnohayluna.com/ia-para-empresas/",
+      "permanent": true
+    },
+    {
+      "source": "/consultoria-y-diseno-por-horas/",
+      "destination": "https://losmartesnohayluna.com/consultoria-estrategica/",
+      "permanent": true
+    },
+    {
+      "source": "/diseno-de-paginas-web-precios/",
+      "destination": "https://losmartesnohayluna.com/servicios/",
+      "permanent": true
+    },
+    {
+      "source": "/que-es-un-funnel-de-ventas/",
+      "destination": "https://losmartesnohayluna.com/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/errores-comunes-al-implementar-un-crm/",
+      "destination": "https://losmartesnohayluna.com/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/estrategias-marketing-medico-seo-medico-clinicas/",
+      "destination": "https://losmartesnohayluna.com/servicios/",
+      "permanent": true
+    },
+    {
+      "source": "/tarjetas-de-visita-papeles-y-acabados/",
+      "destination": "https://losmartesnohayluna.com/servicios/",
+      "permanent": true
+    },
+    {
+      "source": "/que-es-la-api-de-whatsapp-business/",
+      "destination": "https://losmartesnohayluna.com/ia-para-empresas/",
+      "permanent": true
+    },
+    {
+      "source": "/tarjetas-de-visita-vcard-con-codigo-qr/",
+      "destination": "https://losmartesnohayluna.com/servicios/",
+      "permanent": true
+    },
+    {
+      "source": "/cuales-son-los-tipos-de-campanas-en-google-ads/",
+      "destination": "https://losmartesnohayluna.com/servicios/",
+      "permanent": true
+    },
+    {
+      "source": "/que-tendencias-de-diseno-web-dominaran-las-pantallas-en-2025/",
+      "destination": "https://losmartesnohayluna.com/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/que-es-el-seo-local-y-cuanto-se-cobra-por-sus-servicios/",
+      "destination": "https://losmartesnohayluna.com/servicios/",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
@@ -304,6 +369,26 @@
     {
       "source": "/sitemap.xsl",
       "destination": "/sitemap.xsl"
+    },
+    {
+      "source": "/blog/linkedin-empresas-servicios/",
+      "destination": "/blog-linkedin-empresas-servicios.html"
+    },
+    {
+      "source": "/blog/web-que-genera-clientes/",
+      "destination": "/blog-web-que-genera-clientes.html"
+    },
+    {
+      "source": "/blog/como-usar-chatgpt-empresa/",
+      "destination": "/blog-como-usar-chatgpt-empresa.html"
+    },
+    {
+      "source": "/blog/email-marketing-pymes/",
+      "destination": "/blog-email-marketing-pymes.html"
+    },
+    {
+      "source": "/blog/medir-resultados-marketing-digital/",
+      "destination": "/blog-medir-resultados-marketing-digital.html"
     },
     {
       "source": "/((?!api/).*)",

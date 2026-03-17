@@ -851,9 +851,8 @@ footer {
   h2 { font-size: clamp(1.3rem, 6vw, 1.9rem) !important; }
   h3 { font-size: 1.1rem !important; }
 
-  /* Dark section text — stays white */
-  .hero p, .hero li,
-  .hero .hero-sub { color: rgba(255,255,255,.8) !important; }
+  /* Dark section text — only dark bg areas, NOT hero-copy */
+  .hero-photo p, .hero-photo li { color: rgba(255,255,255,.8) !important; }
 
   .testimonials p, .testimonials li,
   .ts-quote { color: rgba(255,255,255,.85) !important; }
@@ -921,6 +920,17 @@ footer .footer-copy {
   color: rgba(255,255,255,.2) !important; 
   font-size: .72rem;
 }
+
+
+/* ── MOBILE FIRST RESET ─────────────────────── */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img, video, iframe, table, input, textarea, select {
+  max-width: 100%;
+}
+img { height: auto; }
 
 </style>
 <script type="application/ld+json">
@@ -1332,5 +1342,6 @@ footer .footer-copy {
   function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
   function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
 </script>
+<script src="/cookie-consent.js" defer></script>
 </body>
 </html>

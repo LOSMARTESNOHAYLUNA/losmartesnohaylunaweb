@@ -357,7 +357,7 @@ footer {
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* RESPONSIVE */
-@media (max-width: 1100px) {
+@media (max-max-width: 100%) {
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-right { display: none; }
   .about-strip { grid-template-columns: 1fr; gap: 3rem; }
@@ -845,7 +845,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
-  max-width: 1200px;
+  max-max-width: 100%;
   margin: 0 auto;
 }
 .authority-stat {
@@ -968,6 +968,17 @@ footer .footer-copy {
   color: rgba(255,255,255,.2) !important; 
   font-size: .72rem;
 }
+
+
+/* ── MOBILE FIRST RESET ─────────────────────── */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img, video, iframe, table, input, textarea, select {
+  max-width: 100%;
+}
+img { height: auto; }
 
 </style>
 <script src="/widget-consultora.js" defer></script>
@@ -1341,5 +1352,6 @@ footer .footer-copy {
   function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
   function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
 </script>
+<script src="/cookie-consent.js" defer></script>
 </body>
 </html>
