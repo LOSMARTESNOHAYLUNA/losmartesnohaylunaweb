@@ -631,7 +631,7 @@ footer {
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ── RESPONSIVE ────────────────────────────────────── */
-@media (max-max-width: 100%) {
+@media (max-width: 1000px) {
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-right { padding-bottom: 5rem; }
   .positioning { grid-template-columns: 1fr; gap: 4rem; }
@@ -640,6 +640,7 @@ footer {
   .ts-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 900px) {
+  .nav-links { display: none; }
   nav { padding: 1rem 1.5rem; }
   .hero, .pain, .deliverables, .process, .testimonials, .final-cta { padding: 5rem 1.8rem; }
   .hero { padding-top: 7rem; }
