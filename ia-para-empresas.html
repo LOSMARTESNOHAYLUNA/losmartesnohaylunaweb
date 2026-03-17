@@ -466,7 +466,7 @@ footer {
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ── RESPONSIVE ───────────────────────────────────── */
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
   .method-steps { grid-template-columns: repeat(2, 1fr); }
   .ms-connector { display: none; }
   .results-grid { grid-template-columns: 1fr 1fr; }
@@ -591,6 +591,8 @@ footer {
 /* Mobile */
 @media (max-width: 480px) {
   nav { padding: .9rem 1.2rem; }
+  .quote-banner { padding: 3.5rem 1.2rem; }
+  .authority-banner { padding: 2.5rem 1.2rem; }
   .nav-logo img { height: 42px; }
   .nav-cta { display: none; }
   footer { padding: 2rem 1.2rem; }
@@ -612,7 +614,7 @@ footer {
 /* ── AUTHORITY BANNER ───────────────────────── */
 .authority-banner { background: var(--purple); padding: 4rem 5rem; position: relative; overflow: hidden; }
 .authority-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--purple-dk) 0%, var(--purple) 60%, var(--purple-lt) 100%); }
-.authority-inner { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1200px; margin: 0 auto; }
+.authority-inner { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 100%; margin: 0 auto; }
 .authority-stat { padding: 2rem 2.5rem; border-right: 1px solid rgba(255,255,255,.08); text-align: center; }
 .authority-stat:last-child { border-right: none; }
 .authority-num { font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 900; color: var(--lime); letter-spacing: -.05em; line-height: 1; margin-bottom: .4rem; }
@@ -622,7 +624,7 @@ footer {
 
 
 /* ── QUOTE BANNERS ──────────────────────────── */
-.quote-banner { background: var(--purple-dk); padding: 5rem; text-align: center; position: relative; overflow: hidden; }
+.quote-banner { background: var(--purple-dk); padding: 5rem 1.8rem; text-align: center; position: relative; overflow: hidden; }
 .quote-banner::before { content: '"'; position: absolute; top: -2rem; left: 50%; transform: translateX(-50%); font-size: 18rem; font-weight: 900; color: rgba(135,178,41,.04); line-height: 1; pointer-events: none; font-family: Georgia, serif; }
 .quote-banner blockquote { position: relative; z-index: 2; font-size: clamp(1.4rem, 2.5vw, 2.2rem); font-weight: 700; color: #fff; letter-spacing: -.02em; line-height: 1.35; max-width: 800px; margin: 0 auto 1.5rem; font-style: italic; }
 .quote-banner blockquote em { color: var(--lime); font-style: normal; }
@@ -667,6 +669,19 @@ footer .footer-copy {
   font-size: .72rem;
 }
 
+
+/* ── MOBILE FIRST RESET ─────────────────────── */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img, video, table, input, textarea, select {
+  max-width: 100%;
+}
+img { height: auto; }
+/* Exclude hero background video from max-width constraint */
+.hero-video-wrap iframe { max-width: none; }
+
 </style>
 <script type="application/ld+json">
 {
@@ -685,6 +700,7 @@ footer .footer-copy {
   "serviceType": "Marketing Digital"
 }
 </script>
+<script src="/widget-consultora.js" defer></script>
 </head>
 <body>
 
@@ -1370,8 +1386,8 @@ footer .footer-copy {
   <h2 class="reveal">En 40 minutos sabemos<br>exactamente cuánto <em>te está costando</em><br>no hacer nada.</h2>
   <p class="reveal">Sesión de diagnóstico gratuita. Sin compromiso. Sin presentaciones de producto. Solo un análisis honesto de dónde están las fugas de tu empresa y qué se puede hacer con ellas.</p>
   <div class="cta-actions reveal">
-    <a class="btn-lime" href="#">Reservar sesión gratuita →</a>
-    <a class="btn-ghost" href="#">Ver todos los servicios</a>
+    <a class="btn-lime" href="/sesion-gratuita/">Reservar sesión gratuita →</a>
+    <a class="btn-ghost" href="/servicios/">Ver todos los servicios</a>
   </div>
   <p class="cta-note reveal">Plazas limitadas · <span>Oferta de lanzamiento 2026</span> · Sin permanencia</p>
 </section>
@@ -1402,7 +1418,6 @@ footer .footer-copy {
     </div>
     <div>
       <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#87B229;margin-bottom:1rem;">Contacto</div>
-      <a href="mailto:hola@losmartesnohayluna.com" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">hola@losmartesnohayluna.com</a>
       <a href="tel:34919997726" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">91 999 77 26</a>
       <a href="https://wa.me/34621060659" target="_blank" rel="noopener" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">WhatsApp</a>
       <a href="https://www.google.com/maps/place/Finca+Solimpar+Legan%C3%A9s" target="_blank" rel="noopener" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;font-weight:300;">Leganés, Madrid</a>
@@ -1418,26 +1433,20 @@ footer .footer-copy {
     </div>
     <div style="display:flex;gap:.8rem;">
       <a href="https://www.instagram.com/losmartesnohayluna" target="_blank" rel="noopener" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;">ig</a>
-      <a href="https://www.linkedin.com/company/los-martes-no-hay-luna" target="_blank" rel="noopener" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;">in</a>
+            <a href="https://www.linkedin.com/company/los-martes-no-hay-luna" target="_blank" rel="noopener" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;">in</a>
     </div>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Reveal on scroll
+<script>
   const els = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+  }, { threshold: 0.08 });
   els.forEach(el => obs.observe(el));
-
-  // Department tabs
-  document.querySelectorAll('.dept-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.tab;
-      document.querySelectorAll('.dept-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.dept-panel').forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
-      const panel = d
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
+</script>
+<script src="/cookie-consent.js" defer></script>
 </body>
 </html>
