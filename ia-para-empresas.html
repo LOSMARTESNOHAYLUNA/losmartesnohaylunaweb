@@ -779,6 +779,49 @@ img { height: auto; }
 <script src="/widget-consultora.js" defer></script>
 </head>
 <body>
+<style>
+@media screen and (max-width: 900px) {
+  section.hero { grid-template-columns: 1fr !important; }
+  section.hero .hero-right { display: none !important; }
+  section.hero .hero-left { 
+    padding: 6rem 1.5rem 3rem !important; 
+    width: 100% !important; 
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  section.hero .hero-left h1 { 
+    font-size: clamp(1.4rem, 5vw, 2rem) !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+  }
+  section.hero .hero-sub { 
+    max-width: 100% !important; 
+    word-break: break-word !important;
+  }
+  section.hero .hero-eyebrow {
+    font-size: .5rem !important;
+    letter-spacing: .12em !important;
+    flex-wrap: wrap !important;
+    white-space: normal !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* Footer grid → 2 columns */
+  footer > div:first-child { grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; }
+  /* Image strip → single image */
+  .img-strip-3 { grid-template-columns: 1fr !important; }
+  .img-strip-3 img:not(:first-child) { display: none !important; }
+}
+@media screen and (max-width: 480px) {
+  /* Footer grid → 1 column */
+  footer > div:first-child { grid-template-columns: 1fr !important; gap: 1.2rem !important; }
+  /* Ensure nothing overflows */
+  * { max-width: 100%; box-sizing: border-box; }
+  img { max-width: 100% !important; }
+}
+</style>
 
 <!-- NAV -->
 <nav>
@@ -1470,7 +1513,7 @@ img { height: auto; }
 
 <!-- FOOTER -->
 <footer>
-  <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.5rem;">
+  <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(1rem, 3vw, 3rem);padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.5rem;">
     <div>
       <a href="/" style="display:inline-block;margin-bottom:1rem;">
         <img src="/img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna" style="height:44px;width:auto;display:block;">
