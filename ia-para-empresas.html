@@ -103,9 +103,10 @@ nav {
   color: var(--lime); font-weight: 600; margin-bottom: 2rem;
 }
 .hero-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--lime); }
-.hero-h1 {
+.hero-h1, .hero-left h1 {
   font-size: clamp(1.8rem, 6vw, 4.2rem); font-weight: 800; color: #fff;
   letter-spacing: -.04em; line-height: 1.1; margin-bottom: 1.8rem;
+  max-width: 100%; word-wrap: break-word;
 }
 .hero-h1 em { color: var(--lime); font-style: italic; font-weight: 300; }
 .hero-sub {
@@ -119,7 +120,7 @@ nav {
 .hp-item {}
 .hp-num { font-size: 2rem; font-weight: 800; color: #fff; letter-spacing: -.04em; line-height: 1; }
 .hp-num span { color: var(--lime); }
-.hp-label { font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-top: .2rem; }
+.hp-label { font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-top: .2rem; max-width: 80px; line-height: 1.3; }
 .btn-lime { display: inline-block; padding: .9rem 2.4rem; background: var(--lime); color: var(--slate); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; text-decoration: none; transition: background .2s; }
 .btn-lime:hover { background: var(--lime-lt); }
 
@@ -600,7 +601,7 @@ footer {
   section, .problem, .depts, .method, .vs-section, .results, .final-cta { padding: 3.5rem 1.2rem; }
   .hero-left { padding: 5.5rem 1.2rem 2rem !important; max-width: 100%; overflow: hidden; }
   .hero-right { padding: 1.5rem 1.2rem 3rem !important; }
-  .hero-h1 { font-size: clamp(1.6rem, 7vw, 2.4rem) !important; word-break: break-word; }
+  .hero-h1, .hero-left h1 { font-size: clamp(1.5rem, 6.5vw, 2.2rem) !important; word-break: break-word; max-width: 100% !important; }
   .hero-sub { max-width: 100% !important; font-size: .85rem !important; }
   .hero-proof { gap: 1.2rem !important; flex-wrap: wrap; }
   .hp-num { font-size: 1.6rem !important; }
@@ -749,7 +750,7 @@ img { height: auto; }
   <div class="hero-video-overlay"></div>
   <div class="hero-left">
     <span class="hero-eyebrow">Consultoría de IA para empresas</span>
-    <h1>Inteligencia Artificial para Empresas en Madrid: Automatización y Apps a Medida</h1>
+    <h1 class="hero-h1">Inteligencia Artificial para Empresas en Madrid: Automatización y Apps a Medida</h1>
     <p class="hero-sub">Cada proceso manual que sigue igual que en 2015 es una factura que pagas cada mes. No en tecnología — en tiempo de tu equipo, en errores evitables y en decisiones que llegan tarde.</p>
     <div class="hero-proof">
       <div class="hp-item">
