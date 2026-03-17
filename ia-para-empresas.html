@@ -104,13 +104,13 @@ nav {
 }
 .hero-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--lime); }
 .hero-h1 {
-  font-size: clamp(2.4rem, 3.6vw, 4.2rem); font-weight: 800; color: #fff;
-  letter-spacing: -.04em; line-height: 1.05; margin-bottom: 1.8rem;
+  font-size: clamp(1.8rem, 6vw, 4.2rem); font-weight: 800; color: #fff;
+  letter-spacing: -.04em; line-height: 1.1; margin-bottom: 1.8rem;
 }
 .hero-h1 em { color: var(--lime); font-style: italic; font-weight: 300; }
 .hero-sub {
   font-size: .9rem; color: rgba(255,255,255,.75); line-height: 1.85;
-  max-width: 420px; font-weight: 300; margin-bottom: 3rem;
+  max-width: min(420px, 100%); font-weight: 300; margin-bottom: 3rem;
 }
 .hero-proof {
   display: flex; gap: 2.5rem; margin-bottom: 3rem;
@@ -598,8 +598,12 @@ footer {
   footer { padding: 2rem 1.2rem; }
   .footer-links { flex-direction: column; gap: .8rem; }
   section, .problem, .depts, .method, .vs-section, .results, .final-cta { padding: 3.5rem 1.2rem; }
-  .hero-left { padding: 5.5rem 1.2rem 2rem; }
-  .hero-right { padding: 1.5rem 1.2rem 3rem; }
+  .hero-left { padding: 5.5rem 1.2rem 2rem !important; max-width: 100%; overflow: hidden; }
+  .hero-right { padding: 1.5rem 1.2rem 3rem !important; }
+  .hero-h1 { font-size: clamp(1.6rem, 7vw, 2.4rem) !important; word-break: break-word; }
+  .hero-sub { max-width: 100% !important; font-size: .85rem !important; }
+  .hero-proof { gap: 1.2rem !important; flex-wrap: wrap; }
+  .hp-num { font-size: 1.6rem !important; }
   .hp-items { flex-direction: column; gap: 1.2rem; }
   input, textarea, select, button { font-size: 16px; }
 }
