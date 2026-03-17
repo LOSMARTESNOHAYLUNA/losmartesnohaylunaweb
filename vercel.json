@@ -290,6 +290,22 @@
       "destination": "/blog-automatizacion-pymes.html"
     },
     {
+      "source": "/procesar/",
+      "destination": "/procesar.php"
+    },
+    {
+      "source": "/sitemap-pages.xml",
+      "destination": "/sitemap-pages.xml"
+    },
+    {
+      "source": "/sitemap-posts.xml",
+      "destination": "/sitemap-posts.xml"
+    },
+    {
+      "source": "/sitemap.xsl",
+      "destination": "/sitemap.xsl"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/$1"
     }

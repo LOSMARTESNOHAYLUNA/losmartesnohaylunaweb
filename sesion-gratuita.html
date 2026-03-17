@@ -932,6 +932,17 @@ footer .footer-copy {
   font-size: .72rem;
 }
 
+
+/* ── MOBILE FIRST RESET ─────────────────────── */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img, video, iframe, table, input, textarea, select {
+  max-width: 100%;
+}
+img { height: auto; }
+
 </style>
 <script type="application/ld+json">
 {
@@ -952,6 +963,7 @@ footer .footer-copy {
 }
 </script>
 <script src="/widget-consultora.js" defer></script>
+<script src="https://www.google.com/recaptcha/api.js?render=TU_SITE_KEY" defer></script>
 </head>
 <body>
 
@@ -1369,6 +1381,28 @@ footer .footer-copy {
   els.forEach(el => obs.observe(el));
   function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
   function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
+</script>
+<script>
+  // reCAPTCHA v3 — sustituye TU_SITE_KEY por tu clave real
+  document.addEventListener('DOMContentLoaded', function() {
+    var forms = document.querySelectorAll('form');
+    forms.forEach(function(form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (typeof grecaptcha !== 'undefined') {
+          grecaptcha.ready(function() {
+            grecaptcha.execute('TU_SITE_KEY', {action: 'submit'}).then(function(token) {
+              var field = form.querySelector('#g-recaptcha-response-field');
+              if (field) field.value = token;
+              form.submit();
+            });
+          });
+        } else {
+          form.submit();
+        }
+      });
+    });
+  });
 </script>
 </body>
 </html>

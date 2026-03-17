@@ -4,5 +4,8 @@ Allow: /
 Disallow: /consultoria-estrategica/
 Disallow: /gracias/
 Disallow: /api/
+Disallow: /procesar/
 
 Sitemap: https://losmartesnohayluna.com/sitemap.xml
+Sitemap: https://losmartesnohayluna.com/sitemap-pages.xml
+Sitemap: https://losmartesnohayluna.com/sitemap-posts.xml
