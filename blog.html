@@ -134,7 +134,7 @@ nav {
 .cat-search input {
   background: none; border: none; outline: none;
   font-family: 'Poppins', sans-serif; font-size: .72rem; color: #fff;
-  width: 160px; font-weight: 300;
+  width: 120px; max-width: 30vw; font-weight: 300;
 }
 .cat-search input::placeholder { color: rgba(255,255,255,.3); }
 
@@ -204,7 +204,8 @@ nav {
 /* ── MAIN CONTENT AREA ────────────────────────────── */
 .blog-body {
   display: grid; grid-template-columns: 1fr 320px; gap: 0;
-  padding: 5rem 5rem; align-items: start;
+  padding: 5rem; align-items: start;
+  max-width: 100%; overflow-x: hidden;
 }
 
 /* ── POSTS GRID ───────────────────────────────────── */
@@ -474,10 +475,10 @@ footer {
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ── RESPONSIVE ───────────────────────────────────── */
-@media (max-max-width: 100%) {
+@media (max-width: 1200px) {
   .topics-grid { grid-template-columns: repeat(3, 1fr); }
 }
-@media (max-max-width: 100%) {
+@media (max-width: 1000px) {
   .blog-body { grid-template-columns: 1fr; padding: 4rem 1.8rem; }
   .posts-area { padding-right: 0; border-right: none; border-bottom: 1px solid var(--rule); padding-bottom: 3rem; margin-bottom: 3rem; }
   .sidebar { padding-left: 0; position: relative; top: 0; }
@@ -582,6 +583,16 @@ footer {
 @media (max-width: 480px) {
   html { font-size: 15px; }
   body { overflow-x: hidden; }
+  .blog-body { padding: 2rem 1rem !important; }
+  .blog-header { padding: 7rem 1rem 2.5rem !important; }
+  .cat-bar { padding: 0 .8rem !important; }
+  .cat-search { display: none; }
+  .fp-content { padding: 1.5rem 1rem !important; }
+  .featured-post { grid-template-columns: 1fr !important; }
+  .posts-area { padding-right: 0 !important; }
+  .post-row { grid-template-columns: 1fr !important; max-width: 100% !important; }
+  .post-info { padding: 1.2rem !important; }
+  .sidebar { padding-left: 0 !important; }
 
   /* Nav */
   nav { padding: .9rem 1.2rem; }
@@ -977,6 +988,7 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
+img, video, iframe { max-width: 100%; height: auto; }
 img, video, iframe, table, input, textarea, select {
   max-width: 100%;
 }
