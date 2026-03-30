@@ -1492,6 +1492,42 @@ img { height: auto; }
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: 0.08 });
   els.forEach(el => obs.observe(el));
+
+  // ── DEPT TABS ─────────────────────────────────────────
+  (function() {
+    const tabs = document.querySelectorAll('.dept-tab');
+    const panels = document.querySelectorAll('.dept-panel');
+
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        const target = tab.getAttribute('data-panel');
+
+        // Update tabs
+        tabs.forEach(function(t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+
+        // Update panels
+        panels.forEach(function(p) {
+          if (p.getAttribute('data-panel') === target) {
+            p.classList.add('active');
+          } else {
+            p.classList.remove('active');
+          }
+        });
+
+        // Scroll to panel on mobile
+        if (window.innerWidth < 900) {
+          const activePanel = document.querySelector('.dept-panel.active');
+          if (activePanel) {
+            setTimeout(function() {
+              activePanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+          }
+        }
+      });
+    });
+  })();
+
   function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
   function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
 </script>
