@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/wp-content/:path*",
+      "destination": "https://losmartesnohayluna.com/",
+      "permanent": false
+    },
+    {
       "source": "/marketing-para-centros-de-estetica/",
       "destination": "https://losmartesnohayluna.com/servicios/",
       "permanent": true
@@ -62,7 +67,7 @@
     },
     {
       "source": "/que-es-el-seo-local-y-cuanto-se-cobra-por-sus-servicios/",
-      "destination": "https://losmartesnohayluna.com/servicios/",
+      "destination": "https://losmartesnohayluna.com/blog/",
       "permanent": true
     },
     {
@@ -238,6 +243,71 @@
     {
       "source": "/tag/:slug*",
       "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/rediseno-y-modernizacion-de-logotipo/politica-de-cookies-y-lgpd",
+      "destination": "https://losmartesnohayluna.com/cookies/",
+      "permanent": true
+    },
+    {
+      "source": "/agencia-de-seo-local-madrid/",
+      "destination": "https://losmartesnohayluna.com/servicios/",
+      "permanent": true
+    },
+    {
+      "source": "/publicidad-en-internet/",
+      "destination": "https://losmartesnohayluna.com/servicios/",
+      "permanent": true
+    },
+    {
+      "source": "/auditoria-seo-gratuita/",
+      "destination": "https://losmartesnohayluna.com/servicios/",
+      "permanent": true
+    },
+    {
+      "source": "/8-errores-al-contratar-el-diseno-de-tu-pagina-web/",
+      "destination": "https://losmartesnohayluna.com/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/publicitarse-en-internet-y-sus-5-beneficios-en-negocios-locales/",
+      "destination": "https://losmartesnohayluna.com/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/locations.kml",
+      "destination": "https://losmartesnohayluna.com/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:author*/feed/",
+      "destination": "https://losmartesnohayluna.com/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:author*",
+      "destination": "https://losmartesnohayluna.com/",
+      "permanent": true
+    },
+    {
+      "source": "/feed/",
+      "destination": "https://losmartesnohayluna.com/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-json/:path*",
+      "destination": "https://losmartesnohayluna.com/",
+      "permanent": true
+    },
+    {
+      "source": "/?p=:id",
+      "destination": "https://losmartesnohayluna.com/",
+      "permanent": true
+    },
+    {
+      "source": "/?page_id=:id",
+      "destination": "https://losmartesnohayluna.com/",
       "permanent": true
     }
   ],
@@ -419,6 +489,15 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/wp-content/:path*",
+      "headers": [
+        {
+          "key": "x-robots-tag",
+          "value": "noindex, nofollow"
         }
       ]
     }

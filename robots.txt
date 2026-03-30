@@ -1,11 +1,24 @@
 User-agent: *
 Allow: /
 
-Disallow: /consultoria-estrategica/
+# Páginas de proceso (sin valor SEO)
 Disallow: /gracias/
 Disallow: /api/
 Disallow: /procesar/
 
+# Rutas WordPress legacy (eliminadas, bloqueadas por seguridad)
+Disallow: /wp-json/
+Disallow: /wp-content/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+Disallow: /feed/
+Disallow: /author/
+Disallow: /?p=
+Disallow: /?page_id=
+Disallow: /?s=
+
+# Sitemaps
 Sitemap: https://losmartesnohayluna.com/sitemap.xml
 Sitemap: https://losmartesnohayluna.com/sitemap-pages.xml
 Sitemap: https://losmartesnohayluna.com/sitemap-posts.xml
