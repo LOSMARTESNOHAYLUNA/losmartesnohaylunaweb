@@ -3,1065 +3,1215 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Consultoría Estratégica con IA — Los Martes No Hay Luna</title>
+<title>AI Tools — Los Martes No Hay Luna</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --purple:#582D81;--purple-lt:#6e3d9a;--purple-dk:#3a1c57;
+  --lime:#87B229;--lime-lt:#9ecf30;--pink:#e72078;
+  --slate:#2a1f38;--off-white:#f8f6f2;--light:#f4f0fa;
+  --mid:#7a6f85;--rule:rgba(88,45,129,.12)
+}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--off-white);color:var(--slate);font-weight:300;line-height:1.7;overflow-x:hidden}
 
-:root {
-  --purple:    #582D81;
-  --purple-lt: #6e3d9a;
-  --purple-dk: #3a1c57;
-  --purple-xdk:#26123a;
-  --lime:      #87B229;
-  --lime-lt:   #9ecf30;
-  --lime-dk:   #6a8c1f;
-  --pink:      #e72078;
-  --slate:     #2a1f38;
-  --off-white: #f8f6f2;
-  --light:     #f4f0fa;
-  --mid:       #7a6f85;
-  --rule:      rgba(88,45,129,.12);
-}
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5rem;background:rgba(248,246,242,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
+.nav-logo{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);text-decoration:none}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;color:var(--mid);text-decoration:none;font-weight:400;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--purple)}
+.nav-cta{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:.55rem 1.6rem;background:var(--purple);color:#fff;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--purple-lt)}
 
-html { scroll-behavior: smooth; }
-body {
-  font-size: 18px; font-family: 'Poppins', sans-serif;
-  background: var(--off-white);
-  color: var(--slate);
-  font-weight: 300;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
+/* ── HERO ── */
+.tools-hero{padding:10rem 5rem 6rem;background:var(--purple-dk);position:relative;overflow:hidden}
+.tools-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:500px;height:500px;border-radius:50%;border:80px solid rgba(135,178,41,.06);pointer-events:none}
+.tools-hero::after{content:'';position:absolute;bottom:-100px;left:8%;width:320px;height:320px;border-radius:50%;border:50px solid rgba(231,32,120,.04);pointer-events:none}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--lime);font-weight:600;margin-bottom:1.2rem}
+.hero-eyebrow::before{content:'';width:20px;height:2px;background:var(--lime)}
+.tools-hero h1{font-size:clamp(2.8rem,5vw,5.5rem);font-weight:800;color:#fff;letter-spacing:-.05em;line-height:.95;margin-bottom:1.2rem}
+.tools-hero h1 em{color:var(--lime);font-style:italic;font-weight:300}
+.hero-sub{font-size:.9rem;color:rgba(255,255,255,.45);line-height:1.8;max-width:420px;margin-bottom:2rem}
+.hero-pills{display:flex;flex-wrap:wrap;gap:.6rem}
+.hero-pill{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;padding:.4rem .9rem;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.5)}
+.hero-right{display:flex;flex-direction:column;gap:1.2rem}
+.hero-stat{display:flex;align-items:flex-end;gap:.8rem;padding:1.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--lime)}
+.hs-num{font-size:2.2rem;font-weight:800;color:#fff;line-height:1}
+.hs-label{font-size:.7rem;color:rgba(255,255,255,.4);line-height:1.4}
 
-/* ── MINIMAL NAV (not in menu) ─────────────────────── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 1rem 5rem;
-  background: rgba(248,246,242,.97);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--rule);
-}
-.nav-logo { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--purple); text-decoration: none; }
-.nav-badge {
-  display: inline-flex; align-items: center; gap: .5rem;
-  font-size: .6rem; letter-spacing: .14em; text-transform: uppercase;
-  font-weight: 600; color: var(--mid);
-}
-.nav-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--lime); display: inline-block; }
-.nav-cta {
-  font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 600;
-  padding: .55rem 1.6rem; background: var(--pink); color: #fff; text-decoration: none;
-  transition: background .2s;
-}
-.nav-cta:hover { background: #c0185e; }
+/* ── HOW IT WORKS ── */
+.how{padding:4rem 5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:#fff;border-bottom:1px solid var(--rule)}
+.how-step{padding:2.5rem 3rem 2.5rem 0;border-right:1px solid var(--rule)}
+.how-step:last-child{border-right:none;padding-right:0;padding-left:3rem}
+.how-step:nth-child(2){padding:2.5rem 3rem}
+.how-num{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);font-weight:700;margin-bottom:.8rem}
+.how-step h3{font-size:1rem;font-weight:700;color:var(--purple);margin-bottom:.5rem}
+.how-step p{font-size:.8rem;color:var(--mid);line-height:1.7}
 
-/* ── HERO ──────────────────────────────────────────── */
-.hero {
-  padding: 7rem 5rem 0;
-  background: var(--purple-dk);
-  position: relative; overflow: hidden;
-  min-height: 100vh;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
-}
-.hero::before {
-  content: '';
-  position: absolute; top: -120px; right: -80px;
-  width: 600px; height: 600px; border-radius: 50%;
-  border: 100px solid rgba(135,178,41,.06);
-  pointer-events: none;
-}
-.hero::after {
-  content: '';
-  position: absolute; bottom: -100px; left: -60px;
-  width: 400px; height: 400px; border-radius: 50%;
-  border: 60px solid rgba(231,32,120,.04);
-  pointer-events: none;
-}
+/* ── TOOLS SECTION ── */
+.tools-section{padding:6rem 5rem}
+.section-hd{margin-bottom:4rem}
+.section-eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);font-weight:700;margin-bottom:.8rem}
+.section-eyebrow::before{content:'';width:18px;height:2px;background:var(--lime)}
+.section-hd h2{font-size:clamp(1.8rem,2.5vw,2.8rem);font-weight:800;color:var(--purple);letter-spacing:-.03em}
+.section-hd p{font-size:.88rem;color:var(--mid);margin-top:.6rem;max-width:520px}
 
-/* Hero noise texture */
-.hero-noise {
-  position: absolute; inset: 0; z-index: 1;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-}
+/* ── APP CARDS ── */
+.apps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.app-card{background:#fff;border:1px solid var(--rule);cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.app-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transition:height .2s}
+.app-card.c-purple::before{background:var(--purple)}
+.app-card.c-green::before{background:var(--lime)}
+.app-card.c-violet::before{background:#8b5cf6}
+.app-card.c-pink::before{background:var(--pink)}
+.app-card.c-orange::before{background:#f5a623}
+.app-card.c-blue::before{background:#0ea5e9}
+.app-card:hover{border-color:var(--purple);transform:translateY(-2px);box-shadow:0 8px 32px rgba(88,45,129,.1)}
+.app-card.active{border-color:var(--purple);box-shadow:0 8px 32px rgba(88,45,129,.15)}
+.app-card.active::after{content:'';position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:10px solid #3a1c57;z-index:5}
+.ac-head{padding:1.8rem 1.8rem 1.2rem}
+.ac-industry{display:inline-flex;align-items:center;gap:.5rem;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:.8rem}
+.ac-industry.ind-agencia{color:var(--purple)}
+.ac-industry.ind-medioambiente{color:var(--lime)}
+.ac-industry.ind-formacion{color:#8b5cf6}
+.ac-industry.ind-salud{color:var(--pink)}
+.ac-industry.ind-construccion{color:#f5a623}
+.ac-industry.ind-academia{color:#0ea5e9}
+.ac-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.ac-icon svg{width:20px;height:20px;stroke-width:1.5;stroke:currentColor;fill:none}
+.app-card.c-purple .ac-icon{background:rgba(88,45,129,.08);color:var(--purple)}
+.app-card.c-green .ac-icon{background:rgba(135,178,41,.1);color:var(--lime)}
+.app-card.c-violet .ac-icon{background:rgba(139,92,246,.08);color:#8b5cf6}
+.app-card.c-pink .ac-icon{background:rgba(231,32,120,.08);color:var(--pink)}
+.app-card.c-orange .ac-icon{background:rgba(245,166,35,.1);color:#f5a623}
+.app-card.c-blue .ac-icon{background:rgba(14,165,233,.08);color:#0ea5e9}
+.ac-company{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);margin-bottom:.3rem}
+.ac-name{font-size:.95rem;font-weight:700;color:var(--slate);line-height:1.3;margin-bottom:.5rem}
+.ac-desc{font-size:.78rem;color:var(--mid);line-height:1.6}
+.ac-foot{padding:1.2rem 1.8rem;border-top:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between}
+.ac-tags{display:flex;gap:.4rem;flex-wrap:wrap}
+.ac-tag{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .6rem;background:var(--light);color:var(--mid);font-weight:500}
+.ac-btn{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--purple);display:flex;align-items:center;gap:.4rem;white-space:nowrap}
+.ac-btn svg{width:14px;height:14px;transition:transform .2s}
+.app-card:hover .ac-btn svg{transform:translateX(3px)}
+.app-card.active .ac-btn{color:var(--pink)}
 
-.hero-left { position: relative; z-index: 2; padding-bottom: 5rem; }
-.hero-pretitle {
-  display: inline-flex; align-items: center; gap: .7rem;
-  font-size: .6rem; letter-spacing: .22em; text-transform: uppercase;
-  color: var(--lime); font-weight: 600; margin-bottom: 1.5rem;
-}
-.hero-pretitle::before { content: ''; width: 22px; height: 2px; background: var(--lime); }
+/* ── DEMO PANEL ── */
+/* ── PANEL DEMO INLINE ── */
+.demo-panel{background:var(--purple-dk);border:1px solid rgba(135,178,41,.2);margin-top:1.5rem;overflow:hidden;max-height:0;transition:max-height .45s ease,opacity .3s ease;opacity:0}
+.demo-panel.open{max-height:none;opacity:1}
+.demo-header{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.8rem;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap;gap:.8rem}
+.demo-header-left{display:flex;align-items:center;gap:1rem;min-width:0;flex:1}
+.demo-badge{width:8px;height:8px;border-radius:50%;background:var(--lime);flex-shrink:0;box-shadow:0 0 8px rgba(135,178,41,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.demo-title{font-size:.78rem;font-weight:700;color:#fff;letter-spacing:.03em}
+.demo-subtitle{font-size:.6rem;color:rgba(255,255,255,.3)}
+.demo-header-actions{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+.demo-next{display:inline-flex;align-items:center;gap:.5rem;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:.45rem 1rem;background:rgba(135,178,41,.12);border:1px solid rgba(135,178,41,.3);color:var(--lime);cursor:pointer;font-family:'Poppins',sans-serif;transition:all .18s;white-space:nowrap}
+.demo-next:hover{background:rgba(135,178,41,.22);border-color:var(--lime)}
+.demo-back{display:inline-flex;align-items:center;gap:.5rem;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:.45rem 1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.5);cursor:pointer;font-family:'Poppins',sans-serif;transition:all .18s;white-space:nowrap}
+.demo-back:hover{background:rgba(255,255,255,.1);color:#fff}
+.demo-close{width:30px;height:30px;border:1px solid rgba(255,255,255,.15);background:none;cursor:pointer;color:rgba(255,255,255,.45);font-size:1rem;transition:all .2s;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Poppins',sans-serif}
+.demo-close:hover{background:rgba(255,255,255,.1);color:#fff}
+.demo-body{padding:1.5rem 1.8rem;overflow-x:auto}
+@media(max-width:600px){.demo-next span,.demo-back span{display:none}.demo-header{padding:.9rem 1rem}.demo-body{padding:1rem}}
 
-.hero h1 {
-  font-size: clamp(2.4rem, 4vw, 4.2rem); font-weight: 900; color: #fff;
-  letter-spacing: -.04em; line-height: 1.05; margin-bottom: 1.5rem;
-}
-.hero h1 em { color: var(--lime); font-style: italic; font-weight: 300; display: block; }
+/* ── KANBAN ── */
+.kb-board{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;min-height:320px}
+.kb-col{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)}
+.kb-col-head{padding:.8rem 1rem;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between}
+.kb-col-name{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.5)}
+.kb-col-count{font-size:.62rem;font-weight:700;color:rgba(255,255,255,.25);background:rgba(255,255,255,.06);padding:.1rem .45rem;border-radius:20px}
+.kb-tasks{padding:.5rem;display:flex;flex-direction:column;gap:.5rem;min-height:240px}
+.kb-task{background:#fff;padding:.85rem 1rem;border-left:3px solid var(--lime);transition:transform .15s,box-shadow .15s}
+.kb-task.p-alta{border-left-color:var(--pink)}
+.kb-task.p-media{border-left-color:#f5a623}
+.kb-task.p-baja{border-left-color:var(--lime)}
+.kb-task:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.kb-task-tag{font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--mid);margin-bottom:.25rem}
+.kb-task-title{font-size:.75rem;font-weight:600;color:var(--slate);line-height:1.3;margin-bottom:.5rem}
+.kb-task-foot{display:flex;align-items:center;justify-content:space-between}
+.kb-avatar{width:22px;height:22px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:.48rem;font-weight:700;color:#fff}
+.kb-advance{font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;padding:.2rem .5rem;background:var(--light);color:var(--purple);border:none;cursor:pointer;font-family:'Poppins',sans-serif;transition:background .15s}
+.kb-advance:hover{background:var(--lime);color:#fff}
+.kb-done{background:rgba(135,178,41,.06);padding:.8rem .9rem;border-left:3px solid rgba(135,178,41,.35)}
+.kb-done .kb-task-tag{color:rgba(255,255,255,.25)}
+.kb-done .kb-task-title{color:rgba(255,255,255,.4);text-decoration:line-through;font-weight:300;font-size:.72rem}
 
-.hero-sub {
-  font-size: .95rem; color: rgba(255,255,255,.75); line-height: 1.85;
-  font-weight: 300; max-width: 480px; margin-bottom: 2.5rem;
-}
-.hero-sub strong { color: rgba(255,255,255,.95); font-weight: 600; }
+/* ── INCIDENCIAS ── */
+.inc-top{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.4rem}
+.inc-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:.9rem 1.1rem}
+.inc-stat-n{font-size:1.4rem;font-weight:800;color:#fff}
+.inc-stat-l{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.inc-filters{display:flex;gap:.5rem;margin-bottom:1.2rem;flex-wrap:wrap}
+.inc-filter{font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;padding:.3rem .8rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);cursor:pointer;font-family:'Poppins',sans-serif;transition:all .15s}
+.inc-filter:hover,.inc-filter.active{background:var(--lime);border-color:var(--lime);color:var(--slate)}
+.inc-table{width:100%;border-collapse:collapse}
+.inc-table th{font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.28);font-weight:500;padding:.55rem .8rem;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}
+.inc-table td{font-size:.73rem;color:rgba(255,255,255,.65);padding:.65rem .8rem;border-bottom:1px solid rgba(255,255,255,.05)}
+.inc-table tr:hover td{background:rgba(255,255,255,.03)}
+.inc-tipo{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding:.2rem .55rem}
+.inc-tipo.t-vertido{background:rgba(14,165,233,.15);color:#7dd3fc}
+.inc-tipo.t-residuos{background:rgba(245,166,35,.12);color:#fbbf24}
+.inc-tipo.t-ruido{background:rgba(139,92,246,.12);color:#c4b5fd}
+.inc-tipo.t-emisiones{background:rgba(231,32,120,.12);color:#f9a8d4}
+.inc-tipo.t-plaga{background:rgba(135,178,41,.12);color:#a3e635}
+.inc-estado{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding:.25rem .6rem;border:none;cursor:pointer;font-family:'Poppins',sans-serif;transition:all .15s}
+.inc-estado.e-abierta{background:rgba(231,32,120,.15);color:var(--pink)}
+.inc-estado.e-gestion{background:rgba(245,166,35,.12);color:#f5a623}
+.inc-estado.e-resuelta{background:rgba(135,178,41,.12);color:var(--lime)}
+.inc-urg{font-size:.65rem;font-weight:700}
+.inc-urg.u-alta{color:var(--pink)}
+.inc-urg.u-media{color:#f5a623}
+.inc-urg.u-baja{color:rgba(255,255,255,.25)}
 
-.hero-bullets { display: flex; flex-direction: column; gap: .7rem; margin-bottom: 2.8rem; }
-.hero-bullet {
-  display: flex; align-items: flex-start; gap: .9rem;
-  font-size: .82rem; color: rgba(255,255,255,.8); font-weight: 300;
-}
-.hero-bullet::before {
-  content: '✓'; width: 20px; height: 20px; border-radius: 50%;
-  background: var(--lime); color: var(--slate);
-  display: flex; align-items: center; justify-content: center;
-  font-size: .6rem; font-weight: 800; flex-shrink: 0; margin-top: .15rem;
-}
+/* ── TIEMPO ── */
+.tim-layout{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.tim-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:1.4rem;margin-bottom:1.2rem}
+.tim-display{font-size:2.4rem;font-weight:800;color:#fff;letter-spacing:.1em;font-variant-numeric:tabular-nums;margin-bottom:.9rem}
+.tim-sel{width:100%;padding:.6rem .9rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:#fff;font-family:'Poppins',sans-serif;font-size:.75rem;outline:none;margin-bottom:.7rem}
+.tim-sel option{background:#3a1c57}
+.tim-inp{width:100%;padding:.6rem .9rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff;font-family:'Poppins',sans-serif;font-size:.75rem;outline:none;margin-bottom:.7rem}
+.tim-inp::placeholder{color:rgba(255,255,255,.28)}
+.tim-btns{display:flex;gap:.5rem}
+.tim-btn{padding:.55rem 1.1rem;border:none;font-family:'Poppins',sans-serif;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:all .15s}
+.tim-start{background:var(--lime);color:var(--slate)}
+.tim-start:hover{background:var(--lime-lt)}
+.tim-stop{background:var(--pink);color:#fff}
+.tim-log-btn{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.1)}
+.tim-log-btn:hover{background:rgba(255,255,255,.15)}
+.tim-entries{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)}
+.tim-entries-hd{padding:.65rem 1rem;border-bottom:1px solid rgba(255,255,255,.07);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28);font-weight:500}
+.tim-entry{padding:.65rem 1rem;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem}
+.tim-entry:last-child{border-bottom:none}
+.tim-e-proj{font-size:.62rem;font-weight:600;color:var(--lime)}
+.tim-e-desc{font-size:.7rem;color:rgba(255,255,255,.5)}
+.tim-e-dur{font-size:.72rem;font-weight:700;color:#fff;white-space:nowrap}
+.tim-week-title{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.9rem}
+.tim-bars{display:flex;gap:.4rem;align-items:flex-end;height:90px;margin-bottom:1.2rem}
+.tim-bw{flex:1;display:flex;flex-direction:column;align-items:center;gap:.3rem}
+.tim-bo{width:100%;background:rgba(255,255,255,.06);flex:1;display:flex;align-items:flex-end}
+.tim-bf{width:100%;background:var(--purple-lt);transition:height .4s}
+.tim-bf.today{background:var(--lime)}
+.tim-bday{font-size:.52rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.28)}
+.tim-bh{font-size:.55rem;color:rgba(255,255,255,.35)}
+.tim-total{background:rgba(135,178,41,.08);border:1px solid rgba(135,178,41,.2);padding:.9rem 1.1rem;display:flex;align-items:center;justify-content:space-between}
+.tim-total-l{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.tim-total-v{font-size:1.3rem;font-weight:800;color:var(--lime)}
 
-/* Scroll indicator */
-.hero-scroll {
-  display: flex; align-items: center; gap: .7rem;
-  font-size: .62rem; letter-spacing: .14em; text-transform: uppercase;
-  color: rgba(255,255,255,.3); cursor: default;
-}
-.scroll-dot {
-  width: 28px; height: 44px; border: 1px solid rgba(255,255,255,.2); border-radius: 14px;
-  position: relative; display: flex; justify-content: center; padding-top: 7px;
-}
-.scroll-dot::after {
-  content: '';
-  width: 4px; height: 8px; background: rgba(255,255,255,.4);
-  border-radius: 2px; animation: scrolldot 1.8s ease infinite;
-}
-@keyframes scrolldot { 0%,100%{transform:translateY(0);opacity:1} 60%{transform:translateY(10px);opacity:0} }
+/* ── CITAS ── */
+.apt-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.4rem}
+.apt-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:.8rem 1rem;text-align:center}
+.apt-stat-n{font-size:1.4rem;font-weight:800;color:#fff}
+.apt-stat-l{font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.28)}
+.apt-list{display:flex;flex-direction:column;gap:.5rem;max-height:390px;overflow-y:auto}
+.apt-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);display:grid;grid-template-columns:64px 1fr 110px;align-items:center;gap:1rem;padding:.75rem 1rem;transition:background .15s}
+.apt-item:hover{background:rgba(255,255,255,.08)}
+.apt-time{font-size:.85rem;font-weight:700;color:#fff}
+.apt-patient{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.85)}
+.apt-treat{font-size:.65rem;color:rgba(255,255,255,.38)}
+.apt-room{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.22)}
+.apt-status{font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;padding:.28rem .7rem;border:none;cursor:pointer;font-family:'Poppins',sans-serif;width:100%;text-align:center;transition:all .15s}
+.apt-toasts{margin-bottom:1rem}
+.apt-toast{background:rgba(135,178,41,.15);border:1px solid rgba(135,178,41,.3);color:var(--lime);font-size:.72rem;padding:.6rem 1rem;margin-bottom:.4rem;animation:fadeSlide .3s ease}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.apt-actions-wrap{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;justify-content:flex-end}
+.apt-action{font-size:.58rem;letter-spacing:.06em;font-weight:600;padding:.32rem .7rem;border:none;cursor:pointer;font-family:'Poppins',sans-serif;transition:opacity .15s;white-space:nowrap}
+.apt-action:hover{opacity:.8}
+.act-resena{background:rgba(135,178,41,.18);color:var(--lime)}
+.act-cafe{background:rgba(14,165,233,.15);color:#7dd3fc}
+.act-wp{background:rgba(37,211,102,.15);color:#25d366}
+.s-atendida{background:rgba(135,178,41,.15);color:var(--lime)}
+.s-ensala{background:rgba(14,165,233,.15);color:#7dd3fc}
+.s-pendiente{background:rgba(255,255,255,.06);color:rgba(255,255,255,.38)}
+.s-cancelada{background:rgba(231,32,120,.12);color:var(--pink)}
 
-/* Hero right — price card */
-.hero-right { position: relative; z-index: 2; padding-bottom: 5rem; }
+/* ── REFORMAS ── */
+.prj-pb{height:5px;background:rgba(255,255,255,.08);margin-bottom:.5rem;border-radius:2px}
+.prj-pf{height:100%;transition:width .6s;border-radius:2px}
+.prj-pf.pf-lime{background:var(--lime)}
+.prj-pf.pf-orange{background:#f5a623}
+.prj-pf.pf-pink{background:var(--pink)}
+.prj-phase{font-size:.5rem;letter-spacing:.05em;text-transform:uppercase;font-weight:600;padding:.18rem .5rem;cursor:pointer;transition:opacity .15s}
+.prj-phase:hover{opacity:.75}
+.prj-phase.done{background:rgba(135,178,41,.15);color:var(--lime)}
+.prj-phase.active{background:rgba(245,166,35,.15);color:#f5a623}
+.prj-phase.pending{background:rgba(255,255,255,.05);color:rgba(255,255,255,.22)}
+/* tabs */
+.rf-tabs{display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.2rem;flex-wrap:wrap}
+.rf-tab{font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;padding:.65rem 1rem;background:none;border:none;color:rgba(255,255,255,.35);cursor:pointer;font-family:'Poppins',sans-serif;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;white-space:nowrap}
+.rf-tab:hover{color:rgba(255,255,255,.65)}
+.rf-tab.active{color:var(--lime);border-bottom-color:var(--lime)}
+/* top */
+.rf-body{}
+.rf-top{margin-bottom:1.2rem}
+.rf-title{font-size:.9rem;font-weight:700;color:#fff;margin-bottom:.3rem}
+.rf-sub{font-size:.62rem;color:rgba(255,255,255,.32);margin-bottom:.9rem}
+.rf-progress-wrap{}
+.rf-pct-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-top:.4rem}
+.rf-pct{font-size:.62rem;font-weight:700;color:rgba(255,255,255,.45)}
+.rf-phases-inline{display:flex;gap:.3rem;flex-wrap:wrap}
+/* two cols */
+.rf-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1.2rem}
+.rf-col{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:1rem}
+.rf-col-title{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.38);margin-bottom:.9rem;display:flex;align-items:center;justify-content:space-between}
+.rf-badge{background:rgba(135,178,41,.15);color:var(--lime);padding:.15rem .5rem;font-size:.55rem;letter-spacing:.06em;border-radius:2px}
+.rf-badge-money{background:rgba(245,166,35,.15);color:#f5a623}
+/* checkboxes */
+.rf-check-row{display:flex;align-items:center;gap:.7rem;padding:.5rem .2rem;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.04);transition:background .12s}
+.rf-check-row:last-child{border-bottom:none}
+.rf-check-row:hover{background:rgba(255,255,255,.03)}
+.rf-checkbox{width:16px;height:16px;border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.04);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .15s,background .15s}
+.rf-checkbox.checked{border-color:var(--lime);background:rgba(135,178,41,.1)}
+.rf-check-label{font-size:.7rem;color:rgba(255,255,255,.5);line-height:1.35;transition:color .15s}
+.rf-check-label.done{color:rgba(255,255,255,.28);text-decoration:line-through;text-decoration-color:rgba(255,255,255,.12)}
+/* pagos */
+.rf-pago-row{display:flex;align-items:center;justify-content:space-between;padding:.55rem .3rem;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.05);transition:background .12s}
+.rf-pago-row:hover{background:rgba(255,255,255,.03)}
+.rf-pago-left{display:flex;align-items:center;gap:.65rem}
+.rf-pago-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15);transition:background .2s;flex-shrink:0}
+.rf-pago-dot.paid{background:var(--lime)}
+.rf-pago-name{font-size:.7rem;color:rgba(255,255,255,.6);margin-bottom:.1rem}
+.rf-pago-amt{font-size:.65rem;font-weight:600;color:rgba(255,255,255,.35)}
+.rf-pago-badge{font-size:.55rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:.18rem .55rem}
+.rf-pago-badge.cobrado{background:rgba(135,178,41,.15);color:var(--lime)}
+.rf-pago-badge.pendiente{background:rgba(255,255,255,.06);color:rgba(255,255,255,.3)}
+.rf-pago-total{border-top:1px solid rgba(255,255,255,.08);margin-top:.6rem;padding-top:.7rem;display:flex;flex-direction:column;gap:.3rem}
+.rf-total-row{display:flex;justify-content:space-between;font-size:.68rem;color:rgba(255,255,255,.35)}
+.rf-total-v{font-weight:700}
+.rf-total-v.cobrado{color:var(--lime)}
+.rf-total-v.pendiente{color:#f5a623}
+@media(max-width:700px){.rf-cols{grid-template-columns:1fr}}
+/* acordeón de obras */
+.rf-list{display:flex;flex-direction:column;gap:.4rem}
+.rf-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);transition:border-color .2s}
+.rf-item.open{border-color:rgba(135,178,41,.3)}
+.rf-item-header{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1rem;cursor:pointer;gap:1rem;user-select:none}
+.rf-item-header:hover{background:rgba(255,255,255,.03)}
+.rf-item-left{flex:1;min-width:0}
+.rf-item-addr{font-size:.82rem;font-weight:600;color:#fff;margin-bottom:.35rem}
+.rf-item-pills{display:flex;gap:.35rem;flex-wrap:wrap}
+.rf-pill{font-size:.52rem;letter-spacing:.07em;text-transform:uppercase;font-weight:600;padding:.15rem .5rem}
+.pill-admin{background:rgba(255,255,255,.07);color:rgba(255,255,255,.36)}
+.pill-fase{background:rgba(14,165,233,.1);color:#7dd3fc}
+.pill-cobrado{background:rgba(135,178,41,.14);color:var(--lime)}
+.pill-pendiente{background:rgba(245,166,35,.1);color:#f5a623}
+.rf-chevron{font-size:.65rem;color:rgba(255,255,255,.22);flex-shrink:0;transition:transform .2s}
+.rf-item.open .rf-chevron{transform:rotate(180deg)}
+.rf-details{padding:.2rem 1rem 1.2rem;border-top:1px solid rgba(255,255,255,.07)}
 
-.price-card {
-  background: var(--off-white);
-  padding: 0;
-  position: relative; overflow: hidden;
-}
-.pc-top {
-  background: var(--purple); padding: 1.8rem 2.5rem;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.pc-top-label { font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.6); font-weight: 500; }
-.pc-badge {
-  font-size: .58rem; letter-spacing: .12em; text-transform: uppercase;
-  font-weight: 700; background: var(--pink); color: #fff;
-  padding: .3rem .8rem;
-}
+/* ── ACADEMIA ── */
+.aca-filters{display:flex;gap:.5rem;margin-bottom:1.2rem;flex-wrap:wrap}
+.aca-filter{font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;padding:.3rem .8rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.38);cursor:pointer;font-family:'Poppins',sans-serif;transition:all .15s}
+.aca-filter:hover,.aca-filter.active{background:rgba(14,165,233,.2);border-color:#0ea5e9;color:#7dd3fc}
+.aca-table{width:100%;border-collapse:collapse}
+.aca-table th{font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);font-weight:500;padding:.5rem .8rem;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}
+.aca-table td{font-size:.72rem;color:rgba(255,255,255,.62);padding:.62rem .8rem;border-bottom:1px solid rgba(255,255,255,.05)}
+.aca-table tr:hover td{background:rgba(255,255,255,.03)}
+.aca-pb{height:5px;background:rgba(255,255,255,.08);width:90px}
+.aca-pf{height:100%;transition:width .4s}
+.aca-pf.c-green{background:var(--lime)}
+.aca-pf.c-blue{background:#0ea5e9}
+.aca-pf.c-orange{background:#f5a623}
+.aca-st{font-size:.56rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding:.18rem .5rem}
+.aca-st.s-completado{background:rgba(135,178,41,.12);color:var(--lime)}
+.aca-st.s-progreso{background:rgba(14,165,233,.12);color:#7dd3fc}
+.aca-st.s-retrasado{background:rgba(231,32,120,.12);color:var(--pink)}
 
-.pc-price-area { padding: 2.5rem 2.5rem 2rem; border-bottom: 1px solid var(--rule); }
-.pc-original {
-  font-size: .8rem; color: var(--mid); text-decoration: line-through;
-  margin-bottom: .2rem; font-weight: 400;
-}
-.pc-original span { font-weight: 500; }
-.pc-offer {
-  display: flex; align-items: flex-start; gap: .5rem; margin-bottom: .5rem;
-}
-.pc-offer-label {
-  font-size: .6rem; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--pink); font-weight: 700; margin-top: .7rem;
-}
-.pc-price {
-  font-size: 4rem; font-weight: 900; color: var(--purple);
-  letter-spacing: -.05em; line-height: 1;
-}
-.pc-price sup { font-size: 1.2rem; font-weight: 600; vertical-align: top; margin-top: .5rem; }
-.pc-price-note { font-size: .72rem; color: var(--mid); font-weight: 300; }
-.pc-savings {
-  display: inline-flex; align-items: center; gap: .5rem;
-  background: var(--lime); color: var(--slate);
-  font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700;
-  padding: .4rem .9rem; margin-top: .8rem;
-}
+/* ── INDUSTRIES ── */
+.industries{padding:6rem 5rem;background:var(--light)}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
+.ind-card{background:#fff;padding:1.8rem 1.5rem;border-top:3px solid var(--rule);transition:all .2s}
+.ind-card:hover{border-top-color:var(--lime);transform:translateY(-2px)}
+.ind-icon{width:38px;height:38px;border-radius:50%;background:var(--light);display:flex;align-items:center;justify-content:center;margin-bottom:.9rem}
+.ind-icon svg{width:18px;height:18px;stroke:var(--purple);fill:none;stroke-width:1.5}
+.ind-name{font-size:.8rem;font-weight:700;color:var(--slate);margin-bottom:.35rem}
+.ind-idea{font-size:.72rem;color:var(--mid);line-height:1.65}
 
-.pc-includes { padding: 2rem 2.5rem; border-bottom: 1px solid var(--rule); }
-.pc-includes-title { font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--mid); font-weight: 600; margin-bottom: 1.2rem; }
-.pc-include-item {
-  display: flex; align-items: flex-start; gap: .8rem;
-  font-size: .8rem; color: var(--slate); font-weight: 400; margin-bottom: .7rem;
-}
-.pc-check {
-  width: 18px; height: 18px; border-radius: 50%; background: var(--light);
-  border: 1.5px solid var(--lime); display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; margin-top: .15rem;
-}
-.pc-check::after { content: '✓'; font-size: .5rem; color: var(--lime); font-weight: 800; }
+/* ── CTA ── */
+.cta-section{background:var(--purple);padding:7rem 5rem;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;right:-100px;top:50%;transform:translateY(-50%);width:400px;height:400px;border-radius:50%;border:70px solid rgba(135,178,41,.06);pointer-events:none}
+.cta-inner{position:relative;z-index:2}
+.cta-eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);font-weight:600;margin-bottom:1.2rem}
+.cta-eyebrow::before{content:'';width:18px;height:2px;background:var(--lime)}
+.cta-section h2{font-size:clamp(2rem,3vw,3.2rem);font-weight:800;color:#fff;letter-spacing:-.04em;line-height:1.1;margin-bottom:1rem}
+.cta-section h2 em{color:var(--lime);font-style:italic;font-weight:300}
+.cta-section p{font-size:.88rem;color:rgba(255,255,255,.45);margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.8}
+.cta-link{display:inline-flex;align-items:center;gap:.8rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--slate);background:var(--lime);padding:1rem 2.5rem;text-decoration:none;transition:background .2s}
+.cta-link:hover{background:var(--lime-lt)}
 
-.pc-form { padding: 2rem 2.5rem; }
-.pc-form-group { margin-bottom: .7rem; }
-.pc-input {
-  width: 100%; padding: .8rem 1rem; border: 1px solid var(--rule);
-  background: #fff; font-family: 'Poppins', sans-serif;
-  font-size: .8rem; color: var(--slate); outline: none; font-weight: 300;
-  transition: border-color .2s;
-}
-.pc-input:focus { border-color: var(--purple); }
-.pc-input::placeholder { color: var(--mid); }
-.pc-submit {
-  width: 100%; padding: 1.1rem; background: var(--pink); border: none;
-  font-family: 'Poppins', sans-serif; font-size: .75rem; letter-spacing: .14em;
-  text-transform: uppercase; font-weight: 700; color: #fff; cursor: pointer;
-  transition: background .2s; margin-top: .4rem;
-}
-.pc-submit:hover { background: #c0185e; }
-.pc-guarantee {
-  display: flex; align-items: center; gap: .6rem;
-  font-size: .65rem; color: var(--mid); margin-top: 1rem; font-weight: 300;
-}
-.pc-guarantee svg { width: 16px; height: 16px; stroke: var(--lime); fill: none; stroke-width: 2; flex-shrink: 0; }
+/* ── FOOTER ── */
+footer{background:var(--slate);padding:2.5rem 5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.footer-links{display:flex;gap:2rem;flex-wrap:wrap}
+.footer-links a{font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--lime)}
+.footer-copy{font-size:.65rem;color:rgba(255,255,255,.2);width:100%}
 
-/* ── PAIN POINTS ───────────────────────────────────── */
-.pain {
-  background: var(--purple);
-  padding: 7rem 5rem;
-  position: relative; overflow: hidden;
-}
-.pain::before {
-  content: '';
-  position: absolute; top: 50%; right: -120px; transform: translateY(-50%);
-  width: 360px; height: 360px; border-radius: 50%;
-  border: 60px solid rgba(135,178,41,.05);
-  pointer-events: none;
-}
-.pain-eyebrow {
-  display: flex; align-items: center; gap: .7rem;
-  font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--lime); font-weight: 600; margin-bottom: 1.5rem;
-}
-.pain-eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--lime); }
-.pain h2 {
-  font-size: clamp(1.8rem, 2.6vw, 3rem); font-weight: 800; color: #fff;
-  letter-spacing: -.04em; line-height: 1.1; margin-bottom: 3.5rem;
-  max-width: 680px;
-}
-.pain h2 em { color: var(--lime); font-style: italic; font-weight: 300; }
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+.reveal.visible{opacity:1;transform:translateY(0)}
 
-.pain-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){.apps-grid{grid-template-columns:repeat(2,1fr)}.ind-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}.nav-links{display:none}
+  .tools-hero{padding:8rem 1.8rem 4rem}.hero-inner{grid-template-columns:1fr}
+  .how{grid-template-columns:1fr;padding:3rem 1.8rem}
+  .how-step{border-right:none;border-bottom:1px solid var(--rule);padding:2rem 0!important}
+  .how-step:last-child{border-bottom:none}
+  .tools-section{padding:4rem 1.8rem}.apps-grid{grid-template-columns:1fr}
+  .kb-board{grid-template-columns:repeat(2,1fr)}.tim-layout{grid-template-columns:1fr}
+  .prj-grid{grid-template-columns:1fr}.ind-grid{grid-template-columns:1fr}
+  .industries{padding:4rem 1.8rem}.cta-section{padding:5rem 1.8rem}
+  footer{padding:2rem 1.8rem}
 }
-.pain-card {
-  background: rgba(255,255,255,.06); padding: 2.5rem 2rem;
-  border-top: 3px solid rgba(255,255,255,.08);
-  transition: background .2s, border-color .2s;
+@media(max-width:600px){
+  .apt-item{grid-template-columns:56px 1fr}
+  .apt-status{grid-column:span 2}
+  .inc-top{grid-template-columns:repeat(2,1fr)}
+  .apt-stats{grid-template-columns:repeat(2,1fr)}
 }
-.pain-card:hover { background: rgba(255,255,255,.1); border-top-color: var(--lime); }
-.pain-emoji { font-size: 2rem; margin-bottom: 1rem; display: block; }
-.pain-card h3 { font-size: .9rem; font-weight: 700; color: #fff; margin-bottom: .5rem; line-height: 1.3; }
-.pain-card p { font-size: .78rem; color: rgba(255,255,255,.65); line-height: 1.75; font-weight: 300; }
-
-/* ── POSITIONING ───────────────────────────────────── */
-.positioning {
-  padding: 7rem 5rem;
-  background: var(--off-white);
-  display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center;
-}
-.pos-left {}
-.pos-eyebrow {
-  display: inline-flex; align-items: center; gap: .7rem;
-  font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--lime); font-weight: 700; margin-bottom: 1.5rem;
-}
-.pos-eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--lime); }
-.positioning h2 {
-  font-size: clamp(2rem, 2.6vw, 3rem); font-weight: 900; color: var(--purple);
-  letter-spacing: -.04em; line-height: 1.08; margin-bottom: 1.5rem;
-}
-.positioning h2 em { color: var(--lime); font-style: italic; font-weight: 300; }
-.positioning > div > p {
-  font-size: .9rem; color: var(--mid); line-height: 1.9; margin-bottom: 1rem; font-weight: 300;
-}
-
-.ai-badge {
-  display: inline-flex; align-items: center; gap: .7rem;
-  background: var(--purple-dk); color: var(--lime);
-  padding: .6rem 1.2rem; margin-top: 1rem;
-  font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 600;
-}
-.ai-badge svg { width: 16px; height: 16px; stroke: var(--lime); fill: none; stroke-width: 2; }
-
-.pos-right {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
-}
-.pos-stat {
-  background: var(--light); padding: 2rem 1.8rem;
-  border-top: 3px solid var(--rule);
-  transition: border-color .2s;
-}
-.pos-stat:hover { border-top-color: var(--lime); }
-.pos-stat-num {
-  font-size: 2.8rem; font-weight: 900; color: var(--purple);
-  letter-spacing: -.05em; line-height: 1; margin-bottom: .4rem;
-}
-.pos-stat-num span { font-size: 1.2rem; }
-.pos-stat-label { font-size: .72rem; color: var(--mid); font-weight: 300; line-height: 1.5; }
-.pos-stat.highlight { background: var(--purple); }
-.pos-stat.highlight .pos-stat-num { color: var(--lime); }
-.pos-stat.highlight .pos-stat-label { color: rgba(255,255,255,.65); }
-
-/* ── WHAT YOU GET ──────────────────────────────────── */
-.deliverables {
-  background: var(--light);
-  padding: 7rem 5rem;
-}
-.dl-header { margin-bottom: 4rem; }
-.dl-eyebrow {
-  display: inline-flex; align-items: center; gap: .7rem;
-  font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--lime); font-weight: 700; margin-bottom: 1rem;
-}
-.dl-eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--lime); }
-.deliverables h2 {
-  font-size: clamp(1.8rem, 2.4vw, 2.8rem); font-weight: 900; color: var(--purple);
-  letter-spacing: -.04em; line-height: 1.1; max-width: 680px;
-}
-.deliverables h2 em { color: var(--lime); font-style: italic; font-weight: 300; }
-
-.dl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.dl-card {
-  background: #fff; padding: 2.5rem 2rem;
-  border-bottom: 3px solid var(--rule);
-  transition: border-color .2s, transform .2s;
-  position: relative;
-}
-.dl-card:hover { border-bottom-color: var(--lime); transform: translateY(-3px); }
-.dl-card.featured {
-  background: var(--purple-dk); border-bottom-color: var(--lime);
-  grid-column: span 1;
-}
-.dl-num {
-  font-size: 3rem; font-weight: 900; color: rgba(88,45,129,.08);
-  letter-spacing: -.05em; line-height: 1; margin-bottom: .8rem;
-}
-.dl-card.featured .dl-num { color: rgba(255,255,255,.07); }
-.dl-icon { width: 44px; height: 44px; margin-bottom: 1.2rem; }
-.dl-icon svg { width: 100%; height: 100%; stroke: var(--purple); fill: none; stroke-width: 1.5; }
-.dl-card.featured .dl-icon svg { stroke: var(--lime); }
-.dl-card h3 { font-size: .92rem; font-weight: 700; color: var(--slate); margin-bottom: .6rem; line-height: 1.3; }
-.dl-card.featured h3 { color: #fff; }
-.dl-card p { font-size: .78rem; color: var(--mid); line-height: 1.75; font-weight: 300; }
-.dl-card.featured p { color: rgba(255,255,255,.65); }
-.dl-tag {
-  display: inline-flex; margin-top: 1.2rem;
-  font-size: .58rem; letter-spacing: .14em; text-transform: uppercase;
-  font-weight: 700; color: var(--lime); border: 1px solid rgba(135,178,41,.3);
-  padding: .3rem .7rem;
-}
-.dl-card.featured .dl-tag { border-color: rgba(135,178,41,.5); }
-
-/* ── PROCESS ───────────────────────────────────────── */
-.process {
-  background: var(--purple-dk); padding: 7rem 5rem;
-  position: relative; overflow: hidden;
-}
-.process::before {
-  content: '';
-  position: absolute; left: -80px; top: 50%; transform: translateY(-50%);
-  width: 380px; height: 380px; border-radius: 50%;
-  border: 60px solid rgba(135,178,41,.05); pointer-events: none;
-}
-.pr-eyebrow {
-  display: inline-flex; align-items: center; gap: .7rem;
-  font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--lime); font-weight: 700; margin-bottom: 1.5rem;
-}
-.pr-eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--lime); }
-.process h2 {
-  font-size: clamp(1.8rem, 2.4vw, 2.8rem); font-weight: 900; color: #fff;
-  letter-spacing: -.04em; line-height: 1.1; margin-bottom: 4rem;
-  max-width: 580px;
-}
-.process h2 em { color: var(--lime); font-style: italic; font-weight: 300; }
-
-.pr-steps {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
-  position: relative;
-}
-.pr-steps::before {
-  content: '';
-  position: absolute; top: 32px; left: 5%; right: 5%; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(135,178,41,.3) 20%, rgba(135,178,41,.3) 80%, transparent);
-  pointer-events: none;
-}
-.pr-step { padding: 0 2rem 0 0; position: relative; }
-.pr-step-dot {
-  width: 64px; height: 64px; border-radius: 50%;
-  background: rgba(255,255,255,.05); border: 1.5px solid rgba(255,255,255,.12);
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 2rem; position: relative; z-index: 2;
-  transition: background .3s, border-color .3s;
-}
-.pr-step:hover .pr-step-dot { background: rgba(135,178,41,.15); border-color: var(--lime); }
-.pr-step-dot svg { width: 26px; height: 26px; stroke: var(--lime); fill: none; stroke-width: 1.5; }
-.pr-step-n {
-  position: absolute; top: -8px; right: -8px;
-  width: 22px; height: 22px; background: var(--lime); border-radius: 50%;
-  font-size: .58rem; font-weight: 800; color: var(--slate);
-  display: flex; align-items: center; justify-content: center;
-}
-.pr-step h3 { font-size: .9rem; font-weight: 700; color: #fff; margin-bottom: .5rem; line-height: 1.3; }
-.pr-step p { font-size: .78rem; color: rgba(255,255,255,.6); line-height: 1.75; font-weight: 300; }
-
-/* ── FOR WHO ───────────────────────────────────────── */
-.for-who {
-  display: grid; grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--rule);
-}
-.fw-col {
-  padding: 6rem 5rem;
-  display: flex; flex-direction: column;
-}
-.fw-col.yes { background: var(--off-white); border-right: 1px solid var(--rule); }
-.fw-col.no { background: var(--light); }
-.fw-label {
-  display: inline-flex; align-items: center; gap: .8rem;
-  font-size: .62rem; letter-spacing: .18em; text-transform: uppercase;
-  font-weight: 700; margin-bottom: 1.5rem;
-}
-.fw-label.l-yes { color: var(--lime); }
-.fw-label.l-no { color: var(--mid); }
-.fw-col h2 {
-  font-size: clamp(1.6rem, 2vw, 2.2rem); font-weight: 900; color: var(--purple);
-  letter-spacing: -.04em; line-height: 1.1; margin-bottom: 2.5rem;
-}
-.fw-col.no h2 { color: var(--mid); }
-.fw-list { display: flex; flex-direction: column; gap: 1rem; }
-.fw-item {
-  display: flex; align-items: flex-start; gap: 1rem;
-  font-size: .83rem; color: var(--slate); font-weight: 300; line-height: 1.6;
-}
-.fw-icon {
-  width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; margin-top: .1rem;
-  display: flex; align-items: center; justify-content: center;
-}
-.fw-icon.y { background: rgba(135,178,41,.15); }
-.fw-icon.y::after { content: '✓'; font-size: .6rem; font-weight: 800; color: var(--lime-dk); }
-.fw-icon.n { background: rgba(122,111,133,.1); }
-.fw-icon.n::after { content: '✕'; font-size: .6rem; font-weight: 800; color: var(--mid); }
-
-/* ── TESTIMONIALS ──────────────────────────────────── */
-.testimonials {
-  background: var(--purple); padding: 7rem 5rem;
-  position: relative; overflow: hidden;
-}
-.testimonials::after {
-  content: '"';
-  position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
-  font-size: 24rem; font-weight: 900; color: rgba(255,255,255,.03);
-  line-height: 1; pointer-events: none; font-style: italic;
-}
-.ts-eyebrow {
-  display: inline-flex; align-items: center; gap: .7rem;
-  font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--lime); font-weight: 700; margin-bottom: 1.5rem;
-}
-.ts-eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--lime); }
-.testimonials h2 {
-  font-size: clamp(1.6rem, 2.2vw, 2.4rem); font-weight: 900; color: #fff;
-  letter-spacing: -.04em; margin-bottom: 3.5rem; max-width: 520px;
-}
-
-.ts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; position: relative; z-index: 2; }
-.ts-card {
-  background: rgba(255,255,255,.07); padding: 2.5rem;
-  border-top: 2px solid rgba(255,255,255,.1);
-  transition: background .2s;
-}
-.ts-card:hover { background: rgba(255,255,255,.11); }
-.ts-stars { color: #fbbf24; font-size: .9rem; letter-spacing: .05em; margin-bottom: 1.2rem; }
-.ts-quote {
-  font-size: .85rem; color: rgba(255,255,255,.8); line-height: 1.85;
-  font-weight: 300; margin-bottom: 1.8rem; font-style: italic;
-}
-.ts-quote::before { content: '"'; color: var(--lime); font-size: 1.2rem; font-weight: 700; font-style: normal; }
-.ts-author { display: flex; align-items: center; gap: .9rem; }
-.ts-avatar {
-  width: 40px; height: 40px; border-radius: 50%; background: var(--purple-lt);
-  display: flex; align-items: center; justify-content: center;
-  font-size: .65rem; font-weight: 700; color: #fff; flex-shrink: 0;
-}
-.ts-name { font-size: .78rem; font-weight: 600; color: #fff; }
-.ts-role { font-size: .65rem; color: rgba(255,255,255,.45); }
-.ts-result {
-  display: inline-flex; margin-top: 1.2rem;
-  font-size: .6rem; letter-spacing: .12em; text-transform: uppercase;
-  font-weight: 700; color: var(--lime); border-left: 2px solid var(--lime);
-  padding: .2rem 0 .2rem .7rem;
-}
-
-/* ── FAQ ───────────────────────────────────────────── */
-.faq {
-  padding: 7rem 5rem; background: var(--off-white);
-  display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: start;
-}
-.faq-left { position: sticky; top: 120px; }
-.faq-eyebrow {
-  display: inline-flex; align-items: center; gap: .7rem;
-  font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--lime); font-weight: 700; margin-bottom: 1.5rem;
-}
-.faq-eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--lime); }
-.faq h2 {
-  font-size: clamp(1.8rem, 2.2vw, 2.6rem); font-weight: 900; color: var(--purple);
-  letter-spacing: -.04em; line-height: 1.1; margin-bottom: 1.5rem;
-}
-.faq-sub { font-size: .82rem; color: var(--mid); line-height: 1.8; font-weight: 300; }
-
-.faq-list { display: flex; flex-direction: column; }
-.faq-item { border-bottom: 1px solid var(--rule); }
-.faq-q {
-  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
-  padding: 1.8rem 0; cursor: pointer;
-  font-size: .88rem; font-weight: 600; color: var(--slate); line-height: 1.4;
-  transition: color .2s;
-}
-.faq-q:hover { color: var(--purple); }
-.faq-q.open { color: var(--purple); }
-.faq-arrow {
-  width: 28px; height: 28px; flex-shrink: 0;
-  border: 1px solid var(--rule); border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  transition: transform .3s, background .2s, border-color .2s;
-}
-.faq-q.open .faq-arrow { transform: rotate(45deg); background: var(--lime); border-color: var(--lime); }
-.faq-arrow svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; }
-.faq-q.open .faq-arrow svg { stroke: var(--slate); }
-.faq-a {
-  font-size: .83rem; color: var(--mid); line-height: 1.85; font-weight: 300;
-  max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s;
-  padding-bottom: 0;
-}
-.faq-a.open { max-height: 300px; padding-bottom: 1.8rem; }
-
-/* ── FINAL CTA ─────────────────────────────────────── */
-.final-cta {
-  background: var(--purple-xdk); padding: 8rem 5rem;
-  text-align: center; position: relative; overflow: hidden;
-}
-.final-cta::before {
-  content: '';
-  position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
-  width: 700px; height: 700px; border-radius: 50%;
-  border: 100px solid rgba(135,178,41,.04); pointer-events: none;
-}
-.final-cta::after {
-  content: '';
-  position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
-  width: 400px; height: 400px; border-radius: 50%;
-  border: 50px solid rgba(231,32,120,.04); pointer-events: none;
-}
-.fc-eyebrow {
-  display: inline-flex; align-items: center; gap: .7rem;
-  font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--lime); font-weight: 700; margin-bottom: 1.5rem; position: relative; z-index: 2;
-}
-.fc-eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--lime); }
-.final-cta h2 {
-  font-size: clamp(2.2rem, 3.5vw, 4rem); font-weight: 900; color: #fff;
-  letter-spacing: -.05em; line-height: 1.05; margin-bottom: 1rem;
-  position: relative; z-index: 2;
-}
-.final-cta h2 em { color: var(--lime); font-style: italic; font-weight: 300; }
-.final-cta > p {
-  font-size: .92rem; color: rgba(255,255,255,.7); max-width: 560px; margin: 0 auto 3rem;
-  line-height: 1.85; font-weight: 300; position: relative; z-index: 2;
-}
-.cta-box {
-  display: inline-flex; flex-direction: column; align-items: center; gap: 1rem;
-  position: relative; z-index: 2;
-}
-.cta-price-mini {
-  display: flex; align-items: center; gap: 1rem;
-  background: rgba(255,255,255,.07); padding: .8rem 1.8rem;
-}
-.cta-original { font-size: .75rem; color: rgba(255,255,255,.4); text-decoration: line-through; }
-.cta-offer { font-size: 1.6rem; font-weight: 900; color: #fff; letter-spacing: -.03em; }
-.cta-badge-pink {
-  font-size: .6rem; letter-spacing: .12em; text-transform: uppercase;
-  font-weight: 700; background: var(--pink); color: #fff; padding: .3rem .7rem;
-}
-.btn-cta-main {
-  display: inline-flex; align-items: center; gap: .8rem;
-  background: var(--pink); color: #fff; text-decoration: none;
-  padding: 1.2rem 3rem;
-  font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700;
-  transition: background .2s, gap .2s;
-}
-.btn-cta-main:hover { background: #c0185e; gap: 1.2rem; }
-.cta-note { font-size: .65rem; color: rgba(255,255,255,.4); }
-
-/* ── FOOTER ────────────────────────────────────────── */
-footer {
-  background: var(--slate); padding: 2.5rem 5rem;
-  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
-}
-.footer-logo { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #fff; }
-.footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
-.footer-links a { font-size: .65rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.3); text-decoration: none; transition: color .2s; }
-.footer-links a:hover { color: var(--lime); }
-.footer-copy { font-size: .65rem; color: rgba(255,255,255,.2); width: 100%; }
-
-/* ── REVEAL ────────────────────────────────────────── */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.d1 { transition-delay: .1s; }
-.reveal.d2 { transition-delay: .2s; }
-.reveal.d3 { transition-delay: .3s; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-/* ── RESPONSIVE ────────────────────────────────────── */
-@media (max-width: 1000px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-right { padding-bottom: 5rem; }
-  .positioning { grid-template-columns: 1fr; gap: 4rem; }
-  .pr-steps { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
-  .pr-steps::before { display: none; }
-  .ts-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 900px) {
-  nav { padding: 1rem 1.5rem; }
-  .hero, .pain, .deliverables, .process, .testimonials, .final-cta { padding: 5rem 1.8rem; }
-  .hero { padding-top: 7rem; }
-  .positioning, .faq { padding: 5rem 1.8rem; grid-template-columns: 1fr; gap: 3rem; }
-  .pain-grid { grid-template-columns: 1fr 1fr; }
-  .dl-grid { grid-template-columns: 1fr 1fr; }
-  .for-who { grid-template-columns: 1fr; }
-  .fw-col { padding: 4rem 1.8rem; }
-  .faq-left { position: relative; top: 0; }
-  footer { padding: 2rem 1.8rem; }
-}
-@media (max-width: 640px) {
-  .pain-grid, .dl-grid, .ts-grid, .pos-right { grid-template-columns: 1fr; }
-  .pr-steps { grid-template-columns: 1fr; }
-}
-
-/* ── MOBILE FIRST RESET ─────────────────────── */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-img, video, iframe, table, input, textarea, select {
-  max-width: 100%;
-}
-img { height: auto; }
-
-
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: .4rem; background: none; border: none; z-index: 200; }
-.nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--purple); transition: all .3s; }
-.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-hamburger.open span:nth-child(2) { opacity: 0; }
-.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(58,28,87,.98); z-index: 150; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; }
-.mobile-menu.open { display: flex; }
-.mobile-menu a { font-family: 'Poppins', sans-serif; font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,.08); width: 100%; text-align: center; transition: color .2s; }
-.mobile-menu a:hover { color: var(--lime); }
-.mobile-menu a:last-child { border-bottom: none; }
-.mobile-menu .mm-cta { margin-top: 1.5rem; background: var(--lime); color: var(--slate) !important; padding: 1rem 2.5rem !important; font-size: .85rem !important; text-transform: uppercase; border-bottom: none !important; width: auto !important; }
-.mobile-menu .mm-close { position: absolute; top: 1.4rem; right: 1.5rem; background: none; border: none; font-size: 1.8rem; color: rgba(255,255,255,.6); cursor: pointer; }
-@media (max-width: 900px) { .nav-hamburger { display: flex; } .nav-links { display: none; } nav { padding: 1rem 1.5rem; } }
-
 </style>
-<script src="/widget-consultora.js" defer>
-  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
-  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
-
-</script>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="/">Los Martes No Hay Luna</a>
-  <span class="nav-badge">Página de servicio · No indexada</span>
-  <a class="nav-cta" href="#reserva">Reservar mi plaza →</a>
+  <ul class="nav-links">
+    <li><a href="/servicios">Servicios</a></li>
+    <li><a href="/sheila-aguilar">Sheila Aguilar</a></li>
+    <li><a href="/ia-para-empresas" class="active">IA para empresas</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/contacto">Contacto</a></li>
+  </ul>
+  <a class="nav-cta" href="/sesion-gratuita">Sesión gratuita</a>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-noise"></div>
+<header class="tools-hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Aplicaciones a medida para empresas</div>
+      <h1>Tu negocio<br>merece su<br>propia <em>herramienta</em></h1>
+      <p class="hero-sub">Desarrollamos mini-aplicaciones personalizadas que automatizan procesos, mejoran la gestión y ahorran horas reales a tu equipo. Sin software genérico. Sin licencias. Sin complejidad.</p>
+      <div class="hero-pills">
+        <span class="hero-pill">Gestión de tareas</span>
+        <span class="hero-pill">Control de tiempo</span>
+        <span class="hero-pill">Registro de incidencias</span>
+        <span class="hero-pill">Agenda de citas</span>
+        <span class="hero-pill">Seguimiento de obras</span>
+        <span class="hero-pill">Panel de alumnos</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stat">
+        <div class="hs-num">3–5h</div>
+        <div class="hs-label">semanales ahorradas<br>de media por equipo</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hs-num">2–4</div>
+        <div class="hs-label">semanas de desarrollo<br>para tu primera herramienta</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hs-num">100%</div>
+        <div class="hs-label">adaptada a tu sector,<br>tu equipo y tu forma de trabajar</div>
+      </div>
+    </div>
+  </div>
+</header>
 
-  <div class="hero-left reveal">
-    <div class="hero-pretitle">Consultoría Estratégica con IA</div>
-    <h1>Tu negocio tiene<br>más potencial del que<br><em>imaginas.</em></h1>
-    <p class="hero-sub">
-      En 2 sesiones intensivas de trabajo personal y minucioso, analizamos tu negocio de arriba a abajo para darte un plan de acción concreto que puedes ejecutar desde el lunes siguiente.
-    </p>
-    <div class="hero-bullets">
-      <div class="hero-bullet">Diagnóstico profundo y personalizado de tu negocio, sector y competencia</div>
-      <div class="hero-bullet">Plan de acción concreto con hoja de ruta ejecutable a 90 días</div>
-      <div class="hero-bullet">Identificación de las ineficiencias que te cuestan dinero cada mes</div>
-      <div class="hero-bullet">Propuesta de mejoras reales: procesos, tecnología, IA o lo que necesite tu caso</div>
-      <div class="hero-bullet">Grabación + documentación completa para aplicar por tu cuenta</div>
-    </div>
-    <div class="hero-scroll">
-      <div class="scroll-dot"></div>
-      Descubre qué incluye
-    </div>
+<!-- HOW -->
+<div class="how">
+  <div class="how-step reveal">
+    <div class="how-num">01 — Diagnóstico</div>
+    <h3>Analizamos tu proceso actual</h3>
+    <p>En una sesión de trabajo identificamos qué tareas se repiten, dónde se pierde tiempo y qué información necesita tu equipo tener siempre a mano.</p>
   </div>
-
-  <!-- Price Card -->
-  <div class="hero-right reveal d1" id="reserva">
-    <div class="price-card">
-      <div class="pc-top">
-        <span class="pc-top-label">Consultoría Estratégica con IA</span>
-        <span class="pc-badge">Plazas limitadas</span>
-      </div>
-      <div class="pc-price-area">
-        <div class="pc-original">PVP regular: <span>2.500€</span></div>
-        <div class="pc-offer">
-          <span class="pc-offer-label">Oferta 2026</span>
-          <div class="pc-price"><sup>€</sup>1.497</div>
-        </div>
-        <div class="pc-price-note">2 sesiones online · Grabación incluida</div>
-        <div class="pc-savings">✦ Ahorras 1.003€ · Solo 8 plazas/mes</div>
-      </div>
-      <div class="pc-includes">
-        <div class="pc-includes-title">Todo lo que incluye</div>
-        <div class="pc-include-item">
-          <div class="pc-check"></div>
-          <span>2 sesiones online de 90 min con Sheila Aguilar</span>
-        </div>
-        <div class="pc-include-item">
-          <div class="pc-check"></div>
-          <span>Diagnóstico minucioso de tu negocio, sector y competencia</span>
-        </div>
-        <div class="pc-include-item">
-          <div class="pc-check"></div>
-          <span>Plan de acción documentado a 90 días</span>
-        </div>
-        <div class="pc-include-item">
-          <div class="pc-check"></div>
-          <span>Definición de cliente ideal + propuesta de valor</span>
-        </div>
-        <div class="pc-include-item">
-          <div class="pc-check"></div>
-          <span>Recomendaciones personalizadas: procesos, tecnología o IA si aplica</span>
-        </div>
-        <div class="pc-include-item">
-          <div class="pc-check"></div>
-          <span>Grabaciones en vídeo de ambas sesiones</span>
-        </div>
-        <div class="pc-include-item">
-          <div class="pc-check"></div>
-          <span>Soporte por WhatsApp durante 15 días</span>
-        </div>
-      </div>
-      <div class="pc-form">
-        <div class="pc-form-group">
-          <input class="pc-input" type="text" placeholder="Tu nombre">
-        </div>
-        <div class="pc-form-group">
-          <input class="pc-input" type="email" placeholder="tu@email.com">
-        </div>
-        <div class="pc-form-group">
-          <input class="pc-input" type="tel" placeholder="Teléfono (opcional)">
-        </div>
-        <button class="pc-submit">Quiero reservar mi plaza →</button>
-        <div class="pc-guarantee">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Pago seguro · Confirmación inmediata por email
-        </div>
-      </div>
-    </div>
+  <div class="how-step reveal d1">
+    <div class="how-num">02 — Desarrollo</div>
+    <h3>Construimos tu herramienta</h3>
+    <p>Desarrollamos una aplicación ligera, sin instalaciones ni licencias, adaptada a tu flujo de trabajo exacto. Tu equipo la entiende en 10 minutos.</p>
   </div>
-</section>
-
-<!-- PAIN POINTS -->
-<section class="pain">
-  <div class="pain-eyebrow reveal">¿Te suena esto?</div>
-  <h2 class="reveal">Si sientes que tu negocio<br>podría ir <em>mucho mejor…</em></h2>
-  <div class="pain-grid">
-    <div class="pain-card reveal">
-      <span class="pain-emoji">😤</span>
-      <h3>Trabajas más horas que nunca pero los resultados no mejoran</h3>
-      <p>El esfuerzo no falta, pero hay algo en la estrategia que no cuadra. Seguís haciendo más de lo mismo esperando resultados distintos.</p>
-    </div>
-    <div class="pain-card reveal d1">
-      <span class="pain-emoji">🤯</span>
-      <h3>La IA te suena a todo el mundo pero no sabes cómo aplicarla a tu caso</h3>
-      <p>Escuchas hablar de ChatGPT y automatizaciones, pero no tienes claro qué tiene sentido para tu empresa y qué es humo.</p>
-    </div>
-    <div class="pain-card reveal d2">
-      <span class="pain-emoji">📉</span>
-      <h3>Tu marketing genera actividad pero no ventas reales</h3>
-      <p>Publicáis en redes, tenéis web, hacéis algo de publicidad... pero el retorno no justifica la inversión de tiempo y dinero.</p>
-    </div>
-    <div class="pain-card reveal">
-      <span class="pain-emoji">🔄</span>
-      <h3>Cada mes empezáis desde cero sin un sistema que escale</h3>
-      <p>No hay procesos definidos. Dependéis de personas concretas. Si alguien falta, todo se resiente.</p>
-    </div>
-    <div class="pain-card reveal d1">
-      <span class="pain-emoji">💸</span>
-      <h3>Hay ineficiencias que te cuestan dinero y ni las ves</h3>
-      <p>En cada empresa que consultamos encontramos entre 3 y 7 fugas que nadie había identificado porque "siempre se ha hecho así".</p>
-    </div>
-    <div class="pain-card reveal d2">
-      <span class="pain-emoji">🧭</span>
-      <h3>Tienes claro el destino pero no el camino para llegar</h3>
-      <p>Sabes que quieres crecer, vender más, llegar a más clientes... pero no tienes un plan concreto y ejecutable para las próximas semanas.</p>
-    </div>
-  </div>
-</section>
-
-<!-- POSITIONING -->
-<section class="positioning">
-  <div class="pos-left reveal">
-    <div class="pos-eyebrow">Nuestra propuesta</div>
-    <h2>No es otra consultoría.<br>Es trabajo <em>personal,<br>minucioso</em> y sin atajos.</h2>
-    <p>La mayoría de consultorías te dan un informe de 80 páginas que acaba en un cajón. Nosotros hacemos algo diferente: <strong>dos sesiones de trabajo real</strong>, en las que Sheila analiza en profundidad tu negocio, tu equipo, tu competencia y tu mercado. Sin plantillas genéricas. Sin respuestas prefabricadas.</p>
-    <p>Con 25 años trabajando con empresas —primero en identidad corporativa, luego en marketing digital— Sheila sabe exactamente dónde mirar. Y una vez terminado ese diagnóstico —si tiene sentido para tu caso— puede proponerte incorporar IA, agentes automatizados de procesos u otras herramientas. Pero primero, entendemos qué necesitas de verdad.</p>
-    <div class="ai-badge">
-      <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-      Trabajo personal y directo con Sheila · Sin intermediarios
-    </div>
-  </div>
-  <div class="pos-right reveal d1">
-    <div class="pos-stat">
-      <div class="pos-stat-num">25<span>+</span></div>
-      <div class="pos-stat-label">Años de experiencia en estrategia e imagen corporativa</div>
-    </div>
-    <div class="pos-stat highlight">
-      <div class="pos-stat-num">40<span>min</span></div>
-      <div class="pos-stat-label">Para localizar las primeras ineficiencias de tu negocio</div>
-    </div>
-    <div class="pos-stat">
-      <div class="pos-stat-num">3x</div>
-      <div class="pos-stat-label">Media de leads tras aplicar el plan a 90 días en nuestros clientes</div>
-    </div>
-    <div class="pos-stat">
-      <div class="pos-stat-num">+100</div>
-      <div class="pos-stat-label">Consultorías realizadas en los últimos 5 años</div>
-    </div>
-  </div>
-</section>
-
-<!-- DELIVERABLES -->
-<section class="deliverables">
-  <div class="dl-header reveal">
-    <div class="dl-eyebrow">Qué te llevas</div>
-    <h2>Todo documentado.<br><em>Todo aplicable.</em> Desde el día uno.</h2>
-  </div>
-  <div class="dl-grid">
-    <div class="dl-card reveal">
-      <div class="dl-num">01</div>
-      <div class="dl-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
-      <h3>Diagnóstico profundo de tu negocio</h3>
-      <p>Análisis minucioso de tu empresa, tu sector, tu competencia y tu posicionamiento actual. Un trabajo de investigación detallado que hacemos personalmente para entender tu realidad antes de proponer nada.</p>
-      <span class="dl-tag">Sesión 1</span>
-    </div>
-    <div class="dl-card reveal d1">
-      <div class="dl-num">02</div>
-      <div class="dl-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-      <h3>Definición de cliente ideal</h3>
-      <p>Identificamos con precisión a quién le estás hablando —y a quién deberías hablarle— con un perfil detallado que incluye motivaciones, objeciones y canales de captación.</p>
-      <span class="dl-tag">Sesión 1</span>
-    </div>
-    <div class="dl-card featured reveal d2">
-      <div class="dl-num">03</div>
-      <div class="dl-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-      <h3>Plan de acción a 90 días</h3>
-      <p>El documento central. Un plan claro, priorizado y ejecutable con acciones concretas, responsables, timings y métricas de seguimiento. No hay ambigüedades.</p>
-      <span class="dl-tag">✦ Documento principal</span>
-    </div>
-    <div class="dl-card reveal">
-      <div class="dl-num">04</div>
-      <div class="dl-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-      <h3>Estrategia de marketing integrada</h3>
-      <p>Qué canales activar, con qué mensaje, con qué presupuesto y en qué orden. Pensado para tu tamaño de empresa, no para una multinacional.</p>
-      <span class="dl-tag">Sesión 2</span>
-    </div>
-    <div class="dl-card reveal d1">
-      <div class="dl-num">05</div>
-      <div class="dl-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-      <h3>Recomendaciones tecnológicas a medida</h3>
-      <p>Si el diagnóstico lo justifica, te proponemos qué herramientas, automatizaciones o agentes de IA tienen sentido para tu negocio específico. Sin vender tecnología por venderla.</p>
-      <span class="dl-tag">Si aplica a tu caso</span>
-    </div>
-    <div class="dl-card reveal d2">
-      <div class="dl-num">06</div>
-      <div class="dl-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
-      <h3>Grabación completa + resumen</h3>
-      <p>Ambas sesiones grabadas en vídeo. Resumen ejecutivo con los puntos clave de cada sesión. Todo disponible en tu espacio privado para revisarlo cuando necesites.</p>
-      <span class="dl-tag">Acceso permanente</span>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="process">
-  <div class="pr-eyebrow reveal">Cómo funciona</div>
-  <h2 class="reveal">De cero a plan ejecutable<br>en <em>dos sesiones.</em></h2>
-  <div class="pr-steps">
-    <div class="pr-step reveal">
-      <div class="pr-step-dot">
-        <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-        <div class="pr-step-n">1</div>
-      </div>
-      <h3>Reservas y completas el formulario</h3>
-      <p>Al reservar recibes un cuestionario de diagnóstico previo. 15 minutos que multiplican el valor de la primera sesión.</p>
-    </div>
-    <div class="pr-step reveal d1">
-      <div class="pr-step-dot">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg>
-        <div class="pr-step-n">2</div>
-      </div>
-      <h3>Sesión 1: Diagnóstico de negocio</h3>
-      <p>90 minutos de trabajo profundo. Sheila analiza tu negocio, tu sector y tu competencia con todo el detalle que merece. Identificamos juntos los puntos de palanca y las áreas de mejora real.</p>
-    </div>
-    <div class="pr-step reveal d2">
-      <div class="pr-step-dot">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        <div class="pr-step-n">3</div>
-      </div>
-      <h3>Sesión 2: Plan de acción</h3>
-      <p>Construimos juntos el plan de acción con las prioridades claras. Si procede, incluimos recomendaciones tecnológicas concretas. Sales de la sesión con todo definido y listo para ejecutar.</p>
-    </div>
-    <div class="pr-step reveal d3">
-      <div class="pr-step-dot">
-        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <div class="pr-step-n">4</div>
-      </div>
-      <h3>Recibes todo documentado</h3>
-      <p>Grabaciones, resúmenes y documentos en tu espacio privado. Más 15 días de soporte por WhatsApp para resolver dudas de implementación.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FOR WHO -->
-<div class="for-who">
-  <div class="fw-col yes">
-    <div class="fw-label l-yes">✦ Este servicio es para ti si…</div>
-    <h2>Estás listo para un cambio real</h2>
-    <div class="fw-list">
-      <div class="fw-item"><div class="fw-icon y"></div><span>Llevas tu propio negocio o eres directivo con capacidad de decisión</span></div>
-      <div class="fw-item"><div class="fw-icon y"></div><span>Tienes claro que necesitas estrategia, no solo más contenido o más publicidad</span></div>
-      <div class="fw-item"><div class="fw-icon y"></div><span>Estás dispuesto a cuestionar cómo has hecho las cosas hasta ahora</span></div>
-      <div class="fw-item"><div class="fw-icon y"></div><span>Quieres entender la IA y aplicarla de forma práctica, no teórica</span></div>
-      <div class="fw-item"><div class="fw-icon y"></div><span>Puedes dedicar tiempo a implementar lo que trabajemos juntos</span></div>
-      <div class="fw-item"><div class="fw-icon y"></div><span>Buscas un plan concreto, no otro informe que no se ejecuta</span></div>
-    </div>
-  </div>
-  <div class="fw-col no">
-    <div class="fw-label l-no">✕ No es para ti si…</div>
-    <h2 style="color:var(--mid)">Buscas resultados sin implicarte</h2>
-    <div class="fw-list">
-      <div class="fw-item"><div class="fw-icon n"></div><span>Esperas que Sheila lo haga todo por ti sin tu participación activa</span></div>
-      <div class="fw-item"><div class="fw-icon n"></div><span>Buscas resultados inmediatos sin ningún tipo de implementación</span></div>
-      <div class="fw-item"><div class="fw-icon n"></div><span>No tienes capacidad de tomar decisiones en tu empresa</span></div>
-      <div class="fw-item"><div class="fw-icon n"></div><span>Crees que la IA es una moda pasajera y no quieres explorarla</span></div>
-      <div class="fw-item"><div class="fw-icon n"></div><span>No tienes tiempo ni recursos para ejecutar el plan en los próximos 90 días</span></div>
-      <div class="fw-item"><div class="fw-icon n"></div><span>Ya tienes una estrategia clara y sólo necesitas que alguien la ejecute</span></div>
-    </div>
+  <div class="how-step reveal d2">
+    <div class="how-num">03 — Implantación</div>
+    <h3>La pones en marcha con soporte</h3>
+    <p>Te acompañamos en el arranque, formamos a tu equipo y ajustamos lo que sea necesario. La herramienta es tuya. Crece contigo.</p>
   </div>
 </div>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div class="ts-eyebrow reveal">Lo que dicen nuestros clientes</div>
-  <h2 class="reveal">Resultados que hablan<br>por sí solos</h2>
-  <div class="ts-grid">
-    <div class="ts-card reveal">
-      <div class="ts-stars">★★★★★</div>
-      <p class="ts-quote">Llegué pensando que mi problema era de marketing. Sheila me ayudó a ver que era un problema de estrategia y posicionamiento. En 90 días cambiamos el mensaje, el canal y el precio. Y funcionó.</p>
-      <div class="ts-author">
-        <div class="ts-avatar">MR</div>
-        <div>
-          <div class="ts-name">María Rodríguez</div>
-          <div class="ts-role">CEO · Estudio de arquitectura · Madrid</div>
-        </div>
+<!-- TOOLS SHOWCASE -->
+<section class="tools-section">
+  <div class="section-hd reveal">
+    <div class="section-eyebrow">Demos interactivas</div>
+    <h2>Herramientas reales,<br>empresas reales</h2>
+    <p>Haz clic en cualquier tarjeta para probar la demo en directo. Todos los datos son ficticios.</p>
+  </div>
+
+  <div class="apps-grid">
+    <!-- 1 KANBAN -->
+    <div class="app-card c-purple reveal" data-app="kanban">
+      <div class="ac-head">
+        <div class="ac-industry ind-agencia">● Agencia de marketing</div>
+        <div class="ac-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="5" height="18" rx="1"/><rect x="10" y="3" width="5" height="11" rx="1"/><rect x="17" y="3" width="4" height="15" rx="1"/></svg></div>
+        <div class="ac-company">Los Martes No Hay Luna</div>
+        <div class="ac-name">Gestión de Tareas del Equipo</div>
+        <div class="ac-desc">Panel Kanban para organizar el trabajo de todo el equipo: tareas, responsables, prioridades y estados en tiempo real.</div>
       </div>
-      <div class="ts-result">+180% en solicitudes de presupuesto</div>
+      <div class="ac-foot">
+        <div class="ac-tags"><span class="ac-tag">Kanban</span><span class="ac-tag">Equipo</span><span class="ac-tag">Prioridades</span></div>
+        <span class="ac-btn">Ver demo <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
     </div>
-    <div class="ts-card reveal d1">
-      <div class="ts-stars">★★★★★</div>
-      <p class="ts-quote">La integración de IA que diseñamos en la sesión 2 nos ahorró literalmente 12 horas semanales de trabajo manual. Y lo implementamos nosotros solos, sin contratar a nadie externo.</p>
-      <div class="ts-author">
-        <div class="ts-avatar">JP</div>
-        <div>
-          <div class="ts-name">Javier Pérez</div>
-          <div class="ts-role">Director Comercial · PYME industrial · Valencia</div>
-        </div>
+    <!-- 2 INCIDENCIAS -->
+    <div class="app-card c-green reveal d1" data-app="incidencias">
+      <div class="ac-head">
+        <div class="ac-industry ind-medioambiente">● Gestión medioambiental</div>
+        <div class="ac-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="ac-company">Medio Ambiente Castro</div>
+        <div class="ac-name">Registro de Incidencias</div>
+        <div class="ac-desc">Sistema de gestión y seguimiento de incidencias medioambientales: tipo, ubicación, urgencia y estado de resolución. Filtra y actualiza en un clic.</div>
       </div>
-      <div class="ts-result">12h/semana ahorradas con IA</div>
+      <div class="ac-foot">
+        <div class="ac-tags"><span class="ac-tag">Incidencias</span><span class="ac-tag">Filtros</span><span class="ac-tag">Estados</span></div>
+        <span class="ac-btn">Ver demo <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
     </div>
-    <div class="ts-card reveal d2">
-      <div class="ts-stars">★★★★★</div>
-      <p class="ts-quote">Llevaba 3 años con la misma estrategia digital sin saber por qué no escalaba. En la primera sesión identificamos el problema. En la segunda, ya teníamos el plan para solucionarlo.</p>
-      <div class="ts-author">
-        <div class="ts-avatar">AL</div>
+    <!-- 3 TIEMPO -->
+    <div class="app-card c-violet reveal d2" data-app="tiempo">
+      <div class="ac-head">
+        <div class="ac-industry ind-formacion">● Formación y productividad</div>
+        <div class="ac-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="ac-company">Lidera tu Negocio</div>
+        <div class="ac-name">Control de Tiempo por Proyecto</div>
+        <div class="ac-desc">Cronómetro integrado con registro de horas por proyecto y resumen visual semanal. Para consultoras, formadores y equipos remotos.</div>
+      </div>
+      <div class="ac-foot">
+        <div class="ac-tags"><span class="ac-tag">Timer</span><span class="ac-tag">Proyectos</span><span class="ac-tag">Semana</span></div>
+        <span class="ac-btn">Ver demo <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </div>
+    <!-- 4 CITAS -->
+    <div class="app-card c-pink reveal" data-app="citas">
+      <div class="ac-head">
+        <div class="ac-industry ind-salud">● Salud y clínicas</div>
+        <div class="ac-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <div class="ac-company">Clínica Estética Sonrisas</div>
+        <div class="ac-name">Gestión de Citas del Día</div>
+        <div class="ac-desc">Vista diaria de agenda con pacientes, tratamientos, sala asignada y estados actualizables en un solo clic. Sin papeles ni llamadas internas.</div>
+      </div>
+      <div class="ac-foot">
+        <div class="ac-tags"><span class="ac-tag">Agenda</span><span class="ac-tag">Pacientes</span><span class="ac-tag">Estados</span></div>
+        <span class="ac-btn">Ver demo <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </div>
+    <!-- 5 REFORMAS -->
+    <div class="app-card c-orange reveal d1" data-app="reformas">
+      <div class="ac-head">
+        <div class="ac-industry ind-construccion">● Construcción y reformas</div>
+        <div class="ac-icon"><svg viewBox="0 0 24 24"><path d="M2 20h20M4 20V10l8-6 8 6v10"/><path d="M9 20v-5h6v5"/></svg></div>
+        <div class="ac-company">Construcciones García</div>
+        <div class="ac-name">Seguimiento de Obras</div>
+        <div class="ac-desc">Panel de control de proyectos en curso: fases, presupuesto ejecutado, plazos y porcentaje de avance. Comparte el estado con el cliente en tiempo real.</div>
+      </div>
+      <div class="ac-foot">
+        <div class="ac-tags"><span class="ac-tag">Proyectos</span><span class="ac-tag">Presupuesto</span><span class="ac-tag">Fases</span></div>
+        <span class="ac-btn">Ver demo <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </div>
+    <!-- 6 ACADEMIA -->
+    <div class="app-card c-blue reveal d2" data-app="academia">
+      <div class="ac-head">
+        <div class="ac-industry ind-academia">● Academia online</div>
+        <div class="ac-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <div class="ac-company">Academia Nexo</div>
+        <div class="ac-name">Seguimiento de Alumnos</div>
+        <div class="ac-desc">Panel de progreso de alumnos por curso: módulo actual, porcentaje completado, última actividad y detección automática de alumnos retrasados.</div>
+      </div>
+      <div class="ac-foot">
+        <div class="ac-tags"><span class="ac-tag">Alumnos</span><span class="ac-tag">Cursos</span><span class="ac-tag">Progreso</span></div>
+        <span class="ac-btn">Ver demo <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEMO PANEL -->
+  <div class="demo-panel" id="demoPanel">
+    <div class="demo-header">
+      <div class="demo-header-left">
+        <div class="demo-badge"></div>
         <div>
-          <div class="ts-name">Ana Llorente</div>
-          <div class="ts-role">Fundadora · E-commerce moda · Barcelona</div>
+          <div class="demo-title" id="demoTitle">Demo</div>
+          <div class="demo-subtitle" id="demoSubtitle">Datos ficticios · Solo para demostración</div>
         </div>
       </div>
-      <div class="ts-result">De 15k€/mes a 47k€/mes en 4 meses</div>
+      <div class="demo-header-actions">
+        <button class="demo-next" id="demoNext">↻ <span>Ver otro ejemplo</span></button>
+        <button class="demo-back" id="demoBack">↑ <span>Todas las herramientas</span></button>
+        <button class="demo-close" id="demoClose">✕</button>
+      </div>
+    </div>
+    <div class="demo-body" id="demoBody"></div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="industries">
+  <div class="section-hd reveal">
+    <div class="section-eyebrow">Tu sector también puede tenerla</div>
+    <h2>Más ideas para tu negocio</h2>
+    <p>Estos son solo algunos ejemplos de herramientas que podemos desarrollar según tu sector y necesidades específicas.</p>
+  </div>
+  <div class="ind-grid">
+    <div class="ind-card reveal">
+      <div class="ind-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+      <div class="ind-name">Hostelería</div>
+      <div class="ind-idea">Control de reservas y mesas, checklist de apertura/cierre, seguimiento de proveedores y alérgenos por plato.</div>
+    </div>
+    <div class="ind-card reveal d1">
+      <div class="ind-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div class="ind-name">Despachos profesionales</div>
+      <div class="ind-idea">CRM ligero de clientes y expedientes, estado de asuntos, plazos y recordatorios automáticos de seguimiento.</div>
+    </div>
+    <div class="ind-card reveal d2">
+      <div class="ind-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <div class="ind-name">E-commerce y retail</div>
+      <div class="ind-idea">Panel de pedidos del día, control de stock crítico, seguimiento de devoluciones y métricas clave de venta.</div>
+    </div>
+    <div class="ind-card reveal d3">
+      <div class="ind-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <div class="ind-name">Fisioterapia y bienestar</div>
+      <div class="ind-idea">Historial de pacientes, plan de tratamiento por sesión, seguimiento de evolución y agenda simplificada.</div>
+    </div>
+    <div class="ind-card reveal">
+      <div class="ind-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+      <div class="ind-name">Consultoría y coaching</div>
+      <div class="ind-idea">Tracker de sesiones con clientes, notas por cliente, seguimiento de compromisos adquiridos y ROI del proceso.</div>
+    </div>
+    <div class="ind-card reveal d1">
+      <div class="ind-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+      <div class="ind-name">Logística y transporte</div>
+      <div class="ind-idea">Estado de repartos del día, incidencias en ruta, control de flotas y albaranes digitales en un solo panel.</div>
+    </div>
+    <div class="ind-card reveal d2">
+      <div class="ind-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="ind-name">Inmobiliaria</div>
+      <div class="ind-idea">Seguimiento de inmuebles y visitas, pipeline de clientes por fase, alertas de caducidad de propuestas y documentos.</div>
+    </div>
+    <div class="ind-card reveal d3">
+      <div class="ind-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+      <div class="ind-name">Seguridad y mantenimiento</div>
+      <div class="ind-idea">Checklist de inspecciones, parte de mantenimiento preventivo y registro de incidencias con firma digital.</div>
     </div>
   </div>
 </section>
 
-
-
-<footer style="background:#2a1f38;padding:4rem 5rem 2rem;">
-  <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.5rem;">
-    <div>
-      <a href="/" style="display:inline-block;margin-bottom:1rem;">
-        <img src="/img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna" style="height:44px;width:auto;display:block;">
-      </a>
-      <p style="font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.7;font-weight:300;max-width:220px;">Marketing digital, consultoría e IA para PYMEs. Leganés, Madrid.</p>
-    </div>
-    <div>
-      <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#87B229;margin-bottom:1rem;">Servicios</div>
-      <a href="/servicios/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">Marketing Digital</a>
-      <a href="/servicios/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">SEO y Posicionamiento</a>
-      <a href="/servicios/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">Redes Sociales</a>
-      <a href="/ia-para-empresas/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">IA para Empresas</a>
-      <a href="/consultoria-estrategica/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;font-weight:300;">Consultoría Estratégica</a>
-    </div>
-    <div>
-      <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#87B229;margin-bottom:1rem;">Empresa</div>
-      <a href="/sheila-aguilar/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">Sheila Aguilar</a>
-      <a href="/blog/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">Blog</a>
-      <a href="/sesion-gratuita/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">Sesión gratuita</a>
-      <a href="/contacto/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;font-weight:300;">Contacto</a>
-    </div>
-    <div>
-      <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#87B229;margin-bottom:1rem;">Contacto</div>
-      <a href="tel:34919997726" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">91 999 77 26</a>
-      <a href="https://wa.me/34621060659" target="_blank" rel="noopener" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">WhatsApp</a>
-      <a href="https://www.google.com/maps/place/Finca+Solimpar+Legan%C3%A9s" target="_blank" rel="noopener" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;font-weight:300;">Leganés, Madrid</a>
-    </div>
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <div class="cta-eyebrow">Empieza hoy</div>
+    <h2>¿Qué proceso te está<br>costando tiempo <em>cada semana</em>?</h2>
+    <p>En una sesión gratuita de 45 minutos analizamos tu flujo de trabajo y te decimos si tiene sentido desarrollar una herramienta a medida para tu negocio.</p>
+    <a class="cta-link" href="/sesion-gratuita">Reservar sesión gratuita →</a>
   </div>
-  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-    <p style="font-size:.7rem;color:rgba(255,255,255,.2);">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
-    <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
-      <a href="/aviso-legal/" rel="nofollow" style="font-size:.7rem;color:rgba(255,255,255,.25);text-decoration:none;">Aviso Legal</a>
-      <a href="/privacidad/" rel="nofollow" style="font-size:.7rem;color:rgba(255,255,255,.25);text-decoration:none;">Privacidad</a>
-      <a href="/cookies/" rel="nofollow" style="font-size:.7rem;color:rgba(255,255,255,.25);text-decoration:none;">Cookies</a>
-      <a href="https://losmartesnohayluna.com/sitemap.xml" target="_blank" rel="noopener" style="font-size:.7rem;color:rgba(135,178,41,.5);text-decoration:none;">Sitemap</a>
-    </div>
-    <div style="display:flex;gap:.8rem;">
-      <a href="https://www.instagram.com/losmartesnohayluna" target="_blank" rel="noopener" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;">ig</a>
-      <a href="https://www.linkedin.com/company/los-martes-no-hay-luna" target="_blank" rel="noopener" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;">in</a>
-    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Los Martes No Hay Luna</span>
+  <div class="footer-links">
+    <a href="#">Aviso Legal</a>
+    <a href="#">Privacidad</a>
+    <a href="#">Cookies</a>
+    <a href="/cdn-cgi/l/email-protection#442c2b282504282b372925363021372a2b2c253d28312a256a272b29"><span class="__cf_email__" data-cfemail="4e2621222f0e22213d232f3c3a2b3d2021262f37223b202f602d2123">[email&#160;protected]</span></a>
   </div>
+  <p class="footer-copy">© 2025 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
 </footer>
 
-<script>
-  const els = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  els.forEach(el => obs.observe(el));
-  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
-  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ================================================================
+   DEMO DATA & RENDERERS
+================================================================ */
+const DEMOS = {
+
+  /* ── KANBAN ──────────────────────────────────────── */
+  kanban: {
+    title:'Gestión de Tareas — Los Martes No Hay Luna',
+    subtitle:'Panel Kanban · Datos ficticios · Solo para demostración',
+    state:{
+      cols:['Pendiente','En progreso','En revisión','✓ Completado'],
+      tasks:[
+        {id:1,title:'Propuesta servicios Kawi Piscinas',tag:'Captación',a:'JU',p:'alta',col:0},
+        {id:2,title:'Copy newsletter Abril LMNHL',tag:'Contenidos',a:'CA',p:'media',col:0},
+        {id:3,title:'Auditoría SEO Fabricasonrisas',tag:'SEO',a:'JE',p:'alta',col:0},
+        {id:4,title:'Diseño web Docrys 2.0',tag:'Web',a:'ES',p:'alta',col:1},
+        {id:5,title:'Campaña Google Ads Q2',tag:'Ads',a:'PA',p:'media',col:1},
+        {id:6,title:'Informe mensual Marzo',tag:'Reporting',a:'SA',p:'alta',col:2},
+        {id:7,title:'Plan contenidos Abril LMNHL',tag:'Contenidos',a:'CA',p:'media',col:3},
+        {id:8,title:'Setup portal Docrys',tag:'Web',a:'ES',p:'alta',col:3},
+      ]
+    },
+    render(s){
+      const colBg=['rgba(135,178,41,.08)','rgba(14,165,233,.08)','rgba(245,166,35,.08)','rgba(135,178,41,.05)'];
+      return `<div class="kb-board" id="kanbanBoard">${s.cols.map((col,ci)=>{
+        const tasks=s.tasks.filter(t=>t.col===ci);
+        return `<div class="kb-col">
+          <div class="kb-col-head" style="background:${colBg[ci]}">
+            <span class="kb-col-name">${col}</span>
+            <span class="kb-col-count">${tasks.length}</span>
+          </div>
+          <div class="kb-tasks">
+            ${tasks.map(t=>ci===3?`
+              <div class="kb-done">
+                <div class="kb-task-tag" style="color:rgba(255,255,255,.25)">${t.tag}</div>
+                <div class="kb-task-title">${t.title}</div>
+                <div class="kb-task-foot"><div class="kb-avatar">${t.a}</div></div>
+              </div>
+            `:`
+              <div class="kb-task p-${t.p}">
+                <div class="kb-task-tag">${t.tag} · <span style="color:${t.p==='alta'?'var(--pink)':t.p==='media'?'#f5a623':'var(--lime)'}">${t.p.toUpperCase()}</span></div>
+                <div class="kb-task-title">${t.title}</div>
+                <div class="kb-task-foot">
+                  <div class="kb-avatar">${t.a}</div>
+                  ${ci<3?`<button class="kb-advance" data-id="${t.id}">Avanzar →</button>`:''}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>`;
+      }).join('')}</div>`;
+    },
+    init(s){
+      document.getElementById('kanbanBoard').addEventListener('click',e=>{
+        const btn=e.target.closest('.kb-advance');
+        if(!btn)return;
+        const t=s.tasks.find(t=>t.id==btn.dataset.id);
+        if(t&&t.col<3)t.col++;
+        document.getElementById('demoBody').innerHTML=DEMOS.kanban.render(s);
+        DEMOS.kanban.init(s);
+      });
+    }
+  },
+
+  /* ── INCIDENCIAS ─────────────────────────────────── */
+  incidencias:{
+    title:'Registro de Incidencias — Medio Ambiente Castro',
+    subtitle:'Gestión medioambiental · Datos ficticios · Solo para demostración',
+    state:{
+      filter:'todos',
+      data:[
+        {id:'INC-001',tipo:'Vertido',tk:'vertido',ub:'Laguna de Valdés',fecha:'28/03/2026',estado:'resuelta',urg:'baja'},
+        {id:'INC-002',tipo:'Residuos',tk:'residuos',ub:'Polígono Norte',fecha:'30/03/2026',estado:'gestion',urg:'media'},
+        {id:'INC-003',tipo:'Ruido',tk:'ruido',ub:'Ctra. N-VI km 45',fecha:'01/04/2026',estado:'abierta',urg:'alta'},
+        {id:'INC-004',tipo:'Emisiones',tk:'emisiones',ub:'Planta Reciclaje Sur',fecha:'01/04/2026',estado:'gestion',urg:'alta'},
+        {id:'INC-005',tipo:'Plaga',tk:'plaga',ub:'Almacén Municipal 3',fecha:'31/03/2026',estado:'abierta',urg:'media'},
+        {id:'INC-006',tipo:'Vertido',tk:'vertido',ub:'Río Castillo, margen izq.',fecha:'25/03/2026',estado:'resuelta',urg:'alta'},
+      ]
+    },
+    render(s){
+      const eL={abierta:'Abierta',gestion:'En gestión',resuelta:'Resuelta'};
+      const uL={alta:'▲ Alta',media:'— Media',baja:'▼ Baja'};
+      const fd=s.filter==='todos'?s.data:s.data.filter(d=>d.tk===s.filter||d.estado===s.filter);
+      const st={tot:s.data.length,ab:s.data.filter(d=>d.estado==='abierta').length,ge:s.data.filter(d=>d.estado==='gestion').length,re:s.data.filter(d=>d.estado==='resuelta').length};
+      return `
+        <div class="inc-top">
+          <div class="inc-stat"><div class="inc-stat-n">${st.tot}</div><div class="inc-stat-l">Total</div></div>
+          <div class="inc-stat"><div class="inc-stat-n" style="color:var(--pink)">${st.ab}</div><div class="inc-stat-l">Abiertas</div></div>
+          <div class="inc-stat"><div class="inc-stat-n" style="color:#f5a623">${st.ge}</div><div class="inc-stat-l">En gestión</div></div>
+          <div class="inc-stat"><div class="inc-stat-n" style="color:var(--lime)">${st.re}</div><div class="inc-stat-l">Resueltas</div></div>
+        </div>
+        <div class="inc-filters">
+          ${['todos','vertido','residuos','ruido','emisiones','plaga','abierta','gestion','resuelta'].map(f=>`
+            <button class="inc-filter${s.filter===f?' active':''}" data-f="${f}">${f==='todos'?'Todos':f.charAt(0).toUpperCase()+f.slice(1)}</button>
+          `).join('')}
+        </div>
+        <table class="inc-table">
+          <thead><tr><th>#</th><th>Tipo</th><th>Ubicación</th><th>Fecha</th><th>Estado</th><th>Urgencia</th></tr></thead>
+          <tbody>${fd.map(d=>`<tr>
+            <td style="color:rgba(255,255,255,.28);font-size:.62rem">${d.id}</td>
+            <td><span class="inc-tipo t-${d.tk}">${d.tipo}</span></td>
+            <td>${d.ub}</td>
+            <td>${d.fecha}</td>
+            <td><button class="inc-estado e-${d.estado}" data-id="${d.id}">${eL[d.estado]}</button></td>
+            <td><span class="inc-urg u-${d.urg}">${uL[d.urg]}</span></td>
+          </tr>`).join('')}</tbody>
+        </table>`;
+    },
+    init(s){
+      const body=document.getElementById('demoBody');
+      body.querySelectorAll('.inc-filter').forEach(b=>b.addEventListener('click',()=>{s.filter=b.dataset.f;body.innerHTML=DEMOS.incidencias.render(s);DEMOS.incidencias.init(s);}));
+      body.querySelectorAll('.inc-estado').forEach(b=>b.addEventListener('click',()=>{
+        const d=s.data.find(x=>x.id===b.dataset.id);
+        if(d)d.estado={abierta:'gestion',gestion:'resuelta',resuelta:'abierta'}[d.estado];
+        body.innerHTML=DEMOS.incidencias.render(s);DEMOS.incidencias.init(s);
+      }));
+    }
+  },
+
+  /* ── TIEMPO ──────────────────────────────────────── */
+  tiempo:{
+    title:'Control de Tiempo — Lidera tu Negocio',
+    subtitle:'Gestión de horas por proyecto · Datos ficticios · Solo para demostración',
+    interval:null,
+    state:{
+      running:false,secs:0,
+      entries:[
+        {p:'Consultoría IA Empresas',d:'Videollamada cliente — setup inicial',dur:'1h 30m'},
+        {p:'Formación Excel Avanzado',d:'Preparación módulo 3 — ejercicios prácticos',dur:'1h 15m'},
+        {p:'Diseño Curso Marketing',d:'Revisión contenidos semana 2',dur:'1h 30m'},
+        {p:'Consultoría IA Empresas',d:'Entrega documentación fase 1',dur:'1h 00m'},
+      ],
+      week:[
+        {day:'L',h:5,t:false},{day:'M',h:6.5,t:false},{day:'X',h:4,t:false},
+        {day:'J',h:7,t:false},{day:'V',h:3,t:false},{day:'S',h:0,t:false},{day:'D',h:5.25,t:true}
+      ]
+    },
+    render(s){
+      const p=n=>String(n).padStart(2,'0');
+      const h=Math.floor(s.secs/3600),m=Math.floor((s.secs%3600)/60),sc=s.secs%60;
+      const maxH=Math.max(...s.week.map(d=>d.h),1);
+      const tot=s.week.reduce((a,d)=>a+d.h,0).toFixed(1);
+      return `
+        <div class="tim-layout">
+          <div>
+            <div class="tim-box">
+              <div class="tim-display" id="timDisp">${p(h)}:${p(m)}:${p(sc)}</div>
+              <select class="tim-sel" id="timProj">
+                <option>Consultoría IA Empresas</option>
+                <option>Formación Excel Avanzado</option>
+                <option>Diseño Curso Marketing</option>
+                <option>Soporte Técnico</option>
+              </select>
+              <input class="tim-inp" id="timDesc" type="text" placeholder="Descripción de la tarea...">
+              <div class="tim-btns">
+                <button class="tim-btn ${s.running?'tim-stop':'tim-start'}" id="timToggle">${s.running?'⏸ Pausar':'▶ Iniciar'}</button>
+                <button class="tim-btn tim-log-btn" id="timLog">Registrar</button>
+              </div>
+            </div>
+            <div class="tim-entries">
+              <div class="tim-entries-hd">Entradas de hoy</div>
+              ${s.entries.map(e=>`<div class="tim-entry">
+                <div><div class="tim-e-proj">${e.p}</div><div class="tim-e-desc">${e.d}</div></div>
+                <div class="tim-e-dur">${e.dur}</div>
+              </div>`).join('')}
+            </div>
+          </div>
+          <div>
+            <div class="tim-week-title">Resumen semanal — horas por día</div>
+            <div class="tim-bars">
+              ${s.week.map(d=>`<div class="tim-bw">
+                <div class="tim-bh">${d.h>0?d.h:'–'}</div>
+                <div class="tim-bo"><div class="tim-bf${d.t?' today':''}" style="height:${d.h/maxH*100}%"></div></div>
+                <div class="tim-bday">${d.day}</div>
+              </div>`).join('')}
+            </div>
+            <div class="tim-total">
+              <span class="tim-total-l">Total semana</span>
+              <span class="tim-total-v">${tot}h</span>
+            </div>
+            <div style="margin-top:1.2rem;font-size:.68rem;color:rgba(255,255,255,.28);line-height:1.8">
+              <div style="color:rgba(255,255,255,.45);font-weight:600;margin-bottom:.3rem">Desglose por proyecto:</div>
+              <div>Consultoría IA Empresas &nbsp;·&nbsp; <span style="color:var(--lime)">4h 30m</span></div>
+              <div>Formación Excel Avanzado &nbsp;·&nbsp; <span style="color:var(--lime)">5h 15m</span></div>
+              <div>Diseño Curso Marketing &nbsp;·&nbsp; <span style="color:var(--lime)">3h 30m</span></div>
+              <div>Soporte Técnico &nbsp;·&nbsp; <span style="color:var(--lime)">2h 00m</span></div>
+            </div>
+          </div>
+        </div>`;
+    },
+    init(s){
+      const self=DEMOS.tiempo;
+      document.getElementById('timToggle').addEventListener('click',()=>{
+        s.running=!s.running;
+        if(s.running){
+          self.interval=setInterval(()=>{
+            s.secs++;
+            const p=n=>String(n).padStart(2,'0');
+            const el=document.getElementById('timDisp');
+            if(el)el.textContent=`${p(Math.floor(s.secs/3600))}:${p(Math.floor((s.secs%3600)/60))}:${p(s.secs%60)}`;
+          },1000);
+          document.getElementById('timToggle').textContent='⏸ Pausar';
+          document.getElementById('timToggle').className='tim-btn tim-stop';
+        }else{
+          clearInterval(self.interval);
+          document.getElementById('timToggle').textContent='▶ Iniciar';
+          document.getElementById('timToggle').className='tim-btn tim-start';
+        }
+      });
+      document.getElementById('timLog').addEventListener('click',()=>{
+        if(s.secs<3)return;
+        const proj=document.getElementById('timProj').value;
+        const desc=document.getElementById('timDesc').value||'Sin descripción';
+        const h=Math.floor(s.secs/3600),m=Math.floor((s.secs%3600)/60);
+        const dur=h>0?`${h}h ${String(m).padStart(2,'0')}m`:`${m}m ${s.secs%60}s`;
+        clearInterval(self.interval);s.running=false;s.secs=0;
+        s.entries.unshift({p:proj,d:desc,dur});
+        if(s.entries.length>6)s.entries.pop();
+        s.week[6].h=Math.round((s.week[6].h+(h+m/60))*10)/10;
+        document.getElementById('demoBody').innerHTML=DEMOS.tiempo.render(s);
+        DEMOS.tiempo.init(s);
+      });
+    }
+  },
+
+  /* ── CITAS ───────────────────────────────────────── */
+  citas:{
+    title:'Gestión de Citas — Clínica Estética Sonrisas',
+    subtitle:'Miércoles 1 Abril 2026 · Datos ficticios · Solo para demostración',
+    state:{
+      toasts:[],
+      apts:[
+        {t:'09:00',p:'Ana García Ruiz',tx:'Tratamiento antienvejecimiento',r:'Cabina 1',s:'atendida'},
+        {t:'09:30',p:'Carmen Díaz Ruiz',tx:'Ácido hialurónico — labios',r:'Cabina 2',s:'atendida'},
+        {t:'10:00',p:'María López Fdez.',tx:'Hidratación profunda facial',r:'Cabina 1',s:'ensala'},
+        {t:'10:30',p:'José Pérez Gil',tx:'Mesoterapia capilar',r:'Cabina 3',s:'pendiente'},
+        {t:'11:00',p:'Lucía Martín Sanz',tx:'Peeling químico',r:'Cabina 2',s:'pendiente'},
+        {t:'11:30',p:'Antonio Ruiz Mora',tx:'Radiofrecuencia facial',r:'Cabina 1',s:'pendiente'},
+        {t:'12:00',p:'Rosa González',tx:'Depilación láser',r:'Cabina 3',s:'pendiente'},
+        {t:'16:00',p:'Pablo Sánchez',tx:'Primera visita — valoración',r:'Cabina 2',s:'pendiente'},
+        {t:'16:30',p:'Sofía Vega',tx:'Botox preventivo',r:'Cabina 1',s:'pendiente'},
+        {t:'17:00',p:'Andrés Castro',tx:'Tratamiento manchas solares',r:'Cabina 3',s:'pendiente'},
+      ]
+    },
+    render(s){
+      const sl={atendida:'s-atendida',ensala:'s-ensala',pendiente:'s-pendiente',cancelada:'s-cancelada'};
+      const la={atendida:'✓ Atendida',ensala:'● En sala',pendiente:'Pendiente',cancelada:'✕ Cancelada'};
+      const st={at:s.apts.filter(a=>a.s==='atendida').length,en:s.apts.filter(a=>a.s==='ensala').length,pe:s.apts.filter(a=>a.s==='pendiente').length,ca:s.apts.filter(a=>a.s==='cancelada').length};
+      const toastHtml=s.toasts.length?`<div class="apt-toasts">${s.toasts.map(t=>`<div class="apt-toast">${t}</div>`).join('')}</div>`:'';
+      return `
+        ${toastHtml}
+        <div class="apt-stats">
+          <div class="apt-stat"><div class="apt-stat-n" style="color:var(--lime)">${st.at}</div><div class="apt-stat-l">Atendidas</div></div>
+          <div class="apt-stat"><div class="apt-stat-n" style="color:#7dd3fc">${st.en}</div><div class="apt-stat-l">En sala</div></div>
+          <div class="apt-stat"><div class="apt-stat-n">${st.pe}</div><div class="apt-stat-l">Pendientes</div></div>
+          <div class="apt-stat"><div class="apt-stat-n" style="color:var(--pink)">${st.ca}</div><div class="apt-stat-l">Canceladas</div></div>
+        </div>
+        <div class="apt-list">
+          ${s.apts.map((a,i)=>{
+            let action='';
+            if(a.s==='atendida') action=`<button class="apt-action act-resena" data-act="resena" data-i="${i}">⭐ Solicitar reseña</button>`;
+            if(a.s==='ensala')   action=`<button class="apt-action act-cafe" data-act="cafe" data-i="${i}">☕ Ofrecer bebida</button>`;
+            if(a.s==='pendiente') action=`<button class="apt-action act-wp" data-act="wp" data-i="${i}">📲 Enviar recordatorio</button>`;
+            return `<div class="apt-item">
+              <div class="apt-time">${a.t}</div>
+              <div class="apt-info"><div class="apt-patient">${a.p}</div><div class="apt-treat">${a.tx} · ${a.r}</div></div>
+              <div class="apt-actions-wrap">
+                ${action}
+                <button class="apt-status ${sl[a.s]}" data-i="${i}">${la[a.s]}</button>
+              </div>
+            </div>`;
+          }).join('')}
+        </div>
+        <div style="margin-top:.8rem;font-size:.6rem;color:rgba(255,255,255,.25)">💡 Cambia el estado de cada cita · Usa las acciones rápidas según el momento</div>`;
+    },
+    init(s){
+      const db=document.getElementById('demoBody');
+      db.querySelectorAll('.apt-status').forEach(b=>b.addEventListener('click',()=>{
+        const i=parseInt(b.dataset.i);
+        s.apts[i].s={pendiente:'ensala',ensala:'atendida',atendida:'cancelada',cancelada:'pendiente'}[s.apts[i].s];
+        db.innerHTML=DEMOS.citas.render(s); DEMOS.citas.init(s);
+      }));
+      db.querySelectorAll('.apt-action').forEach(b=>b.addEventListener('click',e=>{
+        e.stopPropagation();
+        const i=parseInt(b.dataset.i); const a=s.apts[i]; const act=b.dataset.act;
+        const msgs={
+          resena:`✅ Reseña solicitada a ${a.p} por WhatsApp`,
+          cafe:`☕ Recepción avisada: ofrecer bebida a ${a.p}`,
+          wp:`📲 Recordatorio enviado a ${a.p} para las ${a.t}`
+        };
+        s.toasts=[msgs[act]];
+        db.innerHTML=DEMOS.citas.render(s); DEMOS.citas.init(s);
+        setTimeout(()=>{s.toasts=[];db.innerHTML=DEMOS.citas.render(s);DEMOS.citas.init(s);},2800);
+      }));
+    }
+  },
+
+  /* ── REFORMAS ────────────────────────────────────── */
+  reformas:{
+    title:'Seguimiento de Obras — Construcciones García',
+    subtitle:'5 tipos de obra · 10 proyectos activos · Datos ficticios · Solo para demostración',
+    state:{
+      sel:0, exp:null,
+      cats:[
+        {name:'Reforma Integral',icon:'🏠',projects:[
+          {addr:'C/ Mayor 12, 3ºB',client:'Familia Jiménez',tel:'612 345 678',dates:'15/01–30/04/2026',budget:45000,
+            phases:[{n:'Demolición',s:'done'},{n:'Fontanería',s:'done'},{n:'Electricidad',s:'done'},{n:'Alicatado',s:'active'},{n:'Pintura',s:'pending'},{n:'Acabados',s:'pending'}],
+            admin:[{n:'Presupuesto enviado',done:true},{n:'Presupuesto firmado',done:true},{n:'Licencia solicitada',done:true},{n:'Licencia aprobada',done:true},{n:'Acta de inicio firmada',done:false},{n:'Seguro RC comunicado',done:true}],
+            pagos:[{n:'Reserva (20%)',pct:20,done:true},{n:'Inicio de obra (30%)',pct:30,done:true},{n:'Certificación (30%)',pct:30,done:false},{n:'Liquidación (20%)',pct:20,done:false}]
+          },
+          {addr:'C/ Ordóñez 15, 1ºA',client:'Sr. Navarro',tel:'654 987 321',dates:'10/02–15/05/2026',budget:38000,
+            phases:[{n:'Demolición',s:'done'},{n:'Fontanería',s:'done'},{n:'Electricidad',s:'active'},{n:'Alicatado',s:'pending'},{n:'Pintura',s:'pending'},{n:'Acabados',s:'pending'}],
+            admin:[{n:'Presupuesto enviado',done:true},{n:'Presupuesto firmado',done:true},{n:'Licencia solicitada',done:true},{n:'Licencia aprobada',done:false},{n:'Acta de inicio firmada',done:true},{n:'Seguro RC comunicado',done:true}],
+            pagos:[{n:'Reserva (20%)',pct:20,done:true},{n:'Inicio de obra (30%)',pct:30,done:false},{n:'Certificación (30%)',pct:30,done:false},{n:'Liquidación (20%)',pct:20,done:false}]
+          },
+        ]},
+        {name:'Ampliación Local',icon:'🏪',projects:[
+          {addr:'Av. España 45',client:'Moda Actual S.L.',tel:'91 234 56 78',dates:'01/03–15/05/2026',budget:22000,
+            phases:[{n:'Licencias',s:'done'},{n:'Estructura',s:'done'},{n:'Instalaciones',s:'active'},{n:'Acabados',s:'pending'},{n:'Escaparate',s:'pending'}],
+            admin:[{n:'Presupuesto enviado',done:true},{n:'Presupuesto firmado',done:true},{n:'Licencia solicitada',done:true},{n:'Licencia aprobada',done:false},{n:'Acta de inicio firmada',done:true},{n:'Seguro RC comunicado',done:true}],
+            pagos:[{n:'Reserva (20%)',pct:20,done:true},{n:'Inicio de obra (30%)',pct:30,done:false},{n:'Certificación (30%)',pct:30,done:false},{n:'Liquidación (20%)',pct:20,done:false}]
+          },
+          {addr:'C/ Colón 8, Local B',client:'Papelería Hnos. Ruiz',tel:'620 111 222',dates:'15/03–30/04/2026',budget:15500,
+            phases:[{n:'Licencias',s:'done'},{n:'Derribo int.',s:'done'},{n:'Estructura',s:'active'},{n:'Instalaciones',s:'pending'},{n:'Acabados',s:'pending'}],
+            admin:[{n:'Presupuesto enviado',done:true},{n:'Presupuesto firmado',done:true},{n:'Licencia solicitada',done:true},{n:'Licencia aprobada',done:true},{n:'Acta de inicio firmada',done:false},{n:'Seguro RC comunicado',done:false}],
+            pagos:[{n:'Reserva (20%)',pct:20,done:true},{n:'Inicio de obra (30%)',pct:30,done:true},{n:'Certificación (30%)',pct:30,done:false},{n:'Liquidación (20%)',pct:20,done:false}]
+          },
+          {addr:'Pl. Mayor 3, Bajo',client:'Clínica Fisio Activa',tel:'91 876 54 32',dates:'01/04–31/05/2026',budget:31000,
+            phases:[{n:'Licencias',s:'active'},{n:'Derribo int.',s:'pending'},{n:'Instalaciones',s:'pending'},{n:'Acabados',s:'pending'},{n:'Rotulación',s:'pending'}],
+            admin:[{n:'Presupuesto enviado',done:true},{n:'Presupuesto firmado',done:false},{n:'Licencia solicitada',done:true},{n:'Licencia aprobada',done:false},{n:'Acta de inicio firmada',done:false},{n:'Seguro RC comunicado',done:false}],
+            pagos:[{n:'Reserva (20%)',pct:20,done:false},{n:'Inicio de obra (30%)',pct:30,done:false},{n:'Certificación (30%)',pct:30,done:false},{n:'Liquidación (20%)',pct:20,done:false}]
+          },
+        ]},
+        {name:'Suelos Terraza',icon:'🪵',projects:[
+          {addr:'Urb. Los Pinos, Ch. 14',client:'Sr. Morales',tel:'699 876 543',dates:'25/03–10/04/2026',budget:8500,
+            phases:[{n:'Preparación',s:'done'},{n:'Impermeabl.',s:'done'},{n:'Solado',s:'done'},{n:'Sellado',s:'active'},{n:'Entrega',s:'pending'}],
+            admin:[{n:'Presupuesto enviado',done:true},{n:'Presupuesto firmado',done:true},{n:'Acta de inicio firmada',done:true},{n:'Albarán materiales',done:true},{n:'Seguro RC comunicado',done:true},{n:'Acta de recepción',done:false}],
+            pagos:[{n:'Reserva (30%)',pct:30,done:true},{n:'Mitad de obra (40%)',pct:40,done:true},{n:'Liquidación (30%)',pct:30,done:false}]
+          },
+          {addr:'C/ Jardines 22, 4ºC',client:'Sra. Blanco',tel:'611 223 344',dates:'01/04–15/04/2026',budget:4200,
+            phases:[{n:'Preparación',s:'done'},{n:'Impermeabl.',s:'active'},{n:'Solado',s:'pending'},{n:'Sellado',s:'pending'},{n:'Entrega',s:'pending'}],
+            admin:[{n:'Presupuesto enviado',done:true},{n:'Presupuesto firmado',done:true},{n:'Acta de inicio firmada',done:false},{n:'Albarán materiales',done:false},{n:'Seguro RC comunicado',done:true},{n:'Acta de recepción',done:false}],
+            pagos:[{n:'Reserva (30%)',pct:30,done:true},{n:'Mitad de obra (40%)',pct:40,done:false},{n:'Liquidación (30%)',pct:30,done:false}]
+          },
+        ]},
+        {name:'Reforma Baño',icon:'🚿',projects:[
+          {addr:'C/ Velázquez 7, 1ºA',client:'Sra. Pérez',tel:'645 123 456',dates:'28/03–20/04/2026',budget:6200,
+            phases:[{n:'Demolición',s:'active'},{n:'Fontanería',s:'pending'},{n:'Alicatado',s:'pending'},{n:'Sanitarios',s:'pending'},{n:'Acabados',s:'pending'}],
+            admin:[{n:'Presupuesto enviado',done:true},{n:'Presupuesto firmado',done:true},{n:'Acta de inicio firmada',done:false},{n:'Albarán materiales',done:false},{n:'Seguro RC comunicado',done:false},{n:'Acta de recepción',done:false}],
+            pagos:[{n:'Reserva (30%)',pct:30,done:true},{n:'Mitad de obra (40%)',pct:40,done:false},{n:'Liquidación (30%)',pct:30,done:false}]
+          },
+          {addr:'C/ Cervantes 4, 3ºB',client:'Matrimonio Torres',tel:'622 445 566',dates:'05/04–25/04/2026',budget:7800,
+            phases:[{n:'Demolición',s:'done'},{n:'Fontanería',s:'active'},{n:'Alicatado',s:'pending'},{n:'Sanitarios',s:'pending'},{n:'Acabados',s:'pending'}],
+            admin:[{n:'Presupuesto enviado',done:true},{n:'Presupuesto firmado',done:true},{n:'Acta de inicio firmada',done:true},{n:'Albarán materiales',done:true},{n:'Seguro RC comunicado',done:true},{n:'Acta de recepción',done:false}],
+            pagos:[{n:'Reserva (30%)',pct:30,done:true},{n:'Mitad de obra (40%)',pct:40,done:true},{n:'Liquidación (30%)',pct:30,done:false}]
+          },
+        ]},
+        {name:'Reforma Cocina',icon:'🍳',projects:[
+          {addr:'Av. Constitución 9, 2ºD',client:'Familia Herrero',tel:'633 778 899',dates:'10/04–05/05/2026',budget:12500,
+            phases:[{n:'Demolición',s:'done'},{n:'Fontanería',s:'active'},{n:'Electricidad',s:'pending'},{n:'Alicatado',s:'pending'},{n:'Muebles',s:'pending'},{n:'Acabados',s:'pending'}],
+            admin:[{n:'Presupuesto enviado',done:true},{n:'Presupuesto firmado',done:true},{n:'Acta de inicio firmada',done:true},{n:'Albarán materiales',done:false},{n:'Seguro RC comunicado',done:true},{n:'Acta de recepción',done:false}],
+            pagos:[{n:'Reserva (25%)',pct:25,done:true},{n:'Inicio de obra (35%)',pct:35,done:true},{n:'Suministro muebles (20%)',pct:20,done:false},{n:'Liquidación (20%)',pct:20,done:false}]
+          },
+          {addr:'C/ Rosal 31, 1ºA',client:'Sra. Fuentes',tel:'644 112 233',dates:'20/04–15/05/2026',budget:9800,
+            phases:[{n:'Demolición',s:'active'},{n:'Fontanería',s:'pending'},{n:'Electricidad',s:'pending'},{n:'Alicatado',s:'pending'},{n:'Muebles',s:'pending'},{n:'Acabados',s:'pending'}],
+            admin:[{n:'Presupuesto enviado',done:true},{n:'Presupuesto firmado',done:true},{n:'Acta de inicio firmada',done:false},{n:'Albarán materiales',done:false},{n:'Seguro RC comunicado',done:false},{n:'Acta de recepción',done:false}],
+            pagos:[{n:'Reserva (25%)',pct:25,done:true},{n:'Inicio de obra (35%)',pct:35,done:false},{n:'Suministro muebles (20%)',pct:20,done:false},{n:'Liquidación (20%)',pct:20,done:false}]
+          },
+          {addr:'Urb. Las Flores 5, Ch. B',client:'Sr. Castillo',tel:'655 334 455',dates:'25/04–25/05/2026',budget:18000,
+            phases:[{n:'Demolición',s:'pending'},{n:'Fontanería',s:'pending'},{n:'Electricidad',s:'pending'},{n:'Alicatado',s:'pending'},{n:'Muebles',s:'pending'},{n:'Acabados',s:'pending'}],
+            admin:[{n:'Presupuesto enviado',done:true},{n:'Presupuesto firmado',done:false},{n:'Acta de inicio firmada',done:false},{n:'Albarán materiales',done:false},{n:'Seguro RC comunicado',done:false},{n:'Acta de recepción',done:false}],
+            pagos:[{n:'Reserva (25%)',pct:25,done:false},{n:'Inicio de obra (35%)',pct:35,done:false},{n:'Suministro muebles (20%)',pct:20,done:false},{n:'Liquidación (20%)',pct:20,done:false}]
+          },
+        ]},
+      ]
+    },
+    render(s){
+      const cat=s.cats[s.sel];
+      const f=n=>'€'+n.toLocaleString('es-ES');
+      return `
+        <div class="rf-tabs">${s.cats.map((c,i)=>`<button class="rf-tab${s.sel===i?' active':''}" data-i="${i}">${c.icon} ${c.name}</button>`).join('')}</div>
+        <div class="rf-list">
+          ${cat.projects.map((p,pi)=>{
+            const cobrado=p.pagos.filter(x=>x.done).reduce((a,x)=>a+Math.round(p.budget*x.pct/100),0);
+            const doneCount=p.phases.filter(x=>x.s==='done').length;
+            const pct=Math.round(doneCount/p.phases.length*100);
+            const adminOk=p.admin.filter(x=>x.done).length;
+            const isOpen=s.exp===pi;
+            const phCol=pct>=80?'pf-orange':pct>=40?'pf-lime':'pf-pink';
+            const details=isOpen?`
+              <div class="rf-details">
+                <div class="rf-sub">👤 ${p.client} &nbsp;·&nbsp; 📞 ${p.tel} &nbsp;·&nbsp; 📅 ${p.dates}</div>
+                <div class="prj-pb" style="margin-bottom:.4rem"><div class="prj-pf ${phCol}" style="width:${pct}%"></div></div>
+                <div class="rf-pct-row" style="margin-bottom:.8rem">
+                  <span class="rf-pct">${pct}% completado</span>
+                  <div class="rf-phases-inline">${p.phases.map((ph,i)=>`<span class="prj-phase ${ph.s}" data-pi="${i}" data-proj="${pi}">${ph.n}</span>`).join('')}</div>
+                </div>
+                <div class="rf-cols">
+                  <div class="rf-col">
+                    <div class="rf-col-title">📋 Gestión administrativa <span class="rf-badge">${adminOk}/${p.admin.length} completados</span></div>
+                    ${p.admin.map((a,ai)=>`
+                      <div class="rf-check-row" data-admin="${ai}" data-proj="${pi}">
+                        <div class="rf-checkbox${a.done?' checked':''}">${a.done?'<svg viewBox="0 0 12 12" fill="none" width="10" height="10"><polyline points="2,6 5,9 10,3" stroke="#87B229" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>':''}</div>
+                        <span class="rf-check-label${a.done?' done':''}">${a.n}</span>
+                      </div>`).join('')}
+                  </div>
+                  <div class="rf-col">
+                    <div class="rf-col-title">💰 Cobros <span class="rf-badge rf-badge-money">${f(cobrado)} recibido</span></div>
+                    ${p.pagos.map((pg,pgi)=>`
+                      <div class="rf-pago-row${pg.done?' paid':''}" data-pago="${pgi}" data-proj="${pi}">
+                        <div class="rf-pago-left">
+                          <div class="rf-pago-dot${pg.done?' paid':''}" ></div>
+                          <div><div class="rf-pago-name">${pg.n}</div><div class="rf-pago-amt">${f(Math.round(p.budget*pg.pct/100))}</div></div>
+                        </div>
+                        <div class="rf-pago-badge ${pg.done?'cobrado':'pendiente'}">${pg.done?'✓ Cobrado':'Pendiente'}</div>
+                      </div>`).join('')}
+                    <div class="rf-pago-total">
+                      <div class="rf-total-row"><span>Total cobrado</span><span class="rf-total-v cobrado">${f(cobrado)}</span></div>
+                      <div class="rf-total-row"><span>Pendiente de cobro</span><span class="rf-total-v pendiente">${f(p.budget-cobrado)}</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>`:''
+            ;
+            return `
+              <div class="rf-item${isOpen?' open':''}" >
+                <div class="rf-item-header" data-proj="${pi}">
+                  <div class="rf-item-left">
+                    <div class="rf-item-addr">📍 ${p.addr}</div>
+                    <div class="rf-item-pills">
+                      <span class="rf-pill pill-admin">${adminOk}/${p.admin.length} trámites</span>
+                      <span class="rf-pill pill-fase">${doneCount}/${p.phases.length} fases</span>
+                      <span class="rf-pill ${cobrado>0?'pill-cobrado':'pill-pendiente'}">${cobrado>0?f(cobrado)+' cobrado':'Sin cobros'}</span>
+                    </div>
+                  </div>
+                  <div class="rf-chevron">▼</div>
+                </div>
+                ${details}
+              </div>`;
+          }).join('')}
+        </div>`;
+    },
+    init(s){
+      const db=document.getElementById('demoBody');
+      db.querySelectorAll('.rf-tab').forEach(b=>b.addEventListener('click',()=>{
+        s.sel=+b.dataset.i; s.exp=null;
+        db.innerHTML=DEMOS.reformas.render(s); DEMOS.reformas.init(s);
+      }));
+      db.querySelectorAll('.rf-item-header').forEach(h=>h.addEventListener('click',e=>{
+        if(e.target.closest('.rf-check-row,.rf-pago-row,[data-pi]')) return;
+        const i=+h.dataset.proj; s.exp=s.exp===i?null:i;
+        db.innerHTML=DEMOS.reformas.render(s); DEMOS.reformas.init(s);
+      }));
+      db.querySelectorAll('.rf-check-row').forEach(row=>row.addEventListener('click',e=>{
+        e.stopPropagation();
+        s.cats[s.sel].projects[+row.dataset.proj].admin[+row.dataset.admin].done^=true;
+        db.innerHTML=DEMOS.reformas.render(s); DEMOS.reformas.init(s);
+      }));
+      db.querySelectorAll('.rf-pago-row').forEach(row=>row.addEventListener('click',e=>{
+        e.stopPropagation();
+        s.cats[s.sel].projects[+row.dataset.proj].pagos[+row.dataset.pago].done^=true;
+        db.innerHTML=DEMOS.reformas.render(s); DEMOS.reformas.init(s);
+      }));
+      db.querySelectorAll('[data-pi]').forEach(ph=>ph.addEventListener('click',e=>{
+        e.stopPropagation();
+        const phases=s.cats[s.sel].projects[+ph.dataset.proj].phases;
+        const idx=+ph.dataset.pi;
+        if(phases[idx].s==='active'){phases[idx].s='done';if(phases[idx+1])phases[idx+1].s='active';}
+        else if(phases[idx].s==='pending') phases[idx].s='active';
+        db.innerHTML=DEMOS.reformas.render(s); DEMOS.reformas.init(s);
+      }));
+    }
+  },
+
+    /* ── ACADEMIA ────────────────────────────────────── */
+  academia:{
+    title:'Seguimiento de Alumnos — Academia Nexo',
+    subtitle:'124 alumnos activos · Datos ficticios · Solo para demostración',
+    state:{
+      filter:'todos',
+      students:[
+        {n:'Ana Gómez',c:'IA para Empresas',mod:'4/6',pct:65,last:'Hace 2h',s:'progreso',col:'c-blue'},
+        {n:'Carlos Ruiz',c:'Marketing Digital',mod:'6/8',pct:72,last:'Ayer',s:'progreso',col:'c-blue'},
+        {n:'María Santos',c:'Excel Avanzado',mod:'8/8',pct:100,last:'Hace 3 días',s:'completado',col:'c-green'},
+        {n:'Pedro Álvarez',c:'SEO Desde Cero',mod:'2/5',pct:40,last:'Hace 5 días',s:'progreso',col:'c-blue'},
+        {n:'Laura Fernández',c:'IA para Empresas',mod:'6/6',pct:100,last:'Hace 1 semana',s:'completado',col:'c-green'},
+        {n:'Miguel Torres',c:'Marketing Digital',mod:'2/8',pct:25,last:'Hace 10 días',s:'retrasado',col:'c-orange'},
+        {n:'Carmen López',c:'Excel Avanzado',mod:'5/8',pct:62,last:'Ayer',s:'progreso',col:'c-blue'},
+        {n:'Roberto García',c:'SEO Desde Cero',mod:'5/5',pct:100,last:'Hace 2 días',s:'completado',col:'c-green'},
+        {n:'Isabel Martín',c:'IA para Empresas',mod:'2/6',pct:33,last:'Hace 3 semanas',s:'retrasado',col:'c-orange'},
+        {n:'Sergio Díaz',c:'Marketing Digital',mod:'7/8',pct:88,last:'Hoy',s:'progreso',col:'c-blue'},
+      ]
+    },
+    render(s){
+      const sL={completado:'s-completado',progreso:'s-progreso',retrasado:'s-retrasado'};
+      const lA={completado:'✓ Completado',progreso:'En progreso',retrasado:'⚠ Retrasado'};
+      const fd=s.filter==='todos'?s.students:s.students.filter(x=>x.c.toLowerCase().includes(s.filter));
+      const courses=['todos','ia para empresas','marketing digital','excel avanzado','seo desde cero'];
+      return `
+        <div class="aca-filters">
+          ${courses.map(c=>`<button class="aca-filter${s.filter===c?' active':''}" data-f="${c}">${c==='todos'?'Todos los cursos':c}</button>`).join('')}
+        </div>
+        <table class="aca-table">
+          <thead><tr><th>Alumno</th><th>Curso</th><th>Módulo</th><th>Progreso</th><th>Última actividad</th><th>Estado</th></tr></thead>
+          <tbody>${fd.map(x=>`<tr>
+            <td style="font-weight:500;color:rgba(255,255,255,.85)">${x.n}</td>
+            <td style="font-size:.68rem">${x.c}</td>
+            <td style="color:rgba(255,255,255,.35);font-size:.68rem">${x.mod}</td>
+            <td><div class="aca-pb"><div class="aca-pf ${x.col}" style="width:${x.pct}%"></div></div>
+              <div style="font-size:.58rem;color:rgba(255,255,255,.28);margin-top:.2rem">${x.pct}%</div></td>
+            <td style="font-size:.68rem;color:rgba(255,255,255,.32)">${x.last}</td>
+            <td><span class="aca-st ${sL[x.s]}">${lA[x.s]}</span></td>
+          </tr>`).join('')}</tbody>
+        </table>`;
+    },
+    init(s){
+      document.getElementById('demoBody').querySelectorAll('.aca-filter').forEach(b=>b.addEventListener('click',()=>{
+        s.filter=b.dataset.f;
+        document.getElementById('demoBody').innerHTML=DEMOS.academia.render(s);
+        DEMOS.academia.init(s);
+      }));
+    }
+  }
+};
+
+/* ================================================================
+   DEMO PANEL CONTROLLER
+================================================================ */
+const DEMO_ORDER=['kanban','incidencias','tiempo','citas','reformas','academia'];
+let current=null;
+
+function openDemo(id){
+  if(DEMOS.tiempo.interval){clearInterval(DEMOS.tiempo.interval);DEMOS.tiempo.state.running=false;}
+  current=id;
+  const demo=DEMOS[id];
+  document.querySelectorAll('.app-card').forEach(c=>c.classList.remove('active'));
+  const card=document.querySelector(`.app-card[data-app="${id}"]`);
+  if(card) card.classList.add('active');
+  document.getElementById('demoTitle').textContent=demo.title;
+  document.getElementById('demoSubtitle').textContent=demo.subtitle;
+  document.getElementById('demoBody').innerHTML=demo.render(demo.state);
+  const panel=document.getElementById('demoPanel');
+  panel.classList.add('open');
+  setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+  demo.init(demo.state);
+}
+
+function closeDemo(){
+  if(DEMOS.tiempo.interval){clearInterval(DEMOS.tiempo.interval);DEMOS.tiempo.state.running=false;}
+  current=null;
+  document.querySelectorAll('.app-card').forEach(c=>c.classList.remove('active'));
+  document.getElementById('demoPanel').classList.remove('open');
+  // scroll back to cards grid
+  document.querySelector('.apps-grid').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+document.querySelectorAll('.app-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    const id=card.dataset.app;
+    if(current===id){closeDemo();return;}
+    openDemo(id);
+  });
+});
+
+document.getElementById('demoClose').addEventListener('click',closeDemo);
+document.getElementById('demoBack').addEventListener('click',closeDemo);
+document.getElementById('demoNext').addEventListener('click',()=>{
+  const idx=DEMO_ORDER.indexOf(current);
+  const next=DEMO_ORDER[(idx+1)%DEMO_ORDER.length];
+  openDemo(next);
+});
+
+/* ── REVEAL ON SCROLL ── */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
-<script src="/cookie-consent.js" defer></script>
 </body>
 </html>
