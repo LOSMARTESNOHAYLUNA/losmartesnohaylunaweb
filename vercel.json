@@ -309,6 +309,31 @@
       "source": "/?page_id=:id",
       "destination": "https://losmartesnohayluna.com/",
       "permanent": true
+    },
+    {
+      "source": "/blog-web-que-genera-clientes.html",
+      "destination": "/blog/web-que-genera-clientes.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-email-marketing-pymes.html",
+      "destination": "/blog/email-marketing-pymes.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-medir-resultados-marketing-digital.html",
+      "destination": "/blog/medir-resultados-marketing-digital.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-como-usar-chatgpt-empresa.html",
+      "destination": "/blog/como-usar-chatgpt-empresa.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog-linkedin-empresas-servicios.html",
+      "destination": "/blog/linkedin-empresas-servicios.html",
+      "permanent": true
     }
   ],
   "rewrites": [
