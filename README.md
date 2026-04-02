@@ -5,7 +5,7 @@ Sitio web corporativo de **Los Martes No Hay Luna**, agencia de marketing digita
 ## Estructura de páginas 
 
 | Archivo | Descripción | En menú | 
-|---|---|---|
+|---|---|---| 
 | `index.html` | Home principal | ✅ |
 | `servicios-agencia.html` | Servicios de agencia | ✅ Servicios |
 | `ia-para-empresas.html` | IA para empresas | ✅ IA para Empresas |
