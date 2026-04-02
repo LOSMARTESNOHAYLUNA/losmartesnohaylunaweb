@@ -301,38 +301,43 @@
       "permanent": true
     },
     {
-      "source": "/?p=:id",
-      "destination": "https://losmartesnohayluna.com/",
+      "source": "/ia-tools.html",
+      "destination": "/ia-tools/",
       "permanent": true
     },
     {
-      "source": "/?page_id=:id",
-      "destination": "https://losmartesnohayluna.com/",
+      "source": "/ia-tools/",
+      "destination": "/ia-para-empresas/",
       "permanent": true
     },
     {
-      "source": "/blog-web-que-genera-clientes.html",
-      "destination": "/blog/web-que-genera-clientes.html",
-      "permanent": true
-    },
-    {
-      "source": "/blog-email-marketing-pymes.html",
-      "destination": "/blog/email-marketing-pymes.html",
-      "permanent": true
-    },
-    {
-      "source": "/blog-medir-resultados-marketing-digital.html",
-      "destination": "/blog/medir-resultados-marketing-digital.html",
-      "permanent": true
-    },
-    {
-      "source": "/blog-como-usar-chatgpt-empresa.html",
-      "destination": "/blog/como-usar-chatgpt-empresa.html",
+      "source": "/ia-tools.html",
+      "destination": "/ia-para-empresas/",
       "permanent": true
     },
     {
       "source": "/blog-linkedin-empresas-servicios.html",
-      "destination": "/blog/linkedin-empresas-servicios.html",
+      "destination": "/blog/linkedin-empresas-servicios/",
+      "permanent": true
+    },
+    {
+      "source": "/blog-web-que-genera-clientes.html",
+      "destination": "/blog/web-que-genera-clientes/",
+      "permanent": true
+    },
+    {
+      "source": "/blog-como-usar-chatgpt-empresa.html",
+      "destination": "/blog/como-usar-chatgpt-empresa/",
+      "permanent": true
+    },
+    {
+      "source": "/blog-email-marketing-pymes.html",
+      "destination": "/blog/email-marketing-pymes/",
+      "permanent": true
+    },
+    {
+      "source": "/blog-medir-resultados-marketing-digital.html",
+      "destination": "/blog/medir-resultados-marketing-digital/",
       "permanent": true
     }
   ],
@@ -427,27 +432,27 @@
     },
     {
       "source": "/blog/ia-para-pymes/",
-      "destination": "/blog-ia-para-pymes.html"
+      "destination": "/blog/blog-ia-para-pymes.html"
     },
     {
       "source": "/blog/marketing-digital-pymes/",
-      "destination": "/blog-marketing-digital-pymes.html"
+      "destination": "/blog/blog-marketing-digital-pymes.html"
     },
     {
       "source": "/blog/redes-sociales-empresas/",
-      "destination": "/blog-redes-sociales-empresas.html"
+      "destination": "/blog/blog-redes-sociales-empresas.html"
     },
     {
       "source": "/blog/casos-exito-marketing/",
-      "destination": "/blog-casos-exito-marketing.html"
+      "destination": "/blog/blog-casos-exito-marketing.html"
     },
     {
       "source": "/blog/5-preguntas-ia-empresa/",
-      "destination": "/blog-5-preguntas-ia-empresa.html"
+      "destination": "/blog/blog-5-preguntas-ia-empresa.html"
     },
     {
       "source": "/blog/automatizacion-pymes/",
-      "destination": "/blog-automatizacion-pymes.html"
+      "destination": "/blog/blog-automatizacion-pymes.html"
     },
     {
       "source": "/procesar/",
@@ -467,23 +472,23 @@
     },
     {
       "source": "/blog/linkedin-empresas-servicios/",
-      "destination": "/blog-linkedin-empresas-servicios.html"
+      "destination": "/blog/blog-linkedin-empresas-servicios.html"
     },
     {
       "source": "/blog/web-que-genera-clientes/",
-      "destination": "/blog-web-que-genera-clientes.html"
+      "destination": "/blog/blog-web-que-genera-clientes.html"
     },
     {
       "source": "/blog/como-usar-chatgpt-empresa/",
-      "destination": "/blog-como-usar-chatgpt-empresa.html"
+      "destination": "/blog/blog-como-usar-chatgpt-empresa.html"
     },
     {
       "source": "/blog/email-marketing-pymes/",
-      "destination": "/blog-email-marketing-pymes.html"
+      "destination": "/blog/blog-email-marketing-pymes.html"
     },
     {
       "source": "/blog/medir-resultados-marketing-digital/",
-      "destination": "/blog-medir-resultados-marketing-digital.html"
+      "destination": "/blog/blog-medir-resultados-marketing-digital.html"
     },
     {
       "source": "/((?!api/).*)",
