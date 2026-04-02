@@ -2,7 +2,7 @@
 
 Sitio web corporativo de **Los Martes No Hay Luna**, agencia de marketing digital y consultoría con IA. Leganés, Madrid..
 
-## Estructura de páginas
+## Estructura de páginas 
 
 | Archivo | Descripción | En menú |
 |---|---|---|
