@@ -3,10 +3,703 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Tools — Los Martes No Hay Luna</title>
+<title>IA para Empresas Madrid 🚀 | Automatización | LMNHL</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="IA para Empresas en Madrid — Automatización y Apps a Medida | LMNHL">
+<meta property="og:description" content="Identificamos qué procesos de tu empresa son automatizables con IA y los implementamos. Hasta 6.200€/mes de ahorro potencial en empresas de 10 personas.">
+<meta property="og:url" content="https://losmartesnohayluna.com/ia-para-empresas/">
+<meta property="og:image" content="https://losmartesnohayluna.com/img/sheila-trabajando.png">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Los Martes No Hay Luna">
+<link rel="canonical" href="https://losmartesnohayluna.com/ia-para-empresas/">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="inteligencia artificial empresas madrid, automatizacion procesos pymes, apps a medida empresas, consultoria ia madrid">
+<meta name="description" content="Ahorra hasta 6.200€/mes automatizando procesos con IA. Apps a medida, diagnóstico gratuito. 📍 Madrid 📈 Sin tecnicismos, con ROI real ✨">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
 <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --purple:    #582D81;
+  --purple-lt: #6e3d9a;
+  --purple-dk: #3a1c57;
+  --lime:      #87B229;
+  --lime-lt:   #9ecf30;
+  --pink:      #e72078;
+  --slate:     #2a1f38;
+  --off-white: #f8f6f2;
+  --light:     #f4f0fa;
+  --mid:       #7a6f85;
+  --rule:      rgba(88,45,129,.12);
+}
+html { scroll-behavior: smooth; }
+body { font-size: 18px; font-family: 'Poppins', sans-serif; background: var(--off-white); color: var(--slate); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+/* ── NAV ──────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 5rem;
+  background: rgba(248,246,242,.96); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-logo { text-decoration: none; display: flex; align-items: center; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: .68rem; letter-spacing: .07em; text-transform: uppercase; color: var(--mid); text-decoration: none; font-weight: 400; transition: color .2s; }
+.nav-links a:hover { color: var(--purple); }
+.nav-cta { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; padding: .55rem 1.6rem; background: var(--purple); color: #fff; text-decoration: none; transition: background .2s; }
+.nav-cta:hover { background: var(--purple-lt); }
+
+/* ── HERO ─────────────────────────────────────────── */
+.hero {
+  min-height: 100vh; background: var(--purple-dk); color: #fff;
+  display: grid; grid-template-columns: 1fr 1fr;
+  padding-top: 72px; position: relative; overflow: hidden;
+}
+/* Video background */
+.hero-video-wrap {
+  position: absolute; inset: 0; z-index: 0;
+  pointer-events: none; overflow: hidden;
+}
+.hero-video-wrap iframe {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 177.78vh; /* 16/9 * 100vh */
+  height: 56.25vw; /* 9/16 * 100vw */
+  min-width: 100%; min-height: 100%;
+  border: none;
+}
+.hero-video-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(58,28,87,.88) 0%,
+    rgba(58,28,87,.75) 50%,
+    rgba(20,10,40,.85) 100%
+  );
+}
+.hero::before {
+  content: ''; position: absolute; top: -120px; right: -120px;
+  width: 600px; height: 600px; border-radius: 50%;
+  border: 100px solid rgba(135,178,41,.06); pointer-events: none;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: -80px; left: -80px;
+  width: 400px; height: 400px; border-radius: 50%;
+  border: 60px solid rgba(231,32,120,.04); pointer-events: none;
+}
+.hero-left {
+  padding: 6rem 5rem; display: flex; flex-direction: column; justify-content: center;
+  position: relative; z-index: 2;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: .7rem;
+  font-size: .62rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--lime); font-weight: 600; margin-bottom: 2rem;
+}
+.hero-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--lime); }
+.hero-h1, .hero-left h1 {
+  font-size: clamp(1.8rem, 6vw, 4.2rem); font-weight: 800; color: #fff;
+  letter-spacing: -.04em; line-height: 1.1; margin-bottom: 1.8rem;
+  max-width: 100%; word-wrap: break-word;
+}
+.hero-h1 em { color: var(--lime); font-style: italic; font-weight: 300; }
+.hero-sub {
+  font-size: .9rem; color: rgba(255,255,255,.75); line-height: 1.85;
+  max-width: min(420px, 100%); font-weight: 300; margin-bottom: 3rem;
+}
+.hero-proof {
+  display: flex; gap: 2.5rem; margin-bottom: 3rem;
+  padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.08);
+}
+.hp-item {}
+.hp-num { font-size: 2rem; font-weight: 800; color: #fff; letter-spacing: -.04em; line-height: 1; }
+.hp-num span { color: var(--lime); }
+.hp-label { font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-top: .3rem; line-height: 1.4; max-width: 100px; }
+.btn-lime { display: inline-block; padding: .9rem 2.4rem; background: var(--lime); color: var(--slate); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; text-decoration: none; transition: background .2s; }
+.btn-lime:hover { background: var(--lime-lt); }
+
+/* Hero right — animated cost counter */
+.hero-right {
+  background: rgba(0,0,0,.2); border-left: 1px solid rgba(255,255,255,.06);
+  padding: 6rem 4rem; display: flex; flex-direction: column; justify-content: center;
+  position: relative; z-index: 2;
+}
+.counter-card {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+  padding: 2.5rem; margin-bottom: 1.5rem;
+  border-top: 2px solid var(--lime);
+}
+.cc-label { font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: .8rem; }
+.cc-value { font-size: 3rem; font-weight: 800; color: #fff; letter-spacing: -.05em; line-height: 1; margin-bottom: .4rem; }
+.cc-value span { color: var(--lime); }
+.cc-desc { font-size: .78rem; color: rgba(255,255,255,.65); font-weight: 300; }
+.leak-list { display: flex; flex-direction: column; gap: .8rem; }
+.leak-item {
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,.04); padding: 1rem 1.4rem;
+  border-left: 2px solid rgba(231,32,120,.5);
+}
+.li-left { font-size: .78rem; color: rgba(255,255,255,.8); font-weight: 300; }
+.li-cost { font-size: .85rem; font-weight: 700; color: var(--pink); }
+
+/* ── MANIFESTO ────────────────────────────────────── */
+.manifesto {
+  background: var(--lime); padding: 6rem 5rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+}
+.mf-quote {
+  font-size: clamp(1.6rem, 2.2vw, 2.2rem); font-weight: 800; color: var(--slate);
+  letter-spacing: -.03em; line-height: 1.2;
+}
+.mf-quote em { font-style: italic; font-weight: 300; }
+.mf-body { font-size: .9rem; color: var(--slate); opacity: .65; line-height: 1.85; font-weight: 300; }
+.mf-body strong { font-weight: 700; opacity: 1; color: var(--slate); }
+
+/* ── SECTION LABEL ────────────────────────────────── */
+.sl {
+  display: inline-flex; align-items: center; gap: .7rem;
+  font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--lime); font-weight: 700;
+}
+.sl::before { content: ''; width: 18px; height: 2px; background: var(--lime); }
+
+/* ── THE PROBLEM ──────────────────────────────────── */
+.problem { padding: 7rem 5rem; background: var(--off-white); }
+.problem-hd { margin-bottom: 5rem; max-width: 680px; }
+.problem-hd .sl { margin-bottom: 1.2rem; }
+.problem-hd h2 { font-size: clamp(2rem, 2.8vw, 3rem); font-weight: 800; color: var(--purple); letter-spacing: -.04em; line-height: 1.1; }
+.problem-hd h2 em { color: var(--mid); font-style: italic; font-weight: 300; }
+
+/* Real-case leaks */
+.leak-cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 5rem; }
+.lc-card {
+  background: #fff; padding: 2.4rem 2rem;
+  border-top: 3px solid var(--pink); position: relative; overflow: hidden;
+}
+.lc-card::after {
+  content: attr(data-cost);
+  position: absolute; bottom: -1rem; right: 1.5rem;
+  font-size: 4rem; font-weight: 800; color: rgba(231,32,120,.05);
+  letter-spacing: -.06em; line-height: 1; pointer-events: none;
+}
+.lc-dept { font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; color: var(--pink); margin-bottom: .8rem; }
+.lc-scenario { font-size: .92rem; font-weight: 600; color: var(--slate); margin-bottom: .8rem; line-height: 1.35; }
+.lc-desc { font-size: .8rem; color: var(--mid); line-height: 1.7; font-weight: 300; margin-bottom: 1.4rem; }
+.lc-cost-row { display: flex; align-items: center; gap: 1rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); }
+.lc-cost-num { font-size: 1.4rem; font-weight: 800; color: var(--pink); letter-spacing: -.03em; }
+.lc-cost-label { font-size: .65rem; color: var(--mid); font-weight: 300; line-height: 1.4; }
+
+/* ── SOLUTION — BY DEPARTMENT ─────────────────────── */
+.depts { padding: 7rem 5rem; background: var(--light); }
+.depts-hd { margin-bottom: 5rem; }
+.depts-hd .sl { margin-bottom: 1.2rem; }
+.depts-hd h2 { font-size: clamp(2rem, 2.8vw, 3rem); font-weight: 800; color: var(--purple); letter-spacing: -.04em; line-height: 1.1; margin-bottom: 1rem; }
+.depts-hd p { font-size: .9rem; color: var(--mid); max-width: 560px; line-height: 1.8; font-weight: 300; }
+
+/* Department tab nav */
+.dept-nav { display: flex; gap: 0; margin-bottom: 3.5rem; border-bottom: 2px solid var(--rule); overflow-x: auto; scrollbar-width: none; }
+.dept-nav::-webkit-scrollbar { display: none; }
+.dept-tab {
+  font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600;
+  padding: 1rem 1.8rem; color: var(--mid); cursor: pointer;
+  border-bottom: 2px solid transparent; margin-bottom: -2px;
+  background: none; border-top: none; border-left: none; border-right: none;
+  font-family: 'Poppins', sans-serif; transition: color .2s, border-color .2s;
+  white-space: nowrap;
+}
+.dept-tab.active { color: var(--purple); border-bottom-color: var(--purple); }
+.dept-tab:hover:not(.active) { color: var(--purple-lt); }
+
+/* Department panels */
+.dept-panel { display: none; }
+.dept-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+
+.dp-left {}
+.dp-context {
+  background: var(--purple-dk); padding: 2.5rem;
+  margin-bottom: 2rem; border-left: 4px solid var(--lime);
+}
+.dp-context-label { font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; color: var(--lime); margin-bottom: .7rem; }
+.dp-context-text { font-size: .85rem; color: rgba(255,255,255,.8); line-height: 1.7; font-weight: 300; }
+.dp-context-text strong { color: #fff; font-weight: 700; }
+
+.dp-before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+.dp-before, .dp-after { padding: 1.6rem 1.4rem; }
+.dp-before { background: rgba(231,32,120,.06); border-top: 2px solid var(--pink); }
+.dp-after { background: rgba(135,178,41,.07); border-top: 2px solid var(--lime); }
+.dp-ba-label { font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; margin-bottom: .8rem; }
+.dp-before .dp-ba-label { color: var(--pink); }
+.dp-after .dp-ba-label { color: var(--lime); }
+.dp-ba-item { font-size: .78rem; color: var(--mid); padding: .4rem 0; border-bottom: 1px solid var(--rule); line-height: 1.5; font-weight: 300; }
+.dp-ba-item:last-child { border-bottom: none; }
+.dp-after .dp-ba-item { color: var(--slate); }
+
+.dp-saving {
+  display: flex; gap: 1.5rem; padding: 1.6rem;
+  background: var(--purple); align-items: center;
+}
+.ds-num { font-size: 2.4rem; font-weight: 800; color: var(--lime); letter-spacing: -.04em; line-height: 1; flex-shrink: 0; }
+.ds-text { font-size: .78rem; color: rgba(255,255,255,.75); line-height: 1.6; font-weight: 300; }
+.ds-text strong { color: #fff; font-weight: 700; }
+
+.dp-right {}
+.dp-processes { display: flex; flex-direction: column; gap: 1.2rem; }
+.dp-proc {
+  background: #fff; padding: 1.8rem 2rem;
+  border-left: 3px solid transparent; transition: border-color .25s;
+  cursor: default;
+}
+.dp-proc:hover { border-color: var(--lime); }
+.dp-proc-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: .7rem; }
+.dp-proc-name { font-size: .88rem; font-weight: 700; color: var(--purple); line-height: 1.3; }
+.dp-proc-time {
+  font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 600;
+  color: var(--lime); background: rgba(135,178,41,.1); padding: .25rem .7rem;
+  flex-shrink: 0; white-space: nowrap;
+}
+.dp-proc-desc { font-size: .78rem; color: var(--mid); line-height: 1.7; font-weight: 300; margin-bottom: .8rem; }
+.dp-proc-tools { display: flex; flex-wrap: wrap; gap: .4rem; }
+.dp-proc-tool { font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; padding: .22rem .6rem; border: 1px solid var(--rule); color: var(--mid); }
+
+/* ── METHODOLOGY ──────────────────────────────────── */
+.method {
+  background: var(--slate); padding: 7rem 5rem; color: rgba(255,255,255,.7);
+}
+.method-hd { margin-bottom: 5rem; }
+.method-hd .sl { margin-bottom: 1.2rem; }
+.method-hd h2 { font-size: clamp(2rem, 2.8vw, 3rem); font-weight: 800; color: #fff; letter-spacing: -.04em; line-height: 1.1; }
+.method-hd h2 em { color: var(--lime); font-style: italic; font-weight: 300; }
+
+.method-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.ms {
+  padding: 3rem 2.5rem; border-right: 1px solid rgba(255,255,255,.06);
+  position: relative;
+}
+.ms:last-child { border-right: none; }
+.ms-num {
+  font-size: 4.5rem; font-weight: 800; color: rgba(255,255,255,.04);
+  letter-spacing: -.06em; line-height: 1; margin-bottom: .5rem;
+}
+.ms-icon {
+  width: 40px; height: 40px; background: rgba(135,178,41,.1);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem;
+}
+.ms-icon svg { width: 20px; height: 20px; stroke: var(--lime); fill: none; stroke-width: 1.5; }
+.ms-title { font-size: .92rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
+.ms-sub { font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--lime); margin-bottom: .8rem; font-weight: 600; }
+.ms-text { font-size: .8rem; color: rgba(255,255,255,.65); line-height: 1.75; font-weight: 300; }
+.ms-connector {
+  position: absolute; top: 3.5rem; right: -1rem;
+  color: var(--lime); font-size: 1.2rem; z-index: 2;
+  display: flex; align-items: center;
+}
+
+/* ── VS COMPARISON ────────────────────────────────── */
+.vs-section { padding: 7rem 5rem; background: var(--off-white); }
+.vs-hd { margin-bottom: 4.5rem; }
+.vs-hd .sl { margin-bottom: 1rem; }
+.vs-hd h2 { font-size: clamp(1.8rem, 2.4vw, 2.6rem); font-weight: 800; color: var(--purple); letter-spacing: -.04em; line-height: 1.1; }
+.vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.vs-col-label {
+  font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 700;
+  padding: .8rem 1.5rem; text-align: center; margin-bottom: 1rem;
+}
+.vs-col-label.bad { background: rgba(231,32,120,.1); color: var(--pink); }
+.vs-col-label.good { background: rgba(135,178,41,.1); color: var(--lime); }
+.vs-list { list-style: none; }
+.vs-item {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.1rem 1.4rem; border-bottom: 1px solid var(--rule);
+  font-size: .84rem; color: var(--mid); font-weight: 300; line-height: 1.5;
+}
+.vs-item:first-child { border-top: 1px solid var(--rule); }
+.vs-mark-bad { color: var(--pink); font-size: 1rem; flex-shrink: 0; margin-top: .05rem; }
+.vs-mark-good { color: var(--lime); font-size: 1rem; flex-shrink: 0; margin-top: .05rem; }
+.vs-col-good .vs-item { color: var(--slate); }
+
+/* ── REAL RESULTS ─────────────────────────────────── */
+.results { padding: 7rem 5rem; background: var(--purple); color: rgba(255,255,255,.75); }
+.results-hd { margin-bottom: 4.5rem; }
+.results-hd .sl { margin-bottom: 1rem; }
+.results-hd h2 { font-size: clamp(1.8rem, 2.4vw, 2.6rem); font-weight: 800; color: #fff; letter-spacing: -.04em; line-height: 1.1; }
+.results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.result-card {
+  background: rgba(255,255,255,.05); border-top: 3px solid var(--lime);
+  padding: 2.4rem 2rem; transition: background .2s;
+}
+.result-card:hover { background: rgba(255,255,255,.08); }
+.rc-sector { font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; color: var(--lime); margin-bottom: 1.4rem; }
+.rc-result { font-size: 2.4rem; font-weight: 800; color: #fff; letter-spacing: -.04em; line-height: 1; margin-bottom: .3rem; }
+.rc-result span { color: var(--lime); }
+.rc-what { font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 1.2rem; }
+.rc-story { font-size: .82rem; color: rgba(255,255,255,.7); line-height: 1.75; font-weight: 300; font-style: italic; }
+
+/* ── SHEILA BLOCK ─────────────────────────────────── */
+.sheila-block {
+  display: grid; grid-template-columns: 1fr 1fr;
+}
+.sb-photo {
+  background: var(--light); position: relative; overflow: hidden; min-height: 500px;
+}
+.sb-photo .ph {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: .8rem; color: var(--mid);
+}
+.sb-photo .ph svg { width: 44px; height: 44px; opacity: .25; stroke: var(--purple); fill: none; stroke-width: 1.5; }
+.sb-photo .ph span { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
+.sb-copy { background: var(--off-white); padding: 6rem 5rem; display: flex; flex-direction: column; justify-content: center; }
+.sb-copy .sl { margin-bottom: 1.5rem; }
+.sb-copy h2 { font-size: clamp(1.8rem, 2.4vw, 2.4rem); font-weight: 800; color: var(--purple); letter-spacing: -.04em; line-height: 1.12; margin-bottom: 1.2rem; }
+.sb-copy p { font-size: .88rem; color: var(--mid); line-height: 1.85; font-weight: 300; margin-bottom: 1.8rem; }
+.sb-creds { display: flex; flex-direction: column; gap: .7rem; margin-bottom: 2.5rem; }
+.sb-cred { display: flex; align-items: flex-start; gap: .8rem; font-size: .82rem; color: var(--slate); font-weight: 300; }
+.sb-cred::before { content: '✦'; color: var(--lime); font-size: .7rem; flex-shrink: 0; margin-top: .25rem; }
+
+/* ── CTA ──────────────────────────────────────────── */
+.final-cta {
+  background: var(--purple-dk); padding: 9rem 5rem; text-align: center; color: rgba(255,255,255,.75);
+  position: relative; overflow: hidden;
+}
+.final-cta::before {
+  content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 700px; height: 700px; border-radius: 50%;
+  border: 120px solid rgba(135,178,41,.04); pointer-events: none;
+}
+.final-cta .sl { justify-content: center; margin-bottom: 1.5rem; }
+.final-cta .sl::before { display: none; }
+.final-cta h2 { font-size: clamp(2.4rem, 4vw, 4.5rem); font-weight: 800; color: #fff; letter-spacing: -.05em; line-height: 1.05; margin-bottom: 1.2rem; }
+.final-cta h2 em { color: var(--lime); font-style: italic; font-weight: 300; }
+.final-cta p { font-size: .9rem; color: rgba(255,255,255,.7); max-width: 500px; margin: 0 auto 3rem; font-weight: 300; line-height: 1.8; }
+.cta-actions { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+.btn-ghost { display: inline-block; padding: .95rem 2.6rem; border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.6); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 500; text-decoration: none; transition: all .2s; }
+.btn-ghost:hover { border-color: rgba(255,255,255,.5); color: #fff; }
+.cta-note { margin-top: 2rem; font-size: .72rem; color: rgba(255,255,255,.5); }
+.cta-note span { color: var(--lime); }
+
+/* ── FOOTER ───────────────────────────────────────── */
+/* ── FOOTER REDISEÑADO ──────────────────────── */
+footer {
+  background: var(--slate);
+  padding: 4rem 5rem 2rem;
+}
+
+@media (max-width: 900px) {
+  footer { padding: 3rem 1.5rem 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+/* ── REVEAL ───────────────────────────────────────── */
+.reveal { opacity: 1; transform: translateY(0); transition: opacity .6s ease, transform .6s ease; }
+.reveal.d1 { transition-delay: .08s; }
+.reveal.d2 { transition-delay: .16s; }
+.reveal.d3 { transition-delay: .24s; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 1000px) {
+  .method-steps { grid-template-columns: repeat(2, 1fr); }
+  .ms-connector { display: none; }
+  .results-grid { grid-template-columns: 1fr 1fr; }
+}
+/* duplicate 900px block removed — see main responsive block below */
+@media (max-width: 900px) {
+  .placeholder-removed { display: block; }
+  .problem, .depts, .method, .vs-section, .results, .final-cta { padding: 5rem 1.8rem; }
+  .leak-cases { grid-template-columns: 1fr; }
+  .dept-panel.active { grid-template-columns: 1fr; }
+  .dp-before-after { grid-template-columns: 1fr; }
+  .vs-grid { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: 1fr; }
+  .method-steps { grid-template-columns: 1fr; }
+  .sb-photo { min-height: 260px; }
+  footer { padding: 2rem 1.8rem; }
+}
+
+/* ── MOBILE NAV ─────────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: .4rem;
+  background: none;
+  border: none;
+  z-index: 200;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--purple);
+  transition: all .3s;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(58,28,87,.98);
+  z-index: 150;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 2rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: -.02em;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  width: 100%;
+  text-align: center;
+  transition: color .2s;
+}
+.mobile-menu a:hover { color: var(--lime); }
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu .mm-cta {
+  margin-top: 1.5rem;
+  background: var(--lime);
+  color: var(--slate) !important;
+  padding: 1rem 2.5rem !important;
+  font-size: .85rem !important;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border-bottom: none !important;
+  width: auto !important;
+}
+.mobile-menu .mm-close {
+  position: absolute;
+  top: 1.4rem; right: 1.5rem;
+  background: none; border: none;
+  font-size: 1.8rem; color: rgba(255,255,255,.6);
+  cursor: pointer; font-family: sans-serif;
+  line-height: 1;
+}
+@media (max-width: 900px) {
+  .nav-hamburger { display: flex; }
+}
+
+
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — SINGLE CLEAN BLOCK
+   ═══════════════════════════════════════════ */
+
+/* Tablet */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 5rem 1.5rem 2.5rem; }
+  .hero-right { padding: 2rem 1.5rem 3rem; }
+  .manifesto, .sheila-block { grid-template-columns: 1fr; }
+  .sb-copy, .mf-body-wrap { padding: 3rem 1.8rem; }
+  .problem, .depts, .method, .vs-section, .results, .final-cta { padding: 5rem 1.8rem; }
+  .leak-cases, .vs-grid, .results-grid, .method-steps { grid-template-columns: 1fr; }
+  .dept-panel.active { grid-template-columns: 1fr; }
+  .dp-before-after { grid-template-columns: 1fr; }
+  .sb-photo { min-height: 260px; }
+  footer { padding: 2rem 1.8rem; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  nav { padding: .9rem 1.2rem; }
+  .quote-banner { padding: 3.5rem 1.2rem; }
+  .authority-banner { padding: 2.5rem 1.2rem; }
+  .nav-logo img { height: 42px; }
+  .nav-cta { display: none; }
+  footer { padding: 2rem 1.2rem; }
+  .footer-links { flex-direction: column; gap: .8rem; }
+  section, .problem, .depts, .method, .vs-section, .results, .final-cta { padding: 3.5rem 1.2rem; }
+  .hero { grid-template-columns: 1fr !important; }
+  .hero-right { display: none !important; }
+  .hero-left { padding: 5.5rem 1.2rem 3rem !important; max-width: 100%; width: 100%; }
+  .hero-h1, .hero-left h1 { font-size: clamp(1.5rem, 6.5vw, 2.2rem) !important; word-break: break-word; max-width: 100% !important; line-height: 1.15 !important; }
+  .hero-sub { max-width: 100% !important; font-size: .85rem !important; }
+  .hero-proof { gap: 1rem !important; flex-wrap: wrap; }
+  .hp-num { font-size: 1.5rem !important; }
+  .hp-label { font-size: .6rem !important; max-width: 90px !important; line-height: 1.4 !important; letter-spacing: .06em !important; }
+  .hp-items { flex-direction: column; gap: 1.2rem; }
+  input, textarea, select, button { font-size: 16px; }
+}
+
+
+@media (max-width: 768px) {
+  .hero-video-wrap { display: none; }
+  .hero-video-overlay { display: none; }
+  .hero-right { display: none; }
+  .hero { grid-template-columns: 1fr !important; }
+  .hero-left { padding: 5.5rem 1.2rem 3rem !important; max-width: 100%; }
+}
+
+
+/* ── AUTHORITY BANNER ───────────────────────── */
+.authority-banner { background: var(--purple); padding: 4rem 5rem; position: relative; overflow: hidden; }
+.authority-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--purple-dk) 0%, var(--purple) 60%, var(--purple-lt) 100%); }
+.authority-inner { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 100%; margin: 0 auto; }
+.authority-stat { padding: 2rem 2.5rem; border-right: 1px solid rgba(255,255,255,.08); text-align: center; }
+.authority-stat:last-child { border-right: none; }
+.authority-num { font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 900; color: var(--lime); letter-spacing: -.05em; line-height: 1; margin-bottom: .4rem; }
+.authority-label { font-size: .78rem; color: rgba(255,255,255,.6); font-weight: 300; line-height: 1.4; text-transform: uppercase; letter-spacing: .08em; }
+@media (max-width: 900px) { .authority-banner { padding: 3rem 1.5rem; } .authority-inner { grid-template-columns: repeat(2, 1fr); } .authority-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); padding: 1.5rem; } }
+@media (max-width: 480px) { .authority-num { font-size: 2.5rem; } }
+
+
+/* ── QUOTE BANNERS ──────────────────────────── */
+.quote-banner { background: var(--purple-dk); padding: 5rem 1.8rem; text-align: center; position: relative; overflow: hidden; }
+.quote-banner::before { content: '"'; position: absolute; top: -2rem; left: 50%; transform: translateX(-50%); font-size: 18rem; font-weight: 900; color: rgba(135,178,41,.04); line-height: 1; pointer-events: none; font-family: Georgia, serif; }
+.quote-banner blockquote { position: relative; z-index: 2; font-size: clamp(1.4rem, 2.5vw, 2.2rem); font-weight: 700; color: #fff; letter-spacing: -.02em; line-height: 1.35; max-width: 800px; margin: 0 auto 1.5rem; font-style: italic; }
+.quote-banner blockquote em { color: var(--lime); font-style: normal; }
+.quote-banner cite { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.35); font-style: normal; font-weight: 500; }
+.quote-banner.lime { background: var(--lime); }
+.quote-banner.lime blockquote { color: var(--slate); }
+.quote-banner.lime blockquote em { color: var(--purple); }
+.quote-banner.lime cite { color: rgba(42,31,56,.45); }
+.quote-banner.lime::before { color: rgba(42,31,56,.06); }
+@media (max-width: 900px) { .quote-banner { padding: 4rem 1.8rem; } }
+@media (max-width: 480px) { .quote-banner { padding: 3rem 1.2rem; } }
+
+
+/* ── FOOTER LINK OVERRIDES ─────────────────── */
+footer .footer-col a {
+  color: rgba(255,255,255,.45) !important;
+  text-decoration: none !important;
+  display: block !important;
+  font-size: .82rem !important;
+  margin-bottom: .6rem;
+  transition: color .2s;
+  font-weight: 300;
+}
+footer .footer-col a:hover { color: #fff !important; }
+footer .footer-col-title {
+  font-size: .62rem !important;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--lime) !important;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+footer .footer-brand p { 
+  color: rgba(255,255,255,.4) !important; 
+  font-size: .82rem;
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+footer .footer-copy { 
+  color: rgba(255,255,255,.2) !important; 
+  font-size: .72rem;
+}
+
+
+/* ── MOBILE FIRST RESET ─────────────────────── */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img, video, table, input, textarea, select {
+  max-width: 100%;
+}
+img { height: auto; }
+/* Exclude hero background video from max-width constraint */
+.hero-video-wrap iframe { max-width: none; }
+
+
+/* ══════════════════════════════════════════════════
+   MOBILE OVERRIDE FINAL — overrides all conflicts
+   iPhone 15 = 390px, iPhone SE = 375px
+   ══════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  html, body { max-width: 100%; overflow-x: hidden; }
+  .nav-links { display: none !important; }
+  nav { padding: 1rem 1.5rem !important; }
+  .hero { grid-template-columns: 1fr !important; overflow: hidden !important; }
+  .hero-right { display: none !important; }
+  .hero-left {
+    padding: 6rem 1.5rem 3rem !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+  .hero-left h1, .hero-h1 {
+    font-size: clamp(1.5rem, 5.5vw, 2rem) !important;
+    line-height: 1.15 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+  .hero-sub {
+    font-size: .85rem !important;
+    max-width: 100% !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  .hero-proof {
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+  }
+  .hp-num { font-size: 1.5rem !important; }
+  .hp-label { font-size: .6rem !important; max-width: 90px !important; line-height: 1.4 !important; }
+}
+
+@media (max-width: 480px) {
+  html, body { max-width: 100%; overflow-x: hidden; }
+  .hero { grid-template-columns: 1fr !important; }
+  .hero-right { display: none !important; }
+  .hero-left {
+    padding: 5.5rem 1.2rem 2.5rem !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .hero-left h1, .hero-h1 {
+    font-size: clamp(1.3rem, 5vw, 1.7rem) !important;
+    line-height: 1.15 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+  }
+  .hero-sub {
+    font-size: .82rem !important;
+    max-width: 100% !important;
+    word-break: break-word !important;
+  }
+  .hero-eyebrow {
+    font-size: .55rem !important;
+    flex-wrap: wrap !important;
+  }
+  .hero-proof { gap: 1rem !important; flex-wrap: wrap !important; display: flex !important; }
+  .btn-lime { font-size: .65rem !important; padding: .8rem 1.5rem !important; }
+}
+
+
+/* ══ IA TOOLS SECTION ══════════════════════════════ */
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --purple:#582D81;--purple-lt:#6e3d9a;--purple-dk:#3a1c57;
@@ -377,75 +1070,272 @@ footer{background:var(--slate);padding:2.5rem 5rem;display:flex;align-items:cent
   .inc-top{grid-template-columns:repeat(2,1fr)}
   .apt-stats{grid-template-columns:repeat(2,1fr)}
 }
+
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Marketing Digital y Consultoría Estratégica",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Los Martes No Hay Luna",
+    "url": "https://losmartesnohayluna.com"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Madrid"
+  },
+  "serviceType": "Marketing Digital"
+}
+</script>
+<script src="/widget-consultora.js" defer></script>
 </head>
 <body>
+<style>
+@media screen and (max-width: 900px) {
+  section.hero { grid-template-columns: 1fr !important; }
+  section.hero .hero-right { display: none !important; }
+  section.hero .hero-left { 
+    padding: 6rem 1.5rem 3rem !important; 
+    width: 100% !important; 
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  section.hero .hero-left h1 { 
+    font-size: clamp(1.4rem, 5vw, 2rem) !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+  }
+  section.hero .hero-sub { 
+    max-width: 100% !important; 
+    word-break: break-word !important;
+  }
+  section.hero .hero-eyebrow {
+    font-size: .5rem !important;
+    letter-spacing: .12em !important;
+    flex-wrap: wrap !important;
+    white-space: normal !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .img-strip-3 { grid-template-columns: 1fr !important; }
+  .img-strip-3 img:not(:first-child) { display: none !important; }
+}
+</style>
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="/">Los Martes No Hay Luna</a>
+  <a class="nav-logo" href="/"><img src="/img/LMHHL_logo_2026.svg" alt="Los Martes No Hay Luna — Agencia de Marketing Digital Madrid" style="height:52px;width:auto;display:block;"></a>
   <ul class="nav-links">
-    <li><a href="/servicios">Servicios</a></li>
-    <li><a href="/sheila-aguilar">Sheila Aguilar</a></li>
-    <li><a href="/ia-para-empresas" class="active">IA para empresas</a></li>
-    <li><a href="/blog">Blog</a></li>
-    <li><a href="/contacto">Contacto</a></li>
+    <li><a href="/servicios/">Servicios</a></li>
+    <li><a href="/ia-para-empresas/" class="active">IA para Empresas</a></li>
+    <li><a href="/ia-tools/">IA Tools</a></li>
+    <li><a href="/sheila-aguilar/">Sheila Aguilar</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contacto/">Contacto</a></li>
   </ul>
-  <a class="nav-cta" href="/sesion-gratuita">Sesión gratuita</a>
+  <a class="nav-cta" href="/sesion-gratuita/">Sesión gratuita</a>
+  <button class="nav-hamburger" onclick="openMobileMenu()" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- HERO -->
-<header class="tools-hero">
-  <div class="hero-inner">
-    <div>
-      <div class="hero-eyebrow">Aplicaciones a medida para empresas</div>
-      <h1>Tu negocio<br>merece su<br>propia <em>herramienta</em></h1>
-      <p class="hero-sub">Desarrollamos mini-aplicaciones personalizadas que automatizan procesos, mejoran la gestión y ahorran horas reales a tu equipo. Sin software genérico. Sin licencias. Sin complejidad.</p>
-      <div class="hero-pills">
-        <span class="hero-pill">Gestión de tareas</span>
-        <span class="hero-pill">Control de tiempo</span>
-        <span class="hero-pill">Registro de incidencias</span>
-        <span class="hero-pill">Agenda de citas</span>
-        <span class="hero-pill">Seguimiento de obras</span>
-        <span class="hero-pill">Panel de alumnos</span>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-stat">
-        <div class="hs-num">3–5h</div>
-        <div class="hs-label">semanales ahorradas<br>de media por equipo</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hs-num">2–4</div>
-        <div class="hs-label">semanas de desarrollo<br>para tu primera herramienta</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hs-num">100%</div>
-        <div class="hs-label">adaptada a tu sector,<br>tu equipo y tu forma de trabajar</div>
-      </div>
-    </div>
-  </div>
-</header>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mm-close" onclick="closeMobileMenu()">×</button>
+  <a href="/" onclick="closeMobileMenu()">Inicio</a>
+  <a href="/servicios/" onclick="closeMobileMenu()">Servicios</a>
+  <a href="/ia-para-empresas/" onclick="closeMobileMenu()">IA para Empresas</a>
+  <a href="/ia-tools/" onclick="closeMobileMenu()">IA Tools</a>
+  <a href="/sheila-aguilar/" onclick="closeMobileMenu()">Sheila Aguilar</a>
+  <a href="/blog/" onclick="closeMobileMenu()">Blog</a>
+  <a href="/contacto/" onclick="closeMobileMenu()">Contacto</a>
+  <a href="/sesion-gratuita/" class="mm-cta" onclick="closeMobileMenu()">Sesión gratuita →</a>
+</div>
 
-<!-- HOW -->
-<div class="how">
-  <div class="how-step reveal">
-    <div class="how-num">01 — Diagnóstico</div>
-    <h3>Analizamos tu proceso actual</h3>
-    <p>En una sesión de trabajo identificamos qué tareas se repiten, dónde se pierde tiempo y qué información necesita tu equipo tener siempre a mano.</p>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- VIDEO BACKGROUND -->
+  <div class="hero-video-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/QGmEY-BQ0Ic?autoplay=1&mute=1&loop=1&playlist=QGmEY-BQ0Ic&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&playsinline=1"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      title="Background video">
+    </iframe>
   </div>
-  <div class="how-step reveal d1">
-    <div class="how-num">02 — Desarrollo</div>
-    <h3>Construimos tu herramienta</h3>
-    <p>Desarrollamos una aplicación ligera, sin instalaciones ni licencias, adaptada a tu flujo de trabajo exacto. Tu equipo la entiende en 10 minutos.</p>
+  <div class="hero-video-overlay"></div>
+  <div class="hero-left">
+    <span class="hero-eyebrow">Consultoría de IA para empresas</span>
+    <h1 class="hero-h1">Inteligencia Artificial para Empresas en Madrid: Automatización y Apps a Medida</h1>
+    <p class="hero-sub">Cada proceso manual que sigue igual que en 2015 es una factura que pagas cada mes. No en tecnología — en tiempo de tu equipo, en errores evitables y en decisiones que llegan tarde.</p>
+    <div class="hero-proof">
+      <div class="hp-item">
+        <div class="hp-num">4,2<span>h</span></div>
+        <div class="hp-label">Perdidas/semana por empleado en tareas evitables</div>
+      </div>
+      <div class="hp-item">
+        <div class="hp-num">38<span>%</span></div>
+        <div class="hp-label">De los procesos en PYMEs son automatizables hoy</div>
+      </div>
+      <div class="hp-item">
+        <div class="hp-num">40<span>min</span></div>
+        <div class="hp-label">Para mostrarte exactamente dónde está la fuga</div>
+      </div>
+    </div>
+    <a class="btn-lime" href="#sesion">Descubre tus fugas en 40 min →</a>
   </div>
-  <div class="how-step reveal d2">
-    <div class="how-num">03 — Implantación</div>
-    <h3>La pones en marcha con soporte</h3>
-    <p>Te acompañamos en el arranque, formamos a tu equipo y ajustamos lo que sea necesario. La herramienta es tuya. Crece contigo.</p>
+
+  <div class="hero-right">
+    <!-- MEDALLÓN AHORRO -->
+    <div style="background:linear-gradient(135deg,rgba(135,178,41,.15),rgba(135,178,41,.05));border:2px solid var(--lime);padding:2.5rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-20px;right:-20px;width:120px;height:120px;border-radius:50%;background:rgba(135,178,41,.08);pointer-events:none;"></div>
+      <div style="font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--lime);font-weight:700;margin-bottom:1rem;">✦ Tu ahorro potencial mensual</div>
+      <div style="font-size:5rem;font-weight:900;letter-spacing:-.04em;line-height:.9;color:var(--lime);margin-bottom:.3rem;">AHORRO</div>
+      <div style="font-size:2.4rem;font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1;margin-bottom:.8rem;">6.200€</div>
+      <div style="font-size:.82rem;color:rgba(255,255,255,.8);font-weight:300;line-height:1.6;">recuperables cada mes en una empresa de 10 personas.<br><strong style="color:#fff;">¿Cuánto lleva tu empresa perdiendo?</strong></div>
+    </div>
+    <div class="leak-list">
+      <div class="leak-item">
+        <span class="li-left">Emails duplicados y seguimientos manuales</span>
+        <span class="li-cost" style="color:var(--lime);">+1.400€/mes</span>
+      </div>
+      <div class="leak-item">
+        <span class="li-left">Informes hechos a mano cada semana</span>
+        <span class="li-cost" style="color:var(--lime);">+980€/mes</span>
+      </div>
+      <div class="leak-item">
+        <span class="li-left">Presupuestos y propuestas sin plantilla</span>
+        <span class="li-cost" style="color:var(--lime);">+1.100€/mes</span>
+      </div>
+      <div class="leak-item">
+        <span class="li-left">Onboarding de clientes sin protocolo</span>
+        <span class="li-cost" style="color:var(--lime);">+860€/mes</span>
+      </div>
+      <div class="leak-item">
+        <span class="li-left">Atención al cliente sin base de conocimiento</span>
+        <span class="li-cost" style="color:var(--lime);">+1.260€/mes</span>
+      </div>
+      <div class="leak-item">
+        <span class="li-left">Gestión documental sin automatizar</span>
+        <span class="li-cost" style="color:var(--lime);">+600€/mes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE STRIP -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;overflow:hidden;max-height:280px;">
+  <img src="/img/aplicaciones-a-medida-para-empresas.jpg" alt="Aplicaciones a medida para empresas — Desarrollo IA" style="width:100%;height:280px;object-fit:cover;display:block;" loading="lazy">
+  <img src="/img/desarrollo-apps-empresas.jpg" alt="Desarrollo de apps empresariales — LMNHL" style="width:100%;height:280px;object-fit:cover;display:block;" loading="lazy">
+  <img src="/img/aplicaciones-a-medida-para-pymes.jpg" alt="Aplicaciones a medida para PYMEs — IA y automatización" style="width:100%;height:280px;object-fit:cover;display:block;" loading="lazy">
+</div>
+
+<!-- MANIFESTO -->
+<div class="manifesto reveal">
+  <div>
+    <p class="mf-quote">No vendemos herramientas de IA.<br>Somos el <em>médico, no la farmacia.</em></p>
+  </div>
+  <div>
+    <p class="mf-body">La mayoría de proveedores te llegan con una herramienta y buscan dónde encajarla en tu empresa. Nosotros hacemos lo contrario: primero entendemos tu negocio, tus protocolos, cómo trabaja tu equipo y dónde se rompe la cadena. <strong>Después</strong> —y solo después— diseñamos qué automatizar, en qué orden y qué ROI puedes esperar de cada mejora antes de gastar un euro.</p>
   </div>
 </div>
 
+<!-- AUTHORITY BANNER -->
+<section class="authority-banner">
+  <div class="authority-inner">
+    <div class="authority-stat reveal">
+      <div class="authority-num">25<span style="font-size:60%;color:rgba(135,178,41,.7);">+</span></div>
+      <div class="authority-label">Años trabajando<br>con empresas</div>
+    </div>
+    <div class="authority-stat reveal d1">
+      <div class="authority-num">+100</div>
+      <div class="authority-label">Empresas<br>acompañadas</div>
+    </div>
+    <div class="authority-stat reveal d2">
+      <div class="authority-num">3<span style="font-size:60%;color:rgba(135,178,41,.7);">x</span></div>
+      <div class="authority-label">Media de leads<br>en 90 días</div>
+    </div>
+    <div class="authority-stat reveal d3">
+      <div class="authority-num">40<span style="font-size:45%;color:rgba(135,178,41,.7);">min</span></div>
+      <div class="authority-label">Para diagnosticar<br>tu situación real</div>
+    </div>
+  </div>
+</section>
+<!-- THE PROBLEM -->
+<section class="problem">
+  <div class="problem-hd reveal">
+    <span class="sl">Las fugas invisibles</span>
+    <h2>Los problemas que <em>nadie detecta</em><br>porque siempre han funcionado igual</h2>
+  </div>
+
+  <div class="leak-cases">
+    <div class="lc-card reveal" data-cost="€">
+      <div class="lc-dept">📧 Comercial & Ventas</div>
+      <div class="lc-scenario">Un presupuesto mal enviado que se convierte en un conflicto de 3 semanas</div>
+      <p class="lc-desc">Sin plantilla estándar, sin protocolo de seguimiento, sin registro en CRM. Cada comercial hace las cosas a su manera. El cliente recibe versiones distintas y la empresa pierde credibilidad y tiempo resolviendo malentendidos que nunca deberían haber ocurrido.</p>
+      <div class="lc-cost-row">
+        <div class="lc-cost-num">−8h</div>
+        <div class="lc-cost-label">perdidas por incidencia · más el coste reputacional con el cliente</div>
+      </div>
+    </div>
+
+    <div class="lc-card reveal d1" data-cost="€">
+      <div class="lc-dept">📩 Administración & Gestión</div>
+      <div class="lc-scenario">Correos no leídos que generan errores en facturación o entregas</div>
+      <p class="lc-desc">La bandeja de entrada es el caos de la empresa. Sin priorización automática, sin triaje inteligente, los emails importantes se pierden entre newsletters y copias. El resultado: facturas duplicadas, pedidos no confirmados, clientes que esperan respuesta desde hace días.</p>
+      <div class="lc-cost-row">
+        <div class="lc-cost-num">−3h</div>
+        <div class="lc-cost-label">de revisión manual por persona a la semana solo en gestión de email</div>
+      </div>
+    </div>
+
+    <div class="lc-card reveal d2" data-cost="€">
+      <div class="lc-dept">📊 Dirección & Reporting</div>
+      <div class="lc-scenario">El informe mensual que tarda 2 días en prepararse y llega cuando ya es tarde</div>
+      <p class="lc-desc">Alguien del equipo dedica dos días al mes a copiar datos de distintas fuentes en un Excel para hacer un informe que el director podría ver en tiempo real. Cuando llega, las decisiones que debían tomarse en semana 1 ya están en semana 3.</p>
+      <div class="lc-cost-row">
+        <div class="lc-cost-num">−16h</div>
+        <div class="lc-cost-label">de trabajo manual mensual · más el coste de decisiones tardías</div>
+      </div>
+    </div>
+
+    <div class="lc-card reveal" data-cost="€">
+      <div class="lc-dept">🤝 Atención al Cliente</div>
+      <div class="lc-scenario">Las mismas 20 preguntas respondidas manualmente 40 veces al mes</div>
+      <p class="lc-desc">Tu equipo responde cada semana las mismas preguntas sobre horarios, precios, plazos o proceso de devolución. Sin base de conocimiento, sin respuestas automáticas, sin deflexión inteligente. Tiempo de tu equipo más cualificado gastado en lo más básico.</p>
+      <div class="lc-cost-row">
+        <div class="lc-cost-num">−6h</div>
+        <div class="lc-cost-label">semanales en responder preguntas frecuentes que deberían responderse solas</div>
+      </div>
+    </div>
+
+    <div class="lc-card reveal d1" data-cost="€">
+      <div class="lc-dept">🆕 Incorporación de Clientes</div>
+      <div class="lc-scenario">Cada cliente nuevo empieza desde cero porque no hay protocolo de onboarding</div>
+      <p class="lc-desc">Sin flujo automatizado, sin secuencia de bienvenida, sin documentos preconfigurados. La persona responsable dedica 4-5 horas a cada cliente nuevo haciendo cosas que podrían estar ya hechas. Además el cliente percibe desorganización desde el primer día.</p>
+      <div class="lc-cost-row">
+        <div class="lc-cost-num">−4h</div>
+        <div class="lc-cost-label">por cliente nuevo · en una empresa con 8 altas al mes son 32h perdidas</div>
+      </div>
+    </div>
+
+    <div class="lc-card reveal d2" data-cost="€">
+      <div class="lc-dept">📋 Recursos Humanos</div>
+      <div class="lc-scenario">La incorporación de un empleado nuevo ocupa una semana de trabajo administrativo</div>
+      <p class="lc-desc">Contratos, accesos a sistemas, presentaciones de empresa, asignación de herramientas, documentación de procedimientos… todo hecho a mano, cada vez. Sin checklist automatizado, sin flujo de tareas, sin documentación centralizada. Cada nueva contratación reinventa la rueda.</p>
+      <div class="lc-cost-row">
+        <div class="lc-cost-num">−22h</div>
+        <div class="lc-cost-label">de gestión administrativa por cada nuevo empleado incorporado</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- IA TOOLS DEMOS ──────────────────────────────────── -->
 <!-- TOOLS SHOWCASE -->
 <section class="tools-section">
   <div class="section-hd reveal">
@@ -561,6 +1451,8 @@ footer{background:var(--slate);padding:2.5rem 5rem;display:flex;align-items:cent
   </div>
 </section>
 
+
+
 <!-- INDUSTRIES -->
 <section class="industries">
   <div class="section-hd reveal">
@@ -612,29 +1504,542 @@ footer{background:var(--slate);padding:2.5rem 5rem;display:flex;align-items:cent
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="cta-inner reveal">
-    <div class="cta-eyebrow">Empieza hoy</div>
-    <h2>¿Qué proceso te está<br>costando tiempo <em>cada semana</em>?</h2>
-    <p>En una sesión gratuita de 45 minutos analizamos tu flujo de trabajo y te decimos si tiene sentido desarrollar una herramienta a medida para tu negocio.</p>
-    <a class="cta-link" href="/sesion-gratuita">Reservar sesión gratuita →</a>
+<!-- DEPARTMENT SOLUTIONS -->
+<section class="depts">
+  <div class="depts-hd reveal">
+    <span class="sl">Soluciones por área</span>
+    <h2>Qué se puede mejorar en tu empresa<br>y cuánto puedes recuperar</h2>
+    <p>Selecciona el área de tu empresa que más te preocupa. Te mostramos el estado actual típico, cómo lo transformamos y qué ahorro puedes esperar.</p>
   </div>
+
+  <div class="dept-nav reveal">
+    <button class="dept-tab active" data-panel="ventas">Ventas & Comercial</button>
+    <button class="dept-tab" data-panel="operaciones">Operaciones</button>
+    <button class="dept-tab" data-panel="marketing">Marketing</button>
+    <button class="dept-tab" data-panel="atencion">Atención al Cliente</button>
+    <button class="dept-tab" data-panel="direccion">Dirección</button>
+  </div>
+
+  <!-- VENTAS -->
+  <div class="dept-panel active reveal" data-panel="ventas">
+    <div class="dp-left">
+      <div class="dp-context">
+        <div class="dp-context-label">El problema real</div>
+        <p class="dp-context-text">Tu equipo comercial dedica más tiempo a <strong>administración de ventas</strong> que a vender. Propuestas sin estructura, seguimientos olvidados, leads que se enfrían porque nadie los llamó a tiempo. El CRM existe pero nadie lo usa bien.</p>
+      </div>
+      <div class="dp-before-after">
+        <div class="dp-before">
+          <div class="dp-ba-label">Antes</div>
+          <div class="dp-ba-item">Propuestas en Word, cada una distinta</div>
+          <div class="dp-ba-item">Seguimiento en papel o Excel</div>
+          <div class="dp-ba-item">Leads fríos por falta de recordatorio</div>
+          <div class="dp-ba-item">Sin métricas de conversión claras</div>
+          <div class="dp-ba-item">Onboarding de cliente manual</div>
+        </div>
+        <div class="dp-after">
+          <div class="dp-ba-label">Después</div>
+          <div class="dp-ba-item">Propuestas generadas en 3 minutos</div>
+          <div class="dp-ba-item">CRM con alertas automáticas de seguimiento</div>
+          <div class="dp-ba-item">Secuencia de nurturing para leads fríos</div>
+          <div class="dp-ba-item">Dashboard de ventas en tiempo real</div>
+          <div class="dp-ba-item">Flujo de bienvenida automatizado</div>
+        </div>
+      </div>
+      <div class="dp-saving">
+        <div class="ds-num">12h</div>
+        <div class="ds-text">recuperadas por comercial a la semana. <strong>En un equipo de 3 personas son 144h al mes</strong> que vuelven a la actividad comercial real.</div>
+      </div>
+    </div>
+    <div class="dp-right">
+      <img src="/img/apps-a-medida-para-empresas.jpg" alt="Desarrollo de apps a medida para empresas" style="width:100%;height:200px;object-fit:cover;object-position:center;display:block;margin-bottom:1.5rem;border-top:3px solid var(--lime);" loading="lazy">
+      <div class="dp-processes">
+        <div class="dp-proc">
+          <div class="dp-proc-header">
+            <div class="dp-proc-name">Generador de propuestas comerciales con IA</div>
+            <div class="dp-proc-time">−3h → 3min</div>
+          </div>
+          <p class="dp-proc-desc">A partir de los datos del cliente y el servicio seleccionado, la IA genera una propuesta personalizada, profesional y alineada con tu tarifa en menos de 3 minutos. Sin copiar, sin olvidar secciones, sin formato roto.</p>
+          <div class="dp-proc-tools"><span class="dp-proc-tool">Claude IA</span><span class="dp-proc-tool">CRM</span><span class="dp-proc-tool">Notion / Google Docs</span></div>
+        </div>
+        <div class="dp-proc">
+          <div class="dp-proc-header">
+            <div class="dp-proc-name">Automatización de seguimiento de leads</div>
+            <div class="dp-proc-time">−5h → automático</div>
+          </div>
+          <p class="dp-proc-desc">Flujo automático que detecta leads sin actividad en 3, 7 y 14 días y lanza el recordatorio o el email de seguimiento adecuado para cada fase del embudo. Sin que nadie tenga que acordarse de nada.</p>
+          <div class="dp-proc-tools"><span class="dp-proc-tool">Make / Zapier</span><span class="dp-proc-tool">CRM</span><span class="dp-proc-tool">Email</span></div>
+        </div>
+        <div class="dp-proc">
+          <div class="dp-proc-header">
+            <div class="dp-proc-name">Onboarding de cliente nuevo automatizado</div>
+            <div class="dp-proc-time">−4h → 15min</div>
+          </div>
+          <p class="dp-proc-desc">Al cerrar una venta, se activa automáticamente: email de bienvenida, carpeta en Drive, acceso a herramientas, asignación de tareas al equipo y recordatorio de llamada inicial. El cliente percibe organización desde el primer segundo.</p>
+          <div class="dp-proc-tools"><span class="dp-proc-tool">Make</span><span class="dp-proc-tool">Google Drive</span><span class="dp-proc-tool">Notion</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPERACIONES -->
+  <div class="dept-panel reveal" data-panel="operaciones">
+    <div class="dp-left">
+      <div class="dp-context">
+        <div class="dp-context-label">El problema real</div>
+        <p class="dp-context-text">Las operaciones funcionan, pero <strong>consumen más horas de las que deberían</strong>. Tareas repetitivas que se hacen cada semana de la misma manera, documentación que se busca en tres sitios distintos y reuniones que podrían ser un resumen automático.</p>
+      </div>
+      <div class="dp-before-after">
+        <div class="dp-before">
+          <div class="dp-ba-label">Antes</div>
+          <div class="dp-ba-item">Informes semanales manuales en Excel</div>
+          <div class="dp-ba-item">Facturas revisadas a ojo</div>
+          <div class="dp-ba-item">Documentación dispersa</div>
+          <div class="dp-ba-item">Reuniones sin acta ni tareas asignadas</div>
+          <div class="dp-ba-item">Aprobaciones por WhatsApp</div>
+        </div>
+        <div class="dp-after">
+          <div class="dp-ba-label">Después</div>
+          <div class="dp-ba-item">Dashboards actualizados en tiempo real</div>
+          <div class="dp-ba-item">Revisión y categorización automática</div>
+          <div class="dp-ba-item">Base de conocimiento centralizada</div>
+          <div class="dp-ba-item">Actas y tareas generadas por IA</div>
+          <div class="dp-ba-item">Flujos de aprobación estructurados</div>
+        </div>
+      </div>
+      <div class="dp-saving">
+        <div class="ds-num">18h</div>
+        <div class="ds-text">ahorradas al mes en reporting y gestión documental. <strong>Equivale a más de 2 jornadas completas</strong> que vuelven a trabajo de valor real.</div>
+      </div>
+    </div>
+    <div class="dp-right">
+      <img src="/img/desarrollo-aplicaciones-a-medida-para-empresas.jpg" alt="Desarrollo de aplicaciones a medida para empresas" style="width:100%;height:200px;object-fit:cover;object-position:center;display:block;margin-bottom:1.5rem;border-top:3px solid var(--lime);" loading="lazy">
+      <div class="dp-processes">
+        <div class="dp-proc">
+          <div class="dp-proc-header">
+            <div class="dp-proc-name">Reporting automático con datos en tiempo real</div>
+            <div class="dp-proc-time">−16h/mes → 0h</div>
+          </div>
+          <p class="dp-proc-desc">Conectamos tus fuentes de datos (facturación, CRM, web, RRSS) a un dashboard que se actualiza solo. El director ve la situación del negocio en cualquier momento sin que nadie tenga que preparar nada.</p>
+          <div class="dp-proc-tools"><span class="dp-proc-tool">Looker Studio</span><span class="dp-proc-tool">Google Sheets</span><span class="dp-proc-tool">Make</span></div>
+        </div>
+        <div class="dp-proc">
+          <div class="dp-proc-header">
+            <div class="dp-proc-name">Transcripción y resumen de reuniones con IA</div>
+            <div class="dp-proc-time">−2h/reunión → 5min</div>
+          </div>
+          <p class="dp-proc-desc">Cada reunión genera automáticamente un resumen ejecutivo, los puntos de acción con responsable asignado y la fecha de seguimiento. En el CRM o en Notion antes de que el equipo cierre el ordenador.</p>
+          <div class="dp-proc-tools"><span class="dp-proc-tool">Otter.ai</span><span class="dp-proc-tool">Claude IA</span><span class="dp-proc-tool">Notion</span></div>
+        </div>
+        <div class="dp-proc">
+          <div class="dp-proc-header">
+            <div class="dp-proc-name">Base de conocimiento empresarial con IA</div>
+            <div class="dp-proc-time">−3h/semana buscando</div>
+          </div>
+          <p class="dp-proc-desc">Toda la documentación, protocolos y procedimientos de la empresa centralizados y consultables con lenguaje natural. El equipo pregunta y obtiene la respuesta exacta en segundos, sin llamar a nadie ni buscar en carpetas.</p>
+          <div class="dp-proc-tools"><span class="dp-proc-tool">Notion AI</span><span class="dp-proc-tool">ChatGPT</span><span class="dp-proc-tool">Confluence</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARKETING -->
+  <div class="dept-panel reveal" data-panel="marketing">
+    <div class="dp-left">
+      <div class="dp-context">
+        <div class="dp-context-label">El problema real</div>
+        <p class="dp-context-text">Marketing produce contenido, pero <strong>a un ritmo que no escala</strong>. Cada publicación se trabaja desde cero, no hay sistema de reutilización, los textos de ventas cambian sin criterio y no hay forma de medir qué funciona realmente.</p>
+      </div>
+      <div class="dp-before-after">
+        <div class="dp-before">
+          <div class="dp-ba-label">Antes</div>
+          <div class="dp-ba-item">Posts escritos uno a uno desde cero</div>
+          <div class="dp-ba-item">Sin calendario editorial sistematizado</div>
+          <div class="dp-ba-item">Textos web desactualizados</div>
+          <div class="dp-ba-item">Sin análisis de qué contenido convierte</div>
+          <div class="dp-ba-item">Emails redactados manualmente</div>
+        </div>
+        <div class="dp-after">
+          <div class="dp-ba-label">Después</div>
+          <div class="dp-ba-item">Sistema de contenido con IA a escala</div>
+          <div class="dp-ba-item">Calendario generado para 30 días en 1 hora</div>
+          <div class="dp-ba-item">Copy actualizado y A/B testado</div>
+          <div class="dp-ba-item">Análisis automático de rendimiento</div>
+          <div class="dp-ba-item">Secuencias de email en piloto automático</div>
+        </div>
+      </div>
+      <div class="dp-saving">
+        <div class="ds-num">×3</div>
+        <div class="ds-text"><strong>más volumen de contenido</strong> con el mismo equipo. Lo que antes llevaba una semana, ahora son 2 horas.</div>
+      </div>
+    </div>
+    <div class="dp-right">
+      <img src="/img/consultoria-ia-negocios.jpg" alt="Consultoría de IA para negocios — Los Martes No Hay Luna" style="width:100%;height:200px;object-fit:cover;object-position:center;display:block;margin-bottom:1.5rem;border-top:3px solid var(--lime);" loading="lazy">
+      <div class="dp-processes">
+        <div class="dp-proc">
+          <div class="dp-proc-header">
+            <div class="dp-proc-name">Motor de contenido con IA y voz de marca</div>
+            <div class="dp-proc-time">1h → mes completo</div>
+          </div>
+          <p class="dp-proc-desc">Entrenamos un modelo con la voz de tu marca, tus servicios y tu audiencia. Genera propuestas de contenido para 30 días en una sesión de trabajo. El equipo revisa y aprueba, no redacta desde cero.</p>
+          <div class="dp-proc-tools"><span class="dp-proc-tool">Claude IA</span><span class="dp-proc-tool">ChatGPT</span><span class="dp-proc-tool">Notion</span></div>
+        </div>
+        <div class="dp-proc">
+          <div class="dp-proc-header">
+            <div class="dp-proc-name">Secuencias de email marketing automatizadas</div>
+            <div class="dp-proc-time">−6h/semana → 0h</div>
+          </div>
+          <p class="dp-proc-desc">Flujos de email para bienvenida, nurturing, recuperación de leads fríos y upselling, escritos con IA y personalizados por segmento. Una vez activados, trabajan solos.</p>
+          <div class="dp-proc-tools"><span class="dp-proc-tool">Mailchimp</span><span class="dp-proc-tool">ActiveCampaign</span><span class="dp-proc-tool">Make</span></div>
+        </div>
+        <div class="dp-proc">
+          <div class="dp-proc-header">
+            <div class="dp-proc-name">Análisis de rendimiento de contenido con IA</div>
+            <div class="dp-proc-time">Datos en tiempo real</div>
+          </div>
+          <p class="dp-proc-desc">Sistema automatizado que analiza qué publicaciones, asuntos de email o páginas web generan más conversiones. El equipo toma decisiones con datos, no con intuición.</p>
+          <div class="dp-proc-tools"><span class="dp-proc-tool">GA4</span><span class="dp-proc-tool">Looker Studio</span><span class="dp-proc-tool">Claude IA</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ATENCIÓN AL CLIENTE -->
+  <div class="dept-panel reveal" data-panel="atencion">
+    <div class="dp-left">
+      <div class="dp-context">
+        <div class="dp-context-label">El problema real</div>
+        <p class="dp-context-text">El equipo de atención dedica <strong>la mayor parte de su tiempo a responder siempre lo mismo</strong>. Sin base de conocimiento, sin respuestas automáticas para preguntas frecuentes, sin forma de escalar el nivel de servicio sin contratar más personas.</p>
+      </div>
+      <div class="dp-before-after">
+        <div class="dp-before">
+          <div class="dp-ba-label">Antes</div>
+          <div class="dp-ba-item">Mismas preguntas respondidas 40 veces</div>
+          <div class="dp-ba-item">Sin clasificación de urgencias</div>
+          <div class="dp-ba-item">Respuestas en horas o días</div>
+          <div class="dp-ba-item">Sin historial unificado del cliente</div>
+          <div class="dp-ba-item">Escaladas manuales al equipo técnico</div>
+        </div>
+        <div class="dp-after">
+          <div class="dp-ba-label">Después</div>
+          <div class="dp-ba-item">FAQ respondida automáticamente en segundos</div>
+          <div class="dp-ba-item">Triaje inteligente por urgencia y tipo</div>
+          <div class="dp-ba-item">Primera respuesta en menos de 2 minutos</div>
+          <div class="dp-ba-item">Historial completo y contexto en tiempo real</div>
+          <div class="dp-ba-item">Escalada automática con contexto incluido</div>
+        </div>
+      </div>
+      <div class="dp-saving">
+        <div class="ds-num">70%</div>
+        <div class="ds-text">de consultas resueltas sin intervención humana. <strong>El equipo se ocupa de lo que realmente necesita atención personalizada.</strong></div>
+      </div>
+    </div>
+    <div class="dp-right">
+      <img src="/img/aplicaciones-crm-a-medida.jpg" alt="CRM a medida con IA para atención al cliente" style="width:100%;height:200px;object-fit:cover;object-position:center;display:block;margin-bottom:1.5rem;border-top:3px solid var(--lime);" loading="lazy">
+      <div class="dp-processes">
+        <div class="dp-proc">
+          <div class="dp-proc-header">
+            <div class="dp-proc-name">Asistente IA de atención al cliente con base de conocimiento</div>
+            <div class="dp-proc-time">24h/día · 0 esperas</div>
+          </div>
+          <p class="dp-proc-desc">Entrenamos un asistente con toda la información de tu empresa: productos, precios, FAQs, políticas. Responde al instante, con tu tono de voz, en web, email o WhatsApp. Los casos complejos llegan al equipo ya documentados.</p>
+          <div class="dp-proc-tools"><span class="dp-proc-tool">Claude IA</span><span class="dp-proc-tool">Intercom</span><span class="dp-proc-tool">WhatsApp Business API</span></div>
+        </div>
+        <div class="dp-proc">
+          <div class="dp-proc-header">
+            <div class="dp-proc-name">Clasificación y priorización automática de tickets</div>
+            <div class="dp-proc-time">−2h/día triaje manual</div>
+          </div>
+          <p class="dp-proc-desc">Cada consulta entrante se clasifica automáticamente por tipo, urgencia y cliente. El equipo ve primero lo que más importa, con el contexto necesario para responder sin buscar nada.</p>
+          <div class="dp-proc-tools"><span class="dp-proc-tool">Zendesk</span><span class="dp-proc-tool">Make</span><span class="dp-proc-tool">OpenAI</span></div>
+        </div>
+        <div class="dp-proc">
+          <div class="dp-proc-header">
+            <div class="dp-proc-name">Análisis de satisfacción y detección de riesgos</div>
+            <div class="dp-proc-time">Alertas en tiempo real</div>
+          </div>
+          <p class="dp-proc-desc">Sistema que analiza el tono y contenido de las conversaciones con clientes para detectar insatisfacción temprana, riesgos de churn o oportunidades de upselling antes de que el humano lo vea.</p>
+          <div class="dp-proc-tools"><span class="dp-proc-tool">Claude IA</span><span class="dp-proc-tool">CRM</span><span class="dp-proc-tool">Slack</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIRECCIÓN -->
+  <div class="dept-panel reveal" data-panel="direccion">
+    <div class="dp-left">
+      <div class="dp-context">
+        <div class="dp-context-label">El problema real</div>
+        <p class="dp-context-text">El director toma decisiones <strong>con datos de la semana pasada</strong>. Los informes llegan tarde, en formatos distintos, sin contexto. Las reuniones son más largas de lo necesario y el tiempo de dirección se gasta en recopilar información en lugar de analizarla.</p>
+      </div>
+      <div class="dp-before-after">
+        <div class="dp-before">
+          <div class="dp-ba-label">Antes</div>
+          <div class="dp-ba-item">KPIs en distintos sistemas sin unificar</div>
+          <div class="dp-ba-item">Informes que llegan con semana de retraso</div>
+          <div class="dp-ba-item">Decisiones sin datos en tiempo real</div>
+          <div class="dp-ba-item">Reuniones largas y poco productivas</div>
+          <div class="dp-ba-item">Sin visión del pipeline comercial clara</div>
+        </div>
+        <div class="dp-after">
+          <div class="dp-ba-label">Después</div>
+          <div class="dp-ba-item">Dashboard ejecutivo unificado en tiempo real</div>
+          <div class="dp-ba-item">Alertas automáticas de desviaciones</div>
+          <div class="dp-ba-item">Análisis y recomendaciones con IA</div>
+          <div class="dp-ba-item">Reuniones de 30 min con agenda y datos</div>
+          <div class="dp-ba-item">Previsión de ventas automática</div>
+        </div>
+      </div>
+      <div class="dp-saving">
+        <div class="ds-num">6h</div>
+        <div class="ds-text">semanales de dirección recuperadas de tareas administrativas. <strong>Tiempo que vuelve a la estrategia, a los clientes y a las decisiones que importan.</strong></div>
+      </div>
+    </div>
+    <div class="dp-right">
+      <img src="/img/consultoria-ia-pymes.jpg" alt="Consultoría de inteligencia artificial para PYMEs españolas" style="width:100%;height:200px;object-fit:cover;object-position:center;display:block;margin-bottom:1.5rem;border-top:3px solid var(--lime);" loading="lazy">
+      <div class="dp-processes">
+        <div class="dp-proc">
+          <div class="dp-proc-header">
+            <div class="dp-proc-name">Centro de mando ejecutivo unificado</div>
+            <div class="dp-proc-time">Tiempo real · siempre actualizado</div>
+          </div>
+          <p class="dp-proc-desc">Un solo dashboard donde el director ve ventas, operaciones, marketing y satisfacción de clientes actualizados al minuto. Sin intermediarios, sin esperar que alguien prepare el Excel de turno.</p>
+          <div class="dp-proc-tools"><span class="dp-proc-tool">Looker Studio</span><span class="dp-proc-tool">Google Sheets</span><span class="dp-proc-tool">CRM</span></div>
+        </div>
+        <div class="dp-proc">
+          <div class="dp-proc-header">
+            <div class="dp-proc-name">Asistente ejecutivo de IA para análisis y decisiones</div>
+            <div class="dp-proc-time">Análisis en 2 minutos</div>
+          </div>
+          <p class="dp-proc-desc">El director hace preguntas en lenguaje natural sobre su negocio y obtiene análisis, comparativas y recomendaciones basadas en los datos reales de la empresa. Sin necesitar a nadie del equipo para buscar la información.</p>
+          <div class="dp-proc-tools"><span class="dp-proc-tool">Claude IA</span><span class="dp-proc-tool">ChatGPT Enterprise</span><span class="dp-proc-tool">Sheets</span></div>
+        </div>
+        <div class="dp-proc">
+          <div class="dp-proc-header">
+            <div class="dp-proc-name">Sistema de alerta temprana de desviaciones</div>
+            <div class="dp-proc-time">Alertas automáticas</div>
+          </div>
+          <p class="dp-proc-desc">Cuando un KPI se desvía del objetivo, el director recibe una alerta inmediata con el contexto y las posibles causas. No se entera de los problemas en la reunión de fin de mes, sino cuando aún están a tiempo de corregirlos.</p>
+          <div class="dp-proc-tools"><span class="dp-proc-tool">Make</span><span class="dp-proc-tool">Slack</span><span class="dp-proc-tool">Email</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section><!-- /depts -->
+
+<!-- METHODOLOGY -->
+<section class="method">
+  <div class="method-hd reveal">
+    <span class="sl">Nuestra metodología</span>
+    <h2>Del análisis al resultado<br><em>en 4 semanas</em></h2>
+  </div>
+  <div class="method-steps">
+    <div class="ms reveal">
+      <div class="ms-num">01</div>
+      <div class="ms-icon"><svg viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
+      <div class="ms-title">Diagnóstico de procesos</div>
+      <div class="ms-sub">Semana 1</div>
+      <p class="ms-text">Entendemos tu empresa, tu equipo y cómo fluye el trabajo. Mapeamos todos los procesos actuales e identificamos las ineficiencias con mayor impacto económico.</p>
+      <span class="ms-connector">→</span>
+    </div>
+    <div class="ms reveal d1">
+      <div class="ms-num">02</div>
+      <div class="ms-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+      <div class="ms-title">Plan de acción con ROI</div>
+      <div class="ms-sub">Semana 2</div>
+      <p class="ms-text">Presentamos las 5-8 mejoras con mayor retorno, priorizadas por impacto y esfuerzo de implementación. Cada mejora lleva su ROI estimado en horas y euros antes de empezar.</p>
+      <span class="ms-connector">→</span>
+    </div>
+    <div class="ms reveal d2">
+      <div class="ms-num">03</div>
+      <div class="ms-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <div class="ms-title">Implementación guiada</div>
+      <div class="ms-sub">Semanas 3-4</div>
+      <p class="ms-text">Implementamos junto a tu equipo las mejoras aprobadas. Formamos a las personas que van a usarlas y nos aseguramos de que la adopción sea real, no solo técnica.</p>
+      <span class="ms-connector">→</span>
+    </div>
+    <div class="ms reveal d3">
+      <div class="ms-num">04</div>
+      <div class="ms-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+      <div class="ms-title">Medición y evolución</div>
+      <div class="ms-sub">Mes 2 en adelante</div>
+      <p class="ms-text">Medimos el impacto real de cada mejora contra el ROI estimado. Ajustamos, iteramos y seguimos identificando nuevas oportunidades. El trabajo de optimización nunca termina.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE BANNER -->
+<div class="quote-banner lime reveal">
+  <blockquote>"No somos la farmacia.<br>Somos el <em>médico</em> que primero entiende el problema."</blockquote>
+  <cite>— El enfoque que diferencia a LMNHL del resto</cite>
+</div>
+
+<!-- VS COMPARISON -->
+<section class="vs-section">
+  <div class="vs-hd reveal">
+    <span class="sl">Nuestra diferencia</span>
+    <h2>Por qué LMNHL y no otro proveedor de IA</h2>
+  </div>
+  <div class="vs-grid reveal">
+    <div>
+      <div class="vs-col-label bad">Lo que hace el resto</div>
+      <ul class="vs-list">
+        <li class="vs-item"><span class="vs-mark-bad">✕</span>Te venden una herramienta y te enseñan a usarla</li>
+        <li class="vs-item"><span class="vs-mark-bad">✕</span>Llegan con la solución antes de entender el problema</li>
+        <li class="vs-item"><span class="vs-mark-bad">✕</span>Hablan de tecnología, no de tu negocio</li>
+        <li class="vs-item"><span class="vs-mark-bad">✕</span>Proyectos caros que luego nadie usa</li>
+        <li class="vs-item"><span class="vs-mark-bad">✕</span>Sin seguimiento post-implantación</li>
+        <li class="vs-item"><span class="vs-mark-bad">✕</span>No tienen experiencia en imagen ni marketing</li>
+        <li class="vs-item"><span class="vs-mark-bad">✕</span>ROI imposible de medir antes de contratar</li>
+      </ul>
+    </div>
+    <div class="vs-col-good">
+      <div class="vs-col-label good">Cómo trabajamos en LMNHL</div>
+      <ul class="vs-list">
+        <li class="vs-item"><span class="vs-mark-good">✓</span>Diagnosticamos primero, recomendamos después</li>
+        <li class="vs-item"><span class="vs-mark-good">✓</span>Entendemos tu empresa antes de proponer nada</li>
+        <li class="vs-item"><span class="vs-mark-good">✓</span>Hablamos en horas recuperadas y euros ahorrados</li>
+        <li class="vs-item"><span class="vs-mark-good">✓</span>Implantamos junto a tu equipo para asegurar adopción real</li>
+        <li class="vs-item"><span class="vs-mark-good">✓</span>Acompañamiento continuado mes a mes</li>
+        <li class="vs-item"><span class="vs-mark-good">✓</span>25 años en imagen corporativa y marketing + IA incorporada como herramienta estratégica</li>
+        <li class="vs-item"><span class="vs-mark-good">✓</span>ROI estimado por mejora antes de que inviertas un euro</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- REAL RESULTS -->
+<section class="results">
+  <div class="results-hd reveal">
+    <span class="sl">Casos reales</span>
+    <h2>Lo que consiguen nuestros clientes<br><em>en los primeros 90 días</em></h2>
+  </div>
+  <div class="results-grid">
+    <div class="result-card reveal">
+      <div class="rc-sector">Empresa de reformas · 12 personas</div>
+      <div class="rc-result">32<span>h</span></div>
+      <div class="rc-what">ahorradas al mes en administración</div>
+      <p class="rc-story">"Cada presupuesto nos llevaba 3 horas. Ahora lo genera la IA en 8 minutos con toda la información correcta. El equipo hace 4 propuestas más a la semana."</p>
+    </div>
+    <div class="result-card reveal d1">
+      <div class="rc-sector">Clínica dental · 8 personas</div>
+      <div class="rc-result">70<span>%</span></div>
+      <div class="rc-what">de consultas resueltas sin intervención humana</div>
+      <p class="rc-story">"El asistente responde citas, preguntas sobre tratamientos y precios. La recepcionista se ocupa ahora solo de los pacientes que están delante."</p>
+    </div>
+    <div class="result-card reveal d2">
+      <div class="rc-sector">Distribuidora B2B · 22 personas</div>
+      <div class="rc-result">−18K<span>€</span></div>
+      <div class="rc-what">de costes evitados en el primer año</div>
+      <p class="rc-story">"Encontramos tres procesos que nadie había detectado como problema. Eran invisibles porque siempre habían funcionado así. Al automatizarlos recuperamos una persona y media de capacidad."</p>
+    </div>
+    <div class="result-card reveal">
+      <div class="rc-sector">Agencia de marketing · 6 personas</div>
+      <div class="rc-result">×3</div>
+      <div class="rc-what">más contenido con el mismo equipo</div>
+      <p class="rc-story">"El calendario de contenido para 30 días lo generamos ahora en una tarde. Antes eran 3 reuniones y una semana de trabajo disperso."</p>
+    </div>
+    <div class="result-card reveal d1">
+      <div class="rc-sector">Bufete de abogados · 15 personas</div>
+      <div class="rc-result">6<span>h</span></div>
+      <div class="rc-what">semanales de dirección recuperadas</div>
+      <p class="rc-story">"El director tenía el dashboard con todos los KPIs del despacho actualizados. Por primera vez supo el margen por cliente en tiempo real sin pedir el informe a nadie."</p>
+    </div>
+    <div class="result-card reveal d2">
+      <div class="rc-sector">E-commerce · 9 personas</div>
+      <div class="rc-result">−40<span>%</span></div>
+      <div class="rc-what">en tiempo de onboarding de nuevos clientes</div>
+      <p class="rc-story">"El proceso de alta de cliente nuevo pasó de 4 horas a 35 minutos. Y la experiencia del cliente mejoró: reciben todo lo que necesitan de forma automática el mismo día."</p>
+    </div>
+  </div>
+</section>
+
+<!-- SHEILA BLOCK -->
+<div class="sheila-block">
+  <div class="sb-photo" style="overflow:hidden;padding:0;">
+    <img src="/img/Sheila-Aguilar-agencia-de-ia.png" alt="Sheila Aguilar — Consultora de IA para empresas en Madrid" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;min-height:500px;">
+  </div>
+  <div class="sb-copy reveal">
+    <span class="sl">Por qué confiar en nosotros</span>
+    <h2>La única consultora que une IA, marca y marketing en una sola visión</h2>
+    <p>Los consultores de IA no saben de marca ni de marketing. Las agencias creativas no dominan la automatización. Las consultoras tecnológicas grandes no hablan tu idioma ni encajan en tu presupuesto.</p>
+    <p>Sheila Aguilar lleva 25 años trabajando con empresas: primero en diseño e identidad corporativa, después construyendo estrategias de marketing digital. La IA es la herramienta más reciente que ha incorporado a su metodología —no como solución por defecto, sino cuando el diagnóstico lo justifica. La metodología siempre ha sido la misma: <strong>diagnóstico antes que receta.</strong></p>
+    <div class="sb-creds">
+      <div class="sb-cred">25+ años en imagen corporativa, marketing digital e IA aplicada</div>
+      <div class="sb-cred">La única consultora del mercado que une las tres disciplinas</div>
+      <div class="sb-cred">Cada propuesta incluye ROI estimado antes de que inviertas nada</div>
+      <div class="sb-cred">Fundadora de Los Martes No Hay Luna · Leganés, Madrid</div>
+    </div>
+    <a class="btn-lime" href="#sesion">Hablar con Sheila →</a>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="sesion">
+  <span class="sl reveal">Primer paso</span>
+  <h2 class="reveal">En 40 minutos sabemos<br>exactamente cuánto <em>te está costando</em><br>no hacer nada.</h2>
+  <p class="reveal">Sesión de diagnóstico gratuita. Sin compromiso. Sin presentaciones de producto. Solo un análisis honesto de dónde están las fugas de tu empresa y qué se puede hacer con ellas.</p>
+  <div class="cta-actions reveal">
+    <a class="btn-lime" href="/sesion-gratuita/">Reservar sesión gratuita →</a>
+    <a class="btn-ghost" href="/servicios/">Ver todos los servicios</a>
+  </div>
+  <p class="cta-note reveal">Plazas limitadas · <span>Oferta de lanzamiento 2026</span> · Sin permanencia</p>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-logo">Los Martes No Hay Luna</span>
-  <div class="footer-links">
-    <a href="#">Aviso Legal</a>
-    <a href="#">Privacidad</a>
-    <a href="#">Cookies</a>
-    <a href="/cdn-cgi/l/email-protection#442c2b282504282b372925363021372a2b2c253d28312a256a272b29"><span class="__cf_email__" data-cfemail="4e2621222f0e22213d232f3c3a2b3d2021262f37223b202f602d2123">[email&#160;protected]</span></a>
+  <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(1rem, 3vw, 3rem);padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.5rem;">
+    <div>
+      <a href="/" style="display:inline-block;margin-bottom:1rem;">
+        <img src="/img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna" style="height:44px;width:auto;display:block;">
+      </a>
+      <p style="font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.7;font-weight:300;max-width:220px;">Marketing digital, consultoría e IA para PYMEs. Leganés, Madrid.</p>
+    </div>
+    <div>
+      <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#87B229;margin-bottom:1rem;">Servicios</div>
+      <a href="/servicios/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">Marketing Digital</a>
+      <a href="/servicios/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">SEO y Posicionamiento</a>
+      <a href="/servicios/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">Redes Sociales</a>
+      <a href="/ia-para-empresas/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">IA para Empresas</a>
+      <a href="/consultoria-estrategica/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;font-weight:300;">Consultoría Estratégica</a>
+    </div>
+    <div>
+      <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#87B229;margin-bottom:1rem;">Empresa</div>
+      <a href="/sheila-aguilar/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">Sheila Aguilar</a>
+      <a href="/blog/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">Blog</a>
+      <a href="/sesion-gratuita/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">Sesión gratuita</a>
+      <a href="/contacto/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;font-weight:300;">Contacto</a>
+    </div>
+    <div>
+      <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#87B229;margin-bottom:1rem;">Contacto</div>
+      <a href="tel:34919997726" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">91 999 77 26</a>
+      <a href="https://wa.me/34621060659" target="_blank" rel="noopener" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">WhatsApp</a>
+      <a href="https://www.google.com/maps/place/Finca+Solimpar+Legan%C3%A9s" target="_blank" rel="noopener" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;font-weight:300;">Leganés, Madrid</a>
+    </div>
   </div>
-  <p class="footer-copy">© 2025 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+    <p style="font-size:.7rem;color:rgba(255,255,255,.2);">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
+    <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+      <a href="/aviso-legal/" rel="nofollow" style="font-size:.7rem;color:rgba(255,255,255,.25);text-decoration:none;">Aviso Legal</a>
+      <a href="/privacidad/" rel="nofollow" style="font-size:.7rem;color:rgba(255,255,255,.25);text-decoration:none;">Privacidad</a>
+      <a href="/cookies/" rel="nofollow" style="font-size:.7rem;color:rgba(255,255,255,.25);text-decoration:none;">Cookies</a>
+      <a href="https://losmartesnohayluna.com/sitemap.xml" target="_blank" rel="noopener" style="font-size:.7rem;color:rgba(135,178,41,.5);text-decoration:none;">Sitemap</a>
+    </div>
+    <div style="display:flex;gap:.8rem;">
+      <a href="https://www.instagram.com/losmartesnohayluna" target="_blank" rel="noopener" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;">ig</a>
+            <a href="https://www.linkedin.com/company/los-martes-no-hay-luna" target="_blank" rel="noopener" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;">in</a>
+    </div>
+  </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  els.forEach(el => obs.observe(el));
+
+  /* ── IA TOOLS DEMOS ── */
 /* ================================================================
    DEMO DATA & RENDERERS
 ================================================================ */
@@ -1207,11 +2612,47 @@ document.getElementById('demoNext').addEventListener('click',()=>{
   openDemo(next);
 });
 
-/* ── REVEAL ON SCROLL ── */
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
-},{threshold:0.05,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+/* reveal handled by existing observer above */
+
+
+  // ── DEPT TABS ─────────────────────────────────────────
+  (function() {
+    const tabs = document.querySelectorAll('.dept-tab');
+    const panels = document.querySelectorAll('.dept-panel');
+
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        const target = tab.getAttribute('data-panel');
+
+        // Update tabs
+        tabs.forEach(function(t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+
+        // Update panels
+        panels.forEach(function(p) {
+          if (p.getAttribute('data-panel') === target) {
+            p.classList.add('active');
+          } else {
+            p.classList.remove('active');
+          }
+        });
+
+        // Scroll to panel on mobile
+        if (window.innerWidth < 900) {
+          const activePanel = document.querySelector('.dept-panel.active');
+          if (activePanel) {
+            setTimeout(function() {
+              activePanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+          }
+        }
+      });
+    });
+  })();
+
+  function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
 </script>
+<script src="/cookie-consent.js" defer></script>
 </body>
 </html>
