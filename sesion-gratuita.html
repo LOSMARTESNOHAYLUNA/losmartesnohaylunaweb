@@ -562,6 +562,101 @@ body {
 .mobile-menu .mm-close{background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;position:absolute;top:1.5rem;right:1.5rem}
 .mobile-menu .mm-cta{background:var(--lime);color:var(--slate)!important;padding:.7rem 2rem}
 @media(max-width:900px){.nav-links{display:none}.nav-hamburger{display:flex}}
+
+/* ── LOGOS CLIENTES ─────────────────────────────── */
+.clients-logos {
+  background: var(--off-white);
+  padding: 3rem 5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.clients-logos-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+.clients-logos-label {
+  font-size: .6rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--mid); font-weight: 500; margin-bottom: 1.8rem;
+}
+.clients-logos-grid {
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: 2rem 3rem;
+}
+.cl-item img {
+  height: 36px; width: auto; max-width: 120px;
+  object-fit: contain; filter: grayscale(100%); opacity: .55;
+  transition: all .25s;
+}
+.cl-item img:hover { filter: grayscale(0%); opacity: 1; }
+@media(max-width:900px) { .clients-logos { padding: 2.5rem 1.8rem; } .clients-logos-grid { gap: 1.5rem 2rem; } }
+@media(max-width:480px) { .clients-logos { padding: 2rem 1.2rem; } .cl-item img { height: 28px; } }
+
+
+/* ── TESTIMONIALS GRID ──────────────────────────── */
+.testimonials-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem; margin-top: 2.5rem;
+}
+.tg-card {
+  background: var(--light); padding: 1.8rem 1.5rem;
+  border-top: 3px solid var(--lime);
+  display: flex; flex-direction: column;
+}
+.tg-stars { color: #f5a623; font-size: 1rem; margin-bottom: .8rem; letter-spacing: .1em; }
+.tg-card p {
+  font-size: .82rem; color: var(--slate); line-height: 1.7;
+  font-weight: 300; flex: 1; margin-bottom: 1.2rem;
+  font-style: italic;
+}
+.tg-author { font-size: .78rem; font-weight: 700; color: var(--purple); }
+.tg-company { font-size: .65rem; color: var(--mid); letter-spacing: .06em; margin-top: .15rem; }
+@media(max-width:900px) { .testimonials-grid { grid-template-columns: repeat(2,1fr); } }
+@media(max-width:480px) { .testimonials-grid { grid-template-columns: 1fr; } }
+
+
+/* ── FOTO EQUIPO ────────────────────────────────── */
+.team-photo-section { background: var(--purple-dk); padding: 0; overflow: hidden; }
+.team-photo-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; max-height: 420px;
+}
+.tp-img { overflow: hidden; }
+.tp-img img { width: 100%; height: 420px; object-fit: cover; object-position: center top; display: block; transition: transform .4s; }
+.tp-img:hover img { transform: scale(1.03); }
+.tp-caption {
+  text-align: center; padding: 1.2rem;
+  font-size: .65rem; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(255,255,255,.4); font-weight: 400;
+  background: var(--purple-dk);
+}
+@media(max-width:600px) {
+  .team-photo-grid { grid-template-columns: 1fr; max-height: none; }
+  .tp-img img { height: 260px; }
+}
+
+
+/* ── CTAs INTERMEDIOS ───────────────────────────── */
+.cta-mid {
+  background: var(--light);
+  padding: 2.5rem 5rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.cta-dark { background: var(--purple); border-color: transparent; }
+.cta-mid-inner {
+  max-width: 800px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.cta-mid p { font-size: 1rem; font-weight: 600; color: var(--slate); }
+.cta-dark .cta-mid p { color: #fff; }
+.cta-mid-btn {
+  display: inline-block; background: var(--lime); color: var(--slate);
+  padding: .85rem 2rem; font-size: .7rem; letter-spacing: .12em;
+  text-transform: uppercase; font-weight: 700; text-decoration: none;
+  white-space: nowrap; transition: background .2s;
+  flex-shrink: 0;
+}
+.cta-mid-btn:hover { background: var(--lime-lt); }
+@media(max-width:900px) { .cta-mid { padding: 2rem 1.8rem; } .cta-mid-inner { flex-direction: column; text-align: center; } .cta-mid-btn { width: 100%; text-align: center; } }
+@media(max-width:480px) { .cta-mid { padding: 1.8rem 1.2rem; } }
+
 </style>
 </head>
 <body>
@@ -589,6 +684,24 @@ body {
     </div>
   </div>
 </header>
+
+
+<!-- CLIENTES LOGOS -->
+<section class="clients-logos">
+  <div class="clients-logos-inner">
+    <p class="clients-logos-label">Empresas que ya confían en nosotros</p>
+    <div class="clients-logos-grid">
+      <div class="cl-item"><img src="/img/logo-bilboinform.webp" alt="Bilboinform" loading="lazy"></div>
+      <div class="cl-item"><img src="/img/logo-cleanupgranada.webp" alt="Clean Up Granada" loading="lazy"></div>
+      <div class="cl-item"><img src="/img/logo-docrys.webp" alt="Docrys" loading="lazy"></div>
+      <div class="cl-item"><img src="/img/logo-kaw2i.webp" alt="Kaw2i" loading="lazy"></div>
+      <div class="cl-item"><img src="/img/logo-lorenzo-arquitectos.webp" alt="Lorenzo Arquitectos" loading="lazy"></div>
+      <div class="cl-item"><img src="/img/logo-solaris.webp" alt="Solaris" loading="lazy"></div>
+      <div class="cl-item"><img src="/img/logo-david-segui.webp" alt="David Seguí Arquitectos" loading="lazy"></div>
+      <div class="cl-item"><img src="/img/logo-serdoc.webp" alt="Serdoc Informática" loading="lazy"></div>
+    </div>
+  </div>
+</section>
 
 <!-- PROBLEM -->
 <section class="problem reveal">
@@ -663,6 +776,20 @@ body {
   </div>
 </section>
 
+
+<!-- EQUIPO FOTO -->
+<section class="team-photo-section">
+  <div class="team-photo-grid">
+    <div class="tp-img">
+      <img src="/img/equipo-agencia-losmartesnohayluna.webp" alt="Equipo Los Martes No Hay Luna trabajando" loading="lazy">
+    </div>
+    <div class="tp-img">
+      <img src="/img/equipo-agencia-losmartesnohayluna2.webp" alt="Equipo LMNHL en reunión de trabajo" loading="lazy">
+    </div>
+  </div>
+  <div class="tp-caption">El equipo que estará detrás de tu estrategia</div>
+</section>
+
 <!-- PROOF -->
 <section class="proof reveal">
   <div class="proof-inner">
@@ -686,25 +813,31 @@ body {
         <div class="proof-stat-label">Profesionales en equipo</div>
       </div>
     </div>
-    <div class="proof-testimonial">
-      <p>"He revisado los cambios de la web y me gustan mucho. La sección de partners está perfecta, y los blogs que vamos añadiendo le dan mucha vida; se percibe como una web activa. Estoy muy contenta con el trabajo realizado. ¡Felicidades!"</p>
-      <div class="author">Sonia — Lorenzo Arquitectos</div>
-      <div class="role">Llegaron sin presencia digital. Hoy tienen una marca profesional posicionada.</div>
-    </div>
-    <div class="proof-testimonial">
-      <p>"Qué trabajo tan bonito están realizando con la página web. Estoy segura que va a quedar fabulosa — sencilla e intuitiva para los clientes — y eso me ahorrará trabajo."</p>
-      <div class="author">Fábrica de Sonrisas</div>
-      <div class="role">Web diseñada para simplificar la experiencia de sus clientes y ahorrar tiempo al equipo.</div>
-    </div>
-    <div class="proof-testimonial">
-      <p>"Buen trabajo y mejor explicación. Tenemos que seguir en campaña hasta ver al menos 10 leads entrevistados. Sabemos que va a costar un poco pero el sistema tiene que rodar. Las entrevistas nos dirán si la campaña está bien enfocada."</p>
-      <div class="author">David — Seguí Arquitectos</div>
-      <div class="role">Campaña de captación digital activa. Entienden que los resultados reales necesitan proceso.</div>
-    </div>
-    <div class="proof-testimonial">
-      <p>"Me parece muy bien, y también me parece bien que esté agregado en el apartado de blog. ¡Buen trabajo! No tengo nada que cambiar o agregar al respecto."</p>
-      <div class="author">Vanessa Lago — Docrys</div>
-      <div class="role">Estrategia de contenidos y SEO. Confianza total en el equipo sin necesidad de supervisión constante.</div>
+    <div class="testimonials-grid">
+      <div class="tg-card">
+        <div class="tg-stars">★★★★★</div>
+        <p>"He revisado los cambios de la web y me gustan mucho. La sección de partners está perfecta y los blogs le dan mucha vida. Estoy muy contenta con el trabajo. ¡Felicidades!"</p>
+        <div class="tg-author">Sonia</div>
+        <div class="tg-company">Lorenzo Arquitectos</div>
+      </div>
+      <div class="tg-card">
+        <div class="tg-stars">★★★★★</div>
+        <p>"Qué trabajo tan bonito están realizando. La web quedará fabulosa — sencilla e intuitiva — y eso me ahorrará mucho trabajo con los clientes."</p>
+        <div class="tg-author">Equipo</div>
+        <div class="tg-company">Fábrica de Sonrisas</div>
+      </div>
+      <div class="tg-card">
+        <div class="tg-stars">★★★★★</div>
+        <p>"Buen trabajo y mejor explicación. El sistema tiene que rodar y las entrevistas nos dirán si la campaña está bien enfocada. Muy profesionales."</p>
+        <div class="tg-author">David</div>
+        <div class="tg-company">Seguí Arquitectos</div>
+      </div>
+      <div class="tg-card">
+        <div class="tg-stars">★★★★★</div>
+        <p>"Me parece muy bien y también me parece bien que esté en el apartado de blog. ¡Buen trabajo! No tengo nada que cambiar o agregar."</p>
+        <div class="tg-author">Vanessa Lago</div>
+        <div class="tg-company">Docrys</div>
+      </div>
     </div>
     <div class="proof-media">
       <div class="proof-media-label">Más de 160 apariciones en medios digitales nacionales</div>
@@ -724,6 +857,15 @@ body {
   </div>
 </section>
 
+
+<!-- CTA INTERMEDIO -->
+<div class="cta-mid reveal">
+  <div class="cta-mid-inner">
+    <p>¿Ya sabes suficiente? No hace falta leer más.</p>
+    <a href="#reservar" class="cta-mid-btn">Reservar mi sesión gratuita →</a>
+  </div>
+</div>
+
 <!-- ABOUT -->
 <section class="about reveal">
   <div class="about-inner">
@@ -740,6 +882,7 @@ body {
     </div>
   </div>
 </section>
+
 
 <!-- FAQ -->
 <section class="faq reveal">
@@ -781,7 +924,14 @@ body {
       <div class="faq-a">Nuestra oficina está en Leganés (Madrid), pero trabajamos con empresas de toda España. Las sesiones son por videollamada y la ejecución es 100% digital.</div>
     </div>
   </div>
-</section>
+
+<!-- CTA FINAL FAQ -->
+<div class="cta-mid cta-dark reveal">
+  <div class="cta-mid-inner">
+    <p>40 minutos. Sin compromiso. Con un plan real para tu negocio.</p>
+    <a href="#reservar" class="cta-mid-btn">Quiero mi sesión gratuita →</a>
+  </div>
+</div>
 
 <!-- FORM -->
 <section class="form-section" id="reservar">
