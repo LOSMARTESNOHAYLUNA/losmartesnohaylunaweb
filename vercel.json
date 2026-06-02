@@ -1,6 +1,36 @@
 {
   "redirects": [
     {
+      "source": "/consultoria-ia.html",
+      "destination": "https://losmartesnohayluna.com/consultoria-ia/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios.html",
+      "destination": "https://losmartesnohayluna.com/servicios/",
+      "permanent": true
+    },
+    {
+      "source": "/index.php/:path*",
+      "destination": "https://losmartesnohayluna.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/servicios-marketing/",
+      "destination": "https://losmartesnohayluna.com/servicios/",
+      "permanent": true
+    },
+    {
+      "source": "/guia-5-tips-imprescindibles",
+      "destination": "https://losmartesnohayluna.com/",
+      "permanent": true
+    },
+    {
+      "source": "/guia-5-tips-imprescindibles/",
+      "destination": "https://losmartesnohayluna.com/",
+      "permanent": true
+    },
+    {
       "source": "/wp-content/:path*",
       "destination": "https://losmartesnohayluna.com/",
       "permanent": false
