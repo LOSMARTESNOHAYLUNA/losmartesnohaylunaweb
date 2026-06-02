@@ -879,6 +879,13 @@ img, video, iframe, table, input, textarea, select {
 }
 img { height: auto; }
 
+
+@media (max-width: 768px) {
+  footer > div[style*="grid-template-columns"] { grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; }
+}
+@media (max-width: 480px) {
+  footer > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 1rem !important; }
+}
 </style>
 <script src="/widget-consultora.js" defer></script>
 </head>
@@ -891,6 +898,7 @@ img { height: auto; }
   <ul class="nav-links">
     <li><a href="/servicios/">Servicios</a></li>
     <li><a href="/ia-para-empresas/">IA para Empresas</a></li>
+    <li><a href="/ia-tools/">IA Tools</a></li>
     <li><a href="/sheila-aguilar/">Sheila Aguilar</a></li>
     <li><a href="/blog/" class="active">Blog</a></li>
     <li><a href="/contacto/">Contacto</a></li>
@@ -905,6 +913,7 @@ img { height: auto; }
   <a href="/" onclick="closeMobileMenu()">Inicio</a>
   <a href="/servicios/" onclick="closeMobileMenu()">Servicios</a>
   <a href="/ia-para-empresas/" onclick="closeMobileMenu()">IA para Empresas</a>
+  <a href="/ia-tools/" onclick="closeMobileMenu()">IA Tools</a>
   <a href="/sheila-aguilar/" onclick="closeMobileMenu()">Sheila Aguilar</a>
   <a href="/blog/" onclick="closeMobileMenu()">Blog</a>
   <a href="/contacto/" onclick="closeMobileMenu()">Contacto</a>
@@ -928,7 +937,7 @@ img { height: auto; }
     <div class="ah-meta">
       <div class="ah-author">
         <div class="ah-avatar">
-          <img src="https://gravatar.com/losmartesnohayluna" alt="Sheila Aguilar">
+          <img src="/img/sheila-about.png" alt="Sheila Aguilar">
         </div>
         <div>
           <div class="ah-author-name">Sheila Aguilar</div>
@@ -1090,7 +1099,7 @@ img { height: auto; }
     <div class="sidebar-block">
       <div class="sidebar-author">
         <div class="sa-photo">
-          <img src="https://gravatar.com/losmartesnohayluna" alt="Sheila Aguilar">
+          <img src="/img/sheila-about.png" alt="Sheila Aguilar">
         </div>
         <div class="sa-name">Sheila Aguilar</div>
         <div class="sa-role">Fundadora · Los Martes No Hay Luna</div>
@@ -1141,7 +1150,7 @@ img { height: auto; }
 </section>
 
 <footer>
-  <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.5rem;">
+  <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(1rem, 3vw, 3rem);padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.5rem;">
     <div>
       <a href="/" style="display:inline-block;margin-bottom:1rem;">
         <img src="/img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna" style="height:44px;width:auto;display:block;">
