@@ -523,6 +523,10 @@
     {
       "source": "/((?!api/).*)",
       "destination": "/$1"
+    },
+    {
+      "source": "/promo-web/",
+      "destination": "/promo-web.html"
     }
   ],
   "headers": [

@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño Web Profesional por 600€ | Los Martes No Hay Luna</title>
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Tu web profesional por 600€. Diseño a medida, optimizada para Google, lista en 2-4 semanas. Para PYMEs y negocios locales en Madrid.">
+  <meta name="keywords" content="diseño web profesional madrid, página web para empresa, web para pymes, diseño web 600 euros">
+  <meta name="author" content="Sheila Aguilar — Los Martes No Hay Luna">
+  <link rel="canonical" href="https://losmartesnohayluna.com/promo-web/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://losmartesnohayluna.com/promo-web/">
+  <meta property="og:title" content="Diseño Web Profesional por 600€ | Los Martes No Hay Luna">
+  <meta property="og:description" content="Tu web profesional por 600€. Sin sorpresas. Lista en 2-4 semanas.">
+  <meta property="og:image" content="https://losmartesnohayluna.com/img/agencia-marketing-digital-madrid.jpg">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Los Martes No Hay Luna">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Diseño Web Profesional 600€","provider":{"@type":"LocalBusiness","name":"Los Martes No Hay Luna","url":"https://losmartesnohayluna.com"},"areaServed":{"@type":"City","name":"Madrid"},"offers":{"@type":"Offer","price":"600","priceCurrency":"EUR"}}</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--purple:#582D81;--purple-lt:#6e3d9a;--purple-dk:#3a1c57;--purple-xdk:#26123a;--lime:#87B229;--lime-lt:#9ecf30;--pink:#e72078;--slate:#2a1f38;--off-white:#f8f6f2;--light:#f4f0fa;--mid:#7a6f85;--rule:rgba(88,45,129,.12)}
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:var(--off-white);color:var(--slate);font-weight:300;line-height:1.7;overflow-x:hidden}
+    img,video{max-width:100%;height:auto}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5rem;background:rgba(248,246,242,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
+    .nav-logo{text-decoration:none;display:flex;align-items:center}
+    .nav-links{display:flex;gap:2.2rem;list-style:none}
+    .nav-links a{font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;color:var(--mid);text-decoration:none;font-weight:400;transition:color .2s}
+    .nav-links a:hover{color:var(--purple)}
+    .nav-cta{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:.55rem 1.6rem;background:var(--purple);color:#fff;text-decoration:none;transition:background .2s}
+    .nav-cta:hover{background:var(--purple-lt)}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.4rem}
+    .nav-hamburger span{display:block;width:24px;height:2px;background:var(--purple);transition:all .3s}
+    .mobile-menu{display:none;position:fixed;inset:0;background:rgba(42,31,56,.97);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{font-size:1.1rem;font-weight:600;color:#fff;text-decoration:none;letter-spacing:.05em;text-transform:uppercase}
+    .mm-close{background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;position:absolute;top:1.5rem;right:1.5rem}
+    .mm-cta{background:var(--lime);color:var(--slate)!important;padding:.7rem 2rem}
+
+    /* HERO */
+    .hero{min-height:100vh;background:var(--purple-dk);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 5rem 5rem;gap:5rem;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;border:100px solid rgba(135,178,41,.06);pointer-events:none}
+    .hero::after{content:'';position:absolute;bottom:-80px;left:-60px;width:380px;height:380px;border-radius:50%;border:60px solid rgba(231,32,120,.04);pointer-events:none}
+    .hero-left{position:relative;z-index:2}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--lime);font-weight:600;margin-bottom:2rem}
+    .hero-eyebrow::before{content:'';width:28px;height:2px;background:var(--lime)}
+    .hero h1{font-size:clamp(2.2rem,4vw,3.8rem);font-weight:800;color:#fff;letter-spacing:-.04em;line-height:1.05;margin-bottom:1.5rem}
+    .hero h1 em{color:var(--lime);font-style:normal}
+    .hero-sub{font-size:.95rem;color:rgba(255,255,255,.7);line-height:1.8;max-width:440px;font-weight:300;margin-bottom:2.5rem}
+    .hero-price-wrap{display:flex;align-items:baseline;gap:1rem;margin-bottom:2.5rem}
+    .hero-price{font-size:clamp(3.5rem,6vw,5rem);font-weight:900;color:var(--lime);letter-spacing:-.05em;line-height:1}
+    .hero-price-sub{font-size:.8rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.5}
+    .hero-price-sub s{color:rgba(255,255,255,.3)}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
+    .btn-lime{display:inline-block;background:var(--lime);color:var(--slate);padding:.85rem 2.2rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;text-decoration:none;transition:background .2s}
+    .btn-lime:hover{background:var(--lime-lt)}
+    .btn-ghost{display:inline-block;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.7);padding:.85rem 2.2rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;text-decoration:none;transition:all .2s}
+    .btn-ghost:hover{border-color:rgba(255,255,255,.5);color:#fff}
+    .hero-trust{display:flex;gap:1.5rem;flex-wrap:wrap}
+    .ht-item{display:flex;align-items:center;gap:.5rem;font-size:.68rem;color:rgba(255,255,255,.5);letter-spacing:.05em}
+    .ht-item svg{width:14px;height:14px;color:var(--lime);flex-shrink:0}
+
+    /* MOCKUP */
+    .hero-right{position:relative;z-index:2}
+    .hero-mockup{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:1.5rem;position:relative}
+    .mockup-bar{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.08)}
+    .mockup-dot{width:8px;height:8px;border-radius:50%}
+    .mockup-url{flex:1;background:rgba(255,255,255,.06);padding:.3rem .8rem;font-size:.6rem;color:rgba(255,255,255,.3);letter-spacing:.05em;margin:0 .5rem}
+    .mockup-screen{background:var(--off-white);padding:2rem;min-height:300px;position:relative;overflow:hidden}
+    .ms-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;padding-bottom:.8rem;border-bottom:2px solid var(--rule)}
+    .ms-logo{width:80px;height:8px;background:var(--purple);opacity:.6}
+    .ms-links{display:flex;gap:.5rem}
+    .ms-link{width:30px;height:6px;background:var(--mid);opacity:.3}
+    .ms-hero-block{background:var(--purple-dk);padding:1.5rem;margin-bottom:1rem}
+    .ms-line{height:10px;background:#fff;opacity:.8;margin-bottom:.5rem;width:80%}
+    .ms-line-sm{height:8px;background:#fff;opacity:.4;margin-bottom:1rem;width:60%}
+    .ms-btn-block{height:20px;width:100px;background:var(--lime)}
+    .ms-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+    .ms-card{background:var(--light);padding:.8rem}
+    .ms-card-icon{width:20px;height:20px;background:var(--purple);opacity:.3;border-radius:50%;margin-bottom:.4rem}
+    .ms-card-line{height:5px;background:var(--mid);opacity:.2;margin-bottom:.3rem}
+    .ms-card-line.short{width:60%}
+    .mockup-badge{position:absolute;bottom:-1rem;right:-1rem;background:var(--lime);color:var(--slate);padding:1rem 1.5rem;text-align:center}
+    .mb-price{font-size:1.8rem;font-weight:900;letter-spacing:-.04em;line-height:1}
+    .mb-label{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.8}
+    .mockup-tag{position:absolute;top:-1rem;left:1.5rem;background:var(--pink);color:#fff;padding:.3rem .8rem;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+
+    /* TRUST STRIP */
+    .trust-strip{background:var(--slate);padding:1.8rem 5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+    .ts-item{display:flex;align-items:center;gap:.8rem}
+    .ts-num{font-size:1.8rem;font-weight:800;color:var(--lime);letter-spacing:-.04em}
+    .ts-label{font-size:.68rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em;line-height:1.4;font-weight:400}
+    .ts-sep{width:1px;height:40px;background:rgba(255,255,255,.1)}
+
+    /* SECTIONS */
+    .section-eyebrow{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:.7rem}
+    .section-eyebrow::before{content:'';width:20px;height:2px;background:var(--lime)}
+    .section-h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;color:var(--purple);letter-spacing:-.03em;line-height:1.15;margin-bottom:1rem;max-width:640px}
+    .section-h2 em{color:var(--pink);font-style:normal}
+    .section-sub{font-size:.9rem;color:var(--mid);max-width:560px;margin-bottom:3.5rem}
+
+    /* PARA QUIÉN */
+    .for-who{padding:7rem 5rem}
+    .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .who-card{background:#fff;border:1px solid var(--rule);padding:2rem;border-top:4px solid var(--purple);transition:transform .2s,box-shadow .2s}
+    .who-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(88,45,129,.1)}
+    .who-card:nth-child(2){border-top-color:var(--lime)}
+    .who-card:nth-child(3){border-top-color:var(--pink)}
+    .who-icon{width:44px;height:44px;background:var(--light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+    .who-icon svg{width:20px;height:20px;color:var(--purple)}
+    .who-card h3{font-size:1rem;font-weight:700;color:var(--slate);margin-bottom:.5rem;letter-spacing:-.02em}
+    .who-card p{font-size:.82rem;color:var(--mid);line-height:1.7}
+
+    /* INCLUDES */
+    .includes{background:var(--purple-dk);padding:7rem 5rem;position:relative;overflow:hidden}
+    .includes::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;border:120px solid rgba(135,178,41,.04);pointer-events:none}
+    .includes-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+    .inc-left .section-eyebrow{color:var(--lime)}
+    .inc-left .section-eyebrow::before{background:var(--lime)}
+    .inc-left .section-h2{color:#fff}
+    .inc-left .section-sub{color:rgba(255,255,255,.55)}
+    .inc-list{list-style:none;display:flex;flex-direction:column;gap:.8rem}
+    .inc-item{display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.2rem;background:rgba(255,255,255,.05);border-left:3px solid var(--lime)}
+    .inc-item svg{width:16px;height:16px;color:var(--lime);flex-shrink:0;margin-top:.25rem}
+    .inc-item-text strong{display:block;font-size:.82rem;font-weight:600;color:#fff;margin-bottom:.15rem}
+    .inc-item-text span{font-size:.75rem;color:rgba(255,255,255,.45)}
+
+    /* PRICE CARD */
+    .price-card{background:#fff;padding:2.5rem;text-align:center;position:relative}
+    .pc-tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;padding:.3rem 1.2rem;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;white-space:nowrap}
+    .pc-label{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);font-weight:500;margin-bottom:.5rem}
+    .pc-price{font-size:4.5rem;font-weight:900;color:var(--purple);letter-spacing:-.05em;line-height:1;margin-bottom:.3rem}
+    .pc-price span{font-size:1.5rem;font-weight:400;vertical-align:top;margin-top:.8rem;display:inline-block}
+    .pc-iva{font-size:.72rem;color:var(--mid);margin-bottom:1.5rem}
+    .pc-divider{border:none;border-top:1px solid var(--rule);margin:1.5rem 0}
+    .pc-features{text-align:left;list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem}
+    .pc-feat{display:flex;align-items:center;gap:.6rem;font-size:.8rem;color:var(--slate)}
+    .pc-feat svg{width:14px;height:14px;color:var(--lime);flex-shrink:0}
+    .pc-cta{display:block;background:var(--lime);color:var(--slate);padding:1rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;text-decoration:none;transition:background .2s;margin-bottom:1rem}
+    .pc-cta:hover{background:var(--lime-lt)}
+    .pc-note{font-size:.68rem;color:var(--mid)}
+
+    /* PROCESO */
+    .proceso{padding:7rem 5rem;background:var(--off-white)}
+    .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3.5rem}
+    .step{position:relative}
+    .step-num{font-size:4rem;font-weight:900;color:var(--rule);line-height:1;margin-bottom:.5rem;letter-spacing:-.04em}
+    .step-week{display:inline-block;background:var(--purple);color:#fff;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:.2rem .7rem;margin-bottom:.8rem}
+    .step h3{font-size:.9rem;font-weight:700;color:var(--slate);margin-bottom:.4rem}
+    .step p{font-size:.78rem;color:var(--mid);line-height:1.7}
+    .step::after{content:'→';position:absolute;top:1.5rem;right:-1rem;font-size:1.5rem;color:var(--lime);font-weight:300}
+    .step:last-child::after{display:none}
+
+    /* CTA MID */
+    .cta-mid{background:var(--light);padding:4rem 5rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+    .cta-mid-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+    .cta-mid-text h2{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--purple);letter-spacing:-.03em;margin-bottom:.4rem}
+    .cta-mid-text p{font-size:.85rem;color:var(--mid)}
+    .cta-mid-actions{display:flex;flex-direction:column;align-items:center;gap:.5rem;flex-shrink:0}
+    .cta-mid-price{font-size:2.5rem;font-weight:900;color:var(--lime);letter-spacing:-.04em}
+
+    /* TESTIMONIOS */
+    .testimonios{padding:7rem 5rem}
+    .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+    .test-card{background:#fff;border:1px solid var(--rule);padding:2rem;border-top:3px solid var(--lime)}
+    .test-stars{color:#f5a623;font-size:1rem;letter-spacing:.1em;margin-bottom:1rem}
+    .test-text{font-size:.85rem;color:var(--slate);line-height:1.75;font-style:italic;margin-bottom:1.5rem}
+    .test-author{font-size:.78rem;font-weight:700;color:var(--purple)}
+    .test-company{font-size:.65rem;color:var(--mid);letter-spacing:.05em}
+
+    /* FAQ */
+    .faq-section{background:var(--light);padding:7rem 5rem}
+    .faq-inner{display:grid;grid-template-columns:1fr 1.5fr;gap:6rem;align-items:start}
+    .faq-list{display:flex;flex-direction:column;gap:0}
+    .faq-item{border-bottom:1px solid var(--rule)}
+    .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 0;background:none;border:none;cursor:pointer;text-align:left;font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;color:var(--slate);gap:1rem}
+    .faq-q svg{width:18px;height:18px;color:var(--purple);flex-shrink:0;transition:transform .25s}
+    .faq-item.open .faq-q svg{transform:rotate(45deg)}
+    .faq-a{display:none;padding:0 0 1.2rem;font-size:.82rem;color:var(--mid);line-height:1.8}
+    .faq-item.open .faq-a{display:block}
+
+    /* FINAL CTA */
+    .final-cta{background:var(--purple-dk);padding:9rem 5rem;text-align:center;position:relative;overflow:hidden}
+    .final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:80px solid rgba(135,178,41,.05);pointer-events:none}
+    .fct-eyebrow{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);font-weight:700;margin-bottom:1.2rem;position:relative;z-index:2}
+    .final-cta h2{font-size:clamp(1.8rem,3vw,3rem);font-weight:800;color:#fff;letter-spacing:-.04em;line-height:1.15;margin-bottom:1rem;max-width:700px;margin-left:auto;margin-right:auto;position:relative;z-index:2}
+    .final-cta h2 em{color:var(--lime);font-style:italic;font-weight:300}
+    .fct-sub{font-size:.9rem;color:rgba(255,255,255,.55);max-width:480px;margin:0 auto 2.5rem;line-height:1.8;position:relative;z-index:2}
+    .fct-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem;position:relative;z-index:2}
+    .btn-lime-lg{display:inline-block;background:var(--lime);color:var(--slate);padding:1rem 2.5rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;text-decoration:none;transition:background .2s}
+    .btn-lime-lg:hover{background:var(--lime-lt)}
+    .btn-ghost-lg{display:inline-block;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.7);padding:1rem 2.5rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;text-decoration:none;transition:all .2s}
+    .btn-ghost-lg:hover{border-color:rgba(255,255,255,.5);color:#fff}
+    .fct-note{font-size:.68rem;color:rgba(255,255,255,.3);letter-spacing:.06em;position:relative;z-index:2}
+
+    /* FOOTER */
+    footer{background:var(--slate);padding:4rem 5rem 2rem}
+    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(1rem,3vw,3rem);padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.5rem}
+    .footer-brand p{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.7;font-weight:300;margin-top:1rem;max-width:220px}
+    .footer-col-title{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--lime);margin-bottom:1rem}
+    .footer-col a{display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;transition:color .2s}
+    .footer-col a:hover{color:#fff}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    .footer-copy{font-size:.7rem;color:rgba(255,255,255,.2)}
+    .footer-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+    .footer-legal a{font-size:.7rem;color:rgba(255,255,255,.25);text-decoration:none}
+    .footer-social{display:flex;gap:.8rem}
+    .footer-social a{width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;transition:all .2s}
+    .footer-social a:hover{border-color:var(--lime);color:var(--lime)}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      nav{padding:1rem 1.5rem}
+      .nav-links{display:none}
+      .nav-hamburger{display:flex}
+      .hero{grid-template-columns:1fr;padding:6rem 1.8rem 3rem;gap:3rem}
+      .hero-right{display:none}
+      .trust-strip{padding:1.5rem 1.8rem;flex-direction:column;align-items:flex-start;gap:1.2rem}
+      .ts-sep{display:none}
+      .for-who,.proceso,.testimonios,.faq-section{padding:5rem 1.8rem}
+      .includes{padding:5rem 1.8rem}
+      .includes-grid{grid-template-columns:1fr;gap:3rem}
+      .who-grid{grid-template-columns:1fr}
+      .steps-grid{grid-template-columns:1fr 1fr}
+      .step::after{display:none}
+      .test-grid{grid-template-columns:1fr}
+      .faq-inner{grid-template-columns:1fr;gap:2rem}
+      .cta-mid{padding:3rem 1.8rem}
+      .cta-mid-inner{flex-direction:column;text-align:center}
+      .final-cta{padding:6rem 1.8rem}
+      footer{padding:3rem 1.5rem 1.5rem}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+    }
+    @media(max-width:480px){
+      .hero{padding:5.5rem 1.2rem 2.5rem}
+      .hero h1{font-size:clamp(1.8rem,7vw,2.4rem)}
+      .steps-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .for-who,.proceso,.testimonios,.faq-section,.includes,.cta-mid{padding:3.5rem 1.2rem}
+      .final-cta{padding:4rem 1.2rem}
+      .fct-actions{flex-direction:column;align-items:stretch}
+      .btn-lime-lg,.btn-ghost-lg{text-align:center}
+      input,textarea,select,button{font-size:16px!important}
+    }
+  
+    /* ── DECORATIVE ANIMATIONS ──────────────────────── */
+    .deco { position: absolute; pointer-events: none; }
+    .deco-float-slow { animation: float-slow 7s ease-in-out infinite; }
+    .deco-float-mid  { animation: float-mid  5s ease-in-out infinite; }
+    .deco-float-fast { animation: float-fast 3.5s ease-in-out infinite; }
+    .deco-sparkle    { animation: sparkle 3s ease-in-out infinite; }
+    .deco-spin       { animation: spin-slow 18s linear infinite; }
+
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50%      { transform: translateY(-24px) rotate(8deg); }
+    }
+    @keyframes float-mid {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50%      { transform: translateY(-14px) rotate(-6deg); }
+    }
+    @keyframes float-fast {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50%      { transform: translateY(-10px) rotate(4deg); }
+    }
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.25; transform: scale(0.7) rotate(0deg); }
+      50%      { opacity: 1;    transform: scale(1.1) rotate(180deg); }
+    }
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    @keyframes blob-morph {
+      0%, 100% { border-radius: 60% 40% 50% 30%; }
+      33%      { border-radius: 30% 60% 70% 40%; }
+      66%      { border-radius: 50% 30% 40% 60%; }
+    }
+
+
+    @media(max-width:900px){
+      .qs-grid { grid-template-columns: 1fr !important; }
+      .qs-stats { grid-template-columns: repeat(2,1fr) !important; }
+      .portfolio-grid { grid-template-columns: 1fr !important; }
+    }
+    @media(max-width:480px){
+      .qs-stats { grid-template-columns: 1fr 1fr !important; gap:1rem !important; }
+    }
+
+
+    @media(max-width:768px){
+      .demo-grid { grid-template-columns: 1fr !important; }
+      .demo-grid > div:last-child { display: none !important; }
+    }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/"><img src="/img/LMHHL_logo_2026.svg" alt="Los Martes No Hay Luna" style="height:52px;width:auto;display:block;"></a>
+  <ul class="nav-links">
+    <li><a href="/servicios/">Servicios</a></li>
+    <li><a href="/ia-para-empresas/">IA para Empresas</a></li>
+    <li><a href="/sheila-aguilar/">Sheila Aguilar</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contacto/">Contacto</a></li>
+  </ul>
+  <a class="nav-cta" href="#reservar">Quiero mi web →</a>
+  <button class="nav-hamburger" onclick="openMobileMenu()" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mm-close" onclick="closeMobileMenu()">×</button>
+  <a href="/" onclick="closeMobileMenu()">Inicio</a>
+  <a href="/servicios/" onclick="closeMobileMenu()">Servicios</a>
+  <a href="/ia-para-empresas/" onclick="closeMobileMenu()">IA para Empresas</a>
+  <a href="/sheila-aguilar/" onclick="closeMobileMenu()">Sheila Aguilar</a>
+  <a href="/blog/" onclick="closeMobileMenu()">Blog</a>
+  <a href="/contacto/" onclick="closeMobileMenu()">Contacto</a>
+  <a href="#reservar" class="mm-cta" onclick="closeMobileMenu()">Quiero mi web →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="position:relative;">
+  <!-- Vectores decorativos hero -->
+  <svg class="deco deco-float-slow" style="top:60px;right:6%;width:55px;height:55px;opacity:.45;z-index:1;" viewBox="0 0 100 100" fill="none">
+    <defs><linearGradient id="hg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#87B229" stop-opacity=".9"/><stop offset="100%" stop-color="#582D81" stop-opacity=".6"/></linearGradient></defs>
+    <path d="M44,12 Q70,8 78,32 Q92,52 72,72 Q52,90 32,76 Q8,60 14,38 Q20,16 44,12 Z" fill="url(#hg1)"/>
+  </svg>
+  <svg class="deco deco-sparkle" style="top:130px;right:44%;width:18px;height:18px;z-index:1;">
+    <path d="M12 0 L13.5 9.5 L24 12 L13.5 14.5 L12 24 L10.5 14.5 L0 12 L10.5 9.5 Z" fill="#87B229" xmlns="http://www.w3.org/2000/svg"/>
+  </svg>
+  <svg class="deco deco-sparkle" style="top:260px;left:40%;width:14px;height:14px;animation-delay:1s;z-index:1;">
+    <path d="M12 0 L13.5 9.5 L24 12 L13.5 14.5 L12 24 L10.5 14.5 L0 12 L10.5 9.5 Z" fill="#e72078" xmlns="http://www.w3.org/2000/svg"/>
+  </svg>
+  <svg class="deco deco-float-fast" style="bottom:100px;left:5%;width:36px;height:36px;opacity:.6;animation-delay:1.5s;z-index:1;" viewBox="0 0 100 100" fill="none">
+    <circle cx="50" cy="50" r="40" stroke="#87B229" stroke-width="3" stroke-dasharray="6,5"/>
+    <circle cx="50" cy="50" r="18" fill="#87B229" opacity=".3"/>
+  </svg>
+  <svg class="deco deco-spin" style="top:80px;left:3%;width:60px;height:60px;opacity:.15;z-index:1;" viewBox="0 0 100 100" fill="none">
+    <circle cx="50" cy="50" r="45" stroke="#87B229" stroke-width="2" stroke-dasharray="8,6"/>
+    <circle cx="50" cy="50" r="30" stroke="#582D81" stroke-width="1.5" stroke-dasharray="4,8"/>
+  </svg>
+  <div class="hero-left">
+    <div class="hero-eyebrow">Diseño Web para PYMEs · Madrid</div>
+    <h1>Tu web profesional.<br>Lista en <em>2–4 semanas.</em></h1>
+    <p class="hero-sub">Para negocios sin web, con web antigua o con una web que no convierte. Todo incluido, sin sorpresas, al precio más directo del mercado.</p>
+    <div class="hero-price-wrap">
+      <div class="hero-price">600€</div>
+      <div class="hero-price-sub">IVA incluido<br><s>Mercado: 1.800–3.000€</s></div>
+    </div>
+    <div class="hero-actions">
+      <a href="#reservar" class="btn-lime">Quiero mi web por 600€ →</a>
+      <a href="#que-incluye" class="btn-ghost">Ver qué incluye</a>
+    </div>
+    <div class="hero-trust">
+      <div class="ht-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Todo incluido</div>
+      <div class="ht-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Sin permanencia</div>
+      <div class="ht-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Optimizada para Google</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-mockup">
+      <div class="mockup-tag">Tu nueva web</div>
+      <div class="mockup-bar">
+        <div class="mockup-dot" style="background:#ff5f57;"></div>
+        <div class="mockup-dot" style="background:#ffbd2e;"></div>
+        <div class="mockup-dot" style="background:#28c941;"></div>
+        <div class="mockup-url">tuempresa.com</div>
+      </div>
+      <div class="mockup-screen">
+        <div class="ms-nav"><div class="ms-logo"></div><div class="ms-links"><div class="ms-link"></div><div class="ms-link"></div><div class="ms-link"></div></div></div>
+        <div class="ms-hero-block"><div class="ms-line"></div><div class="ms-line-sm"></div><div class="ms-btn-block"></div></div>
+        <div style="height:.8rem;"></div>
+        <div class="ms-cards">
+          <div class="ms-card"><div class="ms-card-icon"></div><div class="ms-card-line"></div><div class="ms-card-line short"></div></div>
+          <div class="ms-card"><div class="ms-card-icon"></div><div class="ms-card-line"></div><div class="ms-card-line short"></div></div>
+          <div class="ms-card"><div class="ms-card-icon"></div><div class="ms-card-line"></div><div class="ms-card-line short"></div></div>
+        </div>
+      </div>
+      <div class="mockup-badge"><div class="mb-price">600€</div><div class="mb-label">Todo incluido</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="ts-item"><div class="ts-num">+80</div><div class="ts-label">Empresas<br>acompañadas</div></div>
+  <div class="ts-sep"></div>
+  <div class="ts-item"><div class="ts-num">2–4</div><div class="ts-label">Semanas hasta<br>tener tu web</div></div>
+  <div class="ts-sep"></div>
+  <div class="ts-item"><div class="ts-num">600€</div><div class="ts-label">Precio fijo<br>sin sorpresas</div></div>
+  <div class="ts-sep"></div>
+  <div class="ts-item"><div class="ts-num">0€</div><div class="ts-label">Costes ocultos<br>ni letra pequeña</div></div>
+</div>
+
+
+<!-- DEMO WEB EJEMPLO -->
+<section style="background:var(--purple-xdk);padding:7rem 5rem;position:relative;overflow:hidden;">
+  <!-- Vectores decorativos -->
+  <svg class="deco deco-float-slow" style="top:80px;right:4%;width:90px;height:90px;opacity:.2;" viewBox="0 0 200 200" fill="none">
+    <defs><linearGradient id="dg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#87B229"/><stop offset="100%" stop-color="#582D81"/></linearGradient></defs>
+    <path d="M48,72 Q44,32 86,28 Q128,24 156,52 Q184,80 168,124 Q152,168 108,168 Q64,168 48,128 Q32,88 48,72 Z" fill="url(#dg1)"/>
+  </svg>
+  <svg class="deco deco-sparkle" style="top:200px;left:5%;width:20px;height:20px;animation-delay:.6s;">
+    <path d="M12 0 L13.5 9.5 L24 12 L13.5 14.5 L12 24 L10.5 14.5 L0 12 L10.5 9.5 Z" fill="#87B229" xmlns="http://www.w3.org/2000/svg"/>
+  </svg>
+  <svg class="deco deco-float-mid" style="bottom:80px;right:8%;width:60px;height:60px;opacity:.25;animation-delay:1s;" viewBox="0 0 100 100" fill="none">
+    <circle cx="50" cy="50" r="40" stroke="#87B229" stroke-width="2" stroke-dasharray="6,5"/>
+    <circle cx="50" cy="50" r="20" fill="#87B229" opacity=".2"/>
+  </svg>
+
+  <div style="max-width:1100px;margin:0 auto;position:relative;z-index:2;">
+    <!-- Header -->
+    <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto 4rem;">
+      <div class="section-eyebrow" style="justify-content:center;color:var(--lime);">Ejemplo real incluido en el precio</div>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.15;margin-bottom:1rem;">Así es la web que obtienes <em style="color:var(--lime);font-style:normal;">por 600€</em></h2>
+      <p style="font-size:.9rem;color:rgba(255,255,255,.55);max-width:560px;margin:0 auto;line-height:1.8;">Esto es un ejemplo real de lo que incluye el servicio. Completo, profesional, adaptado a tu negocio. No es un template genérico: cada web se diseña desde cero.</p>
+    </div>
+
+    <!-- Browser mockup con demo -->
+    <div class="reveal d1" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);overflow:hidden;max-width:900px;margin:0 auto;">
+
+      <!-- Browser chrome -->
+      <div style="background:rgba(255,255,255,.06);padding:.8rem 1.2rem;display:flex;align-items:center;gap:.8rem;border-bottom:1px solid rgba(255,255,255,.06);">
+        <div style="display:flex;gap:.35rem;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:#febc2e;"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:#28c840;"></div>
+        </div>
+        <div style="flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:.3rem .8rem;font-size:.62rem;color:rgba(255,255,255,.35);display:flex;align-items:center;gap:.4rem;">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          fontaneriaruiz.com
+        </div>
+        <a href="https://fontaneriaruiz.vercel.app/" target="_blank" rel="noopener"
+           style="font-size:.62rem;color:var(--lime);text-decoration:none;font-weight:600;white-space:nowrap;padding:.3rem .9rem;border:1px solid rgba(135,178,41,.4);background:rgba(135,178,41,.08);">
+          Ver web →
+        </a>
+      </div>
+
+      <!-- Content grid -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;" class="demo-grid">
+
+        <!-- Left: info del proyecto -->
+        <div style="padding:2.5rem;border-right:1px solid rgba(255,255,255,.06);">
+          <div style="font-size:.55rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);margin-bottom:.8rem;">El proyecto</div>
+          <div style="font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:.3rem;line-height:1.2;">Fontanería Ruiz</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.5);margin-bottom:1.8rem;">Negocio local · Leganés, Madrid</div>
+
+          <div style="display:flex;flex-direction:column;gap:.9rem;margin-bottom:2rem;">
+            <div style="display:flex;align-items:flex-start;gap:.7rem;">
+              <div style="width:18px;height:18px;border-radius:50%;background:rgba(135,178,41,.12);border:1px solid rgba(135,178,41,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#87B229" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span style="font-size:.82rem;color:rgba(255,255,255,.8);">Diseño a medida con identidad propia</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:.7rem;">
+              <div style="width:18px;height:18px;border-radius:50%;background:rgba(135,178,41,.12);border:1px solid rgba(135,178,41,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#87B229" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span style="font-size:.82rem;color:rgba(255,255,255,.8);">Inicio, servicios, quiénes somos y contacto</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:.7rem;">
+              <div style="width:18px;height:18px;border-radius:50%;background:rgba(135,178,41,.12);border:1px solid rgba(135,178,41,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#87B229" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span style="font-size:.82rem;color:rgba(255,255,255,.8);">Botón de llamada y WhatsApp directo</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:.7rem;">
+              <div style="width:18px;height:18px;border-radius:50%;background:rgba(135,178,41,.12);border:1px solid rgba(135,178,41,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#87B229" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span style="font-size:.82rem;color:rgba(255,255,255,.8);">Opiniones de clientes integradas</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:.7rem;">
+              <div style="width:18px;height:18px;border-radius:50%;background:rgba(135,178,41,.12);border:1px solid rgba(135,178,41,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#87B229" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span style="font-size:.82rem;color:rgba(255,255,255,.8);">Perfecta en móvil y en ordenador</span>
+            </div>
+          </div>
+
+          <a href="https://fontaneriaruiz.vercel.app/" target="_blank" rel="noopener"
+             style="display:inline-flex;align-items:center;gap:.5rem;background:var(--lime);color:var(--slate);padding:.75rem 1.5rem;font-size:.68rem;font-weight:700;text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:background .2s;">
+            Ver web completa
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <!-- Right: mini preview simulado -->
+        <div style="background:linear-gradient(160deg,#05020f,#0e0730);padding:1.5rem;display:flex;align-items:stretch;">
+          <div style="flex:1;background:#09061a;overflow:hidden;border:1px solid rgba(255,255,255,.06);">
+            <!-- mini nav -->
+            <div style="background:#0d0a22;padding:.55rem .9rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.05);">
+              <span style="font-size:.55rem;font-weight:800;color:#fff;letter-spacing:-.01em;">Fontanería Ruiz</span>
+              <div style="background:#1a56a0;padding:.2rem .5rem;font-size:.5rem;font-weight:700;color:#fff;">611 22 33 44</div>
+            </div>
+            <!-- mini hero -->
+            <div style="padding:1rem .9rem;background:linear-gradient(160deg,#06030d,#100b28);">
+              <div style="font-size:.5rem;color:rgba(255,255,255,.4);margin-bottom:.3rem;letter-spacing:.06em;text-transform:uppercase;">Leganés · Alcorcón · Getafe</div>
+              <div style="font-size:.75rem;font-weight:800;color:#fff;line-height:1.2;margin-bottom:.25rem;">Tu fontanero<br>de confianza</div>
+              <div style="font-size:.5rem;font-style:italic;color:#4a9eff;font-weight:600;margin-bottom:.6rem;">desde 1997.</div>
+              <div style="font-size:.5rem;color:rgba(255,255,255,.5);line-height:1.5;margin-bottom:.7rem;">Averías, instalaciones y urgencias.<br>Presupuesto sin compromiso.</div>
+              <div style="display:flex;gap:.4rem;">
+                <div style="background:#1a56a0;padding:.25rem .6rem;font-size:.48rem;font-weight:700;color:#fff;">Llamar ahora</div>
+                <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:.25rem .6rem;font-size:.48rem;color:rgba(255,255,255,.7);">WhatsApp</div>
+              </div>
+            </div>
+            <!-- mini servicios -->
+            <div style="padding:.8rem .9rem;background:#06040f;">
+              <div style="font-size:.48rem;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;">Nuestros servicios</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35rem;">
+                <div style="background:rgba(255,255,255,.04);padding:.4rem .5rem;font-size:.46rem;color:rgba(255,255,255,.6);">Averías urgentes</div>
+                <div style="background:rgba(255,255,255,.04);padding:.4rem .5rem;font-size:.46rem;color:rgba(255,255,255,.6);">Calefacción</div>
+                <div style="background:rgba(255,255,255,.04);padding:.4rem .5rem;font-size:.46rem;color:rgba(255,255,255,.6);">Instalaciones</div>
+                <div style="background:rgba(255,255,255,.04);padding:.4rem .5rem;font-size:.46rem;color:rgba(255,255,255,.6);">Reformas baño</div>
+              </div>
+            </div>
+            <!-- mini reseñas -->
+            <div style="padding:.7rem .9rem;background:#08051a;border-top:1px solid rgba(255,255,255,.04);">
+              <div style="font-size:.48rem;color:#f5a623;margin-bottom:.3rem;">★★★★★</div>
+              <div style="font-size:.46rem;color:rgba(255,255,255,.5);font-style:italic;">"Vinieron en menos de 2 horas. Muy profesionales."</div>
+              <div style="font-size:.44rem;color:rgba(255,255,255,.3);margin-top:.25rem;">— María G., Google</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Nota aclaratoria -->
+    <div class="reveal d2" style="text-align:center;margin-top:2rem;">
+      <p style="font-size:.78rem;color:rgba(255,255,255,.4);max-width:600px;margin:0 auto;line-height:1.7;">
+        ¿Necesitas algo más complejo? También hacemos webs más avanzadas para negocios que las requieren.<br>
+        <a href="#reservar" style="color:var(--lime);font-weight:600;text-decoration:none;">Cuéntanos tu proyecto →</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- PARA QUIÉN -->
+<section class="for-who">
+  <div class="section-eyebrow reveal">¿Es para ti?</div>
+  <h2 class="section-h2 reveal">Para el negocio que lleva tiempo <em>sin dar el paso</em></h2>
+  <p class="section-sub reveal">Si te identificas con alguna de estas situaciones, esta oferta es exactamente para ti.</p>
+  <div class="who-grid">
+    <div class="who-card reveal">
+      <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+      <h3>No tienes web todavía</h3>
+      <p>Tu negocio existe y funciona, pero en internet eres invisible. Clientes potenciales te buscan y no te encuentran. Eso tiene solución en 2–4 semanas.</p>
+    </div>
+    <div class="who-card reveal d1">
+      <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <h3>Tu web es antigua o da vergüenza</h3>
+      <p>La creaste hace años y se nota. No se ve bien en móvil, tarda en cargar y transmite una imagen que ya no refleja tu negocio real.</p>
+    </div>
+    <div class="who-card reveal d2">
+      <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+      <h3>Tu web no te trae clientes</h3>
+      <p>Tienes web pero nadie te contacta desde ella. Es un folleto digital sin estrategia. Necesita estar orientada a convertir visitas en consultas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ INCLUYE -->
+<section class="includes" id="que-incluye">
+  <div class="includes-grid">
+    <div class="inc-left">
+      <div class="section-eyebrow reveal">Sin letra pequeña</div>
+      <h2 class="section-h2 reveal">Todo lo que necesita una web profesional</h2>
+      <p class="section-sub reveal">600€ es el precio final. No hay costes adicionales de diseño, maquetación, SEO básico ni integración.</p>
+      <ul class="inc-list">
+        <li class="inc-item reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><div class="inc-item-text"><strong>Diseño personalizado</strong><span>Adaptado a tu imagen corporativa, sector y objetivos</span></div></li>
+        <li class="inc-item reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><div class="inc-item-text"><strong>Responsive (móvil y tablet)</strong><span>El 70% de tus clientes navega desde el móvil</span></div></li>
+        <li class="inc-item reveal d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><div class="inc-item-text"><strong>SEO técnico básico</strong><span>Metadatos, canonical, velocidad optimizada y Google Search Console</span></div></li>
+        <li class="inc-item reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><div class="inc-item-text"><strong>Formulario de contacto + RGPD</strong><span>Con validación, anti-spam y páginas legales obligatorias</span></div></li>
+        <li class="inc-item reveal d2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><div class="inc-item-text"><strong>Publicación en tu dominio</strong><span>Configuramos y publicamos la web en el dominio que ya tienes contratado</span></div></li>
+        <li class="inc-item reveal d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><div class="inc-item-text"><strong>WhatsApp y Google Maps integrados</strong><span>Para que el cliente te contacte o te encuentre con un clic</span></div></li>
+        <li class="inc-item reveal d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><div class="inc-item-text"><strong>30 días de soporte incluidos</strong><span>Resolución de dudas y ajustes menores tras la entrega</span></div></li>
+      </ul>
+    </div>
+    <div class="inc-right reveal d2" id="reservar">
+      <div class="price-card">
+        <div class="pc-tag">Oferta de lanzamiento</div>
+        <p class="pc-label">Tu web profesional</p>
+        <div class="pc-price"><span>€</span>600</div>
+        <p class="pc-iva">IVA incluido · Precio fijo · Sin sorpresas</p>
+        <hr class="pc-divider">
+        <ul class="pc-features">
+          <li class="pc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Diseño personalizado</li>
+          <li class="pc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>100% responsive</li>
+          <li class="pc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>SEO técnico básico</li>
+          <li class="pc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Publicación en tu dominio existente</li>
+          <li class="pc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Formulario + RGPD</li>
+          <li class="pc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Lista en 2–4 semanas</li>
+          <li class="pc-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>30 días de soporte</li>
+        </ul>
+        <a href="/sesion-gratuita/" class="pc-cta">Reservar mi web →</a>
+        <p class="pc-note">Empieza con una sesión gratuita de 40 minutos para ver si encajamos</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="proceso">
+  <div class="section-eyebrow reveal">Sin complicaciones</div>
+  <h2 class="section-h2 reveal">De cero a web en 4 pasos</h2>
+  <p class="section-sub reveal">Nos encargamos de todo. Solo necesitas estar disponible en tres momentos clave para darnos tu feedback.</p>
+  <div class="steps-grid">
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <div class="step-week">Semana 1</div>
+      <h3>Briefing y estrategia</h3>
+      <p>Sesión de 40 min donde entendemos tu negocio, tus clientes y qué debe transmitir tu web. Definimos estructura y mensaje.</p>
+    </div>
+    <div class="step reveal d1">
+      <div class="step-num">02</div>
+      <div class="step-week">Semana 1–2</div>
+      <h3>Diseño y contenido</h3>
+      <p>Diseñamos la web con tu identidad visual. Si no tienes logo ni colores, te orientamos. Tú revisas y apruebas.</p>
+    </div>
+    <div class="step reveal d2">
+      <div class="step-num">03</div>
+      <div class="step-week">Semana 2–3</div>
+      <h3>Desarrollo y ajustes</h3>
+      <p>Maquetamos, optimizamos para móvil y hacemos las correcciones que necesites. Máximo dos rondas de cambios.</p>
+    </div>
+    <div class="step reveal d3">
+      <div class="step-num">04</div>
+      <div class="step-week">Semana 3–4</div>
+      <h3>Publicación y entrega</h3>
+      <p>Publicamos la web, configuramos Google Search Console y te entregamos con un manual básico de uso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA MID -->
+<div class="cta-mid reveal">
+  <div class="cta-mid-inner">
+    <div class="cta-mid-text">
+      <h2>¿Ya tienes suficiente información?</h2>
+      <p>Empieza con una sesión gratuita de 40 minutos. Sin compromiso.</p>
+    </div>
+    <div class="cta-mid-actions">
+      <div class="cta-mid-price">600€</div>
+      <a href="/sesion-gratuita/" class="btn-lime">Reservar sesión gratuita →</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- QUIÉNES SOMOS -->
+<section style="background:var(--slate);padding:7rem 5rem;position:relative;overflow:hidden;">
+  <!-- Vectores decorativos -->
+  <svg class="deco deco-float-slow" style="top:60px;left:6%;width:100px;height:100px;opacity:.3;" viewBox="0 0 200 200" fill="none">
+    <defs><linearGradient id="qg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#87B229"/><stop offset="100%" stop-color="#582D81"/></linearGradient></defs>
+    <path d="M48,72 Q44,32 86,28 Q128,24 156,52 Q184,80 168,124 Q152,168 108,168 Q64,168 48,128 Q32,88 48,72 Z" fill="url(#qg1)"/>
+  </svg>
+  <svg class="deco deco-sparkle" style="top:200px;right:12%;width:22px;height:22px;animation-delay:.5s;">
+    <path d="M12 0 L13.5 9.5 L24 12 L13.5 14.5 L12 24 L10.5 14.5 L0 12 L10.5 9.5 Z" fill="#e72078" xmlns="http://www.w3.org/2000/svg"/>
+  </svg>
+  <svg class="deco deco-float-fast" style="bottom:100px;right:6%;width:50px;height:50px;opacity:.35;animation-delay:1.2s;" viewBox="0 0 100 100" fill="none">
+    <circle cx="50" cy="50" r="40" stroke="#87B229" stroke-width="2.5" stroke-dasharray="6,5" fill="none"/>
+    <circle cx="50" cy="50" r="18" fill="#87B229" opacity=".25"/>
+  </svg>
+
+  <div style="max-width:1100px;margin:0 auto;position:relative;z-index:2;">
+    <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto 4rem;">
+      <div class="section-eyebrow" style="justify-content:center;color:var(--lime);">Quiénes somos</div>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.15;margin-bottom:1rem;">El equipo que tiene <em style="color:var(--lime);font-style:normal;">tu proyecto al lado</em></h2>
+      <p style="font-size:.9rem;color:rgba(255,255,255,.55);max-width:540px;margin:0 auto;line-height:1.8;">No somos una agencia con cien personas que nunca verás. Somos el equipo que vas a tener al otro lado del proyecto, desde el primer día hasta el último.</p>
+    </div>
+
+    <!-- Sheila card -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:980px;margin:0 auto 3rem;" class="qs-grid">
+      <div class="reveal d1" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);overflow:hidden;">
+        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,var(--purple-xdk),var(--purple));aspect-ratio:4/3;">
+          <img src="/img/sheila-about.png" alt="Sheila Aguilar, fundadora de Los Martes No Hay Luna" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(42,31,56,.9) 100%);pointer-events:none;"></div>
+          <div style="position:absolute;bottom:1.2rem;left:1.5rem;right:1.5rem;z-index:1;">
+            <div style="font-size:.55rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:.4rem;">Fundadora</div>
+            <div style="font-size:1.6rem;font-weight:800;color:#fff;line-height:1.1;">Sheila Aguilar</div>
+          </div>
+        </div>
+        <div style="padding:1.8rem;">
+          <div style="font-size:.75rem;font-weight:600;color:var(--lime);margin-bottom:.8rem;">Identidad de marca y sistemas digitales</div>
+          <p style="font-size:.85rem;line-height:1.75;color:rgba(255,255,255,.8);font-weight:300;margin-bottom:.8rem;">Más de 25 años de trayectoria en imagen corporativa y marketing digital. Construyo activos digitales que las empresas realmente usan.</p>
+          <p style="font-size:.82rem;line-height:1.75;color:rgba(255,255,255,.55);font-weight:300;">Cada decisión de diseño tiene un porqué de negocio. La web no es decoración: es una herramienta de trabajo que tiene que servir para algo.</p>
+        </div>
+      </div>
+
+      <div class="reveal d2" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);overflow:hidden;">
+        <div style="position:relative;overflow:hidden;background:linear-gradient(160deg,var(--purple-xdk),var(--purple));aspect-ratio:4/3;">
+          <img src="/img/equipo-agencia-losmartesnohayluna2.webp" alt="Equipo Los Martes No Hay Luna" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(42,31,56,.9) 100%);pointer-events:none;"></div>
+          <div style="position:absolute;bottom:1.2rem;left:1.5rem;right:1.5rem;z-index:1;">
+            <div style="font-size:.55rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:.4rem;">El equipo</div>
+            <div style="font-size:1.6rem;font-weight:800;color:#fff;line-height:1.1;">Los Martes No Hay Luna</div>
+          </div>
+        </div>
+        <div style="padding:1.8rem;">
+          <div style="font-size:.75rem;font-weight:600;color:var(--lime);margin-bottom:.8rem;">Marketing digital, SEO e IA para PYMEs</div>
+          <p style="font-size:.85rem;line-height:1.75;color:rgba(255,255,255,.8);font-weight:300;margin-bottom:.8rem;">Un equipo especializado en hacer crecer negocios reales: estrategia, diseño web, posicionamiento en Google y soluciones de inteligencia artificial.</p>
+          <p style="font-size:.82rem;line-height:1.75;color:rgba(255,255,255,.55);font-weight:300;">Trabajamos con PYMEs y negocios locales que quieren resultados medibles, no promesas vacías.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats strip -->
+    <div class="reveal d3" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;border-top:1px solid rgba(255,255,255,.08);padding-top:2.5rem;" class="qs-stats">
+      <div><div style="font-size:2rem;font-weight:800;color:var(--lime);line-height:1;margin-bottom:.4rem;">+25</div><div style="font-size:.7rem;color:rgba(255,255,255,.5);line-height:1.5;text-transform:uppercase;letter-spacing:.07em;">Años de<br>experiencia</div></div>
+      <div><div style="font-size:2rem;font-weight:800;color:var(--lime);line-height:1;margin-bottom:.4rem;">+80</div><div style="font-size:.7rem;color:rgba(255,255,255,.5);line-height:1.5;text-transform:uppercase;letter-spacing:.07em;">Empresas<br>acompañadas</div></div>
+      <div><div style="font-size:2rem;font-weight:800;color:var(--lime);line-height:1;margin-bottom:.4rem;">2–4</div><div style="font-size:.7rem;color:rgba(255,255,255,.5);line-height:1.5;text-transform:uppercase;letter-spacing:.07em;">Semanas de<br>entrega</div></div>
+      <div><div style="font-size:2rem;font-weight:800;color:var(--lime);line-height:1;margin-bottom:.4rem;">100%</div><div style="font-size:.7rem;color:rgba(255,255,255,.5);line-height:1.5;text-transform:uppercase;letter-spacing:.07em;">Precio acordado<br>garantizado</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonios">
+  <div class="section-eyebrow reveal">Lo que dicen nuestros clientes</div>
+  <h2 class="section-h2 reveal">Negocios reales, resultados reales</h2>
+  <div class="test-grid">
+    <div class="test-card reveal">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-text">"He revisado los cambios de la web y me gustan mucho. La sección de partners está perfecta y los blogs le dan mucha vida. ¡Felicidades!"</p>
+      <div class="test-author">Sonia</div>
+      <div class="test-company">Lorenzo Arquitectos</div>
+    </div>
+    <div class="test-card reveal d1">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-text">"Qué trabajo tan bonito están realizando. La web quedará fabulosa — sencilla e intuitiva — y eso me ahorrará mucho trabajo con los clientes."</p>
+      <div class="test-author">Equipo</div>
+      <div class="test-company">Fábrica de Sonrisas</div>
+    </div>
+    <div class="test-card reveal d2">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-text">"Me parece muy bien y también me parece bien que esté en el blog. ¡Buen trabajo! No tengo nada que cambiar. Muy profesionales."</p>
+      <div class="test-author">Vanessa Lago</div>
+      <div class="test-company">Docrys</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PORTFOLIO -->
+<section style="padding:7rem 5rem;background:var(--off-white);position:relative;overflow:hidden;">
+  <svg class="deco deco-float-slow" style="top:60px;right:4%;width:80px;height:80px;opacity:.25;" viewBox="0 0 200 200" fill="none">
+    <path d="M48,72 Q44,32 86,28 Q128,24 156,52 Q184,80 168,124 Q152,168 108,168 Q64,168 48,128 Q32,88 48,72 Z" fill="#582D81"/>
+  </svg>
+  <svg class="deco deco-sparkle" style="bottom:120px;left:5%;width:20px;height:20px;animation-delay:.8s;">
+    <path d="M12 0 L13.5 9.5 L24 12 L13.5 14.5 L12 24 L10.5 14.5 L0 12 L10.5 9.5 Z" fill="#87B229" xmlns="http://www.w3.org/2000/svg"/>
+  </svg>
+
+  <div style="position:relative;z-index:2;">
+    <div class="section-eyebrow reveal">Ejemplos reales</div>
+    <h2 class="section-h2 reveal">Webs que hemos creado <em>para negocios como el tuyo</em></h2>
+    <p class="section-sub reveal">Cada web es diferente porque cada negocio lo es. Aquí van algunos ejemplos de lo que podemos hacer.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;" class="portfolio-grid">
+
+      <a href="https://www.medeaestilistas.es/" target="_blank" rel="noopener" class="reveal" style="display:block;background:#fff;border:1px solid var(--rule);overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(88,45,129,.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="background:linear-gradient(135deg,#f4f0fa,#e8e0f5);height:200px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background:url('https://www.medeaestilistas.es/') center/cover no-repeat;opacity:.15;"></div>
+          <div style="text-align:center;position:relative;z-index:1;">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5" style="margin-bottom:.6rem;"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+            <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--purple);font-weight:600;">Peluquería & Estética</div>
+          </div>
+        </div>
+        <div style="padding:1.5rem;">
+          <div style="font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);font-weight:600;margin-bottom:.4rem;">Sector Belleza</div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--slate);margin-bottom:.4rem;letter-spacing:-.02em;">Medea Estilistas</h3>
+          <p style="font-size:.8rem;color:var(--mid);line-height:1.6;margin-bottom:1rem;">Web profesional para peluquería con sistema de reservas, galería de trabajos y ficha completa de servicios.</p>
+          <div style="font-size:.68rem;color:var(--purple);font-weight:600;letter-spacing:.05em;">medeaestilistas.es →</div>
+        </div>
+      </a>
+
+      <a href="https://serdoc.es/" target="_blank" rel="noopener" class="reveal d1" style="display:block;background:#fff;border:1px solid var(--rule);overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(88,45,129,.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="background:linear-gradient(135deg,#f0f4f8,#dce8f5);height:200px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+          <div style="text-align:center;position:relative;z-index:1;">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5" style="margin-bottom:.6rem;"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--purple);font-weight:600;">Informática Empresarial</div>
+          </div>
+        </div>
+        <div style="padding:1.5rem;">
+          <div style="font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);font-weight:600;margin-bottom:.4rem;">Sector Tecnología</div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--slate);margin-bottom:.4rem;letter-spacing:-.02em;">Serdoc Informática</h3>
+          <p style="font-size:.8rem;color:var(--mid);line-height:1.6;margin-bottom:1rem;">Web corporativa para empresa de servicios informáticos con catálogo de soluciones y formulario de contacto directo.</p>
+          <div style="font-size:.68rem;color:var(--purple);font-weight:600;letter-spacing:.05em;">serdoc.es →</div>
+        </div>
+      </a>
+
+      <a href="https://gardenweb-2026.vercel.app/es/" target="_blank" rel="noopener" class="reveal d2" style="display:block;background:#fff;border:1px solid var(--rule);overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(88,45,129,.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="background:linear-gradient(135deg,#f0f8f0,#d5edda);height:200px;display:flex;align-items:center;justify-content:center;">
+          <div style="text-align:center;">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5" style="margin-bottom:.6rem;"><path d="M2 22 Q8 14 12 10 Q16 6 22 2"/><path d="M22 2 Q20 10 16 14 Q12 18 8 20"/><path d="M6 22 Q8 18 10 14"/></svg>
+            <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--purple);font-weight:600;">Jardinería & Paisajismo</div>
+          </div>
+        </div>
+        <div style="padding:1.5rem;">
+          <div style="font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);font-weight:600;margin-bottom:.4rem;">Sector Servicios</div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--slate);margin-bottom:.4rem;letter-spacing:-.02em;">Garden Web 2026</h3>
+          <p style="font-size:.8rem;color:var(--mid);line-height:1.6;margin-bottom:1rem;">Landing moderna para empresa de jardinería y paisajismo con galería de proyectos y presupuesto online.</p>
+          <div style="font-size:.68rem;color:var(--purple);font-weight:600;letter-spacing:.05em;">Ver web →</div>
+        </div>
+      </a>
+
+      <a href="https://piscinassolaris.es/" target="_blank" rel="noopener" class="reveal d3" style="display:block;background:#fff;border:1px solid var(--rule);overflow:hidden;text-decoration:none;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(88,45,129,.12)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="background:linear-gradient(135deg,#f0f6ff,#d5e8f8);height:200px;display:flex;align-items:center;justify-content:center;">
+          <div style="text-align:center;">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="1.5" style="margin-bottom:.6rem;"><path d="M2 12 Q5 9 8 12 Q11 15 14 12 Q17 9 20 12 Q21.5 13.5 22 12"/><path d="M2 17 Q5 14 8 17 Q11 20 14 17 Q17 14 20 17 Q21.5 18.5 22 17"/><path d="M12 2 L12 8"/><path d="M9 5 L12 2 L15 5"/></svg>
+            <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--purple);font-weight:600;">Construcción & Reforma</div>
+          </div>
+        </div>
+        <div style="padding:1.5rem;">
+          <div style="font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);font-weight:600;margin-bottom:.4rem;">Sector Construcción</div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--slate);margin-bottom:.4rem;letter-spacing:-.02em;">Piscinas Solaris</h3>
+          <p style="font-size:.8rem;color:var(--mid);line-height:1.6;margin-bottom:1rem;">Web corporativa para empresa de piscinas con galería de proyectos, catálogo de modelos y solicitud de presupuesto.</p>
+          <div style="font-size:.68rem;color:var(--purple);font-weight:600;letter-spacing:.05em;">piscinassolaris.es →</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div>
+      <div class="section-eyebrow reveal">Preguntas frecuentes</div>
+      <h2 class="section-h2 reveal">Todo lo que quieres saber antes de decidir</h2>
+      <p class="section-sub reveal">Si tienes alguna duda que no esté aquí, escríbenos por <a href="https://wa.me/34621060659" style="color:var(--purple);font-weight:600;">WhatsApp</a>.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item"><button class="faq-q">¿El precio es realmente todo incluido?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a">Sí. 600€ es el precio final con IVA. Incluye diseño, desarrollo, hosting, formulario, páginas legales y publicación. El dominio corre a cargo del cliente — si no tienes, te orientamos para contratarlo por tu cuenta. Sin costes sorpresa por nuestra parte.</div></div>
+      <div class="faq-item"><button class="faq-q">¿Qué necesito tener yo para empezar?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a">Solo necesitas tener claro qué hace tu negocio y para quién. Si tienes logo y colores, mejor. Si no, te orientamos. Nosotros nos encargamos del resto.</div></div>
+      <div class="faq-item"><button class="faq-q">¿Cuánto tiempo tengo que dedicar?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a">Básicamente 3 momentos: briefing (40 min), revisión del diseño (30 min) y aprobación final. El resto lo gestionamos nosotros.</div></div>
+      <div class="faq-item"><button class="faq-q">¿Puedo añadir más páginas o funcionalidades?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a">El precio base incluye hasta 5 secciones. Si necesitas tienda online, blog con CMS o funcionalidades especiales, lo presupuestamos por separado antes de empezar.</div></div>
+      <div class="faq-item"><button class="faq-q">¿Necesito tener ya un dominio contratado?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a">El dominio corre a tu cargo — es algo que contratas directamente con un proveedor como GoDaddy o Nominalia por unos 10–15€/año. Si no tienes o no sabes cómo hacerlo, te orientamos en el proceso para que lo tengas listo antes de la entrega.</div></div>
+      <div class="faq-item"><button class="faq-q">¿Puedo gestionar la web yo mismo después?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a">Sí. Te entregamos acceso completo y un manual básico. Si en el futuro quieres actualizaciones, lo hacemos por horas sin obligación.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="fct-eyebrow">¿A qué esperas?</div>
+  <h2>Tu web profesional por 600€.<br><em>Sin excusas para seguir sin ella.</em></h2>
+  <p class="fct-sub">Empieza con una sesión gratuita de 40 minutos. Sin compromiso. Si vemos que encajamos, arrancamos esa semana.</p>
+  <div class="fct-actions">
+    <a href="/sesion-gratuita/" class="btn-lime-lg">Reservar sesión gratuita →</a>
+    <a href="https://wa.me/34621060659?text=Hola,%20me%20interesa%20la%20web%20por%20600€" target="_blank" rel="noopener" class="btn-ghost-lg">Escribir por WhatsApp →</a>
+  </div>
+  <p class="fct-note">Plazas limitadas · Respuesta en menos de 24h · 30 días de soporte incluidos</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/"><img src="/img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna" style="height:44px;width:auto;display:block;"></a>
+      <p>Marketing digital, consultoría e IA para PYMEs. Leganés, Madrid.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Servicios</div>
+      <div class="footer-col">
+        <a href="/servicios/">Marketing Digital</a>
+        <a href="/diseno-web/">Diseño Web 600€</a>
+        <a href="/ia-para-empresas/">IA para Empresas</a>
+        <a href="/consultoria-estrategica/">Consultoría</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Empresa</div>
+      <div class="footer-col">
+        <a href="/sheila-aguilar/">Sheila Aguilar</a>
+        <a href="/blog/">Blog</a>
+        <a href="/sesion-gratuita/">Sesión gratuita</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Contacto</div>
+      <div class="footer-col">
+        <a href="tel:34919997726">91 999 77 26</a>
+        <a href="https://wa.me/34621060659" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:hola@losmartesnohayluna.com">hola@losmartesnohayluna.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
+    <div class="footer-legal">
+      <a href="/aviso-legal/" rel="nofollow">Aviso Legal</a>
+      <a href="/privacidad/" rel="nofollow">Privacidad</a>
+      <a href="/cookies/" rel="nofollow">Cookies</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/losmartesnohayluna" target="_blank" rel="noopener">ig</a>
+      <a href="https://www.linkedin.com/company/los-martes-no-hay-luna" target="_blank" rel="noopener">in</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/widget-consultora.js" defer></script>
+<script src="/cookie-consent.js" defer></script>
+<script>
+  function openMobileMenu(){document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden';}
+  function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow='';}
+  document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
