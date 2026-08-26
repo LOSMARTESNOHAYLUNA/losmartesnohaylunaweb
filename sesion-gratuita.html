@@ -1302,12 +1302,13 @@ function showStep(n) {
     d.classList.remove('current', 'done');
     if (i < n) d.classList.add('done');
     if (i === n) d.classList.add('current');
-  // Mostrar botón submit solo en el último paso
+  });
+  // Mostrar el botón de envío solo en el último paso
   const submitWrap = document.getElementById('submit-wrap');
   if (submitWrap) submitWrap.style.display = (n === steps.length - 1) ? 'block' : 'none';
-  });
   current = n;
 }
+showStep(0);
 
 // Option selection
 form.querySelectorAll('.form-options').forEach(group => {
@@ -1367,18 +1368,19 @@ form.addEventListener('submit', async (e) => {
 
   try {
     // Enviar datos a FormSubmit (envía al email sin necesidad de backend)
-    const formData = new FormData();
-    formData.append('_subject', '🌙 Nueva solicitud de sesión gratuita — LMNHL');
-    formData.append('_template', 'table');
-    formData.append('_captcha', 'false');
+    const payload = {
+      _subject: 'Nueva solicitud de sesion gratuita - LMNHL',
+      _template: 'table',
+      _captcha: 'false'
+    };
     Object.entries(data).forEach(([key, value]) => {
-      formData.append(key, value || '—');
+      payload[key] = value || '-';
     });
 
-    const response = await fetch('https://formsubmit.co/hola@losmartesnohayluna.com', {
+    const response = await fetch('https://formsubmit.co/ajax/hola@losmartesnohayluna.com', {
       method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
     });
 
     if (response.ok) {
