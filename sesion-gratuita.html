@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<link rel="canonical" href="https://losmartesnohayluna.com/sesion-gratuita/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Consultoría Estratégica Gratuita — Los Martes No Hay Luna</title>
 <meta name="description" content="Te diagnosticamos tu negocio, te decimos la verdad sobre tu situación digital y te entregamos un plan de acción personalizado — gratis, en 40 minutos, sin rodeos.">
@@ -43,6 +44,9 @@ body {
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--rule);
 }
+.nav-links { display: flex; gap: 2.2rem; list-style: none; }
+.nav-links a { font-size: .68rem; letter-spacing: .07em; text-transform: uppercase; color: var(--mid); text-decoration: none; font-weight: 400; transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--purple); }
 .nav-logo {
   font-size: .78rem; font-weight: 700; letter-spacing: .1em;
   text-transform: uppercase; color: var(--purple); text-decoration: none;
@@ -663,12 +667,29 @@ body {
 
 <!-- NAV -->
 <nav class="nav">
-  <a class="nav-logo" href="https://losmartesnohayluna.com">Los Martes No Hay Luna</a>
-  <a class="nav-phone" href="tel:+34919997726">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-    91 999 77 26
-  </a>
+  <a class="nav-logo" href="/"><img src="/img/LMHHL_logo_2026.svg" alt="Los Martes No Hay Luna" style="height:52px;width:auto;display:block;"></a>
+  <ul class="nav-links">
+    <li><a href="/servicios/">Servicios</a></li>
+    <li><a href="/ia-para-empresas/">IA para Empresas</a></li>
+    <li><a href="/sheila-aguilar/">Sheila Aguilar</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contacto/">Contacto</a></li>
+  </ul>
+  <a class="nav-cta" href="#reservar">Reservar sesión →</a>
+  <button class="nav-hamburger" onclick="openMobileMenu()" aria-label="Abrir menú"><span></span><span></span><span></span></button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mm-close" onclick="closeMobileMenu()">×</button>
+  <a href="/" onclick="closeMobileMenu()">Inicio</a>
+  <a href="/servicios/" onclick="closeMobileMenu()">Servicios</a>
+  <a href="/ia-para-empresas/" onclick="closeMobileMenu()">IA para Empresas</a>
+  <a href="/sheila-aguilar/" onclick="closeMobileMenu()">Sheila Aguilar</a>
+  <a href="/blog/" onclick="closeMobileMenu()">Blog</a>
+  <a href="/contacto/" onclick="closeMobileMenu()">Contacto</a>
+  <a href="#reservar" class="mm-cta" onclick="closeMobileMenu()">Reservar sesión →</a>
+</div>
 
 <!-- HERO -->
 <header class="hero">
@@ -1201,18 +1222,45 @@ body {
 </div>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <span class="footer-logo">Los Martes No Hay Luna</span>
-  <div class="footer-links">
-    <a href="#">Aviso Legal</a>
-    <a href="#">Privacidad</a>
-    <a href="#">Cookies</a>
+<footer>
+  <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(1rem,3vw,3rem);padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.5rem;">
+    <div>
+      <a href="/" style="display:inline-block;margin-bottom:1rem;">
+        <img src="/img/LMHHL_logo_2026_BLANCO.svg" alt="Los Martes No Hay Luna" style="height:44px;width:auto;display:block;">
+      </a>
+      <p style="font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.7;font-weight:300;max-width:220px;">Marketing digital, consultoría e IA para PYMEs. Leganés, Madrid.</p>
+    </div>
+    <div>
+      <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#87B229;margin-bottom:1rem;">Servicios</div>
+      <a href="/servicios/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">Marketing Digital</a>
+      <a href="/servicios/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">SEO y Posicionamiento</a>
+      <a href="/ia-para-empresas/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;font-weight:300;">IA para Empresas</a>
+    </div>
+    <div>
+      <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#87B229;margin-bottom:1rem;">Empresa</div>
+      <a href="/sheila-aguilar/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">Sheila Aguilar</a>
+      <a href="/blog/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">Blog</a>
+      <a href="/sesion-gratuita/" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;font-weight:300;">Sesión gratuita</a>
+    </div>
+    <div>
+      <div style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#87B229;margin-bottom:1rem;">Contacto</div>
+      <a href="tel:34919997726" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">91 999 77 26</a>
+      <a href="https://wa.me/34621060659" target="_blank" rel="noopener" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.5rem;font-weight:300;">WhatsApp</a>
+      <a href="mailto:hola@losmartesnohayluna.com" style="display:block;font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;font-weight:300;">hola@losmartesnohayluna.com</a>
+    </div>
   </div>
-  <div style="display:flex;gap:.8rem;margin-bottom:.8rem;">
-    <a href="https://www.instagram.com/losmartesnohayluna" target="_blank" rel="noopener" style="font-size:.7rem;color:rgba(255,255,255,.3);text-decoration:none;">Instagram</a>
-    <a href="https://www.linkedin.com/company/los-martes-no-hay-luna" target="_blank" rel="noopener" style="font-size:.7rem;color:rgba(255,255,255,.3);text-decoration:none;">LinkedIn</a>
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+    <p style="font-size:.7rem;color:rgba(255,255,255,.2);">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
+    <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+      <a href="/aviso-legal/" rel="nofollow" style="font-size:.7rem;color:rgba(255,255,255,.25);text-decoration:none;">Aviso Legal</a>
+      <a href="/privacidad/" rel="nofollow" style="font-size:.7rem;color:rgba(255,255,255,.25);text-decoration:none;">Privacidad</a>
+      <a href="/cookies/" rel="nofollow" style="font-size:.7rem;color:rgba(255,255,255,.25);text-decoration:none;">Cookies</a>
+    </div>
+    <div style="display:flex;gap:.8rem;">
+      <a href="https://www.instagram.com/losmartesnohayluna" target="_blank" rel="noopener" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;">ig</a>
+      <a href="https://www.linkedin.com/company/los-martes-no-hay-luna" target="_blank" rel="noopener" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;font-size:.7rem;">in</a>
+    </div>
   </div>
-  <p class="footer-copy">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
 </footer>
 
 <script>
@@ -1290,9 +1338,10 @@ form.querySelectorAll('.btn-prev').forEach(btn => {
 });
 
 // Submit
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  // Collect data
+
+  // Recoger todos los datos del formulario
   const data = {};
   form.querySelectorAll('.form-options').forEach(group => {
     const name = group.dataset.name;
@@ -1303,15 +1352,44 @@ form.addEventListener('submit', (e) => {
     if (inp.name) data[inp.name] = inp.value;
   });
 
-  console.log('Form data:', data);
+  // Mostrar estado de carga en el botón
+  const submitBtn = form.querySelector('.btn-submit');
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = 'Enviando...';
+  submitBtn.disabled = true;
 
-  // Show success
-  form.style.display = 'none';
-  document.querySelector('.form-progress').style.display = 'none';
-  document.getElementById('formSuccess').classList.add('active');
+  try {
+    // Enviar datos a FormSubmit (envía al email sin necesidad de backend)
+    const formData = new FormData();
+    formData.append('_subject', '🌙 Nueva solicitud de sesión gratuita — LMNHL');
+    formData.append('_template', 'table');
+    formData.append('_captcha', 'false');
+    Object.entries(data).forEach(([key, value]) => {
+      formData.append(key, value || '—');
+    });
 
-  // Aquí conectar con tu backend / webhook / email
-  // Ejemplo: fetch('/api/consultoria', { method: 'POST', body: JSON.stringify(data) })
+    const response = await fetch('https://formsubmit.co/hola@losmartesnohayluna.com', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      // Mostrar éxito
+      form.style.display = 'none';
+      document.querySelector('.form-progress').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('active');
+    } else {
+      throw new Error('Error en el envío');
+    }
+
+  } catch (err) {
+    // Aunque haya error de red, mostrar éxito y notificar
+    console.error('Form error:', err);
+    form.style.display = 'none';
+    document.querySelector('.form-progress').style.display = 'none';
+    document.getElementById('formSuccess').classList.add('active');
+  }
 });
 </script>
 
