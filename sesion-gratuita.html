@@ -980,7 +980,7 @@ footer a { transition: color .2s; }
       <div class="form-progress-dot" data-step="8"></div>
     </div>
 
-    <form id="consultForm">
+    <form id="consultForm" novalidate>
 
       <!-- STEP 0: FILTRO -->
       <div class="form-step active" data-step="0">
@@ -1152,7 +1152,7 @@ footer a { transition: color .2s; }
       <div class="form-step" data-step="7">
         <label class="form-label">Déjanos la URL de tu web y tu perfil de Instagram (si tienes). Esto nos permite preparar la sesión con información real de tu negocio.</label>
         <div style="display:flex;flex-direction:column;gap:.8rem;">
-          <input class="form-input" type="url" name="web" placeholder="https://www.tuempresa.com">
+          <input class="form-input" type="text" inputmode="url" name="web" placeholder="www.tuempresa.com">
           <input class="form-input" type="text" name="instagram" placeholder="@tuempresa">
         </div>
         <div class="form-nav">
@@ -1191,6 +1191,7 @@ footer a { transition: color .2s; }
 
       <!-- Submit fuera de los pasos para que siempre funcione -->
       <div id="submit-wrap" style="display:none;">
+        <p id="form-error" style="display:none;color:#e72078;font-size:.8rem;font-weight:600;margin-bottom:.8rem;">Revisa los campos marcados: nombre, empresa, email y teléfono son obligatorios.</p>
         <button type="submit" class="btn-submit">Reservar mi sesión gratuita →</button>
         <p class="form-note">Plazas limitadas · Sin compromiso · 100% confidencial</p>
       </div>
@@ -1359,6 +1360,30 @@ form.querySelectorAll('.btn-prev').forEach(btn => {
 // Submit
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+
+  // Validación manual: solo campos del último paso (visibles)
+  const obligatorios = ['nombre', 'empresa', 'email', 'telefono'];
+  let faltan = false;
+  obligatorios.forEach(n => {
+    const campo = form.querySelector('[name="' + n + '"]');
+    if (!campo) return;
+    const vacio = !campo.value.trim();
+    const emailMal = (n === 'email' && campo.value && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(campo.value));
+    if (vacio || emailMal) {
+      campo.style.borderColor = '#e72078';
+      if (!faltan) campo.focus();
+      faltan = true;
+    } else {
+      campo.style.borderColor = '';
+    }
+  });
+  if (faltan) {
+    const aviso = document.getElementById('form-error');
+    if (aviso) aviso.style.display = 'block';
+    return;
+  }
+  const aviso = document.getElementById('form-error');
+  if (aviso) aviso.style.display = 'none';
 
   // Recoger todos los datos del formulario
   const data = {};
