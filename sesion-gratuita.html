@@ -1180,6 +1180,10 @@ body {
           <button type="button" class="btn-prev">← Atrás</button>
           <div></div>
         </div>
+      </div>
+
+      <!-- Submit fuera de los pasos para que siempre funcione -->
+      <div id="submit-wrap" style="display:none;">
         <button type="submit" class="btn-submit">Reservar mi sesión gratuita →</button>
         <p class="form-note">Plazas limitadas · Sin compromiso · 100% confidencial</p>
       </div>
@@ -1298,6 +1302,9 @@ function showStep(n) {
     d.classList.remove('current', 'done');
     if (i < n) d.classList.add('done');
     if (i === n) d.classList.add('current');
+  // Mostrar botón submit solo en el último paso
+  const submitWrap = document.getElementById('submit-wrap');
+  if (submitWrap) submitWrap.style.display = (n === steps.length - 1) ? 'block' : 'none';
   });
   current = n;
 }
