@@ -1386,14 +1386,18 @@ form.addEventListener('submit', async (e) => {
   if (aviso) aviso.style.display = 'none';
 
   // Recoger todos los datos del formulario
-  const data = {};
+  const data = {};   // valores técnicos (para el CRM)
+  const texto = {};  // texto legible (para el email)
   form.querySelectorAll('.form-options').forEach(group => {
     const name = group.dataset.name;
     const sel = group.querySelector('.form-option.selected');
-    if (sel) data[name] = sel.dataset.value;
+    if (sel) {
+      data[name] = sel.dataset.value;
+      texto[name] = sel.textContent.trim();
+    }
   });
   form.querySelectorAll('input, textarea').forEach(inp => {
-    if (inp.name) data[inp.name] = inp.value;
+    if (inp.name) { data[inp.name] = inp.value; texto[inp.name] = inp.value; }
   });
 
   // Mostrar estado de carga en el botón
@@ -1404,14 +1408,28 @@ form.addEventListener('submit', async (e) => {
 
   try {
     // Enviar datos a FormSubmit (envía al email sin necesidad de backend)
+    const v = k => (texto[k] && String(texto[k]).trim()) || '—';
     const payload = {
-      _subject: 'Nueva solicitud de sesion gratuita - LMNHL',
+      _subject: 'Nueva solicitud de sesion gratuita - ' + v('empresa'),
       _template: 'table',
-      _captcha: 'false'
+      _captcha: 'false',
+      'Nombre':                  v('nombre'),
+      'Empresa':                 v('empresa'),
+      'Email':                   v('email'),
+      'Telefono':                v('telefono'),
+      'Web':                     v('web'),
+      'Instagram':               v('instagram'),
+      'Sector':                  v('sector'),
+      'Tamano de empresa':       v('tamano'),
+      'Facturacion anual':       v('facturacion'),
+      'Reto principal':          v('reto'),
+      'Inversion previa':        v('inversion'),
+      'Objetivo':                v('objetivo'),
+      'Compromiso 24h WhatsApp': v('compromiso'),
+      'Tiene empresa':           v('filtro'),
+      'Origen':                  'Landing Consultoria Gratuita',
+      'Fecha':                   new Date().toLocaleString('es-ES')
     };
-    Object.entries(data).forEach(([key, value]) => {
-      payload[key] = value || '-';
-    });
 
     // ── 1. Enviar al CRM (GoHighLevel) ──────────────────────
     const ghl = {
@@ -1432,7 +1450,7 @@ form.addEventListener('submit', async (e) => {
       source:              'Landing Consultoría Gratuita'
     };
 
-    fetch('https://services.leadconnectorhq.com/hooks/Jj1vO4Q0xz6JTKL0mTp6/webhook-trigger/db9e0946-1dea-4870-98c8-32b5c4271021', {
+    fetch('https://services.leadconnectorhq.com/hooks/Jj1vO4Q0xz6JTKL0mTp6/webhook-trigger/e09a94a0-3c37-4691-a649-b2efdca0a643', {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
