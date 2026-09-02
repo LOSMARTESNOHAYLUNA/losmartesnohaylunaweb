@@ -1214,6 +1214,7 @@ footer a { transition: color .2s; }
         </div>
         <iframe
           src="https://api.leadconnectorhq.com/widget/booking/1HYQjueKG3b2iKrHCeM8"
+          id="calendarioSheila"
           style="width:100%;height:700px;border:none;display:block;"
           scrolling="yes"
           id="booking-landing">
@@ -1450,12 +1451,28 @@ form.addEventListener('submit', async (e) => {
       source:              'Landing Consultoría Gratuita'
     };
 
-    fetch('https://services.leadconnectorhq.com/hooks/Jj1vO4Q0xz6JTKL0mTp6/webhook-trigger/e09a94a0-3c37-4691-a649-b2efdca0a643', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(ghl)
-    }).catch(err => console.error('GHL webhook:', err));
+    const webhookUrl = 'https://services.leadconnectorhq.com/hooks/Jj1vO4Q0xz6JTKL0mTp6/webhook-trigger/e09a94a0-3c37-4691-a649-b2efdca0a643';
+    const cuerpo = JSON.stringify(ghl);
+
+    // Envío CORS normal: es el único modo que conserva Content-Type: application/json,
+    // imprescindible para que GoHighLevel interprete el payload y cree el contacto.
+    try {
+      const r = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: cuerpo,
+        keepalive: true
+      });
+      console.log('GHL webhook status:', r.status);
+    } catch (errGhl) {
+      // Si el navegador bloquea por CORS, reintento en no-cors (llega como text/plain)
+      console.warn('GHL CORS bloqueado, reintentando en no-cors:', errGhl);
+      try {
+        await fetch(webhookUrl, { method: 'POST', mode: 'no-cors', body: cuerpo, keepalive: true });
+      } catch (err2) {
+        console.error('GHL webhook falló:', err2);
+      }
+    }
 
     // ── 2. Enviar copia por email ───────────────────────────
     const response = await fetch('https://formsubmit.co/ajax/hola@losmartesnohayluna.com', {
@@ -1463,6 +1480,20 @@ form.addEventListener('submit', async (e) => {
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(payload)
     });
+
+    // Precargar el calendario con los datos para que la reserva
+    // se asocie al contacto que acaba de crearse y no genere uno nuevo
+    try {
+      const cal = document.getElementById('calendarioSheila');
+      if (cal) {
+        const p = new URLSearchParams({
+          first_name: data.nombre   || '',
+          email:      data.email    || '',
+          phone:      data.telefono || ''
+        });
+        cal.src = 'https://api.leadconnectorhq.com/widget/booking/1HYQjueKG3b2iKrHCeM8?' + p.toString();
+      }
+    } catch (e) { console.warn('Prefill calendario:', e); }
 
     if (response.ok) {
       // Mostrar éxito
