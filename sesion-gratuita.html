@@ -1413,6 +1413,33 @@ form.addEventListener('submit', async (e) => {
       payload[key] = value || '-';
     });
 
+    // ── 1. Enviar al CRM (GoHighLevel) ──────────────────────
+    const ghl = {
+      first_name:          data.nombre      || '',
+      email:               data.email       || '',
+      phone:               data.telefono    || '',
+      company_name:        data.empresa     || '',
+      sector:              data.sector      || '',
+      tamano_empresa:      data.tamano      || '',
+      facturacion_anual:   data.facturacion || '',
+      reto_principal:      data.reto        || '',
+      inversion_previa:    data.inversion   || '',
+      objetivo:            data.objetivo    || '',
+      url_web:             data.web         || '',
+      instagram:           data.instagram   || '',
+      compromiso_whatsapp: data.compromiso  || '',
+      filtro_entrada:      data.filtro      || '',
+      source:              'Landing Consultoría Gratuita'
+    };
+
+    fetch('https://services.leadconnectorhq.com/hooks/Jj1vO4Q0xz6JTKL0mTp6/webhook-trigger/db9e0946-1dea-4870-98c8-32b5c4271021', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(ghl)
+    }).catch(err => console.error('GHL webhook:', err));
+
+    // ── 2. Enviar copia por email ───────────────────────────
     const response = await fetch('https://formsubmit.co/ajax/hola@losmartesnohayluna.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
