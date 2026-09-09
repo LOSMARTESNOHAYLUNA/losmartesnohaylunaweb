@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5KS6V79X');</script>
+<!-- End Google Tag Manager -->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Consultoría Estratégica Marketing Madrid 🚀</title>
@@ -1183,6 +1191,11 @@ img { height: auto; }
 <script src="/widget-consultora.js" defer></script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KS6V79X"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 
 <!-- NAV -->
 <nav>
@@ -1585,38 +1598,7 @@ img { height: auto; }
     <a href="tel:34919997726">91 999 77 26</a>
   </div>
   <p class="footer-copy">© 2026 Los Martes No Hay Luna · Todos los derechos reservados · Leganés, Madrid</p>
-</footer>
-
-<script>
-  // Reveal on scroll
-  const els = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-  els.forEach(el => obs.observe(el));
-
-  // FAQ accordion
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const answer = item.querySelector('.faq-a');
-      const isOpen = q.classList.contains('open');
-      document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('open'));
-      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
-      if (!isOpen) { q.classList.add('open'); answer.classList.add('open'); }
-    });
-  });
-</script>
-
-<script>
-function openMobileMenu() {
-  document.getElementById('mobileMenu').classList.add('open');
-  document.querySelector('.nav-hamburger').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeMobileMenu() {
-  document.getElementById('mobileMenu').classList.remove('open');
-  var btn = document.<footer>
+<footer>
   <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(1rem, 3vw, 3rem);padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.5rem;">
     <div>
       <a href="/" style="display:inline-block;margin-bottom:1rem;">
@@ -1667,9 +1649,22 @@ function closeMobileMenu() {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: 0.08 });
   els.forEach(el => obs.observe(el));
+
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const answer = item.querySelector('.faq-a');
+      const isOpen = q.classList.contains('open');
+      document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+      if (!isOpen) { q.classList.add('open'); if (answer) answer.classList.add('open'); }
+    });
+  });
+
   function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow='hidden'; }
   function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow=''; }
 </script>
+<script src="/widget-consultora.js" defer></script>
 <script src="/cookie-consent.js" defer></script>
 </body>
 </html>
