@@ -379,7 +379,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="/" onclick="closeMobileMenu()">Inicio</a>
   <a href="/servicios/" onclick="closeMobileMenu()">Servicios</a>
   <a href="/ia-para-empresas/" onclick="closeMobileMenu()">IA para Empresas</a>
-  <a href="/ia-tools/" onclick="closeMobileMenu()">IA Tools</a>
   <a href="/sheila-aguilar/" onclick="closeMobileMenu()">Sheila Aguilar</a>
   <a href="/blog/" onclick="closeMobileMenu()">Blog</a>
   <a href="/contacto/" onclick="closeMobileMenu()">Contacto</a>
@@ -423,6 +422,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </main>
+
+
+<!-- CALENDARIO -->
+<section style="padding:0 5rem 5rem;background:var(--off-white,#f8f6f2);" id="reservar">
+  <div style="max-width:900px;margin:0 auto;border:1px solid rgba(88,45,129,.12);overflow:hidden;">
+    <div style="background:#582D81;padding:1.2rem 2rem;">
+      <p style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#87B229;font-weight:600;margin-bottom:.3rem;">Último paso</p>
+      <p style="font-size:.85rem;color:rgba(255,255,255,.85);font-weight:300;">Elige el día y la hora que mejor te venga · 40 minutos · Videollamada</p>
+    </div>
+    <iframe id="calendarioGracias"
+      src="https://api.leadconnectorhq.com/widget/booking/1HYQjueKG3b2iKrHCeM8"
+      style="width:100%;height:700px;border:none;display:block;" scrolling="yes"></iframe>
+  </div>
+</section>
+
+<script>
+(function(){
+  var p = new URLSearchParams(location.search);
+  var cal = document.getElementById('calendarioGracias');
+  if (cal && (p.get('nombre') || p.get('email'))) {
+    var q = new URLSearchParams({
+      first_name: p.get('nombre')   || '',
+      email:      p.get('email')    || '',
+      phone:      p.get('telefono') || ''
+    });
+    cal.src = 'https://api.leadconnectorhq.com/widget/booking/1HYQjueKG3b2iKrHCeM8?' + q.toString();
+  }
+  // Evento para la etiqueta de conversión
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: 'lead_formulario', origen: p.get('origen') || 'web' });
+})();
+</script>
 
 <footer>
   <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(1rem, 3vw, 3rem);padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.5rem;">

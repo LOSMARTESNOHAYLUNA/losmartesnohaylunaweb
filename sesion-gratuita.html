@@ -1494,35 +1494,22 @@ form.addEventListener('submit', async (e) => {
       body: JSON.stringify(payload)
     });
 
-    // Precargar el calendario con los datos para que la reserva
-    // se asocie al contacto que acaba de crearse y no genere uno nuevo
-    try {
-      const cal = document.getElementById('calendarioSheila');
-      if (cal) {
-        const p = new URLSearchParams({
-          first_name: data.nombre   || '',
-          email:      data.email    || '',
-          phone:      data.telefono || ''
-        });
-        cal.src = 'https://api.leadconnectorhq.com/widget/booking/1HYQjueKG3b2iKrHCeM8?' + p.toString();
-      }
-    } catch (e) { console.warn('Prefill calendario:', e); }
-
-    if (response.ok) {
-      // Mostrar éxito
-      form.style.display = 'none';
-      document.querySelector('.form-progress').style.display = 'none';
-      document.getElementById('formSuccess').classList.add('active');
-    } else {
-      throw new Error('Error en el envío');
-    }
+    irAGracias(data);
 
   } catch (err) {
-    // Aunque haya error de red, mostrar éxito y notificar
+    // Aunque falle el correo, el lead ya salió al CRM: seguimos a gracias
     console.error('Form error:', err);
-    form.style.display = 'none';
-    document.querySelector('.form-progress').style.display = 'none';
-    document.getElementById('formSuccess').classList.add('active');
+    irAGracias(data);
+  }
+
+  function irAGracias(d) {
+    const q = new URLSearchParams({
+      nombre:   d.nombre   || '',
+      email:    d.email    || '',
+      telefono: d.telefono || '',
+      origen:   'sesion-gratuita'
+    });
+    window.location.href = '/gracias/?' + q.toString();
   }
 });
 </script>
