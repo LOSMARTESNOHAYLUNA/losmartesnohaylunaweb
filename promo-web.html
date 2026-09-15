@@ -172,7 +172,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .ia-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem}
     .ia-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:2rem;transition:border-color .2s,transform .2s}
     .ia-card:hover{border-color:rgba(135,178,41,.3);transform:translateY(-4px)}
-    .ia-icon{width:48px;height:48px;background:rgba(135,178,41,.1);border:1px solid rgba(135,178,41,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.2rem}
+    .ia-icon{width:48px;height:48px;background:rgba(135,178,41,.1);border:1px solid rgba(135,178,41,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.2rem;color:var(--lime)}
     .ia-card h3{font-size:.9rem;font-weight:700;color:#fff;margin-bottom:.5rem;letter-spacing:-.01em}
     .ia-card p{font-size:.78rem;color:#fff;line-height:1.7}
     .ia-note{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:1.5rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
@@ -443,20 +443,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-size:.85rem;color:var(--mid);text-align:center;padding:2rem}
     #demoFallo{display:none}
     #demoFallo a{color:var(--purple);font-weight:700;text-decoration:none;border-bottom:2px solid var(--lime)}
-    #demoPie{display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;
-      padding:.9rem 1.4rem;background:var(--purple-dk);border-top:1px solid rgba(255,255,255,.1)}
-    #demoPie span{color:rgba(255,255,255,.65);font-size:.82rem;font-weight:300}
-    #demoPie button{background:var(--lime);color:var(--slate);border:none;cursor:pointer;font-family:inherit;
-      font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.6rem}
-    #demoPie button:hover{background:var(--lime-lt)}
     @media(max-width:700px){
       #demoBarra{padding:.7rem .9rem;gap:.6rem}
       .dm-txt{display:none}
       .dm-cta{font-size:.58rem;padding:.55rem .9rem}
-      #demoPie{padding:.8rem .9rem;gap:.7rem}
-      #demoPie span{display:none}
-      #demoPie button{width:100%;text-align:center}
     }
+
+    /* ── CTA FLOTANTE DENTRO DE LA DEMO ─────────── */
+    #demoCta{position:absolute;right:22px;bottom:22px;z-index:20;cursor:pointer;
+      display:flex;flex-direction:column;align-items:flex-end;gap:.6rem;
+      font-family:'Poppins',sans-serif;-webkit-tap-highlight-color:transparent}
+
+    .dc-burbuja{display:flex;align-items:center;gap:.6rem;background:var(--lime);color:var(--slate);
+      padding:.8rem 1.3rem;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:-.01em;
+      box-shadow:0 8px 28px rgba(0,0,0,.35);white-space:nowrap;
+      animation:dc-latido 2.6s ease-in-out infinite;transition:transform .2s}
+    #demoCta:hover .dc-burbuja{transform:scale(1.05)}
+    .dc-punto{width:9px;height:9px;border-radius:50%;background:var(--pink);flex-shrink:0;
+      animation:dc-parpadeo 1.4s ease-in-out infinite}
+    .dc-flecha{font-size:1rem;line-height:1}
+
+    .dc-panel{display:none;background:#fff;border-top:4px solid var(--lime);padding:1.3rem 1.5rem;
+      box-shadow:0 14px 44px rgba(0,0,0,.4);max-width:280px;text-align:left}
+    #demoCta.abierto .dc-panel{display:block;animation:dc-entra .35s ease}
+    #demoCta.abierto .dc-burbuja{animation:none}
+    .dc-titulo{font-size:.95rem;font-weight:800;color:var(--purple);margin-bottom:.35rem;letter-spacing:-.02em}
+    .dc-texto{font-size:.8rem;color:var(--mid);line-height:1.6;margin-bottom:1rem}
+    .dc-texto strong{color:var(--lime);font-weight:800}
+    .dc-boton{display:inline-block;background:var(--lime);color:var(--slate);padding:.6rem 1.4rem;
+      font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+
+    @keyframes dc-latido{
+      0%,100%{box-shadow:0 8px 28px rgba(0,0,0,.35),0 0 0 0 rgba(135,178,41,.55)}
+      50%{box-shadow:0 8px 28px rgba(0,0,0,.35),0 0 0 14px rgba(135,178,41,0)}}
+    @keyframes dc-parpadeo{0%,100%{opacity:1}50%{opacity:.25}}
+    @keyframes dc-entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    @keyframes dc-aviso{
+      0%,100%{transform:translateX(0)}
+      15%{transform:translateX(-7px)}35%{transform:translateX(7px)}
+      55%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+    #demoCta.avisa .dc-burbuja{animation:dc-aviso .7s ease}
+
+    @media(max-width:700px){
+      #demoCta{left:12px;right:12px;bottom:12px;align-items:stretch}
+      .dc-burbuja{justify-content:center;font-size:.74rem;padding:.85rem 1rem}
+      .dc-panel{max-width:none}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .dc-burbuja,.dc-punto{animation:none!important}}
 </style>
 </head>
 <body>
@@ -1224,9 +1258,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="https://fontaneriaruiz.vercel.app/" target="_blank" rel="noopener">Abrir en otra pestaña →</a>
     </div>
   </div>
-  <div id="demoPie">
-    <span>¿Te encaja este estilo para tu negocio?</span>
-    <button type="button" onclick="demoAlFormulario()">Reservar mi web por 600€ →</button>
+  <!-- CTA flotante que acompaña al visitante -->
+  <div id="demoCta" onclick="demoAlFormulario()" role="button" tabindex="0">
+    <div class="dc-burbuja">
+      <span class="dc-punto"></span>
+      <span class="dc-corto">¿Quieres una web como esta?</span>
+      <span class="dc-flecha">→</span>
+    </div>
+    <div class="dc-panel">
+      <p class="dc-titulo">¿Te gusta lo que ves?</p>
+      <p class="dc-texto">Esta misma web, adaptada a tu negocio, por <strong>600€</strong></p>
+      <span class="dc-boton">La quiero →</span>
+    </div>
   </div>
 </div>
 
@@ -1252,12 +1295,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     }, 6000);
     if (window.dataLayer) window.dataLayer.push({event:'ver_demo_web'});
+    iniciarCta();
+  }
+
+  var ctaTimers = [];
+  function iniciarCta(){
+    pararCta();
+    var cta = document.getElementById('demoCta');
+    if (!cta) return;
+    cta.classList.remove('abierto');
+    // A los 10 segundos se despliega el panel grande
+    ctaTimers.push(setTimeout(function(){ cta.classList.add('abierto'); }, 10000));
+    // Y cada 7 segundos da un toque de atención
+    ctaTimers.push(setInterval(function(){
+      cta.classList.add('avisa');
+      setTimeout(function(){ cta.classList.remove('avisa'); }, 700);
+    }, 7000));
+  }
+  function pararCta(){
+    ctaTimers.forEach(function(t){ clearTimeout(t); clearInterval(t); });
+    ctaTimers = [];
   }
 
   function cerrarDemo(){
     document.getElementById('demoModal').classList.remove('abierta');
     document.body.style.overflow = '';
     clearTimeout(demoTimer);
+    pararCta();
   }
 
   function demoAlFormulario(){
