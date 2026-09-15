@@ -40,18 +40,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* NAV */
     nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5rem;background:rgba(248,246,242,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
     .nav-logo{text-decoration:none;display:flex;align-items:center}
-    .nav-links{display:flex;gap:2.2rem;list-style:none}
-    .nav-links a{font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;color:var(--mid);text-decoration:none;font-weight:400;transition:color .2s}
-    .nav-links a:hover{color:var(--purple)}
     .nav-cta{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:.55rem 1.6rem;background:var(--purple);color:#fff;text-decoration:none;transition:background .2s}
     .nav-cta:hover{background:var(--purple-lt)}
-    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.4rem}
-    .nav-hamburger span{display:block;width:24px;height:2px;background:var(--purple);transition:all .3s}
-    .mobile-menu{display:none;position:fixed;inset:0;background:rgba(42,31,56,.97);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem}
-    .mobile-menu.open{display:flex}
-    .mobile-menu a{font-size:1.1rem;font-weight:600;color:#fff;text-decoration:none;letter-spacing:.05em;text-transform:uppercase}
-    .mm-close{background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;position:absolute;top:1.5rem;right:1.5rem}
-    .mm-cta{background:var(--lime);color:var(--slate)!important;padding:.7rem 2rem}
 
     /* HERO */
     .hero{min-height:100vh;background:var(--purple-dk);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 5rem 5rem;gap:5rem;position:relative;overflow:hidden}
@@ -375,8 +365,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* RESPONSIVE */
     @media(max-width:900px){
       nav{padding:1rem 1.5rem}
-      .nav-links{display:none}
-      .nav-hamburger{display:flex}
       .hero{grid-template-columns:1fr;padding:6rem 1.8rem 3rem;gap:3rem}
       .hero-right{display:none}
       .trust-strip{padding:1.5rem 1.8rem;flex-direction:column;align-items:flex-start;gap:1.2rem}
@@ -418,7 +406,58 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .demo-grid > div:last-child{display:none !important}
       .portfolio-grid{grid-template-columns:1fr !important}
     }
-  </style>
+  
+    .pain-card{text-decoration:none;cursor:pointer;position:relative;transition:transform .2s,box-shadow .2s,border-left-color .2s}
+    .pain-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(88,45,129,.12)}
+    .pain-card::after{content:'Lo solucionamos →';position:absolute;right:1.4rem;bottom:1rem;
+      font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;
+      color:var(--purple);opacity:0;transform:translateX(-6px);transition:all .25s}
+    .pain-card:hover::after{opacity:1;transform:translateX(0)}
+    .pain-card{padding-bottom:2.6rem}
+    @media(max-width:900px){.pain-card::after{opacity:1;transform:none;position:static;display:block;margin-top:.7rem}
+      .pain-card{padding-bottom:1.8rem}}
+
+    /* ── VENTANA DEMO ────────────────────────────── */
+    #demoModal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(38,18,58,.96);
+      flex-direction:column;backdrop-filter:blur(4px)}
+    #demoModal.abierta{display:flex}
+    #demoBarra{display:flex;align-items:center;justify-content:space-between;gap:1rem;
+      padding:.85rem 1.4rem;background:var(--purple-dk);border-bottom:1px solid rgba(255,255,255,.1);flex-wrap:wrap}
+    #demoTitulo{display:flex;align-items:center;gap:.8rem;min-width:0}
+    .dm-pill{background:var(--pink);color:#fff;font-size:.55rem;font-weight:700;letter-spacing:.14em;
+      text-transform:uppercase;padding:.25rem .7rem;white-space:nowrap}
+    .dm-txt{color:rgba(255,255,255,.75);font-size:.8rem;font-weight:300}
+    .dm-txt strong{color:var(--lime);font-weight:700}
+    #demoAcciones{display:flex;align-items:center;gap:.6rem}
+    .dm-cta{background:var(--lime);color:var(--slate);border:none;cursor:pointer;font-family:inherit;
+      font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.6rem 1.3rem;
+      transition:background .2s;white-space:nowrap}
+    .dm-cta:hover{background:var(--lime-lt)}
+    .dm-x{background:none;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.7);
+      width:34px;height:34px;font-size:1.3rem;line-height:1;cursor:pointer;transition:all .2s;flex-shrink:0}
+    .dm-x:hover{border-color:#fff;color:#fff}
+    #demoCuerpo{flex:1;position:relative;background:#fff;overflow:hidden}
+    #demoFrame{width:100%;height:100%;border:none;display:block}
+    #demoCarga,#demoFallo{position:absolute;inset:0;display:flex;flex-direction:column;
+      align-items:center;justify-content:center;gap:.8rem;background:#fff;
+      font-size:.85rem;color:var(--mid);text-align:center;padding:2rem}
+    #demoFallo{display:none}
+    #demoFallo a{color:var(--purple);font-weight:700;text-decoration:none;border-bottom:2px solid var(--lime)}
+    #demoPie{display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;
+      padding:.9rem 1.4rem;background:var(--purple-dk);border-top:1px solid rgba(255,255,255,.1)}
+    #demoPie span{color:rgba(255,255,255,.65);font-size:.82rem;font-weight:300}
+    #demoPie button{background:var(--lime);color:var(--slate);border:none;cursor:pointer;font-family:inherit;
+      font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.6rem}
+    #demoPie button:hover{background:var(--lime-lt)}
+    @media(max-width:700px){
+      #demoBarra{padding:.7rem .9rem;gap:.6rem}
+      .dm-txt{display:none}
+      .dm-cta{font-size:.58rem;padding:.55rem .9rem}
+      #demoPie{padding:.8rem .9rem;gap:.7rem}
+      #demoPie span{display:none}
+      #demoPie button{width:100%;text-align:center}
+    }
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -430,28 +469,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="/"><img src="/img/LMHHL_logo_2026.svg" alt="Los Martes No Hay Luna" style="height:52px;width:auto;display:block;"></a>
-  <ul class="nav-links">
-    <li><a href="/servicios/">Servicios</a></li>
-    <li><a href="/ia-para-empresas/">IA para Empresas</a></li>
-    <li><a href="/sheila-aguilar/">Sheila Aguilar</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="/contacto/">Contacto</a></li>
-  </ul>
   <a class="nav-cta" href="#reservar">Quiero mi web →</a>
-  <button class="nav-hamburger" onclick="openMobileMenu()" aria-label="Abrir menú"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mm-close" onclick="closeMobileMenu()">×</button>
-  <a href="/" onclick="closeMobileMenu()">Inicio</a>
-  <a href="/servicios/" onclick="closeMobileMenu()">Servicios</a>
-  <a href="/ia-para-empresas/" onclick="closeMobileMenu()">IA para Empresas</a>
-  <a href="/sheila-aguilar/" onclick="closeMobileMenu()">Sheila Aguilar</a>
-  <a href="/blog/" onclick="closeMobileMenu()">Blog</a>
-  <a href="/contacto/" onclick="closeMobileMenu()">Contacto</a>
-  <a href="#reservar" class="mm-cta" onclick="closeMobileMenu()">Quiero mi web →</a>
-</div>
 
 <!-- HERO -->
 <section class="hero" style="position:relative;">
@@ -521,34 +541,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-h2 reveal">Lo que pasa con <em>casi todas las agencias</em></h2>
     <p class="section-sub reveal">Estas son las quejas más repetidas. Tómalas como la lista de lo que no va a pasarte aquí.</p>
     <div class="pain-grid">
-      <div class="pain-card reveal">
+      <a href="#reservar" class="pain-card reveal">
         <div class="pain-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:28px;height:28px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
         <div class="pain-text">
           <strong>"No entiendo nada de hosting, dominio…"</strong>
           <span>Te venden tecnología cuando lo que necesitas es que funcione. No tienes que entender nada — de eso nos encargamos.</span>
         </div>
-      </div>
-      <div class="pain-card reveal d1">
+      </a>
+      <a href="#reservar" class="pain-card reveal d1">
         <div class="pain-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:28px;height:28px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/></svg></div>
         <div class="pain-text">
           <strong>"Me la hicieron y desaparecieron"</strong>
           <span>Sin soporte, sin nadie al teléfono cuando algo falla. Con nosotros tienes un equipo real desde el día uno.</span>
         </div>
-      </div>
-      <div class="pain-card reveal d2">
+      </a>
+      <a href="#reservar" class="pain-card reveal d2">
         <div class="pain-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:28px;height:28px;"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <div class="pain-text">
           <strong>"Luego salieron costes que no me dijeron"</strong>
           <span>El precio del anuncio nunca era el real. 600€ + IVA es el precio final de la web. Todo lo importante está dentro.</span>
         </div>
-      </div>
-      <div class="pain-card reveal d3">
+      </a>
+      <a href="#reservar" class="pain-card reveal d3">
         <div class="pain-emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:28px;height:28px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
         <div class="pain-text">
           <strong>"Si me voy, pierdo la web"</strong>
           <span>Hay agencias que retienen tu web si cambias de proveedor. Los archivos son tuyos desde el primer día, sin condiciones.</span>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -568,7 +588,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="background:rgba(255,255,255,.06);padding:.8rem 1.2rem;display:flex;align-items:center;gap:.8rem;border-bottom:1px solid rgba(255,255,255,.06);">
         <div style="display:flex;gap:.35rem;"><div style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></div><div style="width:10px;height:10px;border-radius:50%;background:#febc2e;"></div><div style="width:10px;height:10px;border-radius:50%;background:#28c840;"></div></div>
         <div style="flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:.3rem .8rem;font-size:.62rem;color:#fff;display:flex;align-items:center;gap:.4rem;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>fontaneriaruiz.com</div>
-        <a href="https://fontaneriaruiz.vercel.app/" target="_blank" rel="noopener" style="font-size:.62rem;color:var(--lime);text-decoration:none;font-weight:600;white-space:nowrap;padding:.3rem .9rem;border:1px solid rgba(135,178,41,.4);background:rgba(135,178,41,.08);">Ver web →</a>
+        <button type="button" onclick="abrirDemo()" style="font-size:.62rem;color:var(--lime);font-weight:600;white-space:nowrap;padding:.3rem .9rem;border:1px solid rgba(135,178,41,.4);background:rgba(135,178,41,.08);cursor:pointer;font-family:inherit;">Ver web →</button>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;" class="demo-grid">
         <div style="padding:2.5rem;border-right:1px solid rgba(255,255,255,.06);">
@@ -582,7 +602,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div style="display:flex;align-items:flex-start;gap:.7rem;"><div style="width:18px;height:18px;border-radius:50%;background:rgba(135,178,41,.12);border:1px solid rgba(135,178,41,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#87B229" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><span style="font-size:.82rem;color:#fff;">Opiniones de clientes integradas</span></div>
             <div style="display:flex;align-items:flex-start;gap:.7rem;"><div style="width:18px;height:18px;border-radius:50%;background:rgba(135,178,41,.12);border:1px solid rgba(135,178,41,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#87B229" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><span style="font-size:.82rem;color:#fff;">Perfecta en móvil y en ordenador</span></div>
           </div>
-          <a href="https://fontaneriaruiz.vercel.app/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--lime);color:var(--slate);padding:.75rem 1.5rem;font-size:.68rem;font-weight:700;text-decoration:none;letter-spacing:.1em;text-transform:uppercase;">Ver web completa <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+          <button type="button" onclick="abrirDemo()" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--lime);color:var(--slate);padding:.75rem 1.5rem;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;font-family:inherit;">Ver web completa <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></button>
         </div>
         <div style="background:linear-gradient(160deg,#05020f,#0e0730);padding:1.5rem;display:flex;align-items:stretch;">
           <div style="flex:1;background:#09061a;overflow:hidden;border:1px solid rgba(255,255,255,.06);">
@@ -1147,8 +1167,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="/whatsapp-boton.js" defer></script>
 <script src="/cookie-consent.js" defer></script>
 <script>
-  function openMobileMenu(){document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden';}
-  function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow='';}
 
   document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{const item=q.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open');});});
 
@@ -1184,6 +1202,82 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         alert('Hubo un problema al enviar. Escríbenos por WhatsApp y te atendemos enseguida.');
       });
   }
+</script>
+
+<!-- VENTANA DEMO -->
+<div id="demoModal" role="dialog" aria-modal="true" aria-label="Ejemplo de web">
+  <div id="demoBarra">
+    <div id="demoTitulo">
+      <span class="dm-pill">Ejemplo real</span>
+      <span class="dm-txt">Así es la web que obtienes por <strong>600€</strong></span>
+    </div>
+    <div id="demoAcciones">
+      <button type="button" onclick="demoAlFormulario()" class="dm-cta">Quiero una web como esta →</button>
+      <button type="button" onclick="cerrarDemo()" class="dm-x" aria-label="Cerrar">&times;</button>
+    </div>
+  </div>
+  <div id="demoCuerpo">
+    <div id="demoCarga">Cargando el ejemplo…</div>
+    <iframe id="demoFrame" title="Fontanería Ruiz — ejemplo de web" loading="lazy"></iframe>
+    <div id="demoFallo">
+      <p>No se ha podido mostrar el ejemplo aquí.</p>
+      <a href="https://fontaneriaruiz.vercel.app/" target="_blank" rel="noopener">Abrir en otra pestaña →</a>
+    </div>
+  </div>
+  <div id="demoPie">
+    <span>¿Te encaja este estilo para tu negocio?</span>
+    <button type="button" onclick="demoAlFormulario()">Reservar mi web por 600€ →</button>
+  </div>
+</div>
+
+<script>
+  // ── VENTANA DEMO ──────────────────────────────────────────
+  var DEMO_URL = 'https://fontaneriaruiz.vercel.app/';
+  var demoTimer;
+
+  function abrirDemo(){
+    var m = document.getElementById('demoModal');
+    var fr = document.getElementById('demoFrame');
+    document.getElementById('demoCarga').style.display = 'flex';
+    document.getElementById('demoFallo').style.display = 'none';
+    if (!fr.src) fr.src = DEMO_URL;
+    m.classList.add('abierta');
+    document.body.style.overflow = 'hidden';
+    // Si en 6s no ha cargado, ofrecemos abrirla fuera
+    clearTimeout(demoTimer);
+    demoTimer = setTimeout(function(){
+      if (document.getElementById('demoCarga').style.display !== 'none') {
+        document.getElementById('demoCarga').style.display = 'none';
+        document.getElementById('demoFallo').style.display = 'flex';
+      }
+    }, 6000);
+    if (window.dataLayer) window.dataLayer.push({event:'ver_demo_web'});
+  }
+
+  function cerrarDemo(){
+    document.getElementById('demoModal').classList.remove('abierta');
+    document.body.style.overflow = '';
+    clearTimeout(demoTimer);
+  }
+
+  function demoAlFormulario(){
+    cerrarDemo();
+    var d = document.getElementById('reservar');
+    if (d) d.scrollIntoView({behavior:'smooth', block:'start'});
+    if (window.dataLayer) window.dataLayer.push({event:'demo_a_formulario'});
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    var fr = document.getElementById('demoFrame');
+    if (fr) fr.addEventListener('load', function(){
+      document.getElementById('demoCarga').style.display = 'none';
+      clearTimeout(demoTimer);
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') cerrarDemo();
+  });
 </script>
 </body>
 </html>
