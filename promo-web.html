@@ -454,19 +454,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       display:flex;flex-direction:column;align-items:flex-end;gap:.6rem;
       font-family:'Poppins',sans-serif;-webkit-tap-highlight-color:transparent}
 
-    .dc-burbuja{display:flex;align-items:center;gap:.6rem;background:var(--lime);color:var(--slate);
-      padding:.8rem 1.3rem;border-radius:999px;font-size:.78rem;font-weight:700;letter-spacing:-.01em;
-      box-shadow:0 8px 28px rgba(0,0,0,.35);white-space:nowrap;
-      animation:dc-latido 2.6s ease-in-out infinite;transition:transform .2s}
-    #demoCta:hover .dc-burbuja{transform:scale(1.05)}
-    .dc-punto{width:9px;height:9px;border-radius:50%;background:var(--pink);flex-shrink:0;
+    .dc-burbuja{display:flex;align-items:center;gap:1.1rem;background:var(--lime);color:#fff;
+      padding:1.7rem 3rem;border-radius:999px;font-size:1.45rem;font-weight:800;letter-spacing:-.02em;
+      white-space:nowrap;text-shadow:0 1px 3px rgba(0,0,0,.25);
+      animation:dc-latido 2.2s ease-in-out infinite, dc-brillo 3s ease-in-out infinite;
+      transition:transform .2s}
+    #demoCta:hover .dc-burbuja{transform:scale(1.06)}
+    .dc-punto{width:15px;height:15px;border-radius:50%;background:var(--pink);flex-shrink:0;
       animation:dc-parpadeo 1.4s ease-in-out infinite}
-    .dc-flecha{font-size:1rem;line-height:1}
+    .dc-flecha{font-size:1.7rem;line-height:1}
 
     .dc-panel{display:none;background:#fff;border-top:4px solid var(--lime);padding:1.3rem 1.5rem;
       box-shadow:0 14px 44px rgba(0,0,0,.4);max-width:280px;text-align:left}
-    #demoCta.abierto .dc-panel{display:block;animation:dc-entra .35s ease}
-    #demoCta.abierto .dc-burbuja{animation:none}
+    #demoCta:hover .dc-panel{display:block;animation:dc-entra .3s ease}
+    
     .dc-titulo{font-size:.95rem;font-weight:800;color:var(--purple);margin-bottom:.35rem;letter-spacing:-.02em}
     .dc-texto{font-size:.8rem;color:var(--mid);line-height:1.6;margin-bottom:1rem}
     .dc-texto strong{color:var(--lime);font-weight:800}
@@ -474,19 +475,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
 
     @keyframes dc-latido{
-      0%,100%{box-shadow:0 8px 28px rgba(0,0,0,.35),0 0 0 0 rgba(135,178,41,.55)}
-      50%{box-shadow:0 8px 28px rgba(0,0,0,.35),0 0 0 14px rgba(135,178,41,0)}}
+      0%,100%{box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 0 0 rgba(135,178,41,.65),0 0 34px rgba(135,178,41,.75)}
+      50%{box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 0 28px rgba(135,178,41,0),0 0 60px rgba(158,207,48,.95)}}
+    @keyframes dc-brillo{
+      0%,100%{background:var(--lime);filter:brightness(1)}
+      50%{background:var(--lime-lt);filter:brightness(1.18)}}
     @keyframes dc-parpadeo{0%,100%{opacity:1}50%{opacity:.25}}
     @keyframes dc-entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
     @keyframes dc-aviso{
-      0%,100%{transform:translateX(0)}
-      15%{transform:translateX(-7px)}35%{transform:translateX(7px)}
-      55%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
-    #demoCta.avisa .dc-burbuja{animation:dc-aviso .7s ease}
+      0%{transform:scale(1) rotate(0)}
+      12%{transform:scale(1.18) rotate(-3deg)}
+      26%{transform:scale(1.1) rotate(3deg)}
+      40%{transform:scale(1.16) rotate(-2deg)}
+      54%{transform:scale(1.06) rotate(2deg)}
+      70%{transform:scale(1.1) rotate(0)}
+      100%{transform:scale(1) rotate(0)}}
+    #demoCta.avisa .dc-burbuja{animation:dc-aviso 1.1s cubic-bezier(.34,1.56,.64,1);
+      background:var(--lime-lt);box-shadow:0 14px 44px rgba(135,178,41,.55)}
+    /* destello que recorre la burbuja */
+    .dc-burbuja{position:relative;overflow:hidden}
+    .dc-burbuja::before{content:'';position:absolute;top:0;left:-120%;width:55%;height:100%;
+      background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);
+      transform:skewX(-18deg);animation:dc-destello 3.4s ease-in-out infinite}
+    #demoCta.avisa .dc-burbuja::before{animation:dc-destello 1.1s ease}
+    @keyframes dc-destello{from{left:-120%}to{left:130%}}
 
     @media(max-width:700px){
       #demoCta{left:12px;right:12px;bottom:12px;align-items:stretch}
-      .dc-burbuja{justify-content:center;font-size:.74rem;padding:.85rem 1rem}
+      .dc-burbuja{justify-content:center;font-size:1.12rem;padding:1.4rem 1rem;white-space:normal;line-height:1.3}
       .dc-panel{max-width:none}
     }
     @media(prefers-reduced-motion:reduce){
@@ -1305,12 +1321,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (!cta) return;
     cta.classList.remove('abierto');
     // A los 10 segundos se despliega el panel grande
-    ctaTimers.push(setTimeout(function(){ cta.classList.add('abierto'); }, 10000));
-    // Y cada 7 segundos da un toque de atención
+    // el botón ya es el protagonista; el panel se muestra solo al pasar el ratón
+    // Primer aviso enseguida
+    ctaTimers.push(setTimeout(function(){
+      cta.classList.add('avisa');
+      setTimeout(function(){ cta.classList.remove('avisa'); }, 1100);
+    }, 2000));
+    // Y después cada 5 segundos
     ctaTimers.push(setInterval(function(){
       cta.classList.add('avisa');
-      setTimeout(function(){ cta.classList.remove('avisa'); }, 700);
-    }, 7000));
+      setTimeout(function(){ cta.classList.remove('avisa'); }, 1100);
+    }, 5000));
   }
   function pararCta(){
     ctaTimers.forEach(function(t){ clearTimeout(t); clearInterval(t); });
