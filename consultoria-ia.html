@@ -792,7 +792,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       try{ await fetch(WEBHOOK,{method:'POST',mode:'no-cors',body:cuerpo,keepalive:true}); }catch(y){}
     }
 
-    var etiqueta={cualificado:'Cualificado',cualificado_parcial:'Cualificado parcial (decisión compartida)',no_cualificado:'No cualifica (facturación)'}[est];
+    var etiqueta={cualificado:'Cualificado',cualificado_parcial:'Cualificado parcial (decisión compartida)',no_cualificado:'No cualifica (menos de 150k)'}[est];
     try{
       await fetch(EMAIL,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify({
