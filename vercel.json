@@ -369,6 +369,11 @@
       "source": "/blog-medir-resultados-marketing-digital.html",
       "destination": "/blog/medir-resultados-marketing-digital/",
       "permanent": true
+    },
+    {
+      "source": "/gracias-ia.html",
+      "destination": "/gracias-ia/",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -535,6 +540,14 @@
     {
       "source": "/consultoria-ia",
       "destination": "/consultoria-ia.html"
+    },
+    {
+      "source": "/gracias-ia/",
+      "destination": "/gracias-ia.html"
+    },
+    {
+      "source": "/gracias-ia",
+      "destination": "/gracias-ia.html"
     }
   ],
   "headers": [

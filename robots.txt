@@ -3,6 +3,7 @@ Allow: /
 
 # Páginas de proceso (sin valor SEO)
 Disallow: /gracias/
+Disallow: /gracias-ia/
 Disallow: /api/
 Disallow: /procesar/
 
