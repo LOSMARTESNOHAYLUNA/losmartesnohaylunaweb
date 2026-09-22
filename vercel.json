@@ -527,6 +527,14 @@
     {
       "source": "/promo-web/",
       "destination": "/promo-web.html"
+    },
+    {
+      "source": "/consultoria-ia/",
+      "destination": "/consultoria-ia.html"
+    },
+    {
+      "source": "/consultoria-ia",
+      "destination": "/consultoria-ia.html"
     }
   ],
   "headers": [
