@@ -36,6 +36,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
 :root{
   --noche:#26123a; --morado-dk:#3a1c57; --morado:#582D81;
   --lima:#87B229; --lima-lt:#9ecf30; --rosa:#e72078;
@@ -55,7 +56,7 @@ a{color:inherit}
 .top{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(248,246,242,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
 .top img{height:46px;width:auto}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:inherit;font-weight:700;font-size:.95rem;text-decoration:none;border:none;cursor:pointer;padding:.95rem 1.7rem;border-radius:6px;transition:background .2s,transform .15s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:inherit;font-weight:700;font-size:.95rem;text-decoration:none;border:none;cursor:pointer;padding:.95rem 1.7rem;transition:background .2s,transform .15s}
 .btn:active{transform:translateY(1px)}
 .btn-lima{background:var(--lima);color:#fff}
 .btn-lima:hover{background:var(--lima-lt)}
@@ -73,7 +74,7 @@ a{color:inherit}
 .hero-acc{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1.6rem}
 .hero-nota{font-size:.86rem;color:rgba(255,255,255,.55)}
 
-.calc{background:#fff;color:var(--tinta);border-radius:14px;padding:2rem;box-shadow:0 30px 70px rgba(10,4,20,.45)}
+.calc{background:#fff;color:var(--tinta);padding:2rem;box-shadow:0 30px 70px rgba(10,4,20,.45)}
 .calc h2{font-size:1.1rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.3rem}
 .calc .sub{font-size:.85rem;color:var(--gris);margin-bottom:1.4rem}
 .campo{margin-bottom:1.1rem}
@@ -81,7 +82,7 @@ a{color:inherit}
 .campo label b{font-weight:800;color:var(--morado);font-size:1rem}
 input[type=range]{width:100%;accent-color:var(--morado);height:28px;cursor:pointer}
 .coste-h{display:flex;align-items:center;gap:.6rem}
-.coste-h input{width:92px;font:inherit;font-weight:600;padding:.45rem .6rem;border:1.5px solid var(--linea);border-radius:6px}
+.coste-h input{width:92px;font:inherit;font-weight:600;padding:.45rem .6rem;border:1.5px solid var(--linea)}
 .res{margin-top:1.4rem;border-top:1px solid var(--linea);padding-top:1.3rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .res .lbl{font-size:.78rem;color:var(--gris);line-height:1.35;margin-bottom:.25rem}
 .res .val{font-size:1.9rem;font-weight:800;letter-spacing:-.03em;line-height:1.05}
@@ -103,18 +104,26 @@ section{padding:6rem 0}
 
 /* Espejo del problema: filas, no tarjetas */
 .espejo-lista{border-top:1px solid var(--linea)}
-.fila{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;padding:1.5rem .4rem;border-bottom:1px solid var(--linea);text-decoration:none;transition:background .2s}
+.fila{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;padding:1.5rem 1rem;border-bottom:1px solid var(--linea);cursor:pointer;transition:background .2s;border-left:4px solid transparent}
 .fila:hover{background:var(--lila)}
 .fila h3{font-size:1.12rem;font-weight:700;letter-spacing:-.015em;color:var(--tinta);margin-bottom:.15rem}
 .fila p{font-size:.95rem;color:var(--gris)}
-.fila .ir{font-size:.85rem;font-weight:600;color:var(--morado);white-space:nowrap}
+.fila:has(input:checked){background:var(--lila);border-left-color:var(--lima)}
+.marca{display:inline-flex;align-items:center;gap:.6rem;font-size:.88rem;font-weight:600;color:var(--morado);white-space:nowrap}
+.marca input{appearance:none;-webkit-appearance:none;width:28px;height:28px;border:2px solid var(--morado);background:#fff;display:grid;place-items:center;cursor:pointer;flex-shrink:0;transition:background .15s,border-color .15s}
+.marca input::after{content:'';width:8px;height:14px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-2px) scale(0);transition:transform .15s}
+.marca input:checked{background:var(--lima);border-color:var(--lima)}
+.marca input:checked::after{transform:rotate(45deg) translate(-1px,-2px) scale(1)}
+.resumen-dolor{margin-top:2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;background:var(--morado-dk);color:#fff;padding:1.4rem 1.8rem}
+.resumen-dolor p{font-size:1.02rem;max-width:52ch}
+.resumen-dolor strong{color:var(--lima)}
 
 /* Verdad del ROI */
 .roi{background:var(--noche);color:#fff}
 .roi .h2{color:#fff;max-width:18ch}
 .roi-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:start}
 .roi p{color:rgba(255,255,255,.75);font-size:1.02rem;margin-bottom:1.1rem;max-width:56ch}
-.balanza{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:1.8rem}
+.balanza{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:1.8rem}
 .balanza .linea{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:.95rem}
 .balanza .linea:last-child{border-bottom:none}
 .balanza .linea span:last-child{font-weight:700;text-align:right}
@@ -133,7 +142,7 @@ section{padding:6rem 0}
 
 /* Caso real */
 .caso{background:var(--lila)}
-.tabla-caso{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--linea)}
+.tabla-caso{background:#fff;overflow:hidden;border:1px solid var(--linea)}
 .tabla-caso .cab,.tabla-caso .reg{display:grid;grid-template-columns:.9fr 1.3fr;gap:0}
 .tabla-caso .cab div{padding:1rem 1.6rem;font-size:.85rem;font-weight:600;color:var(--gris);background:var(--hueso);border-bottom:1px solid var(--linea)}
 .tabla-caso .reg div{padding:1.5rem 1.6rem;border-bottom:1px solid var(--linea)}
@@ -154,7 +163,7 @@ section{padding:6rem 0}
 .paso::before{content:counter(paso);display:block;font-size:2.4rem;font-weight:800;color:var(--lima);line-height:1;margin-bottom:.8rem}
 .paso h3{font-size:1.05rem;font-weight:700;margin-bottom:.35rem;color:var(--morado-dk)}
 .paso p{font-size:.93rem;color:var(--gris)}
-.despues{margin-top:3rem;padding:1.8rem 2rem;background:#fff;border-left:4px solid var(--lima);border-radius:0 10px 10px 0;max-width:780px}
+.despues{margin-top:3rem;padding:1.8rem 2rem;background:#fff;border-left:4px solid var(--lima);max-width:780px}
 .despues p{font-size:1rem;color:var(--tinta)}
 
 /* Para quién */
@@ -171,7 +180,7 @@ section{padding:6rem 0}
 /* Quién hay detrás */
 .detras{background:#fff}
 .detras-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem;align-items:center}
-.detras img{border-radius:12px;aspect-ratio:4/5;object-fit:cover;object-position:top}
+.detras img{aspect-ratio:4/5;object-fit:cover;object-position:top}
 .detras p{color:var(--gris);font-size:1.02rem;margin-bottom:1rem;max-width:58ch}
 .medios{margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid var(--linea);font-size:.92rem;color:var(--gris)}
 .medios strong{color:var(--tinta);font-weight:600}
@@ -181,9 +190,9 @@ section{padding:6rem 0}
 .form-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:4rem;align-items:start}
 .form-sec .h2{color:#fff}
 .form-sec .intro{color:rgba(255,255,255,.72)}
-.plazas{display:inline-block;background:rgba(135,178,41,.15);border:1px solid rgba(135,178,41,.4);color:#d8f09a;font-size:.9rem;font-weight:500;padding:.55rem .95rem;border-radius:6px}
-.caja{background:#fff;color:var(--tinta);border-radius:14px;padding:2.2rem;box-shadow:0 30px 70px rgba(10,4,20,.4)}
-.barra{height:6px;background:var(--lila);border-radius:3px;overflow:hidden;margin-bottom:.6rem}
+.plazas{display:inline-block;background:rgba(135,178,41,.15);border:1px solid rgba(135,178,41,.4);color:#d8f09a;font-size:.9rem;font-weight:500;padding:.55rem .95rem}
+.caja{background:#fff;color:var(--tinta);padding:2.2rem;box-shadow:0 30px 70px rgba(10,4,20,.4)}
+.barra{height:6px;background:var(--lila);overflow:hidden;margin-bottom:.6rem}
 .barra span{display:block;height:100%;width:12.5%;background:var(--lima);transition:width .35s ease}
 .cuenta{font-size:.82rem;color:var(--gris);margin-bottom:1.4rem}
 .paso-f{display:none}
@@ -191,11 +200,11 @@ section{padding:6rem 0}
 .paso-f h3{font-size:1.2rem;font-weight:700;letter-spacing:-.015em;line-height:1.3;margin-bottom:.4rem}
 .guia{font-size:.88rem;color:var(--gris);margin-bottom:1.1rem}
 .paso-f label.t{display:block;font-size:.88rem;font-weight:600;margin:1rem 0 .35rem}
-.paso-f input[type=text],.paso-f input[type=email],.paso-f input[type=tel],.paso-f textarea{width:100%;font:inherit;font-size:16px;padding:.85rem 1rem;border:1.5px solid var(--linea);border-radius:8px;background:var(--hueso);color:var(--tinta)}
+.paso-f input[type=text],.paso-f input[type=email],.paso-f input[type=tel],.paso-f textarea{width:100%;font:inherit;font-size:16px;padding:.85rem 1rem;border:1.5px solid var(--linea);background:var(--hueso);color:var(--tinta)}
 .paso-f textarea{min-height:120px;resize:vertical}
 .paso-f input:focus,.paso-f textarea:focus{outline:none;border-color:var(--morado);background:#fff}
 .ops{display:grid;gap:.6rem;margin-top:.4rem}
-.op{text-align:left;font:inherit;font-size:.97rem;font-weight:500;padding:.95rem 1.1rem;border:1.5px solid var(--linea);border-radius:8px;background:#fff;color:var(--tinta);cursor:pointer;transition:border-color .15s,background .15s}
+.op{text-align:left;font:inherit;font-size:.97rem;font-weight:500;padding:.95rem 1.1rem;border:1.5px solid var(--linea);background:#fff;color:var(--tinta);cursor:pointer;transition:border-color .15s,background .15s}
 .op:hover{border-color:var(--morado)}
 .op[aria-pressed="true"]{border-color:var(--morado);background:var(--lila);font-weight:600}
 .privacidad{display:flex;gap:.6rem;align-items:flex-start;font-size:.85rem;color:var(--gris);margin-top:1.1rem}
@@ -206,6 +215,7 @@ section{padding:6rem 0}
 .btn-atras{background:none;border:none;font:inherit;font-weight:600;color:var(--gris);cursor:pointer;padding:.9rem .2rem}
 .btn-atras[hidden]{display:none}
 .cierre-f{font-size:.84rem;color:var(--gris);margin-top:1rem}
+.ops::after{content:"Al elegir una opción pasas a la siguiente pregunta.";font-size:.8rem;color:var(--gris);margin-top:.3rem}
 .trampa{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
 /* FAQ */
@@ -256,7 +266,8 @@ section{padding:6rem 0}
   .tabla-caso .reg{grid-template-columns:1fr}
   .tabla-caso .reg div:first-child{border-right:none;border-bottom:1px dashed var(--linea)}
   .pasos{grid-template-columns:1fr}
-  .fila{grid-template-columns:1fr;gap:.4rem}
+  .fila{grid-template-columns:1fr;gap:.8rem}
+  .resumen-dolor .btn{width:100%}
   .fija{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:.75rem 1rem;background:rgba(38,18,58,.97);transform:translateY(110%);transition:transform .3s}
   .fija.ver{transform:none}
   .fija .btn{width:100%}
@@ -338,12 +349,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="h2" id="t-problema">Lo que te está costando dinero no siempre se ve</h2>
     <p class="intro">Ninguna de estas tareas parece grave por separado. Sumadas, semana tras semana, son horas de tu equipo que no generan un euro.</p>
     <div class="espejo-lista">
-      <a class="fila" href="#formulario"><div><h3>Respondéis cada día las mismas preguntas</h3><p>Por WhatsApp, email o teléfono. Horarios, precios, disponibilidad, una y otra vez.</p></div><span class="ir">Esto nos pasa</span></a>
-      <a class="fila" href="#formulario"><div><h3>Los presupuestos se hacen a mano</h3><p>Cada uno se lleva un rato que nadie apunta, y a veces se quedan días esperando.</p></div><span class="ir">Esto nos pasa</span></a>
-      <a class="fila" href="#formulario"><div><h3>Los clientes se enfrían y nadie les hace seguimiento</h3><p>Piden información, desaparecen, y nadie tiene tiempo de volver a llamarles.</p></div><span class="ir">Esto nos pasa</span></a>
-      <a class="fila" href="#formulario"><div><h3>El teléfono corta el trabajo cada poco</h3><p>Cada llamada interrumpe lo que el equipo estaba haciendo y cuesta volver a arrancar.</p></div><span class="ir">Esto nos pasa</span></a>
-      <a class="fila" href="#formulario"><div><h3>Las citas y reservas dependen de una persona</h3><p>Cambios, olvidos y huecos vacíos que nadie recupera.</p></div><span class="ir">Esto nos pasa</span></a>
-      <a class="fila" href="#formulario"><div><h3>Os piden los mismos documentos una y otra vez</h3><p>Reenviar facturas, certificados o justificantes se come horas de administración.</p></div><span class="ir">Esto nos pasa</span></a>
+      <label class="fila"><div><h3>Respondéis cada día las mismas preguntas</h3><p>Por WhatsApp, email o teléfono. Horarios, precios, disponibilidad, una y otra vez.</p></div><span class="marca"><input type="checkbox" value="Respondéis cada día las mismas preguntas"><span>Nos pasa</span></span></label>
+      <label class="fila"><div><h3>Los presupuestos se hacen a mano</h3><p>Cada uno se lleva un rato que nadie apunta, y a veces se quedan días esperando.</p></div><span class="marca"><input type="checkbox" value="Los presupuestos se hacen a mano"><span>Nos pasa</span></span></label>
+      <label class="fila"><div><h3>Los clientes se enfrían y nadie les hace seguimiento</h3><p>Piden información, desaparecen, y nadie tiene tiempo de volver a llamarles.</p></div><span class="marca"><input type="checkbox" value="Los clientes se enfrían y nadie les hace seguimiento"><span>Nos pasa</span></span></label>
+      <label class="fila"><div><h3>El teléfono corta el trabajo cada poco</h3><p>Cada llamada interrumpe lo que el equipo estaba haciendo y cuesta volver a arrancar.</p></div><span class="marca"><input type="checkbox" value="El teléfono corta el trabajo cada poco"><span>Nos pasa</span></span></label>
+      <label class="fila"><div><h3>Las citas y reservas dependen de una persona</h3><p>Cambios, olvidos y huecos vacíos que nadie recupera.</p></div><span class="marca"><input type="checkbox" value="Las citas y reservas dependen de una persona"><span>Nos pasa</span></span></label>
+      <label class="fila"><div><h3>Os piden los mismos documentos una y otra vez</h3><p>Reenviar facturas, certificados o justificantes se come horas de administración.</p></div><span class="marca"><input type="checkbox" value="Os piden los mismos documentos una y otra vez"><span>Nos pasa</span></span></label>
+    </div>
+    <div class="resumen-dolor" id="resumen" hidden aria-live="polite">
+      <p id="resumen-txt"></p>
+      <a class="btn btn-lima" href="#formulario">Calcular lo que nos cuesta</a>
     </div>
   </div>
 </section>
@@ -482,9 +497,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="paso-f activo" data-paso="0">
           <h3>¿Cómo se llama tu empresa y a qué se dedica?</h3>
           <p class="guia">Nombre y sector en una línea. Por ejemplo: Reformas López, reformas integrales de viviendas.</p>
-          <input type="text" name="empresa" autocomplete="organization" aria-label="Empresa y sector">
+          <input type="text" name="empresa" autocomplete="organization" aria-label="Empresa y sector" enterkeyhint="next">
           <label class="t" for="f-web">¿Cuál es tu web o perfil de Instagram?</label>
-          <input type="text" id="f-web" name="web" inputmode="url" placeholder="www.tuempresa.com o @tuempresa">
+          <input type="text" id="f-web" name="web" inputmode="url" placeholder="www.tuempresa.com o @tuempresa" enterkeyhint="next">
         </div>
 
         <div class="paso-f" data-paso="1" data-grupo="equipo">
@@ -545,11 +560,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="paso-f" data-paso="7">
           <h3>¿Dónde te enviamos la confirmación?</h3>
           <label class="t" for="f-nombre">Nombre</label>
-          <input type="text" id="f-nombre" name="nombre" autocomplete="given-name">
+          <input type="text" id="f-nombre" name="nombre" autocomplete="given-name" enterkeyhint="next">
           <label class="t" for="f-email">Email</label>
-          <input type="email" id="f-email" name="email" autocomplete="email">
+          <input type="email" id="f-email" name="email" autocomplete="email" enterkeyhint="next">
           <label class="t" for="f-tel">Teléfono</label>
-          <input type="tel" id="f-tel" name="telefono" autocomplete="tel" inputmode="tel">
+          <input type="tel" id="f-tel" name="telefono" autocomplete="tel" inputmode="tel" enterkeyhint="send">
           <label class="privacidad"><input type="checkbox" name="privacidad" id="f-priv"><span>He leído y acepto la <a href="/privacidad/" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
           <p class="cierre-f">Si tu empresa encaja, podrás elegir día y hora nada más enviar.</p>
         </div>
@@ -612,7 +627,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var h=document.getElementById('c-horas'), p=document.getElementById('c-personas'), c=document.getElementById('c-coste');
   var vh=document.getElementById('v-horas'), vp=document.getElementById('v-personas');
   var rc=document.getElementById('r-coste'), ra=document.getElementById('r-ahorro');
-  var fmt=function(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €';};
+  var fmt=function(n){return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €'};
   var reducido=!!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   var primera=true;
   function pintar(el,obj){
@@ -630,8 +645,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     pintar(rc,anual); pintar(ra,anual*0.7);
     primera=false;
   }
-  [h,p,c].forEach(function(el){el.addEventListener('input',calc);});
+  [h,p,c].forEach(function(el){el.addEventListener('input',calc)});
   calc();
+})();
+
+
+/* ── CASILLAS DEL PROBLEMA ───────────────────────── */
+(function(){
+  var cajas=document.querySelectorAll('#problema input[type=checkbox]');
+  var res=document.getElementById('resumen'), txt=document.getElementById('resumen-txt');
+  var tarea=document.querySelector('#iaForm [name="tarea"]'), escrita=false;
+  if(tarea) tarea.addEventListener('input',function(){ escrita=true; });
+  cajas.forEach(function(c){
+    c.addEventListener('change',function(){
+      var marcadas=[].filter.call(cajas,function(x){return x.checked});
+      var n=marcadas.length;
+      res.hidden=n===0;
+      txt.innerHTML = n===1
+        ? 'Has marcado <strong>1 situación</strong>. Tiene un coste que se puede calcular, y casi nunca viene sola.'
+        : 'Has marcado <strong>'+n+' situaciones</strong>. Cada una tiene un coste que se puede calcular. Sumadas, suelen ser más de lo que parece.';
+      if(tarea && !escrita) tarea.value = marcadas.map(function(x){return x.value}).join('. ') + (n?'.':'');
+      if(c.checked){ window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'dolor_marcado',dolor:c.value}); }
+    });
+  });
 })();
 
 /* ── BARRA FIJA MÓVIL ────────────────────────────── */
@@ -640,8 +676,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   if(!('IntersectionObserver' in window))return;
   var enHero=true, enForm=false;
   function act(){ fija.classList.toggle('ver', !enHero && !enForm); }
-  new IntersectionObserver(function(e){enHero=e[0].isIntersecting;act();}).observe(hero);
-  new IntersectionObserver(function(e){enForm=e[0].isIntersecting;act();},{threshold:.15}).observe(form);
+  new IntersectionObserver(function(e){enHero=e[0].isIntersecting;act()}).observe(hero);
+  new IntersectionObserver(function(e){enForm=e[0].isIntersecting;act()},{threshold:.15}).observe(form);
 })();
 
 /* ── FORMULARIO ──────────────────────────────────── */
@@ -655,18 +691,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var bSig=document.getElementById('siguiente'), bAtras=document.getElementById('atras'), bEnv=document.getElementById('enviar');
   var err=document.getElementById('error'), barra=document.getElementById('barra'), cuenta=document.getElementById('cuenta');
   var elec={};  // respuestas de opción: {grupo:{v,k}}
-  var F=function(n){return form.elements[n];};
+  var F=function(n){return form.elements[n]};
 
   function mostrar(n){
-    pasos.forEach(function(s,i){s.classList.toggle('activo',i===n);});
+    pasos.forEach(function(s,i){s.classList.toggle('activo',i===n)});
     actual=n;
     barra.style.width=((n+1)/total*100)+'%';
     cuenta.textContent=n===total-1?'Último paso':'Pregunta '+(n+1)+' de '+(total-1);
+    var esOpcion=!!pasos[n].dataset.grupo;
     bAtras.hidden=n===0;
-    bSig.hidden=n===total-1;
+    bSig.hidden=(n===total-1)||esOpcion;
     bEnv.hidden=n!==total-1;
     err.classList.remove('ver');
+    // En móvil, que la nueva pregunta quede a la vista
+    var caja=form.closest('.caja');
+    if(iniciado && caja){
+      var r=caja.getBoundingClientRect();
+      if(r.top<70 || r.top>window.innerHeight*0.4){
+        var red=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({top:window.scrollY+r.top-90,behavior:red?'auto':'smooth'});
+      }
+    }
+    iniciado=true;
+    var foco=pasos[n].querySelector('input[type=text],input[type=email],input[type=tel],textarea');
+    if(foco && n>0) setTimeout(function(){ try{foco.focus({preventScroll:true})}catch(x){} },320);
   }
+  var iniciado=false;
 
   function fallo(msg){ err.textContent=msg; err.classList.add('ver'); }
 
@@ -688,7 +738,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     op.setAttribute('aria-pressed','false');
     op.addEventListener('click',function(){
       var s=op.closest('.paso-f'), g=s.dataset.grupo;
-      s.querySelectorAll('.op').forEach(function(o){o.setAttribute('aria-pressed','false');});
+      s.querySelectorAll('.op').forEach(function(o){o.setAttribute('aria-pressed','false')});
       op.setAttribute('aria-pressed','true');
       elec[g]={v:op.dataset.v,k:op.dataset.k||''};
       err.classList.remove('ver');
@@ -699,7 +749,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   bSig.addEventListener('click',function(){ if(valida(actual)) mostrar(actual+1); });
   bAtras.addEventListener('click',function(){ if(actual>0) mostrar(actual-1); });
   form.addEventListener('keydown',function(e){
-    if(e.key==='Enter' && e.target.tagName==='INPUT' && actual<total-1){ e.preventDefault(); bSig.click(); }
+    if(e.key!=='Enter' || e.target.tagName!=='INPUT') return;
+    if(actual<total-1){ e.preventDefault(); if(valida(actual)) mostrar(actual+1); return; }
+    // En los datos de contacto, "Siguiente" salta al campo siguiente
+    var orden=['nombre','email','telefono'], i=orden.indexOf(e.target.name);
+    if(i>-1 && i<orden.length-1){ e.preventDefault(); F(orden[i+1]).focus(); }
   });
 
   function estado(){
@@ -711,10 +765,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   form.addEventListener('submit',async function(e){
     e.preventDefault();
     if(F('_gotcha').value) return;
-    if(!valida(actual)) return;
+    // Si el envío llega antes del final (tecla "Ir" del móvil, Enter…), solo se avanza
+    if(actual<total-1){ if(valida(actual)) mostrar(actual+1); return; }
+    // Comprobación completa: si falta algo, se vuelve a esa pregunta
+    for(var i=0;i<total;i++){ if(!valida(i)){ mostrar(i); valida(i); return; } }
 
     bEnv.disabled=true; bEnv.textContent='Enviando…';
-    var v=function(g){return elec[g]?elec[g].v:'';};
+    var v=function(g){return elec[g]?elec[g].v:''};
     var d={
       nombre:F('nombre').value.trim(), email:F('email').value.trim(), telefono:F('telefono').value.trim(),
       empresa:F('empresa').value.trim(), web:F('web').value.trim(), tarea:F('tarea').value.trim()
