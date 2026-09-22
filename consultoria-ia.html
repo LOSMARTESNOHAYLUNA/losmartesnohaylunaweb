@@ -103,11 +103,19 @@ section{padding:6rem 0}
 
 /* Espejo del problema: filas, no tarjetas */
 .espejo-lista{border-top:1px solid var(--linea)}
-.fila{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;padding:1.5rem .4rem;border-bottom:1px solid var(--linea);text-decoration:none;transition:background .2s}
+.fila{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;padding:1.5rem 1rem;border-bottom:1px solid var(--linea);cursor:pointer;transition:background .2s;border-left:4px solid transparent}
 .fila:hover{background:var(--lila)}
 .fila h3{font-size:1.12rem;font-weight:700;letter-spacing:-.015em;color:var(--tinta);margin-bottom:.15rem}
 .fila p{font-size:.95rem;color:var(--gris)}
-.fila .ir{font-size:.85rem;font-weight:600;color:var(--morado);white-space:nowrap}
+.fila:has(input:checked){background:var(--lila);border-left-color:var(--lima)}
+.marca{display:inline-flex;align-items:center;gap:.6rem;font-size:.88rem;font-weight:600;color:var(--morado);white-space:nowrap}
+.marca input{appearance:none;-webkit-appearance:none;width:28px;height:28px;border:2px solid var(--morado);border-radius:6px;background:#fff;display:grid;place-items:center;cursor:pointer;flex-shrink:0;transition:background .15s,border-color .15s}
+.marca input::after{content:'';width:8px;height:14px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-2px) scale(0);transition:transform .15s}
+.marca input:checked{background:var(--lima);border-color:var(--lima)}
+.marca input:checked::after{transform:rotate(45deg) translate(-1px,-2px) scale(1)}
+.resumen-dolor{margin-top:2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;background:var(--morado-dk);color:#fff;border-radius:12px;padding:1.4rem 1.8rem}
+.resumen-dolor p{font-size:1.02rem;max-width:52ch}
+.resumen-dolor strong{color:var(--lima)}
 
 /* Verdad del ROI */
 .roi{background:var(--noche);color:#fff}
@@ -256,7 +264,8 @@ section{padding:6rem 0}
   .tabla-caso .reg{grid-template-columns:1fr}
   .tabla-caso .reg div:first-child{border-right:none;border-bottom:1px dashed var(--linea)}
   .pasos{grid-template-columns:1fr}
-  .fila{grid-template-columns:1fr;gap:.4rem}
+  .fila{grid-template-columns:1fr;gap:.8rem}
+  .resumen-dolor .btn{width:100%}
   .fija{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:.75rem 1rem;background:rgba(38,18,58,.97);transform:translateY(110%);transition:transform .3s}
   .fija.ver{transform:none}
   .fija .btn{width:100%}
@@ -338,12 +347,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="h2" id="t-problema">Lo que te está costando dinero no siempre se ve</h2>
     <p class="intro">Ninguna de estas tareas parece grave por separado. Sumadas, semana tras semana, son horas de tu equipo que no generan un euro.</p>
     <div class="espejo-lista">
-      <a class="fila" href="#formulario"><div><h3>Respondéis cada día las mismas preguntas</h3><p>Por WhatsApp, email o teléfono. Horarios, precios, disponibilidad, una y otra vez.</p></div><span class="ir">Esto nos pasa</span></a>
-      <a class="fila" href="#formulario"><div><h3>Los presupuestos se hacen a mano</h3><p>Cada uno se lleva un rato que nadie apunta, y a veces se quedan días esperando.</p></div><span class="ir">Esto nos pasa</span></a>
-      <a class="fila" href="#formulario"><div><h3>Los clientes se enfrían y nadie les hace seguimiento</h3><p>Piden información, desaparecen, y nadie tiene tiempo de volver a llamarles.</p></div><span class="ir">Esto nos pasa</span></a>
-      <a class="fila" href="#formulario"><div><h3>El teléfono corta el trabajo cada poco</h3><p>Cada llamada interrumpe lo que el equipo estaba haciendo y cuesta volver a arrancar.</p></div><span class="ir">Esto nos pasa</span></a>
-      <a class="fila" href="#formulario"><div><h3>Las citas y reservas dependen de una persona</h3><p>Cambios, olvidos y huecos vacíos que nadie recupera.</p></div><span class="ir">Esto nos pasa</span></a>
-      <a class="fila" href="#formulario"><div><h3>Os piden los mismos documentos una y otra vez</h3><p>Reenviar facturas, certificados o justificantes se come horas de administración.</p></div><span class="ir">Esto nos pasa</span></a>
+      <label class="fila"><div><h3>Respondéis cada día las mismas preguntas</h3><p>Por WhatsApp, email o teléfono. Horarios, precios, disponibilidad, una y otra vez.</p></div><span class="marca"><input type="checkbox" value="Respondéis cada día las mismas preguntas"><span>Nos pasa</span></span></label>
+      <label class="fila"><div><h3>Los presupuestos se hacen a mano</h3><p>Cada uno se lleva un rato que nadie apunta, y a veces se quedan días esperando.</p></div><span class="marca"><input type="checkbox" value="Los presupuestos se hacen a mano"><span>Nos pasa</span></span></label>
+      <label class="fila"><div><h3>Los clientes se enfrían y nadie les hace seguimiento</h3><p>Piden información, desaparecen, y nadie tiene tiempo de volver a llamarles.</p></div><span class="marca"><input type="checkbox" value="Los clientes se enfrían y nadie les hace seguimiento"><span>Nos pasa</span></span></label>
+      <label class="fila"><div><h3>El teléfono corta el trabajo cada poco</h3><p>Cada llamada interrumpe lo que el equipo estaba haciendo y cuesta volver a arrancar.</p></div><span class="marca"><input type="checkbox" value="El teléfono corta el trabajo cada poco"><span>Nos pasa</span></span></label>
+      <label class="fila"><div><h3>Las citas y reservas dependen de una persona</h3><p>Cambios, olvidos y huecos vacíos que nadie recupera.</p></div><span class="marca"><input type="checkbox" value="Las citas y reservas dependen de una persona"><span>Nos pasa</span></span></label>
+      <label class="fila"><div><h3>Os piden los mismos documentos una y otra vez</h3><p>Reenviar facturas, certificados o justificantes se come horas de administración.</p></div><span class="marca"><input type="checkbox" value="Os piden los mismos documentos una y otra vez"><span>Nos pasa</span></span></label>
+    </div>
+    <div class="resumen-dolor" id="resumen" hidden aria-live="polite">
+      <p id="resumen-txt"></p>
+      <a class="btn btn-lima" href="#formulario">Calcular lo que nos cuesta</a>
     </div>
   </div>
 </section>
@@ -632,6 +645,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
   [h,p,c].forEach(function(el){el.addEventListener('input',calc);});
   calc();
+})();
+
+
+/* ── CASILLAS DEL PROBLEMA ───────────────────────── */
+(function(){
+  var cajas=document.querySelectorAll('#problema input[type=checkbox]');
+  var res=document.getElementById('resumen'), txt=document.getElementById('resumen-txt');
+  var tarea=document.querySelector('#iaForm [name="tarea"]'), escrita=false;
+  if(tarea) tarea.addEventListener('input',function(){ escrita=true; });
+  cajas.forEach(function(c){
+    c.addEventListener('change',function(){
+      var marcadas=[].filter.call(cajas,function(x){return x.checked;});
+      var n=marcadas.length;
+      res.hidden=n===0;
+      txt.innerHTML = n===1
+        ? 'Has marcado <strong>1 situación</strong>. Tiene un coste que se puede calcular, y casi nunca viene sola.'
+        : 'Has marcado <strong>'+n+' situaciones</strong>. Cada una tiene un coste que se puede calcular. Sumadas, suelen ser más de lo que parece.';
+      if(tarea && !escrita) tarea.value = marcadas.map(function(x){return x.value;}).join('. ') + (n?'.':'');
+      if(c.checked){ window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'dolor_marcado',dolor:c.value}); }
+    });
+  });
 })();
 
 /* ── BARRA FIJA MÓVIL ────────────────────────────── */
