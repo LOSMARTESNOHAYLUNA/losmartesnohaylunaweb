@@ -214,6 +214,7 @@ section{padding:6rem 0}
 .btn-atras{background:none;border:none;font:inherit;font-weight:600;color:var(--gris);cursor:pointer;padding:.9rem .2rem}
 .btn-atras[hidden]{display:none}
 .cierre-f{font-size:.84rem;color:var(--gris);margin-top:1rem}
+.ops::after{content:"Al elegir una opción pasas a la siguiente pregunta.";font-size:.8rem;color:var(--gris);margin-top:.3rem}
 .trampa{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
 /* FAQ */
@@ -495,9 +496,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="paso-f activo" data-paso="0">
           <h3>¿Cómo se llama tu empresa y a qué se dedica?</h3>
           <p class="guia">Nombre y sector en una línea. Por ejemplo: Reformas López, reformas integrales de viviendas.</p>
-          <input type="text" name="empresa" autocomplete="organization" aria-label="Empresa y sector">
+          <input type="text" name="empresa" autocomplete="organization" aria-label="Empresa y sector" enterkeyhint="next">
           <label class="t" for="f-web">¿Cuál es tu web o perfil de Instagram?</label>
-          <input type="text" id="f-web" name="web" inputmode="url" placeholder="www.tuempresa.com o @tuempresa">
+          <input type="text" id="f-web" name="web" inputmode="url" placeholder="www.tuempresa.com o @tuempresa" enterkeyhint="next">
         </div>
 
         <div class="paso-f" data-paso="1" data-grupo="equipo">
@@ -558,11 +559,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="paso-f" data-paso="7">
           <h3>¿Dónde te enviamos la confirmación?</h3>
           <label class="t" for="f-nombre">Nombre</label>
-          <input type="text" id="f-nombre" name="nombre" autocomplete="given-name">
+          <input type="text" id="f-nombre" name="nombre" autocomplete="given-name" enterkeyhint="next">
           <label class="t" for="f-email">Email</label>
-          <input type="email" id="f-email" name="email" autocomplete="email">
+          <input type="email" id="f-email" name="email" autocomplete="email" enterkeyhint="next">
           <label class="t" for="f-tel">Teléfono</label>
-          <input type="tel" id="f-tel" name="telefono" autocomplete="tel" inputmode="tel">
+          <input type="tel" id="f-tel" name="telefono" autocomplete="tel" inputmode="tel" enterkeyhint="send">
           <label class="privacidad"><input type="checkbox" name="privacidad" id="f-priv"><span>He leído y acepto la <a href="/privacidad/" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
           <p class="cierre-f">Si tu empresa encaja, podrás elegir día y hora nada más enviar.</p>
         </div>
@@ -696,11 +697,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     actual=n;
     barra.style.width=((n+1)/total*100)+'%';
     cuenta.textContent=n===total-1?'Último paso':'Pregunta '+(n+1)+' de '+(total-1);
+    var esOpcion=!!pasos[n].dataset.grupo;
     bAtras.hidden=n===0;
-    bSig.hidden=n===total-1;
+    bSig.hidden=(n===total-1)||esOpcion;
     bEnv.hidden=n!==total-1;
     err.classList.remove('ver');
+    // En móvil, que la nueva pregunta quede a la vista
+    var caja=form.closest('.caja');
+    if(iniciado && caja){
+      var r=caja.getBoundingClientRect();
+      if(r.top<70 || r.top>window.innerHeight*0.4){
+        var red=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({top:window.scrollY+r.top-90,behavior:red?'auto':'smooth'});
+      }
+    }
+    iniciado=true;
+    var foco=pasos[n].querySelector('input[type=text],input[type=email],input[type=tel],textarea');
+    if(foco && n>0) setTimeout(function(){ try{foco.focus({preventScroll:true});}catch(x){} },320);
   }
+  var iniciado=false;
 
   function fallo(msg){ err.textContent=msg; err.classList.add('ver'); }
 
@@ -733,7 +748,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   bSig.addEventListener('click',function(){ if(valida(actual)) mostrar(actual+1); });
   bAtras.addEventListener('click',function(){ if(actual>0) mostrar(actual-1); });
   form.addEventListener('keydown',function(e){
-    if(e.key==='Enter' && e.target.tagName==='INPUT' && actual<total-1){ e.preventDefault(); bSig.click(); }
+    if(e.key!=='Enter' || e.target.tagName!=='INPUT') return;
+    if(actual<total-1){ e.preventDefault(); if(valida(actual)) mostrar(actual+1); return; }
+    // En los datos de contacto, "Siguiente" salta al campo siguiente
+    var orden=['nombre','email','telefono'], i=orden.indexOf(e.target.name);
+    if(i>-1 && i<orden.length-1){ e.preventDefault(); F(orden[i+1]).focus(); }
   });
 
   function estado(){
@@ -745,7 +764,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   form.addEventListener('submit',async function(e){
     e.preventDefault();
     if(F('_gotcha').value) return;
-    if(!valida(actual)) return;
+    // Si el envío llega antes del final (tecla "Ir" del móvil, Enter…), solo se avanza
+    if(actual<total-1){ if(valida(actual)) mostrar(actual+1); return; }
+    // Comprobación completa: si falta algo, se vuelve a esa pregunta
+    for(var i=0;i<total;i++){ if(!valida(i)){ mostrar(i); valida(i); return; } }
 
     bEnv.disabled=true; bEnv.textContent='Enviando…';
     var v=function(g){return elec[g]?elec[g].v:'';};
