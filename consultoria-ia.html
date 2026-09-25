@@ -184,6 +184,13 @@ section{padding:6rem 0}
 .detras p{color:var(--gris);font-size:1.02rem;margin-bottom:1rem;max-width:58ch}
 .medios{margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid var(--linea);font-size:.92rem;color:var(--gris)}
 .medios strong{color:var(--tinta);font-weight:600}
+.equipo{margin-top:3.5rem;border-top:1px solid var(--linea);padding-top:2.5rem}
+.equipo-fotos{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.equipo-fotos figure{overflow:hidden;background:var(--lila)}
+.equipo-fotos img{width:100%;height:320px;object-fit:cover}
+.equipo-pie{margin-top:1.2rem;font-size:.95rem;color:var(--gris);max-width:70ch}
+@media(max-width:720px){.equipo-fotos{grid-template-columns:1fr}.equipo-fotos img{height:240px}.equipo{margin-top:2.5rem;padding-top:1.8rem}}
+
 
 /* Formulario */
 .form-sec{background:var(--morado-dk);color:#fff}
@@ -474,6 +481,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>Sheila Aguilar dirige Los Martes No Hay Luna. Lleva 25 años trabajando con pymes de servicios, y eso se nota en algo concreto: entiende cómo funciona una empresa por dentro antes de hablar de tecnología.</p>
       <p>Detrás hay un equipo de 8 profesionales que diseña y desarrolla las soluciones de IA que se implantan en cada cliente. No revendemos herramientas de terceros: construimos lo que cada empresa necesita.</p>
       <p class="medios">Nuestro análisis sobre IA y pymes ha aparecido en más de 160 medios nacionales, entre ellos <strong>El Confidencial Digital, Periodista Digital, Diario Siglo XXI, Madrid Diario</strong> y <strong>El Mundo Financiero</strong>.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="equipo">
+      <div class="equipo-fotos">
+        <figure><img src="/img/equipo-agencia-losmartesnohayluna.webp" alt="Equipo de Los Martes No Hay Luna trabajando en la oficina" loading="lazy" style="object-position:center 20%"></figure>
+        <figure><img src="/img/equipo-agencia-losmartesnohayluna2.webp" alt="Equipo de Los Martes No Hay Luna en una reunión de trabajo" loading="lazy"></figure>
+      </div>
+      <p class="equipo-pie">Ocho personas repartidas en estrategia, SEO, campañas, diseño, desarrollo y gestión de proyectos. Las mismas que después construyen lo que sale del diagnóstico.</p>
     </div>
   </div>
 </section>
