@@ -79,4 +79,25 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://losmartesnohayluna.com/blog/automatizacion-de-procesos-en-empresas-de-servicios/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://losmartesnohayluna.com/blog/como-reducir-ausencias-en-clinica/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://losmartesnohayluna.com/blog/inteligencia-artificial-en-procesos-de-seleccion-de-personal/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
