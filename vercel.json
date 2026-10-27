@@ -526,6 +526,18 @@
       "destination": "/blog/medir-resultados-marketing-digital.html"
     },
     {
+      "source": "/blog/automatizacion-de-procesos-en-empresas-de-servicios/",
+      "destination": "/blog/automatizacion-de-procesos-en-empresas-de-servicios.html"
+    },
+    {
+      "source": "/blog/como-reducir-ausencias-en-clinica/",
+      "destination": "/blog/como-reducir-ausencias-en-clinica.html"
+    },
+    {
+      "source": "/blog/inteligencia-artificial-en-procesos-de-seleccion-de-personal/",
+      "destination": "/blog/inteligencia-artificial-en-procesos-de-seleccion-de-personal.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/$1"
     },
