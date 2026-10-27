@@ -46,7 +46,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { max-width: 100%; overflow-x: hidden; }
+html, body { max-width: 100%; overflow-x: hidden;
+  overflow-x: clip; }
 :root {
   --purple: #582D81; --purple-lt: #6e3d9a; --purple-dk: #3a1c57;
   --lime: #87B229; --lime-lt: #9ecf30; --lime-dk: #6a8c1f;
@@ -56,7 +57,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
   --data: #0ea5e9;
 }
 html { scroll-behavior: smooth; }
-body { font-size: 18px; font-family: 'Poppins', sans-serif; background: var(--off-white); color: var(--slate); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+body { font-size: 18px; font-family: 'Poppins', sans-serif; background: var(--off-white); color: var(--slate); font-weight: 300; line-height: 1.7; overflow-x:hidden; overflow-x:clip; }
 img { max-width: 100%; height: auto; }
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 5rem; background: rgba(248,246,242,.97); backdrop-filter: blur(14px); border-bottom: 1px solid var(--rule); }
 .nav-logo { text-decoration: none; display: flex; align-items: center; }
